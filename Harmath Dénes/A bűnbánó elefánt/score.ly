@@ -169,7 +169,7 @@ AltoI =  \relative a' {
 AltoILyrics =  \lyricmode { bap bap bap -- pa -- "dú"
     "ú" \skip4 bap -- pa -- "dú" su -- ba -- dup -- sup -- sup sup -- su
     -- ba -- dup -- dup wap -- pa -- "dú" -- ba -- pa "wá" -- "wá" --
-    "wá" "és" nem vet -- te "ész" -- re lenn a "fű" -- ben a kis po -- co --
+    "wá" "és" nem vet -- te "ész" -- re lent a "fű" -- ben a kis po -- co --
     "kot." "á" \skip4 \skip4 \skip4 \skip4 "wá" -- "wá" -- "wá" -- "wá"
     du -- "pá" -- du -- bá "ú" \skip4 la -- pos -- "ra." "Hű!" "- Ej," de
     "bánt," "ej," de "bánt!" "- so" -- "pán" -- ko -- dott az e -- le --
