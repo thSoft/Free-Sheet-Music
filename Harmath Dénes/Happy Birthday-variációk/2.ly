@@ -32,7 +32,7 @@ SopranoA = \relative c'' {
 	fis! g fis e! fis2 | g r r |   % 79
 	r a b! | c4 d c1 |   % 81
 	d1. ~ | d2 r r4 g, |   % 83
-	c bes as! g f c' | f2. d4 es2 ~ |   % 85
+	c bes as! g as c | f2. d4 es2 ~ |   % 85
 	es4 f es d c2 ~ | c b! a |   % 87
 	b!1.\fermata
 	\bar "|."
