@@ -1,6 +1,6 @@
 \version "2.11.35"
 
-#(set-global-staff-size 18)
+#(set-global-staff-size 18.25)
 
 \header {
 	composer = "Harmath Dénes"
@@ -27,7 +27,8 @@ MusicXMLXPartAVoiceA = \relative c' {
 	\clef G
 	\key bes \major
 	\time 4/4 
-	\grace s8 \once \override Score.BarLine #'stencil = ##f R1 \mf^\markup{Alla pastorale}  | R1 |   % 3
+	\grace s8 \once \override Score.BarLine #'stencil = ##f
+	\tempo "Alla pastorale" R1 \mf | R1 |   % 3
 	\voiceOne
 	\clef bass
 	f8 f16 es f8 c es d c bes | c4 f, g2 |   % 5
@@ -40,7 +41,7 @@ MusicXMLXPartAVoiceA = \relative c' {
 	\key g \major \grace s8
 	R1 \mf| R1 |   % 17
 	a8 a16 g a8 fis d' d16 c d8 a | c b\prall a g a4 a |   % 19
-	b8 b16 a b8 fis d' d16 cis d8 b | fis'16 e d e fis8 gis! a4 a | \break  % 21
+	b8 b16 a b8 fis d' d16 cis d8 b | fis'16 e d e fis8 gis! a4 a \break | % 21
 	b8 b16 c b8 g <<{b, b16 c b8 g}\\{ \override Voice.Rest #'stencil = ##f r4 \startTextSpan r8 r16 r16 \stopTextSpan}>> | a'8 g fis4 <<{a,8 g fis4}\\{ \override Voice.Rest #'stencil = ##f r4 \startTextSpan r8 r16 r16 \stopTextSpan}>> |   % 23
 	g'8 g16 fis e8 g <<{g, g16 fis e8 g}\\{ \override Voice.Rest #'stencil = ##f r4 \startTextSpan r8 r16 r16 \stopTextSpan}>> | fis'8 e d4 <<{fis,8 e d4}\\{ \override Voice.Rest #'stencil = ##f r4 \startTextSpan r8 r16 r16 \stopTextSpan}>> |   % 25
 	a'8 a16 g fis g a fis g8 g g4 | fis8 fis16 e d e fis d e4 e |   % 27
@@ -48,8 +49,8 @@ MusicXMLXPartAVoiceA = \relative c' {
 	fis \startTextSpan e d d | s2 s \stopTextSpan |\oneVoice   % 31
 	R1  | \voiceOne <fis d>2 \p <d cis> |   % 33
 	<e b>1 \bar "||" \break \key a \major
-	\time 2/2 
-	a4. \f ^\markup{Allegro maestoso} a8 a4 b ~ |   % 35
+	\time 2/2 \tempo "Allegro maestoso"  
+	a4. \f a8 a4 b ~ |   % 35
 	b a ~ a8 gis16 fis gis4 | a4. b16 cis dis!8 eis! fis4 ~ |   % 37
 	fis8 eis!16 dis! eis4 fis4. e!8 | d2 cis4 ~ cis16 b cis dis! |   % 39
 	e1 ~ | e4. e8 d cis b a |   % 41
@@ -58,15 +59,15 @@ MusicXMLXPartAVoiceA = \relative c' {
 	cis8 bis!4 cis8 dis!2 ~ | dis8 cis16 bis! cis4 ~ cis8 b!16 cis dis!8 eis! |   % 47
 	fis1 ~ | fis ~ |   % 49
 	fis \bar "||" \break \key d \major
-	\time 3/8 
+	\time 3/8 \tempo "Adagio"  
 	\oneVoice
-	b,8 \p ^\markup{Adagio} ~ \times 2/3 { b16 d cis  } \times 2/3 { b\prall ais! b  } |   % 51
+	b,8 \p ~ \times 2/3 { b16 d cis  } \times 2/3 { b\prall ais! b  } |   % 51
 	b32 fis64 b fis16 ~ fis4 | dis'!8\mordent ~ \times 2/3 { dis16 fis e  } \times 2/3 { dis\prall cis dis  } |   % 53
 	b4. | e8\mordent ~ \times 2/3 { e16 dis! e  } \times 2/3 { b' cis b  } |   % 55
-	b32 ais! gis!16 gis ais8.\mordent | fis64 gis!  a!16. ~ \times 2/3 { a16 dis,! e  } \times 2/3 { fis gis a  } |   % 57
-	a gis!32 fis fis16 gis8.\mordent | e64 fis g!16. ~ \times 2/3 { g16 e fis  } \times 2/3 { g a g  } |   % 59
-	g8. f!16\prall es!8 | dis!64 e fis!16. ~ \times 2/3 { fis16 a gis!  } \times 2/3 { fis eis! fis  } |   % 61
-	f!8.\prall es!16 des!8 | b64 cis d!16. ~ \times 2/3 { d16 cis b  } \times 2/3 { b cis d  } |   % 63
+	b32 ais! gis!16 gis ais8.\mordent | \acciaccatura { fis16[ gis!] } a!8 ~ \times 2/3 { a16 dis,! e  } \times 2/3 { fis gis a  } |   % 57
+	a gis!32 fis fis16 gis8.\mordent | \acciaccatura { e16[ fis] } g!8 ~ \times 2/3 { g16 e fis  } \times 2/3 { g a g  } |   % 59
+	g8. f!16\prall es!8 | \acciaccatura { dis!16[ e] } fis!8 ~ \times 2/3 { fis16 a gis!  } \times 2/3 { fis eis! fis  } |   % 61
+	f!8.\prall es!16 des!8 | \acciaccatura { b16[ cis] } d!8 ~ \times 2/3 { d16 cis b  } \times 2/3 { b cis d  } |   % 63
 	d e32 d cis d b16 cis8 ~ | cis4. ~ |   % 65
 	cis ~ | cis8 ~ \times 2/3 { cis16 e dis!  } \times 2/3 { cis\prall bis! cis  } |   % 67
 	cis32 gis!64 cis gis16 ~ gis4 | e'8 ~ \times 2/3 { e16 fis dis!  } \times 2/3 { e dis cis  } |   % 69
@@ -75,8 +76,8 @@ MusicXMLXPartAVoiceA = \relative c' {
 	as\mordent ~ \times 2/3 { as16 bes as  } \times 2/3 { g f g  } |   % 73
 	g8.\trill  f16 e!16. e32 | e!16 f\mordent ~ f4 ~ |   % 75
 	f4. ~ | f ~ |   % 77
-	f \bar "||" \break \key c \major \time 4/4 |  
-	d''32 \mf ^\markup{Vivace} a f c s8 c'32 a f c s8 b'32 a f c s8 c'32 a f c s8 |   % 79
+	f \bar "||" \break \key c \major \time 4/4 \tempo "Vivace" |  
+	d''32 \mf a f c s8 c'32 a f c s8 b'32 a f c s8 c'32 a f c s8 |   % 79
 	d'32 a f c s8 e'32 b g d s8 f'32 c a e s8 e'32 b g d s8 |\noBreak d'32 a f c s8 c'32 a f c s8 b'32 a f c s8 c'32 a f c s8 |   % 81
 	d'32 a f c s8 c'32 a f c s8 b'32 a f c s8 a'32 g f c s8 | b'32 g e d s8 c'32 b g e s8 d'32 a f e s8 e'32 b a f s8 |\noBreak   % 83
 	d'32 b a e s8 c'32 b g e s8 b'32 g e c s8 a'32 fis! e c s8 | b'32 gis! fis! b, s8 c'32 gis f! d s8 d'32 a e c s8 c'32 a fis! d s8 |\noBreak   % 85
@@ -88,8 +89,8 @@ MusicXMLXPartAVoiceA = \relative c' {
 	e'32 c as! d, s8 fis'!32 d bes! e, s8 gis'!32 e c fis,! s8 ais'!32 fis d gis,! s8 | \voiceTwo c'32 as! es! c s8 bes'!32 g f d s8 as'32 ges! es c s8 bes'32 as f d s8 |   % 97
 	\oneVoice \set tieWaitForNote = ##t
 	c'16~ g~ e~ d~ \set tieWaitForNote = ##f <d e g c>4~ <c' g e c>2 \bar "||" \break \key es \major
-	\time 5/8 \voiceOne
-	f,8 \ff ^\markup{Allegro} f16 es f8 es c |   % 99
+	\time 5/8 \voiceOne \tempo "Allegro"
+	f,8 \ff f16 es f8 es c |   % 99
 	d d16 c bes8 < g c > f | f' f16 es f8 es c |   % 101
 	bes bes16 as bes8 < g c > 4~ |\key c \major c8 d16 c d8 c a |   % 103
 	b b16 a g8 < e a > d | d' d16 c d8 c a |   % 105
