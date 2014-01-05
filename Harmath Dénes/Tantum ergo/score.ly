@@ -54,7 +54,7 @@ Soprano =  \relative g' {
     c8 r8 r4 r4. \bar "|."
 }
 SopranoLyricsOne =  \lyricmode {
-	Tan -- tum er -- go sac -- _- ra -- _ men
+	Tan -- tum er -- go sac -- _ ra -- _ men
     -- tum ve -- ne -- re -- mur cer -- _ nu -- _ "i,"
     et an -- ti -- quum do -- _ cu -- _  men -- tum
     no -- vo ce -- _ dat _ ri -- tu -- "i,"
