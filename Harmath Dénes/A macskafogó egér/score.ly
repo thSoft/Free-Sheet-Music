@@ -31,7 +31,7 @@ AvoiceAA = \relative c'{
     \key g \major 
     %bartimesig: 
     \time 4/4 
-    \tempo "Buffo" d8 ^\markup {\upright  "fischiare"} ^\mp e b d~ d4 r | 
+    \tempo "Buffo" d8 ^\markup {\upright  "fischiare"} ^\mp e b d~ d4 r8 d~ | 
     d8 e a, d~ d4 r8 c | 
     b c d e fis g e g 
     fis8. g16 a8 d,~ d4 a-^  ^\markup {\upright  "cantare"} |
@@ -261,7 +261,7 @@ AvoiceDA = \relative c'{
 ApartAverseA = \lyricmode {
 	\set ignoreMelismata = ##t
 	cin -- ci -- ni -- ci -- ni -- cin -- ci -- ni -- ci -- ni -- cin  cin -- ci -- ni -- ci -- ni -- cin -- ci -- ni -- ci -- ni -- cin  cin -- ci -- ni -- ci -- ni -- cin -- ci -- ni -- ci -- ni -- cin
-	\repeat unfold 24 { \skip4 }
+	\repeat unfold 25 { \skip4 }
 	miáú cin -- ci -- ni -- ci -- ni -- cin -- ci -- ni -- ci -- ni -- cin  cin -- ci -- ni -- ci -- ni -- cin -- ci -- ni -- ci -- ni -- cin  cin -- ci -- ni -- ci -- ni -- cin -- ci -- ni -- ci -- ni -- cin  miáú, miá -- ú,  miá -- ú  mi -- á -- ú,  "\"Sze" -- gény  jó szü -- le -- im  ag -- gód -- nak  mi -- at -- "tam!\""  És bár a cir -- mos -- nak  köny -- nye  is meg -- e -- redt,  nem tud -- ta  meg -- hat -- ni  a ke -- vély  e -- ge -- ret.  "\"Be" -- kap -- "lak!\""  -_ug -- rott  rá az e -- gér  or -- dít -- va...
 }
 ApartBverseA = \lyricmode {
