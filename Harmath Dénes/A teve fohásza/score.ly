@@ -161,7 +161,7 @@ SopranoII =  \relative g' {
     r4 r8 as8 as8  as8  as4 | % 22
     as8  as8  as4 as8 r8 r4 | % 23
     f4 f4 e4 e4 | % 24
-    es4 es8 d4. d4  | % 25
+    es!4 es8 d4. d4  | % 25
     es2 as8 g4 g8 | % 26
     ges4 r4 r2 | % 27
     f2 ~ f8 r8 r4  | % 28
@@ -368,7 +368,7 @@ AltoII =  \relative c' {
     bes4 bes4 bes4  | % 47
     a2. | % 48
       gis4 r4 r2 | % 49
-    g4 r4 r2  | \barNumberCheck #50
+    g!4 r4 r2  | \barNumberCheck #50
     fis4 r4 r2 | % 51
     f!4 r4 r2 | % 52
     R1  | % 53
@@ -386,7 +386,7 @@ AltoII =  \relative c' {
 AltoIILyrics =  \lyricmode {
 	tum -- bá -- rá -- láp -- pá -- tu -- m -- pá
 	tum -- bá -- rá -- láp -- pá -- tu -- m -- pá
-	Mo -- no -- ton ü -- get a süp -- ped "dő" ho -- mo -- kon
+	Mo -- no -- ton ü -- get a süp -- pe -- "dő" ho -- mo -- kon
 	tum -- bá -- rá -- láp -- pá -- tu -- m -- pá
 	"ú" te -- ve to -- va
     tum -- "máp" -- "pá" tum -- "máp" -- "pá" "púp" "wáp" -- "pá"
