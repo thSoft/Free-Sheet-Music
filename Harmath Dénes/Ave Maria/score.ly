@@ -1,4 +1,4 @@
-\version "2.11.35"
+\version "2.18.0"
 
 #(set-global-staff-size 17)
 
@@ -13,50 +13,50 @@ SzoprXnXIA = \relative c' {
 	\clef G
 	\time 2/2 
 	\dynamicUp
-	s2\mp	^\markup{Poco parlando} R2 | R1 |   % 3
+	R1\mp^\markup \italic{Poco parlando} | R1 |   % 3
 	b'2 fis!4 gis! | gis!  ( dis'! e2 ) |   % 5
 	dis!4 dis cis! b | cis!1  ( ~  \< |   % 7
 	cis2. dis!4 )  |\break \noPageBreak dis!1 ~ |   % 9
 	dis \time 3/2 | 
-	\times 2/3 { dis!4  (  \! cis! ) cis  } \times 2/3 { cis  ( dis ) cis  } \times 2/3 { cis  ( b ) ais!  } \time 2/2 | 
-	\times 2/3 { as!  ( bes! ) des!  } \times 2/3 { bes  ( as ) bes  } | bes!1 ~ |   % 13
+	\tuplet 3/2 { dis!4  (  \! cis! ) cis  } \tuplet 3/2 { cis  ( dis ) cis  } \tuplet 3/2 { cis  ( b ) ais!  } \time 2/2 | 
+	\tuplet 3/2 { as!  ( bes! ) des!  } \tuplet 3/2 { bes  ( as ) bes  } | bes!1 ~ |   % 13
 	bes ~ |\noBreak bes |\break   % 15
-	\times 2/3 { c,4  ( \mp f ) f ~  } f2 ~ | f1 |   % 17
-	\times 2/3 { f4  ( bes! ) bes ~  } bes2 ~ | bes1 |   % 19
-	\times 2/3 { bes!4  ( es! ) es ~  } es2 ~ | es bes!4 c |   % 21
+	\tuplet 3/2 { c,4  ( \mp f ) f ~  } f2 ~ | f1 |   % 17
+	\tuplet 3/2 { f4  ( bes! ) bes ~  } bes2 ~ | bes1 |   % 19
+	\tuplet 3/2 { bes!4  ( es! ) es ~  } es2 ~ | es bes!4 c |   % 21
 	d  ( a2 ) b4 |\break \noPageBreak a  ( e2 ) fis!4 |   % 23
-	\times 2/3 { fis!  ( b ) b ~  } b2 ~ | b1 ~ |   % 25
+	\tuplet 3/2 { fis!  ( b ) b ~  } b2 ~ | b1 ~ |   % 25
 	b \time 4/4 | 
-	fis!4 \p ^\markup{Molto sostenuto}  \<  gis! b cis! |   % 27
+	fis!4 \p ^\markup \italic{Molto sostenuto}  \<  gis! b cis! |   % 27
 	dis!4. e8 e2->  ( ~ | e4. fis!8 )  \! fis2\ff \fermata \bar "||" \time 2/2 | 
-	es!1 \mp ^\markup{Con moto, parlando} ~ | es ~ |   % 31
+	es!1 \mp ^\markup \italic{Con moto, parlando} ~ | es ~ |   % 31
 	es ~ | es ~ |   % 33
 	es ~ | es ~ |   % 35
 	es ~ | es ~ |   % 37
-	es | \times 2/3 { es!2 des! bes!  } |   % 39
+	es | \tuplet 3/2 { es!2 des! bes!  } |   % 39
 	as!4  ( es! ) es2 | R1 |   % 41
 	R1 | R1 |   % 43
 	R1 | R1 |   % 45
-	r4 bes'! as! bes | \times 2/3 { des!2  ( c ) as!  } |   % 47
+	r4 bes'! as! bes | \tuplet 3/2 { des!2  ( c ) as!  } |   % 47
 	bes! f | bes! f |   % 49
 	R1 | R1 |   % 51
 	R1 | R1 |   % 53
-	R1 | \cresc r4 a gis! a |   % 55
+	R1 | \deprecatedcresc r4 a gis! a |   % 55
 	c2. b4 | r a gis! a |   % 57
-	cis!2 b | r4 ^\markup{allarg.} cis!  ( b ) cis |   % 59
+	cis!2 b | r4 ^\markup \italic{allarg.} cis!  ( b ) cis |   % 59
 	e  ( cis!2 ) fis!4 | cis!1 \ff ~ |   % 61
 	cis ~ | cis ~ |   % 63
-	cis2. r4 |\break \noPageBreak des!2 \mp ^\markup{Poco meno mosso} r |   % 65
+	cis2. r4 |\break \noPageBreak des!2 \mp ^\markup \italic{Poco meno mosso} r |   % 65
 	r des!  \<  ~ | des4 \! des!8 \> des des4 des  \! |   % 67
 	des! des des2 | cis!1 |   % 69
-	r2 cis!  ( ~ | cis4 ^\markup{Piú lento} b a g |   % 71
+	r2 cis!  ( ~ | cis4 ^\markup \italic{Piú lento} b a g |   % 71
 	g4. a8 ) a4 a  ( ~ | a g fis! e |   % 73
 	e2. fis!4 | fis!1 ~ |   % 75
 	fis ~ | fis ~ |   % 77
 	fis ~ |\noPageBreak fis2  \<  gis! |   % 79
 	ais! ) b | b1 \f  \! ~ |   % 81
 	b | b ~ |   % 83
-	b ~ | << { b ~ b } \\ { s1^\> s2.. s8\! } >> 
+	b ~ | b ~ | b 
 	\bar "|."
 }
 SzoprXnXIATextA = \lyricmode {
@@ -99,7 +99,7 @@ SzoprXnXIIB = \relative c' {
 	\time 2/2 
 	                   
 	R1 | R1 |   % 3
-	R1 | \times 2/3 { gis'!2  ( b4 )  } b2 ~ |   % 5
+	R1 | \tuplet 3/2 { gis'!2  ( b4 )  } b2 ~ |   % 5
 	b1 ~ | b2 gis! ~ |   % 7
 	gis1 ~ | gis ~ |   % 9
 	gis ~ \time 3/2 | 
@@ -121,7 +121,7 @@ SzoprXnXIIB = \relative c' {
 	c1 | bes! |   % 39
 	R1 | R1 |   % 41
 	R1 | r4 f es! f |   % 43
-	\times 2/3 { as!2  ( g ) es!  } | as! as |   % 45
+	\tuplet 3/2 { as!2  ( g ) es!  } | as! as |   % 45
 	g g | f1  ( ~ |   % 47
 	f ~ | f2 g ~ |   % 49
 	g a ) | a r |   % 51
@@ -200,7 +200,7 @@ AltXIC = \relative c' {
 	R1 | R1 |   % 41
 	R1 | R1 |   % 43
 	R1 | r4 f es! des! |   % 45
-	\times 2/3 { es!2  ( des! ) bes!  } | bes!1  ( |   % 47
+	\tuplet 3/2 { es!2  ( des! ) bes!  } | bes!1  ( |   % 47
 	es! ~ | es2 ) d |   % 49
 	r4 e d e | g  ( fis! ) fis2 |   % 51
 	e a, | d g, |   % 53
@@ -281,7 +281,7 @@ AltXIID = \relative c' {
 	es!1 | des! |   % 47
 	bes! | c |   % 49
 	e | r4 fis! e d |   % 51
-	\times 2/3 { e2  ( d ) b  } | r4 d d  ( c ) |   % 53
+	\tuplet 3/2 { e2  ( d ) b  } | r4 d d  ( c ) |   % 53
 	bes!  ( c ) bes  ( a ) | a2 r |   % 55
 	R1 | R1 |   % 57
 	R1 | eis'!1  ( ~ |   % 59
@@ -346,9 +346,9 @@ TenorE = \relative c {
 	e ~ | e ~ |   % 25
 	e \time 4/4 | 
 	r2 e'  ( ~ |   % 27
-	e ~ e4. fis!8 | e2 ) cis!\fermata \bar "||" \time 2/2 | 
+	e ~ e4. fis!8 | e4 dis8 b ) cis2\fermata \bar "||" \time 2/2 | 
 	R1 | r4 es! des! es |   % 31
-	\times 2/3 { ges!2  ( f ) des!  } | es! as,! |   % 33
+	\tuplet 3/2 { ges!2  ( f ) des!  } | es! as,! |   % 33
 	es'! as,! | es'!1 ~ |   % 35
 	es ~ | es ~ |   % 37
 	es | des! ~ |   % 39
@@ -369,9 +369,9 @@ TenorE = \relative c {
 	bes!4 r r bes8 bes | cis!1-> |   % 69
 	a | b  ( |   % 71
 	a4 b a b ) | b1 |   % 73
-	R1 | r8 b a b \times 2/3 { d4  ( cis! ) a  } |   % 75
-	b e, b' e, | b' gis!8 b \times 2/3 { dis!4  ( cis! ) b  } |   % 77
-	cis! fis,! cis' fis, | r8 cis'! b cis \times 2/3 { e4  ( dis! ) b  } |   % 79
+	R1 | r8 b a b \tuplet 3/2 { d4  ( cis! ) a  } |   % 75
+	b e, b' e, | b' gis!8 b \tuplet 3/2 { dis!4  ( cis! ) b  } |   % 77
+	cis! fis,! cis' fis, | r8 cis'! b cis \tuplet 3/2 { e4  ( dis! ) b  } |   % 79
 	cis! gis! cis gis | b1 |   % 81
 	b | r4 b fis! gis! |   % 83
 	gis!  ( dis'! e2 ) | dis!1 ~ |   % 85
@@ -430,9 +430,9 @@ BaritonF = \relative c {
 	R1 | R1 |   % 31
 	R1 | R1 |   % 33
 	R1 | r4 bes! as! bes |   % 35
-	\times 2/3 { des!2  ( c ) as!  } | ges!4 f ges  ( as! ) |   % 37
+	\tuplet 3/2 { des!2  ( c ) as!  } | ges!4 f ges  ( as! ) |   % 37
 	as!1 | as! |   % 39
-	\times 2/3 { bes!2  ( as! ) ges!  } | as!4 ges! ges  ( as ) |   % 41
+	\tuplet 3/2 { bes!2  ( as! ) ges!  } | as!4 ges! ges  ( as ) |   % 41
 	as!1 | R1 |   % 43
 	R1 | R1 |   % 45
 	R1 | R1 |   % 47
@@ -497,9 +497,9 @@ BasszusG = \relative c {
 	bes ~ | bes |   % 15
 	R1 | R1 |   % 17
 	R1 | R1 |   % 19
-	r4 as'! es! f | \times 2/3 { f  ( c' ) c ~  } c2 |   % 21
+	r4 as'! es! f | \tuplet 3/2 { f  ( c' ) c ~  } c2 |   % 21
 	R1 | R1 |   % 23
-	R1 | \times 4/6 { b,4  ( cis! ) cis  ( fis,! ) fis  ( e )  } |   % 25
+	R1 | \tuplet 6/4 { b,4  ( cis! ) cis  ( fis,! ) fis  ( e )  } |   % 25
 	e1 \time 4/4 | 
 	R1 |   % 27
 	r2 a'4.  ( fis!8 | cis!2 ) fis,!\fermata \bar "||" \time 2/2 | 
@@ -562,7 +562,7 @@ BasszusGTextA = \lyricmode {
 		
 		}
 \score {
-	\relative <<
+	\relative c' <<
 	\new ChoirStaff <<
 		\context Staff = cSzoprXnXIAA <<
 			\context Voice = cSzoprXnXIAA \SzoprXnXIA
@@ -614,7 +614,7 @@ BasszusGTextA = \lyricmode {
 \paper {
 	#(set-paper-size "a4")
 	head-separation = 0
-	between-system-padding = 0
+	obsolete-between-system-padding = 0  system-system-spacing #'padding = #(/ obsolete-between-system-padding staff-space)  score-system-spacing #'padding = #(/ obsolete-between-system-padding staff-space)
 	system-count = 12
 	ragged-last-bottom = ##f
 }
