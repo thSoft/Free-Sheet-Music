@@ -293,11 +293,11 @@ SinistraI = \relative c'{
 	<aes aes'>4 <g g'>\arpeggio ~\fermata -> g'8 bes ees g |
 	R1 *3 |
 	\clef treble |
-	\voiceOne aes'2 ges4. r8 |
+	\voiceOne aes''2 ges4. r8 |
 	\key a \major
 	\oneVoice <dis fis a>4\arpeggio r r2 |
 	\time 2/4
-	<dis' fis>2\arpeggio |
+	<dis fis>2\arpeggio |
 	\time 4/4
 	<cis eis gis>4\arpeggio r r2 |
 	\times 2/3{cis16 fis a } r8 r4 r2 |
@@ -366,7 +366,7 @@ SinistraII = \relative c'{
 	s1 |
 	s1 |
 	s1 |
-	ees,2.. r8 |
+	ees2.. r8 |
 	s1 |
 	s2 |
 	s1 |
@@ -375,7 +375,7 @@ SinistraII = \relative c'{
 	s1 |
 	s1 |
 	s1 |
-	a'4 b a gis |
+	a4 b a gis |
 	a8 b a gis a b a gis |
 	s1 |
 	s1 |
