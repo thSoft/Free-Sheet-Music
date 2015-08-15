@@ -527,8 +527,8 @@ BasszusG = \relative c {
 	d'2. b4 | e,1 ) |   % 73
 	a | b ~ |   % 75
 	b2. fis!4 | gis!1 |   % 77
-	dis'! | e,  ( ~ |   % 79
-	e ~ | e ~ |   % 81
+	dis'! | e  ( ~ |   % 79
+	e | e, ~ |   % 81
 	e | b' ~ |   % 83
 	b ~ | b ~ |   % 85
 	b ) 
