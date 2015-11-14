@@ -7,6 +7,12 @@
     \Staff \RemoveEmptyStaves
     \override VerticalAxisGroup.remove-first = ##t
   }
+  indent = 1\cm
+}
+
+\paper {
+	left-margin = 1.3\cm
+	right-margin = 0.8\cm
 }
 
 \A

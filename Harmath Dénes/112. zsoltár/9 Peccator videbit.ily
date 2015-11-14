@@ -3,13 +3,24 @@ IHeader = {
 	\mark "9. Peccator videbit"
 	\Common
 }
+ITacet = {
+	\once \override Staff.TimeSignature.stencil = ##f
+	R1*39^"Tacet"
+	\bar "||"
+}
 IGlobal = {
 	\IHeader
 	\tempo "Con fuoco"
 	s1*16
+	\set Staff.beatStructure = #'(2 2 3)
 	s2..*18^"accel. poco a poco"
 	\tempo "Presto"
-	s2..*5 ^"piú accel." 
+	s2..*3 ^"piú accel."
+	\set Staff.beatStructure = #'(3 2 2)
+}
+ITimes = {
+	s1*16
+	\time 7/8
 }
 IFlauto =  \relative g' {
     \clef "treble" \key g \major \time 4/4 | % 1
@@ -21,71 +32,53 @@ IFlauto =  \relative g' {
     R1*11 \!  | % 17
     \time 7/8  | % 17
     R2..*18 | % 35
-    es,,8\mf[ e8] f8[ fis8] g8[ gis8 a8]
+    es,,8:16\mf_"dim." e8:16 f8:16 fis8:16 g8:16 gis8:16 a8:16
     | % 36
-    a8[  bes8] b8[ c8] des8[ d8 es8] | % 37
-    es8[  e8] f8[ fis8] g8[ gis8 a8] | % 38
-    bes8[  e,8 bes'8] e8 r4. | % 39
+    a8:16  bes8:16 b8:16 c8:16 des8:16 d8:16 es8:16 | % 37
+    es8:16  e8:16 f8:16 fis8:16 g8:16 gis8:16 a8:16 | % 38
+    bes8:16  e,8:16 bes'8:16 e8 r4. | % 39
     R2.. \bar "||"
     }
 
 IOboe =  \relative g' {
     \clef "treble" \key g \major \time 4/4 R1 | % 2
-    g16 -> g16 g16 r16 r8 g16 g16 -> r16 g16 g16 g16 g16 g16 g16 g16
+    g16 ->\f g16 g16 r16 r8 g16 g16 -> r16 g16 g16 g16 g16 g16 g16 g16
     | % 3
-    R1*2 | % 5
-    R1*2 | % 7
-    R1*2 | % 9
-    R1*2 | % 11
-    R1*2 | % 13
-    R1 | % 14
+    R1*11 | % 14
     r2 c,16 b16 c16 d16 dis8 r8 | % 15
     R1*2 | % 17
-    \time 7/8  R2.. | % 18
-    R2..*3 | % 21
-    R2..*2 | % 23
-    g'4 g4 fis4 dis8 | % 24
+    \time 7/8  R2..*6 | % 23
+    g'4 g4 fis4 es8 | % 24
     g4 a4 fis4. | % 25
-    g4 g4 fis4 dis8 | % 26
+    g4 g4 fis4 es8 | % 26
     d4 d4 d4. | % 27
-    R2..*3 | \barNumberCheck #30
-    R2.. | % 31
-    g4 g4 fis4 dis8 | % 32
+    R2..*4 | % 31
+    g4 g4 fis4 es8 | % 32
     g4 a4 fis4. | % 33
-    g4 g4 fis4 dis8 | % 34
+    g4 g4 fis4 es8 | % 34
     d4 d4 d4. | % 35
-    R2.. | % 36
-    R2..*4 \bar "||"
+    R2..*5 \bar "||"
     }
 
 ICornoInglese =  \relative d' {
     \transposition f \clef "treble" \key d \major
     \time 4/4 R1 | % 2
-    d16 -> d16 d16 r16 r8 d16 d16 -> r16 d16 d16 d16 d16 d16 d16 d16
+    d16 ->\f d16 d16 r16 r8 d16 d16 -> r16 d16 d16 d16 d16 d16 d16 d16
     | % 3
-    R1*2 | % 5
-    R1*2 | % 7
-    R1*2 | % 9
-    R1*2 | % 11
-    R1*2 | % 13
-    R1 | % 14
+    R1*11 | % 14
     r4 eis16 dis16 eis16 fis16 g8 r8 r4 | % 15
     R1*2 | % 17
-    \time 7/8  R2.. | % 18
-    R2.. | % 19
+    \time 7/8  R2..*2 | % 19
     gis'4 gis4 g4 e8 | \barNumberCheck #20
     gis4 ais4 g4. | % 21
     gis4 gis4 g4 e8 | % 22
     es4 es4 es4. | % 23
-    R2.. | % 24
-    R2..*3 | % 27
+    R2..*4 | % 27
     gis4 gis4 g4 e8 | % 28
     gis4 ais4 g4. | % 29
     gis4 gis4 g4 e8 | \barNumberCheck #30
     dis4 dis4 dis4. | % 31
-    R2..*2 | % 33
-    R2..*3 | % 36
-    R2..*4 \bar "||"
+    R2..*9 \bar "||"
     }
 
 IFagotto =  \relative g {
@@ -130,73 +123,62 @@ IFagotto =  \relative g {
     }
 
 IBattacio =  \relative e' {
+	\set RhythmicStaff.instrumentName = "Battacio"
     \clef "percussion" \stopStaff \override Staff.StaffSymbol
     #'line-count = #1 \startStaff \key c \major
-    \time 4/4 R1*2 | % 3
-    R1 | % 4
+    \time 4/4 R1*3 | % 4
     r2 r4 e4 | % 5
-    R1*2 | % 7
-    R1*2 | % 9
-    R1*2 | % 11
-    R1 | % 12
+    R1*7 | % 12
     r2 r4 e4 | % 13
-    R1*2 | % 15
-    R1*2 | % 17
-    \time 7/8  R2.. | % 18
-    R2..*3 | % 21
-    R2..*3 | % 24
-    R2..*3 | % 27
-    R2..*3 | \barNumberCheck #30
-    R2..*3 | % 33
-    R2..*3 | % 36
-    R2..*4 \bar "||"
+    R1*4 | % 17
+    \time 7/8  R2..*23 \bar "||"
     }
 
 IVioliniI =  \relative b' {
     \clef "treble" \key g \major \time 4/4 | % 1
 	\once \override TextScript.outside-staff-priority = #-100
-    b8 ^"martellato"\ff r8 dis8 r8 b8 r8 g8 r8 | % 2
-    b8 r8 gis8 r8 f2 -> | % 3
+    b8\downbow ^"martellato"\ff r8 dis8^"sempre" r8 b8 r8 g8 r8 | % 2
+    b8^"sim." r8 gis8 r8 f2 -> | % 3
     g8 r8 gis8 r8 a8 r8 ais8 r8 | % 4
-    r8 <dis, b'>16 ^"poco sul ponticello" <dis b'>16 <dis b'>16 <dis b'>16
+    r8 <dis, b'>16\downbow ^"poco sul ponticello" <dis b'>16 <dis b'>16 <dis b'>16
     <dis b'>16 <dis b'>16 <dis b'>16 <dis b'>16 <dis b'>8 r4 
     | % 5
-    <a' e'>8^"modo ord." r8 <a e'>8 r8 <a e'>8 r8 <a e'>8 r8 | % 6
+    <a' e'>8^"ord."\downbow r8 <a e'>8^"sempre" r8 <a e'>8 r8 <a e'>8 r8 | % 6
     <a e'>8 r8 <a e'>8 r8 <a e'>8 r8 <a e'>8 r8 | % 7
     <a e'>8 r8 <a e'>8 r8 <a e'>8 r8 <a e'>8 r8 | % 8
-    r8 <des c'>16 ^"sul ponticello" <des c'>16 <des c'>16 <des c'>16
+    r8 <des c'>16\downbow ^"sul ponticello" <des c'>16 <des c'>16 <des c'>16
     <des c'>16 <des c'>16 <c b'>16 <c b'>16 <c b'>8 r4 | % 9
-    d'16^"modo ord." des16 c16 b16 bes16 a16 as16 g16 des'16 c16 b16 bes16 a16 as16
+    d'16\downbow^"ord." des16 c16 b16 bes16 a16 as16 g16 des'16 c16 b16 bes16 a16 as16
     g16 ges16 | \barNumberCheck #10
-    f8 r8 f8 r8 f8 r8 f8 r8 | % 11
+    f8\downbow r8 f8^"sempre" r8 f8 r8 f8 r8 | % 11
     f8 r8 f8 r8 f8 r8 f8 r8 | % 12
-    r8 <e bes'>16 ^"molto sul ponticello" <e bes'>16 <e bes'>16 <e bes'>16
+    r8 <e bes'>16\downbow ^"molto sul ponticello" <e bes'>16 <e bes'>16 <e bes'>16
     <e bes'>16 <e bes'>16 <es a>16 <es a>16 <es a>8 r4 | % 13
-    fis8^"modo ord." r8 fis8 r8 fis8 r8 fis8 r8 | % 14
+    fis8\downbow^"ord." r8 fis8^"sempre" r8 fis8 r8 fis8 r8 | % 14
     fis8 r8 fis8 r8 fis8 r8 fis8 r8 | % 15
     fis8 r8 fis8 r8 fis8 r8 fis8 r8 | % 16
     e8\> r8 dis8 r8 cis8 r8 bis8 r8 | % 17
     \time 7/8  cis8\mp r8 r4 r4. | % 18
-    fisis,4 fisis4 fisis4 fisis8 | % 19
+    fisis,4\downbow fisis4 fisis4 fisis8 | % 19
     r8 gis8 r8 gis8 r8 a8 r8 | \barNumberCheck #20
-    r8 gis8 r8 gis8 r8 a8 a8 | % 21
+    r8 gis8\downbow r8 gis8 r8 a8 a8 | % 21
     r8 gis8 r8 gis8 r8 a8 r8 | % 22
-    r8 as8 r8 as8 r8 as8 as8 | % 23
+    r8 as8\downbow r8 as8 r8 as8 as8 | % 23
     r8 e'8 r8 e8 r8 dis8 r8 | % 24
-    r8 e8 r8 e8 r8 dis8 dis8 | % 25
+    r8 e8\downbow r8 e8 r8 dis8 dis8 | % 25
     r8 e8 r8 e8 r8 dis8 r8 | % 26
-    r8 bes8 r8 bes8 r8 bes8 bes8 | % 27
+    r8 bes8\downbow r8 bes8 r8 bes8 bes8 | % 27
     r8 gis8 r8 gis8 r8 a8 r8 | % 28
-    r8 gis8 r8 gis8 r8 a8 a8 | % 29
+    r8 gis8\downbow r8 gis8 r8 a8 a8 | % 29
     r8 gis8 r8 gis8 r8 a8 r8 | \barNumberCheck #30
-    r8 f8 r8 f8 r8 f8 f8 | % 31
+    r8 f8\downbow r8 f8 r8 f8 f8 | % 31
     r8 c'8 r8 d8 r8 ais8 r8 | % 32
-    r8 c8 r8 d8 r8 ais8 ais8 | % 33
+    r8 c8\downbow r8 d8 r8 ais8 ais8 | % 33
     r8 c8 r8 d8 r8 ais8 r8 | % 34
-    r8 bes8 r8 bes8 r8 bes8 bes8 | % 35
-    c,4 cis4 d4. | % 36
-    fis4 g4 gis4. | % 37
-    b4 d4 es4. | % 38
+    r8 bes8\downbow r8 bes8 r8 bes8 bes8 | % 35
+    c,4\downbow_"dim." cis4 d4. | % 36
+    fis4\upbow g4\upbow gis4. | % 37
+    b4 d4\downbow es4.\upbow | % 38
     e!8 c8 fis,8 r2 | % 39
     R2.. \bar "||"
     }
@@ -208,17 +190,17 @@ IVioliniII =  \relative dis' {
     es8 r8 e8 r8 f8 r8 fis8 r8 | % 4
     r8 g16 ^"poco sul ponticello" g16 g16 g16 g16 g16 g16 g16 g8 r4
     | % 5
-    <g, d'>8^"modo ord." r8 <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 | % 6
+    <g, d'>8^"ord." r8 <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 | % 6
     <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 | % 7
     <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 | % 8
     r8 g''16 ^"sul ponticello" g16 g16 g16 g16 g16 fis16 fis16 fis8 r4
     | % 9
-    r8 f,8^"modo ord." as8 b8 r8 bes8 des8 e8 | \barNumberCheck #10
+    r8 f,8^"ord." as8 b8 r8 bes8 des8 e8 | \barNumberCheck #10
     b8 r8 b8 r8 b8 r8 b8 r8 | % 11
     b8 r8 b8 r8 b8 r8 b8 r8 | % 12
     r8 <b f'>16 ^"molto sul ponticello" <b f'>16 <b f'>16 <b f'>16 <b
         f'>16 <b f'>16 <bes e>16 <bes e>16 <bes e>8 r4 | % 13
-    b8^"modo ord." r8 c8 r8 b8 r8 c8 r8 | % 14
+    b8^"ord." r8 c8 r8 b8 r8 c8 r8 | % 14
     b8 r8 c8 r8 b8 r8 c8 r8 | % 15
     b8 r8 c8 r8 b8 r8 c8 r8 | % 16
     gis8\> r8 gis8 r8 g8 r8 fis8 r8 | % 17
@@ -240,10 +222,10 @@ IVioliniII =  \relative dis' {
     r8 a8 r8 g8 r8 fis8 fis8 | % 33
     r8 a8 r8 g8 r8 fis8 r8 | % 34
     r8 g8 r8 g8 r8 g8 g8 | % 35
-    c,4 cis4 d4. | % 36
+    c,4_"dim." cis4 d4. | % 36
     fis4 g4 gis4. | % 37
     gis4 c4 b4. | % 38
-    d8 bes8 fis8 r2 | % 39
+    d8[ bes8 fis8] r2 | % 39
     R2.. \bar "||"
     }
 
@@ -254,18 +236,18 @@ IVioleI =  \relative g {
     b8 r8 c8 r8 cis8 r8 d8 r8 | % 4
     r8 g,16 g16 ^"poco sul ponticello" g16 g16 g16 g16 <g dis'>16 <g
         dis'>16 <g dis'>8 r4 | % 5
-    fis'8^"modo ord." r8 fis8 r8 fis8 r8 fis8 r8 | % 6
+    fis'8^"ord." r8 fis8 r8 fis8 r8 fis8 r8 | % 6
     fis8 r8 fis8 r8 fis8 r8 fis8 r8 | % 7
     fis8 r8 fis8 r8 fis8 r8 fis8 r8 | % 8
     r8 <bes, a'>16 ^"sul ponticello" <bes a'>16 <bes a'>16 <bes a'>16
     <bes a'>16 <bes a'>16 <a gis'>16 <a gis'>16 <a gis'>8 r4 
     | % 9
-    r8 b8^"modo ord." d8 f8 r8 e8 g8 bes8 | \barNumberCheck #10
+    r8 b8^"ord." d8 f8 r8 e8 g8 bes8 | \barNumberCheck #10
     a8 r8 as8 r8 a8 r8 as8 r8 | % 11
     a8 r8 as8 r8 a8 r8 as8 r8 | % 12
     r8 <des, g>16 ^"molto sul ponticello" <des g>16 <des g>16 <des g>16
     <des g>16 <des g>16 <c ges'>16 <c ges'>16 <c ges'>8 r4 | % 13
-    gis'8^"modo ord." r8 ais8 r8 gis8 r8 ais8 r8 | % 14
+    gis'8^"ord." r8 ais8 r8 gis8 r8 ais8 r8 | % 14
     gis8 r8 ais8 r8 gis8 r8 ais8 r8 | % 15
     gis8 r8 ais8 r8 gis8 r8 ais8 r8 | % 16
     bis,8\> r8 cis8 r8 e8 r8 d8 r8 | % 17
@@ -287,7 +269,7 @@ IVioleI =  \relative g {
     r8 es8 r8 es8 r8 dis8 dis8 | % 33
     r8 es8 r8 es8 r8 dis8 r8 | % 34
     r8 fis8 r8 fis8 r8 fis8 fis8 | % 35
-    bes,4 b4 c4. | % 36
+    bes,4_"dim." b4 c4. | % 36
     d4 es4 e4. | % 37
     gis4 a4 g4. | % 38
     gis8 r4 r2 | % 39
@@ -301,23 +283,23 @@ IVioleII =  \relative e {
     g8 r8 gis8 r8 a8 r8 ais8 r8 | % 4
     r8 b16 ^"poco sul ponticello" b16 b16 b16 b16 b16 b16 b16 b8 r4
     | % 5
-    b8^"modo ord." r8 bes8 r8 b8 r8 bes8 r8 | % 6
+    b8^"ord." r8 bes8 r8 b8 r8 bes8 r8 | % 6
     b8 r8 bes8 r8 b8 r8 bes8 r8 | % 7
     b8 r8 bes8 r8 b8 r8 bes8 r8 | % 8
     r8 e16 ^"sul ponticello" e16 e16 e16 e16 e16 dis16 dis16 dis8 r4
     | % 9
-    r8 as8^"modo ord." b8 d8 r8 des8 e8 g8 | \barNumberCheck #10
+    r8 as8^"ord." b8 d8 r8 des8 e8 g8 | \barNumberCheck #10
     d8 r8 es8 r8 d8 r8 es8 r8 | % 11
     d8 r8 es8 r8 d8 r8 es8 r8 | % 12
     r8 <as, d>16 ^"molto sul ponticello" <as d>16 <as d>16 <as d>16 <as
         d>16 <as d>16 <g des'>16 <g des'>16 <g des'>8 r4 | % 13
-    c8^"modo ord." r8 cis8 r8 c8 r8 cis8 r8 | % 14
+    c8^"ord." r8 cis8 r8 c8 r8 cis8 r8 | % 14
     c8 r8 cis8 r8 c8 r8 cis8 r8 | % 15
     c8 r8 cis8 r8 c8 r8 cis8 r8 | % 16
     dis,8\> r8 fis8 r8 a8 r8 gis8 r8 | % 17
     \time 7/8  cis,8\mp r8 r4 r4. | % 18
     R2..*17 | % 35
-    bes'4 b4 c4. | % 36
+    bes'4_"dim." b4 c4. | % 36
     d4 es4 e4. | % 37
     gis4 a4 f4. | % 38
     fis8 r4 r2 | % 39
@@ -336,12 +318,12 @@ IVioloncelli =  \relative e {
     e8 r8 e8 r8 e8 r8 e8 r8 | % 8
     r8 fis,16 ^"sul ponticello" fis16 fis16 fis16 fis16 fis16 b16 b16 b8
     r4 | % 9
-    r8 d8^"modo ord." f8 as8 r8 g8 bes8 des8 | \barNumberCheck #10
+    r8 d8^"ord." f8 as8 r8 g8 bes8 des8 | \barNumberCheck #10
     f,,8 r8 as8 r8 f8 r8 as8 r8 | % 11
     f8 r8 as8 r8 f8 r8 as8 r8 | % 12
     r8 bes16 ^"molto sul ponticello" bes16 bes16 bes16 bes16 bes16 es16
     es16 es8 r4 | % 13
-    e8^"modo ord." r8 ais8 r8 e8 r8 ais8 r8 | % 14
+    e8^"ord." r8 ais8 r8 e8 r8 ais8 r8 | % 14
     e8 r8 ais8 r8 e8 r8 ais8 r8 | % 15
     e8 r8 ais8 r8 e8 r8 ais8 r8 | % 16
     cis,8\> r8 a8 r8 dis8 r8 gis,8 r8 | % 17
@@ -362,11 +344,11 @@ IContrabbassi =  \relative e {
     r8 fis,16 ^"sul ponticello" fis16 fis16 fis16 fis16 fis16 b16 b16 b8
     r4 | % 9
     R1 | \barNumberCheck #10
-    f8^"modo ord." r8 as8 r8 f8 r8 as8 r8 | % 11
+    f8^"ord." r8 as8 r8 f8 r8 as8 r8 | % 11
     f8 r8 as8 r8 f8 r8 as8 r8 | % 12
     r8 bes16 ^"molto sul ponticello" bes16 bes16 bes16 bes16 bes16 es16
     es16 es8 r4 | % 13
-    a8^"modo ord." r8 dis,8 r8 a'8 r8 dis,8 r8 | % 14
+    a8^"ord." r8 dis,8 r8 a'8 r8 dis,8 r8 | % 14
     a'8 r8 dis,8 r8 a'8 r8 dis,8 r8 | % 15
     a'8 r8 dis,8 r8 a'8 r8 dis,8 r8 | % 16
     cis8\> r8 a8 r8 dis8 r8 gis,8 r8 | % 17
@@ -481,7 +463,6 @@ I = \score {
             
             >>
         \new RhythmicStaff <<
-            \set RhythmicStaff.instrumentName = "Battacio"
             \set RhythmicStaff.shortInstrumentName = "Batt."
             \context RhythmicStaff << 
                 \context Voice = "IBattacio" { \IBattacio }

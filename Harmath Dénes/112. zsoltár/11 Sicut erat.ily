@@ -3,6 +3,11 @@ KHeader = {
 	\mark "11. Sicut erat"
 	\Common
 }
+KTacet = {
+	\once \override Staff.TimeSignature.stencil = ##f
+	R1*47^"Tacet"
+	\bar "|."
+}
 KGlobal = {
 	\KHeader
 	\tempo "Allegretto"
@@ -25,7 +30,7 @@ KFlautoI =  \relative a {
     R1*2 | % 24
     r4 e,4^"a 2" f4 fis4 g4 gis4 a4 ais4 | % 25
     b2 r2 r1 | % 26
-    r1 r4 fis'4 e4 fis4 | % 27
+    r1 r4 fis'4^"Solo" e4 fis4 | % 27
     dis2 r2 r1 | % 28
     r4 a4\f b4 a4 d2 c2 | % 29
     r4 e8 fis8 g4 a8 g8 fis4 e8 d8 e4 a,4 | \barNumberCheck #30
@@ -80,15 +85,14 @@ KFlautoII =  \relative e''' {
 
 KOboeI =  \relative a' {
     \clef "treble" \key d \major \time 4/4 R1*5 \bar "||"
-    \time 4/2  R1*2 | % 7
-    R1*8 | % 11
-    R1*8 | % 15
-    R1*6 | % 18
-    r2 r4 a4 e'1 ~ | % 19
+    \time 4/2  R1*24 | % 18
+	\voiceOne
+    r2 r4 a4\mf e'1 ~ | % 19
     e1 d1 ~ | \barNumberCheck #20
     d1 d1 | % 21
     b4 ais4 fis4 gis4 a4 gis4 fis4 e4 | % 22
     fis2 r2 r1 | % 23
+	\oneVoice
     R1*2 | % 24
     r1 r2 r4 fis4 | % 25
     g4 fis4 fis2 r1 | % 26
@@ -98,16 +102,16 @@ KOboeI =  \relative a' {
     r1 r2 r4 a,4 ~ | \barNumberCheck #30
     a4 g8 fis8 e4 r4 r4 b2 cis8 d8 | % 31
     e2 r2 r1 | % 32
-    R1*2 | % 33
-    R1*4 | % 35
+    R1*6 | % 35
     r1 r4 a8 g8 a4 d,4 | % 36
     g2 fis2 e2 r4 fis4 | % 37
     g4 g4 fis4 fis4 e2 r4 eis4 | % 38
     fis4 r4 r2 r1 | % 39
+	\voiceOne
     R1*6 | % 42
     r4 c'4 c4 c4 c4 b4 b2 | % 43
     r4 a4 a4 a4 a4 g4 g2 | % 44
-    g1 \rest g2 \rest g2 ~ | % 45
+    r1 r2 g2 ~ | % 45
     g2 a4 g4 a4 b4 c2 | % 46
     d\breve ~ | % 47
     d\breve ^\fermata \bar "|."
@@ -115,31 +119,30 @@ KOboeI =  \relative a' {
 
 KOboeII =  \relative d'' {
     \clef "treble" \key d \major \time 4/4 s1*5 \bar "||"
-    \time 4/2  s1*2 s1*8 s1*8
-    s1*6 | % 18
-    d1 \rest r4 g,4 g4 g4 | % 19
+    \time 4/2  s1*24 | % 18
+	\voiceTwo
+    r1 r4 g,4 g4 g4 | % 19
     g4 fis4 fis2 r4 f4 f4 f4 | \barNumberCheck #20
-    f4 e4 e2 e4 d4 fis2 | % 21
+    f4 e4 e2. d4 fis2 | % 21
     e4 cis4 e4 d4 cis1 | % 22
-    b2 r2 r1 s1*10 s1*10 s1*8
-    s1*8 | % 41
-    d'1 \rest d4 \rest g,4 g4 g4 | % 42
-    g4 fis4 fis2 d'1 \rest | % 43
-    r4 a8 g8 a4 d,4 g2 g2 \rest | % 44
+    b2 r2 r1
+    \oneVoice
+    s1*36 | % 41
+	\voiceTwo
+    r1 r4 g'4 g4 g4 | % 42
+    g4 fis4 fis2 r1| % 43
+    r4 a8 g8 a4 d,4 g2 r2 | % 44
     a2 g4 a4 g4 fis4 e2 | % 45
     c'1 r1 | % 46
-    d2 \rest a1. ~ | % 47
+    r2 a1. ~ | % 47
     a\breve \bar "|."
     }
 
 KCornoInglese =  \relative g' {
     \transposition f \clef "treble" \key a \major \time 4/4 R1*5 \bar
     "||"
-    \time 4/2  R1*2 | % 7
-    R1*8 | % 11
-    R1*8 | % 15
-    R1*8 | % 19
-    g4 a8 b8 a4 e4 d4 r4 r2 | \barNumberCheck #20
+    \time 4/2  R1*26 | % 19
+    g4\mf a8 b8 a4 e4 d4 r4 r2 | \barNumberCheck #20
     f4 g8 a8 g4 d4 e2 r2 | % 21
     r4 gis2 fis4 cis1 | % 22
     cis2 r2 r1 | % 23
@@ -151,13 +154,11 @@ KCornoInglese =  \relative g' {
     R1*4 | \barNumberCheck #30
     r2 r4 b2 a8 g8 fis2 | % 31
     gis2 r2 r1 | % 32
-    R1*2 | % 33
-    R1*6 | % 36
+    R1*8 | % 36
     d2 e2 fis2 r4 e4 | % 37
     d4 d4 e4 e4 f2 r4 f4 | % 38
     e4 r4 r2 r1 | % 39
-    R1*6 | % 42
-    R1*2 | % 43
+    R1*8 | % 43
     r1 r4 a8 g8 a4 d,4 | % 44
     g1 r1 | % 45
     R1*2 | % 46
@@ -210,20 +211,11 @@ KFagottoII =  \relative a, {
 KTrombe =  \relative b' {
     \transposition bes \clef "treble" \key e \major \time 4/4 R1*5 \bar
     "||"
-    \time 4/2  R1*2 | % 7
-    R1*8 | % 11
-    R1*8 | % 15
-    R1*8 | % 19
-    R1*8 | % 23
-    R1*10 | % 28
-    R1*10 | % 33
-    R1*8 | % 37
-    R1*2 | % 38
-    r2 r4 b4 ^"a 2" ^"marcato" dis2 e2 | % 39
+    \time 4/2  R1*64 | % 38
+    r2 r4 b4\ff ^"a 2" ^"marcato" dis2 e2 | % 39
     fis2 r4 gis4 a4 gis8 fis8 gis8 a8 b4 | \barNumberCheck #40
     fis2 r2 r1 | % 41
-    R1*2 | % 42
-    R1*2 | % 43
+    R1*4 | % 43
     r1 r2 cis2 | % 44
     cis1 b2 cis2 | % 45
     d2 cis2 b2 a2 | % 46
@@ -234,18 +226,10 @@ KTrombe =  \relative b' {
 KCorni =  \relative a' {
     \transposition f \clef "treble" \key a \major \time 4/4 R1*5 \bar
     "||"
-    \time 4/2  R1*2 | % 7
-    R1*8 | % 11
-    R1*8 | % 15
-    R1*8 | % 19
-    R1*8 | % 23
-    R1*10 | % 28
-    R1*10 | % 33
-    R1*8 | % 37
-    r1 <a b>4 <a b>8 <a b>8 <a b>4 <a bis>4 | % 38
+    \time 4/2  R1*62 | % 37
+    r1 <a b>4\mf <a b>8 <a b>8 <a b>4 <a bis>4 | % 38
     <a cis>4 r4 r2 r1 | % 39
-    R1*6 | % 42
-    R1*4 | % 44
+    R1*10 | % 44
     d\breve ~ | % 45
     <b d>\breve ~ | % 46
     <b cis>\breve ~ ~ | % 47
@@ -254,59 +238,57 @@ KCorni =  \relative a' {
 
 KTromboni =  \relative gis {
     \clef "bass" \key d \major \time 4/4 R1*5 \bar "||"
-    \time 4/2  R1*2 | % 7
-    R1*8 | % 11
-    R1*8 | % 15
-    R1*8 | % 19
-    R1*8 | % 23
-    R1*10 | % 28
-    R1*10 | % 33
-    R1*8 | % 37
-    r1 <gis bes>4 <gis bes>8 <gis bes>8 <gis bes>4 <gis bes>4 | % 38
+    \time 4/2  R1*62 | % 37
+    r1 <gis bes>4\mf <gis bes>8 <gis bes>8 <gis bes>4 <gis bes>4 | % 38
     a4 r4 r2 r1 | % 39
-    R1*6 | % 42
-    R1*6 | % 45
-    r2 a,2 c2 a2 | % 46
+    R1*12 | % 45
+    r2 a,2\f c2 a2 | % 46
     d\breve ~ | % 47
-    <d, d'>\breve _"Trb. b." ^\fermata \bar "|."
+    d^\fermata \bar "|."
+    }
+
+KTromboneBasso =  \relative d, {
+    \clef "bass" \key d \major \time 4/4 R1*5 \bar "||"
+    \time 4/2  R1*82
+    d\breve\f^\fermata \bar "|."
     }
 
 KVioliniI =  \relative d' {
-    \clef "treble" \key d \major \time 4/4 d4\f d'4 ~ d8 cis16 d16 e8 g,8
-    | % 2
-    fis4 fis'4 ~ fis8 e16 fis16 g8 b,8 | % 3
-    a4 a'4 ~ a8 g16 a16 b8 cis8 | % 4
-    d4 a4 gis4. \trill gis8 | % 5
+    \clef "treble" \key d \major \time 4/4
+    d4\downbow-_\f d'4\downbow ~ d8 cis16 d16 e8 g,8\upbow | % 2
+    fis4-_ fis'4\downbow ~ fis8 e16 fis16 g8 b,8\upbow | % 3
+    a4-_ a'4\downbow ~ a8 g16 a16 b8\upbow cis8\upbow | % 4
+    d4 a4 gis4. \trill gis8\upbow | % 5
     a1 ^\fermata \bar "||"
-    \time 4/2  <d,, a' fis'>4 r4 r2 r4 b'8 ^"Solo"
+    \time 4/2  <d,, a' fis'>4\downbow r4 r2 r4 b'8\upbow ^"Solo"
     cis8 d4 e8 d8 | % 7
-    cis4 e4 a8 g8 fis8 e8 d4 g2 fis4 | % 8
-    e4 a,4 d2. cis8 b8 \afterGrace cis2 \trill { b16 cis16 } | % 9
+    cis4 e4 a8 g8 fis8 e8 d4 g2 fis4\upbow | % 8
+    e4 a,4 d2. cis8 b8 \afterGrace cis2( \trill { b16 cis16) } | % 9
     d4 r4 r2 r1 | \barNumberCheck #10
     R1*24 | % 22
-    b1 ^"Tutti"\mf ~ b4 g8 a8 b4 a8 b8 | % 23
-    c2 b2 ~ b2. a4 | % 24
-    b1 ~ b4 e,2 fis4 | % 25
+    b1\downbow ^"Tutti"\mf ~ b4 g8\downbow a8 b4 a8 b8 | % 23
+    c2-_ b2\downbow ~ b2. a4\downbow | % 24
+    b1\upbow ~ b4 e,2\downbow fis4\upbow | % 25
     g4 :8 fis4 :8 fis2 :8 f2 :8 e2 :8 | % 26
     e1 :8 a1 :8 | % 27
     fis1 :8 b2 :8 r2 | % 28
-    r1 b2 :8 c4 :8 d4 :8 | % 29
+    r1 b2 :8\downbow c4 :8 d4 :8 | % 29
     e1 :8 d2 :8 c2 :8 | \barNumberCheck #30
     d2 :8 a1 :8 gis2 :8 | % 31
     a\breve :8 | % 32
     a2 r2 r1 | % 33
     R1*6 | % 36
-    d4 d2 d2 d2 d4 ~ | % 37
+    d4\downbow d2\upbow d2 d2 d4 ~ | % 37
     d4 d2 d2 d2 d4 ~ | % 38
-    d4 \breathe d4\f e4 d4 g2 fis2 | % 39
-    r4 a8 b8 c4 d8 c8 b4 a8 g8 a4 d,4 | \barNumberCheck #40
-    g1 fis2 f2 | % 41
-    e1.. d4 | % 42
+    d4 \breathe d4\f\upbow e4 d4 g2 fis2 | % 39
+    r4 a8\downbow b8 c4 d8 c8 b4 a8 g8 a4 d,4 | \barNumberCheck #40
+    g1 fis2 f2\downbow | % 41
+    e1..\upbow d4\upbow | % 42
     d\breve ~ | % 43
     d\breve ~ | % 44
-    d\breve ~ | % 45
+    d\breve\upbow^"~" ~ | % 45
     d\breve ~ | % 46
-    d\breve ~ | % 47
+    d\breve\downbow^"~" ~ | % 47
     d\breve ^\fermata \bar "|."
     }
 
@@ -499,20 +481,16 @@ KContrabbassi =  \relative d {
     }
 
 KOrganoMDSopra =  \relative d' {
-    \clef "treble" \key d \major \time 4/4 R1*5 \bar "||"
-    \time 4/2  R1*2 | % 7
-    R1*8 | % 11
-    R1*8 | % 15
-    R1*8 | % 19
-    R1*8 | % 23
-    R1*10 | % 28
-    R1*8 | % 32
-    r2 r4 d4 e2 d2 | % 33
+    \clef "treble" \key d \major \time 4/4
+    \oneVoice
+    R1*5 \bar "||"
+    \time 4/2  R\breve*26 | % 32
+    \voiceOne r2 r4 d4\mf e2 d2 | % 33
     a'4 g2 fis4 g4 a8 b8 a2 | % 34
     g2 fis2 e1 | % 35
     d\breve ~ | % 36
     d2 r2 r1 | % 37
-    R1*8 | % 41
+    \oneVoice R\breve R\breve*3 \f | % 41
     a'4 b4 cis4 d4 e4 fis4 g4 a4 | % 42
     r8 d,8 c8 d8 fis8 d8 c8 d8 b8 d8 c8 d8 g8 d8 c8 d8 | % 43
     a8 d8 c8 d8 a'8 d,8 c8 d8 g,8 d'8 c8 d8 b'8 d,8 c8 d8 | % 44
@@ -520,78 +498,65 @@ KOrganoMDSopra =  \relative d' {
         g>8 c'8 | % 45
     r4 <g d'>8 e8 <g d'>8 e8 <g d'>8 e8 <g d'>8 e8 <g c>8 e8 <g c>8 e8
     <g c>8 e'8 | % 46
-    d\breve | % 47
+    \voiceOne d\breve | % 47
     d\breve ^\fermata \bar "|."
     }
 
-KOrganoMDMezzo =  \relative b, {
+KOrganoMDMezzo =  \relative b {
     \clef "treble" \key d \major \time 4/4 s1*5 \bar "||"
-    \time 4/2  s1*2 s1*8 s1*8
-    s1*8 s1*8 s1*10 s1*10
-    s1*8 s1*10 s1*8 | % 46
-    b2 \rest f'4 \rest fis'8 g8 fis1 ~ | % 47
-    fis\breve ^\fermata \bar "|."
+    \time 4/2  s\breve*40 | % 46
+    f'4\rest a8 b8 a1. ^~ | % 47
+    a\breve \bar "|."
     }
 
 KOrganoMDSotto =  \relative c' {
-    \clef "treble" \key d \major \time 4/4 s1*5 \bar "||"
-    \time 4/2  s1*2 s1*8 s1*8
-    s1*8 s1*8 s1*10 s1*8 | % 32
+    \clef "treble" \key d \major \time 4/4
+    \voiceTwo
+    s1*5 \bar "||"
+    \time 4/2  s\breve*26 | % 32
     r1 c1 | % 33
     <c e>1 d4 e8 fis8 e4 d4 | % 34
     e2 d2 ~ d2. c8 b8 | % 35
     c4 b8 a8 b2 a2. b8 c8 | % 36
     b2 r2 r1 s1*10 s1*8 | % 46
-    r4 a'8 b8 a1. ~ | % 47
-    a\breve \bar "|."
+	a2\rest r4 fis'8 g8 fis1 ~ | % 47
+    fis\breve ^\fermata \bar "|."
     }
 
 KOrganoMSSopra =  \relative a {
-    \clef "bass" \key d \major \time 4/4 R1*5 \bar "||"
-    \time 4/2  R1*2 | % 7
-    R1*8 | % 11
-    R1*8 | % 15
-    R1*8 | % 19
-    R1*8 | % 23
-    R1*10 | % 28
-    R1*8 | % 32
+    \clef "bass" \key d \major \time 4/4
+    \oneVoice R1*5 \bar "||"
+    \time 4/2  R\breve*26 | % 32
     r1 r4 a4 b4 a4 | % 33
     d,2 a'2 b4 cis8 d8 d4 a4 | % 34
-    c2 a2 a4 \rest b4 a4 g4 | % 35
+    \voiceOne
+    c2 a2 r4 b4 a4 g4 | % 35
     a2. g4 ~ g4 fis8 e8 fis2 | % 36
-    g2 r2 r1 | % 37
+    \oneVoice g2 r2 r1 | % 37
     R1*2 | % 38
     \clef "treble" r2 a1 b2 ~ | % 39
     b4 g4 c2. a4 d2 ~ | \barNumberCheck #40
     d4 b4 e4 cis4 fis4 d4 gis4 f4 | % 41
     a\breve \trill | % 42
     R1*4 | % 44
-    r2 g,2 ^"Pos." ~ <g c>2 ~ ~ <g c e>2 | % 45
+    r2 g,2 \mf ~ <g c>2 ~ ~ <g c e>2 | % 45
     r2 c2 ~ <c e>2 ~ ~ <c e a>2 | % 46
-    r1 r4 d8 ^"Hw." e8 d2 ~ | % 47
+    \voiceOne r1 r4 d8 \f e8 d2 ~ | % 47
     d\breve ^\fermata \bar "|."
     }
 
 KOrganoMSSotto =  \relative a, {
     \clef "bass" \key d \major \time 4/4 s1*5 \bar "||"
-    \time 4/2  s1*2 s1*8 s1*8
-    s1*8 s1*8 s1*10 s1*10
-    s1*2 | % 34
+    \time 4/2  s\breve*28 | % 34
     a4 e'4 a2 g2 e2 | % 35
     d2.. cis8 d1 s\breve*10 | % 46
-    r1 e'2 \rest c4 \rest a8 b8 | % 47
+    r1 r2 r4 a'8 b8 | % 47
     a\breve \bar "|."
     }
 
 KOrganoPed =  \relative d, {
     \clef "bass" \key d \major \time 4/4 R1*5 \bar "||"
-    \time 4/2  R1*2 | % 7
-    R1*8 | % 11
-    R1*8 | % 15
-    R1*8 | % 19
-    R1*8 | % 23
-    R1*10 | % 28
-    R1*10 | % 33
+    \time 4/2  R\breve*27 | % 33
     r4 d4 e4 d4 g2 fis2 | % 34
     r4 a8 b8 c4 d8 c8 b4 a8 g8 a4 e4 | % 35
     fis2 g2 d1 | % 36

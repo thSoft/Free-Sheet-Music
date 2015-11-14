@@ -7,13 +7,21 @@ CGlobal = {
 	\CHeader
 	\tempo "Ad libitum"
 	\time 9/8 s8*27
-    \time 4/4  s1*5 | % 9
+	\overrideTimeSignatureSettings
+        4/4        % timeSignatureFraction
+        1/8        % baseMomentFraction
+        #'(3 2 3)    % beatStructure
+        #'()       % beamExceptions
+    \time 4/4
+    s1*5 | % 9
 	\tempo "Vivace"
     s1*6 | % 15
     \time 9/8  s8*9 | % 16
     \time 3/4  s2. | % 17
     \time 4/4  s1*2 | % 19
-	s1*2 
+	\set Staff.beatStructure = #'(3 3 2)
+	s1
+	\set Staff.beatStructure = #'(3 2 3)
 }
 CTacet = {
 	\once \override Staff.TimeSignature.stencil = ##f
@@ -23,7 +31,7 @@ CTacet = {
 COboe =  \relative a' {
     \clef "treble" \key c \major \time 9/8 | % 1
     R8*9 | % 2
-    r2. a8. a16 a8 | % 3
+    r2. a8.\mf^"cantabile" a16 a8 | % 3
     bes8 g8 a8 f4 e8 f8 e8 d8 | % 4
     \time 4/4  e2 r2 | % 5
     R1 | % 6
@@ -46,39 +54,33 @@ COboe =  \relative a' {
     }
 
 CCornoInglese =  \relative a' {
-    \transposition f \clef "treble" \key g \major \time 9/8 r4. r8 a8
+    \transposition f \clef "treble" \key g \major \time 9/8 r4. r8 a8\mf
     cis8 e8. e16 e8 | % 2
     fis4 e4 r4 r4. | % 3
     R8*9 | % 4
     \time 4/4  R1 | % 5
-    r4. b8. b16 b8 a8 b8 | % 6
-    d8. c16 a8 b8 e,4 r4 | % 7
-    R1*2 | % 9
-      R1*4 | % 13
-    R1*2 | % 15
+    r4. b8.[ b16 b8] a8 b8 | % 6
+    d8.[ c16 a8] b8 e,4 r4 | % 7
+    R1*8 | % 15
     \time 9/8  R8*9 | % 16
     \time 3/4  R2. | % 17
     \time 4/4  R1 | % 18
     a8.[ a16 a8] g8[ a8] d8.[ c16 a8] | % 19
     \key f \major bes4. r4. r4 | \barNumberCheck #20
-    f8. g16 f8 e8 d8 f4. ~ | % 21
+    f8.[ g16 f8] e8[ d8] f4. ~ | % 21
     \time 6/8  f8 a8 g8 e8 f8 g8 | % 22
     f4. r4. | % 23
     \time 9/8  R8*18 | % 25
     r2. f8 g8 c8 | % 26
     \key g \major a4. r2. | % 27
-    R8*27 | \barNumberCheck #30
-    R8*18 \bar "||"
+    R8*45 \bar "||"
     }
 
 CFagotto =  \relative a {
     \clef "bass" \key c \major \time 9/8 R8*27 | % 4
-    \time 4/4  r4. a8. a16 a8 b8 b8 | % 5
-    d8. cis16 a8 e'4 r8 r4 | % 6
-    R1 | % 7
-    R1*2 | % 9
-      R1*4 | % 13
-    R1*2 | % 15
+    \time 4/4  r4. a8.[ a16 a8] b8 b8 | % 5
+    d8.[ cis16 a8] e'4 r8 r4 | % 6
+    R1*9 | % 15
     \time 9/8  R8*9 | % 16
     \time 3/4  R2. | % 17
     \time 4/4  g,,8.[ g16 g8] f8[ g8] bes8.[ a16 f8] | % 18
@@ -89,20 +91,18 @@ CFagotto =  \relative a {
     \time 9/8  bes8 c4 bes4. r4. | % 24
     bes8. bes16 bes8 c8. a16 a8 bes4 g8 | % 25
     g4 f8 g8 f8 es8 f8. r8. | % 26
-    \key c \major R8*9 | % 27
-    R8*27 | \barNumberCheck #30
-    R8*18 \bar "||"
+    \key c \major R8*54 \bar "||"
     }
 
 CVioliniI =  \relative a'' {
     \clef "treble" \key c \major \time 9/8 | % 1
-    a2. \p ~ :32 a4. ~ :32 | % 2
+    a2. \p ~ :32_"trem." a4. ~ :32 | % 2
     a2. ~ :32 a4. ~ :32 | % 3
     a2. ~ :32 a4. ~ :32 | % 4
     \time 4/4  a1 ~ :32 | % 5
     a1 ~ :32 | % 6
     a1 ~ :32 | % 7
-    a4\mf g4 f4 c4 | % 8
+    a4\downbow\mf g4\upbow f4 c4 | % 8
     f2. g4 | % 9
       d4 d4. r4. | \barNumberCheck #10
     R1*5 | % 15
@@ -113,11 +113,11 @@ CVioliniI =  \relative a'' {
     \time 6/8  R2.*2 | % 23
     \time 9/8  R8*27 | % 26
     \key c \major | % 26
-    d2. \mp ~ d4. ~ | % 27
-    d2. ~ d4. ~ | % 28
-    d2. ~ d4. ~ | % 29
+    d2.\downbow \mp ~ d4. ~ | % 27
+    d2. ~ d4.\upbow^"~" ~ | % 28
+    d2.\downbow^"~" ~ d4. ~ | % 29
     d2. ~ d4. ~ | \barNumberCheck #30
-    d2. ~ d4. ~ | % 31
+    d2. ~ d4.\downbow^"~" ~ | % 31
     d2. ~ d4. ^\fermata \bar "||"
     }
 
@@ -297,24 +297,22 @@ CContrabbassi =  \relative f {
 
 COrganoMDSopra =  \relative g {
     \clef "treble" \key c \major \time 9/8 \oneVoice R8*27 | % 4
-    \time 4/4  R1*3 | % 7
-    R1*2 | % 9
+    \time 4/4  R1*5 | % 9
       | % 9
-    R1*3 | % 12
+    R1*3\p | % 12
     g8.[ g16 g8] a8[ a8] c8.[ b16 g8] | % 13
     <a c>8.[ c16 c8] <a d>8[ d8] <a f'>8.[ e'16 c8] | % 14
     <b d>8.[ c16 <b d>8] <b e g>8[ <c e g>8] <c f bes>8.[ a'16 f8] | % 15
     \time 9/8  <f g>8. c16 <f g>8 <e a c>8 <f a c>8 <f bes es>8.[ d'16
     bes8] <f g>8 | % 16
-    \time 3/4 \voiceOne c'8 d8 c8 b8 a4 | % 17
-    \time 4/4  <d, g>4. ~ ~ <d g>4 ~ ~ <d f g>4. ~ ~ | % 18
-    <d g>4. ~ <f g>4 d4 f8 | % 19
+    \time 3/4 \voiceOne c'8\f d8 c8 b8 a4 | % 17
+    \time 4/4 \oneVoice <d, g>4. ~ ~ <d g>4 ~ ~ <d f g>4. ~ ~ | % 18
+    <d g>4. ^~ <f g>4 d4 f8 | % 19
     \key bes \major es4. r4. r4 | \barNumberCheck #20
     R1 | % 21
-    \time 6/8  R2. | % 22
-    R2. | % 23
+    \time 6/8  R2.*2 | % 23
     \time 9/8  R8*27 | % 26
-    \key c \major <g d'>2. ~ ~ <g d'>4. ~ ~ | % 27
+    \key c \major \voiceOne <g d'>2.\mp ~ ~ <g d'>4. ~ ~ | % 27
     <g d'>2. ~ ~ <g d'>4. ~ ~ | % 28
     <bes d>2. ~ ~ <bes d>4. ~ | % 29
     <a d>2. ~ ~ <a d>4. ~ ~ | \barNumberCheck #30
@@ -324,28 +322,28 @@ COrganoMDSopra =  \relative g {
 
 COrganoMDSotto =  \relative f' {
     \clef "treble" \key c \major \time 9/8 s8*27 | % 4
-    \time 4/4  s1*3 s1*2 | % 9
+    \time 4/4  s1*5 | % 9
       | % 9
     s1*4 s1*2 | % 15
     \time 9/8  s8*9 | % 16
     \time 3/4  f4 e2 | % 17
     \time 4/4  s1*2 | % 19
     \key bes \major s1*2 | % 21
-    \time 6/8  s2. s2. | % 23
+    \time 6/8  s2.*2 | % 23
     \time 9/8  s8*27 | % 26
     \key c \major s8*9 s8*27 s4*9 \bar "||"
     }
 
 COrganoMDMezzo =  \relative g' {
     \clef "treble" \key c \major \time 9/8 s8*27 | % 4
-    \time 4/4  s1*3 s1*2 | % 9
+    \time 4/4  s1*5 | % 9
       | % 9
     s1*4 ^"cresc. poco a poco" s1*2 | % 15
     \time 9/8  s8*9 | % 16
     \time 3/4  g2 fis4 | % 17
     \time 4/4  s1*2 | % 19
     \key bes \major s1*2 | % 21
-    \time 6/8  s2. s2. | % 23
+    \time 6/8  s2.*2 | % 23
     \time 9/8  s8*27 | % 26
     \key c \major \voiceTwo g4. a2. | % 27
     b4. bes4. a4. | % 28
@@ -356,11 +354,10 @@ COrganoMDMezzo =  \relative g' {
     }
 
 COrganoMSSopra =  \relative g, {
-    \clef "treble" \key c \major \time 9/8 R8*27 | % 4
-    \time 4/4  R1*3 | % 7
-    R1*2 | % 9
-     \oneVoice R1 | \barNumberCheck #10
-    \clef "bass" <g d'>4 g'8 <g, d'>8 r8 <g d'>8 g'8 <g, d'>8 | % 11
+    \clef "bass" \key c \major \time 9/8 \oneVoice R8*27 | % 4
+    \time 4/4  R1*5 | % 9
+    R1 | \barNumberCheck #10
+    <g d'>4 g'8 <g, d'>8 r8 <g d'>8 g'8 <g, d'>8 | % 11
     <g d'>4 g'8 <g, d'>8 r8 <g d'>8 g'8 <g, d'>8 | % 12
     <g d'>8 g'8 r8 <g, d'>8[ g'8] <g, d'>8 g'8 r8 | % 13
     <g, d'>8 g'8 r8 <g, d'>8[ g'8] <g, d'>8 g'8 r8 | % 14
@@ -371,8 +368,7 @@ COrganoMSSopra =  \relative g, {
     b4. <a c>4 <as bes>4. ~ | % 19
     \key bes \major <g bes>4. r4. r4 | \barNumberCheck #20
     R1 | % 21
-    \time 6/8  R2. | % 22
-    R2. | % 23
+    \time 6/8  R2.*2 | % 23
     \time 9/8  R8*27 | % 26
     \clef "treble" \key c \major \voiceOne d'4. e4. f4. | % 27
     g4. es2. | % 28
@@ -384,14 +380,14 @@ COrganoMSSopra =  \relative g, {
 
 COrganoMSSotto =  \relative b {
     \clef "treble" \key c \major \time 9/8 s8*27 | % 4
-    \time 4/4  s1*3 s1*2 | % 9
+    \time 4/4  s1*5 | % 9
       s1 | \barNumberCheck #10
     \clef "bass" s1*3 s1*2 | % 15
     \time 9/8  s8*9 | % 16
     \time 3/4  s2. | % 17
     \time 4/4  s1*2 | % 19
     \key bes \major s1*2 | % 21
-    \time 6/8  s2. s2. | % 23
+    \time 6/8  s2.*2 | % 23
     \time 9/8  s8*27 | % 26
     \clef "treble" \key c \major b4. c2. | % 27
     d4. c2. | % 28
@@ -403,8 +399,7 @@ COrganoMSSotto =  \relative b {
 
 COrganoPed =  \relative g, {
     \clef "bass" \key c \major \time 9/8 R8*27 | % 4
-    \time 4/4  R1*3 | % 7
-    R1*2 | % 9
+    \time 4/4  R1*5 | % 9
       g4 g'8 g,4 g8 g'8 g,8 g4 r8 g8 r8 g4
     r8 | % 11
     g4 r8 g8 r8 g4 r8 | % 12
@@ -417,8 +412,7 @@ COrganoPed =  \relative g, {
     g4 g8 a4 bes4. | % 19
     \key bes \major es,4. r4. r4 | \barNumberCheck #20
     R1 | % 21
-    \time 6/8  R2. | % 22
-    R2. | % 23
+    \time 6/8  R2.*2 | % 23
     \time 9/8  R8*27 | % 26
     \key c \major d2. ~ d4. | % 27
     d8. d'16 d,8 d'8. c16 d8 f8. es16 c8 | % 28
@@ -460,7 +454,7 @@ CSoprano =  \relative g' {
       R1*4 | % 13
     R1*2 | % 15
     \time 9/8  | % 15
-    g8. ^"cresc."[ g16 g8] c8[ c8] es8.[ d16 bes8] g8 | % 16
+    g8. _"cresc."[ g16 g8] c8[ c8] es8.[ d16 bes8] g8 | % 16
     \time 3/4  c8 d8 c8 b8 a4 | % 17
     \time 4/4  g4 r8 r4 r4. | % 18
     R1 | % 19
@@ -485,7 +479,7 @@ CMezzosoprano =  \relative d' {
     R1*2 | % 9
       R1*4 | % 13
     R1 | % 14
-    d8.[ ^"cresc." d16 d8] g8[ g8] bes8.[ a16 f8] | % 15
+    d8.[ _"cresc." d16 d8] g8[ g8] bes8.[ a16 f8] | % 15
     \time 9/8  f8. e16 d8 a'8 a8 bes8.[ bes16 bes8] f8 | % 16
     \time 3/4  a4 g4 fis4 | % 17
     \time 4/4  g4 r8 r4 r4. | % 18
@@ -512,7 +506,7 @@ CAlto =  \relative c' {
     \time 4/4  R1*3 | % 7
     R1*2 | % 9
       R1*4 | % 13
-    c8.[ ^"cresc." c16 c8] d8[ d8] f8.[ e16 c8] | % 14
+    c8.[ _"cresc." c16 c8] d8[ d8] f8.[ e16 c8] | % 14
     d8.[ c16 b8] e8[ e8] f8.[ f16 e8] | % 15
     \time 9/8  c8. c16 d8 e8 f8 f8.[ f16 f8] es8 | % 16
     \time 3/4  g4 e4 g4 | % 17
@@ -537,7 +531,7 @@ CTenore =  \relative g {
     \time 4/4  R1*3 | % 7
     R1*2 | % 9
       R1*3 | % 12
-    g8.[ ^"cresc." g16 g8] a8[ a8] c8.[ b16 g8] | % 13
+    g8.[ _"cresc." g16 g8] a8[ a8] c8.[ b16 g8] | % 13
     a8.[ a16 a8] a8[ a8] a8.[ a16 a8] | % 14
     b8.[ b16 b8] b8[ c8] c8.[ c16 c8] | % 15
     \time 9/8  a8. a16 b8 c8 f8 es8.[ es16 es8] bes8 | % 16
@@ -565,7 +559,7 @@ CBasso =  \relative g {
     \time 4/4  R1*3 | % 7
     R1*2 | % 9
       R1*2 | % 11
-    g8.[ ^"cresc." g16 g8] g8[ g8] g8.[ g16 g8] | % 12
+    g8.[ _"cresc." g16 g8] g8[ g8] g8.[ g16 g8] | % 12
     g8.[ g16 g8] g8[ g8] g8.[ g16 g8] | % 13
     g8.[ g16 g8] g8[ g8] g8.[ g16 g8] | % 14
     g8.[ g16 g8] g8[ g8] g8.[ g16 g8] | % 15

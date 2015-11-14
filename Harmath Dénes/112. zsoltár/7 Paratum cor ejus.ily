@@ -3,6 +3,11 @@ GHeader = {
 	\mark "7. Paratum cor ejus"
 	\Common
 }
+GTacet = {
+	\once \override Staff.TimeSignature.stencil = ##f
+	R1*59^"Tacet"
+	\bar "|."
+}
 GGlobal = {
 	\GHeader
 	\tempo "Pomposo"
@@ -12,7 +17,7 @@ GGlobal = {
 	\tempo "Con brio"
 	s1.*34
 	s1.*2^"poco allarg."
-	s1.*2^"a tempo."
+	s1.*2^"a tempo"
 }
 GFlauti =  \relative a'' {
     \clef "treble" \key c \major \time 12/8 | % 1
@@ -31,23 +36,15 @@ GFlauti =  \relative a'' {
     }
 
 GOboeI =  \relative fis'' {
-    \clef "treble" \key c \major \time 12/8 R1.*6 | % 7
-    R1.*5 | % 12
-    R1.*5 | % 17
-    R1.*5 | % 22
-    R1.*6 | % 28
-    R1.*5 | % 33
-    R1.*4 | % 37
-    fis1. | % 38
+    \clef "treble" \key c \major \time 12/8 R1.*36 | % 37
+	\voiceOne
+    fis1.\mp | % 38
     d2. cis8 b8 a8 b4. | % 39
     b2. b4. ais4. | \barNumberCheck #40
     b2. ~ b4. a4. ~ | % 41
     a4. g4. fis4. g4. | % 42
     a1. | % 43
-    R1. | % 44
-    R1.*4 | % 48
-    R1.*5 | % 53
-    R1.*2 | % 55
+    R1.*12 | % 55
     c1. \pp ~ | % 56
     c2. ~ c4. d4. | % 57
     e1. ~ | % 58
@@ -55,37 +52,26 @@ GOboeI =  \relative fis'' {
     }
 
 GOboeII =  \relative d'' {
-    \clef "treble" \key c \major \time 12/8 s1*9 s2*15
-    s2*15 s2*15 s1*9 s2*15
-    s1*6 | % 37
+    \clef "treble" \key c \major \time 12/8 s1.*36 | % 37
+	\voiceTwo
     d2. cis8 d8 cis8 b4 a8 | % 38
     g4. a2. g4 fis8 | % 39
-    e4. gis2. cis,4. | \barNumberCheck #40
+    e4. gis2. cis,4. |
     fis2. g4. d4. | % 41
     d1. | % 42
-    g4. e4. fis2. s1. s1*6 s2*15 s1*3 | % 55
-    s2*9 \pp s1. \bar "|."
+    g4. e4. fis2.
+    s1.*16
     }
 
 GCornoInglese =  \relative a'' {
-    \transposition f \clef "treble" \key g \major \time 12/8 R1.*6
-    | % 7
-    R1.*5 | % 12
-    R1.*5 | % 17
-    R1.*5 | % 22
-    R1.*6 | % 28
-    R1.*5 | % 33
-    R1.*4 | % 37
-    a4. fis4. cis4. a4. | % 38
+    \transposition f \clef "treble" \key g \major \time 12/8 R1.*36 | % 37
+    a4.\mp fis4. cis4. a4. | % 38
     b4. cis4. d2. | % 39
     gis,1. | \barNumberCheck #40
     fis1. | % 41
     fis2. g4. fis4. | % 42
     g4. d4. e2. | % 43
-    R1. | % 44
-    R1.*4 | % 48
-    R1.*5 | % 53
-    R1.*2 | % 55
+    R1.*12 | % 55
     c'2. \pp ~ c4. d4. | % 56
     e2. c2. | % 57
     d1. ~ | % 58
@@ -119,7 +105,7 @@ GFagotto =  \relative cis' {
 GTrombaI =  \relative a' {
     \transposition bes \clef "treble" \key d \major \time 12/8
     \oneVoice
-    <a d>4. ~ ~ <a d>4 <g c>8 <a d>4. <b e>4. | % 2
+    <a d>4.\f ~ ~ <a d>4 <g c>8 <a d>4. <b e>4. | % 2
     <a d>2. ~ ~ <a d>4. r4. | % 3
     <a d>4. <a d>8 <a d>8 <a d>8 <b e>4. <g c>4. | % 4
     <a d>2. ~ ~ <a d>4. r4. | % 5
@@ -132,7 +118,9 @@ GTrombaI =  \relative a' {
     <dis gis>2. ~ ~ <dis gis>4. r4. | % 11
     <dis gis>4. <dis gis>8 <dis gis>8 <dis gis>8 <eis ais>4. <cis fis>4.
     | % 12
+	\voiceOne
     gis'2. ~ gis4. ~ gis8 fis8 eis8 | % 13
+	\oneVoice
     <bes es>4. ~ ~ <bes es>4 <bes es>8 <c f>4. <a d>4. | % 14
     <g c>1. | % 15
     r4. <bes es>8 <bes es>8 <bes es>8 <c f>4. <a d>4. | % 16
@@ -143,8 +131,7 @@ GTrombaI =  \relative a' {
     a4. ~ a4 g8 a4. c4. | \barNumberCheck #20
     a1. | % 21
 	\oneVoice
-    R1. | % 22
-    R1.*6 | % 28
+    R1.*7 | % 28
     r2. r4. a,4. | % 29
     <d fis>4. ~ ~ <d fis>4 <d fis>8 <d fis>4 <fis a>8 <e g>4 <d fis>8 |
     \barNumberCheck #30
@@ -159,32 +146,29 @@ GTrombaI =  \relative a' {
     gis4 ais8 b4. ~ b4 ais16 gis16 ais4. | % 36
     b2. ~ b4. r4. | % 37
 	\oneVoice
-    R1. | % 38
-    R1.*6 | % 44
-    R1.*4 | % 48
-    R1.*4 | % 52
+    R1.*15 | % 52
     a,4 a8 b8 c8 b8 a4. r4. | % 53
-    R1.*5 | % 58
-    R1. \bar "|."
+    R1.*6 \bar "|."
     }
 
 GTrombaII =  \relative dis'' {
-    \transposition bes \clef "treble" \key d \major \time 12/8 s1*9
+    \transposition bes \clef "treble" \key d \major \time 12/8
+    \voiceTwo
+    s1*9
     s2*15 | % 12
-    dis2. ~ dis4. r4. s1*6 | % 17
+    dis2. ~ dis4. r4.
+    s1*6 | % 17
     as2. c2. | % 18
     c1. | % 19
     f1. | \barNumberCheck #20
-    g,4. ~ -> g4 a8 -> fis4. -> g4. -> s1. s1*9 
-    s1*6 | % 32
+    g,4. ~ -> g4 a8 -> fis4. -> g4. -> s1.*11 | % 32
     dis'4 cis8 dis4 e8 dis4. r4. s1*3 | % 35
     e4 fis8 d4. cis4 b8 cis4 d8 | % 36
-    b2. b4. r4. s1. s1*9 s1*6 s2*15
-    s2*15 s1. \bar "|."
+    b2. b4. r4.
     }
 
 GCornoI =  \relative g' {
-    \transposition f \clef "treble" \key g \major \time 12/8 <g b>4. ~ ~
+    \transposition f \clef "treble" \key g \major \time 12/8 <g b>4.\f ~ ~
     <g b>4 a8 <g b>4. <f c'>4. | % 2
     <g b>2. ~ ~ <g b>4. r4. | % 3
     <g b>4. <g b>8 <g b>8 <g b>8 <f c'>4. a4. | % 4
@@ -213,17 +197,17 @@ GCornoI =  \relative g' {
     <b d>2. <b d>4. <b d>4. | \barNumberCheck #30
     <a d>2. <a d>4. <d e>4. | % 31
     <c e>2. <c e>4. <a e'>4. | % 32
+	\voiceOne
     e'2. e4. e4. | % 33
+	\oneVoice
     <c g'>2. <c g'>4. <c g'>4. | % 34
+	\voiceOne
     g'2. g4. d4. | % 35
+	\oneVoice
     e2. b4. b4. | % 36
     b2. ~ b4. r4. | % 37
-    R1. | % 38
-    R1.*6 | % 44
-    R1.*4 | % 48
-    R1.*5 | % 53
-    R1.*4 | % 57
-    g,4 b4 d4 e4 g4 a4 | % 58
+    R1.*20 | % 57
+    g,4\mf b4 d4 e4 g4 a4 | % 58
     b4 d4 e4 g8 r4 r4. \bar "|."
     }
 
@@ -231,13 +215,13 @@ GCornoII =  \relative b' {
     \transposition f \clef "treble" \key g \major \time 12/8 s1*9
     s2*15 s2*15 s2*15 s1*9
     s1*6 | % 32
+	\voiceTwo
     b4 c8 b4 a8 b4. b4. s1. | % 34
-    d4 c8 d4 e8 d4. d4. s2*9 s1*9 s1*6 
-    s2*15 s2*15 s1. \bar "|."
+    d4 c8 d4 e8 d4. d4.
     }
 
 GTromboneI =  \relative e {
-    \clef "bass" \key c \major \time 12/8 <e g>4. ~ ~ <e g>4 <f a>8 <e
+    \clef "bass" \key c \major \time 12/8 <e g>4.\f ~ ~ <e g>4 <f a>8 <e
         g>4. <d f>4. | % 2
     <e g>2. ~ ~ <e g>4. r4. | % 3
     <e g>4. <e g>8 <e g>8 <e g>8 <d f>4. <f a>4. | % 4
@@ -254,46 +238,48 @@ GTromboneI =  \relative e {
     <ais cis>2. ~ ~ <ais cis>4. r4. | % 13
     <f as>4. ~ ~ <f as>4 <f as>8 <es g>4. <g bes>4. | % 14
     <f as>1. | % 15
-    r4. <f gis>8 <f as>8 <f as>8 <es g>4. <g bes>4. | % 16
+    r4. <f as>8 <f as>8 <f as>8 <es g>4. <g bes>4. | % 16
     <f as>2. ~ ~ <f as>4. r4. | % 17
     <as des>1. | % 18
+    \voiceOne
     des2. c2. | % 19
+	\oneVoice
     <as c>1. | \barNumberCheck #20
+    \voiceOne
     bes4. ~ -> bes4 bes8 -> c4. -> as4. -> | % 21
-    R1. | % 22
-    R1.*6 | % 28
+	\oneVoice
+    R1.*7 | % 28
     r2. r4. g4. | % 29
     <g c>2. <g c>4. <g c>4. | \barNumberCheck #30
     <g d'>2. <g d'>4. r4. | % 31
     <a d>2. <a d>4. a4. | % 32
+	\voiceOne
     cis4 d8 cis4 b8 cis4. cis4. | % 33
-    <a c>2. <a c>4. <f c'>4. | % 34
+	\oneVoice
+    <a c!>2. <a c>4. <f c'>4. | % 34
     <c c'>2. <c c'>4. <g' c>4. | % 35
+	\voiceOne
     a4. c4. b4. d4. | % 36
-    cis2. ~ cis4. r4. | % 37
-    R1. | % 38
-    R1.*6 | % 44
-    R1.*4 | % 48
-    R1.*5 | % 53
-    R1. | % 54
-    es4 es8 d8 es8 d8 c4. r4. | % 55
-    R1.*3 | % 58
-    R1. \bar "|."
+	\oneVoice
+    <e, cis'>2. ~ <e cis'>4. r4. | % 37
+    R1.*17 | % 54
+    es'4 es8 d8 es8 d8 c4. r4. | % 55
+    R1.*4 \bar "|."
     }
 
 GTromboneII =  \relative as {
-    \clef "bass" \key c \major \time 12/8 s1*9 s2*15
+    \clef "bass" \key c \major \time 12/8
+    \voiceTwo
+    s1*9 s2*15
     s2*15 s1. | % 18
     as1. s1. | \barNumberCheck #20
-    f1. s1. s1*9 s1*6 | % 32
+    f1. s1.*11 | % 32
     a2. a4. a4. s1*3 | % 35
     fis4. e2. e4. | % 36
-    e2. ~ e4. r4. s1. s1*9 s1*6 s2*15
-    s2*15 s1. \bar "|."
     }
 
 GTromboneBasso =  \relative c {
-    \clef "bass" \key c \major \time 12/8 c1. ~ | % 2
+    \clef "bass" \key c \major \time 12/8 c1.\f ~ | % 2
     c4. ~ c4 c8 c4. g4. | % 3
     c,1. ~ | % 4
     c4. ~ c4 bes8 c4. d4. | % 5
@@ -313,8 +299,7 @@ GTromboneBasso =  \relative c {
     bes2. as4. ges4. | % 19
     f2. ~ f4. f8 es8 c8 | \barNumberCheck #20
     bes1. | % 21
-    R1. | % 22
-    R1.*6 | % 28
+    R1.*7 | % 28
     r2. r4. g'4. | % 29
     c,2. c4. e4. | \barNumberCheck #30
     g2. g4 g8 f4 e8 | % 31
@@ -324,27 +309,15 @@ GTromboneBasso =  \relative c {
     c2. c4. e4. | % 35
     d4. a4. e'4. e,4. | % 36
     a2. ~ a4. r4. | % 37
-    R1. | % 38
-    R1.*6 | % 44
-    R1.*4 | % 48
-    R1.*5 | % 53
-    R1.*5 | % 58
+    R1.*21 | % 58
     r2. r8 c,8 c8 c8 r4 \bar "|."
     }
 
 GTimpani =  \relative g, {
-    \clef "bass" \key c \major \time 12/8 R1.*6 | % 7
-    R1.*5 | % 12
-    R1.*5 | % 17
-    R1.*5 | % 22
-    R1.*6 | % 28
+    \clef "bass" \key c \major \time 12/8 R1.*27 | % 28
     r2. r4 g8 g4 g8 | % 29
     c2. r2. | \barNumberCheck #30
-    R1.*3 | % 33
-    R1.*5 | % 38
-    R1.*6 | % 44
-    R1.*4 | % 48
-    R1.*2 | \barNumberCheck #50
+    R1.*20 | \barNumberCheck #50
     r2. r4. r4 g8 | % 51
     c4. r4. r2. | % 52
     g4 g4 g4 g4. r4. | % 53
@@ -354,24 +327,24 @@ GTimpani =  \relative g, {
 
 GVioliniI =  \relative e'' {
     \clef "treble" \key c \major \time 12/8 R1.*20^"senza sord." | % 21
-    e4. ^"Solo"\f -. e4. -. b4 a8 b4 c8 | % 22
-    d4. ~ d4 c16 b16 a4. ~ a4 b8 | % 23
-    c4. b4 -_ a8 g4 e8 fis4 g8 | % 24
+    e4.\downbow ^"Solo"\f -. e4. -. b4--( a8-.) b4--( c8-.) | % 22
+    d4. ~ d4 c16 b16 a4. ~ a4 b8\upbow | % 23
+    c4. b4 -_ a8\upbow g4--( e8-.) fis4--( g8-.) | % 24
     a4. ~ a4 g16 fis16 e2. | % 25
-    b'4 b8 b4 b8 d4. ~ d4 c16 b16 | % 26
-    a4 a8 a4 a8 c4. ~ c4 b16 a16 | % 27
-    g4 fis8 g4 a8 b4 g8 e'4. -> | % 28
+    b'4\downbow--( b8-.) b4--( b8-.) d4. ~ d4 c16 b16 | % 26
+    a4\upbow--( a8-.) a4--( a8-.) c4. ~ c4 b16 a16 | % 27
+    g4--( fis8-.) g4--( a8-.) b4--( g8-.) e'4. -> | % 28
     d8 c8 b8 c8 b8 a8 g2. | % 29
     g2. r2. | \barNumberCheck #30
     R1.*21 | % 51
-    c8 ^"Tutti" g8 c8 g8 c8 g8 c4. r4. | % 52
-    g8 c8 d8 g8 c8 d8 g4. r4 c,,8 | % 53
-    g8 c8 g8 c8 g8 c8 g4. r4 d8 | % 54
-    c4 -> c4 -> c4 -> c4. c4. | % 55
+    c8\downbow ^"Tutti" g8 c8 g8 c8 g8 c4. r4. | % 52
+    g8\downbow c8 d8 g8 c8 d8 g4. r4 c,,8\upbow | % 53
+    g8 c8 g8 c8 g8 c8 g4. r4 d8\upbow | % 54
+    c4 -> c4 -> c4 -> c4. c4.\upbow | % 55
     c1. ~ | % 56
-    c2. ~ c4. d4. | % 57
-    e1. ~ | % 58
-    e2. ~ e8 c8 c8 c8 r4 \bar "|."
+    c2. ~ c4. d4.\downbow | % 57
+    e1.\upbow ~ | % 58
+    e2. ~ e8 c8\downbow_"marc." c8 c8 r4 \bar "|."
     }
 
 GVioliniII =  \relative c'' {
@@ -450,23 +423,16 @@ GContrabbassi =  \relative bes, {
     }
 
 GOrganoMDSopra =  \relative c'' {
-    \clef "treble" \key c \major \time 12/8 R1.*6 | % 7
-    R1.*5 | % 12
-    R1.*5 | % 17
-    R1.*5 | % 22
-    R1.*6 | % 28
-    R1.*5 | % 33
-    R1.*5 | % 38
-    R1.*5 | % 43
-    c4 ^"Grand jeu" b8 c4 d8 e4. ~ <e a>4. | % 44
+    \clef "treble" \key c \major \time 12/8 R1.*42 | % 43
+    c4 \f^"Grand jeu" b8 c4 d8 e4. ~ <e a>4. | % 44
     g4 a8 g4 fis8 e4. r4. | % 45
     e4 fis8 e4 d8 c4. e4. | % 46
-    <b d>4 <a c>8 <g b>4 a8 g4. r4. | % 47
-    f'4 e8 f4 g8 a4 a8 g4 f8 | % 48
+    \oneVoice <b d>4 <a c>8 <g b>4 a8 g4. r4. | % 47
+    \voiceOne f'4 e8 f4 g8 a4 a8 g4 f8 | % 48
     e4 d8 c4 d8 e4. fis4. | % 49
     g4. a4. a2. ~ | \barNumberCheck #50
     a2. ~ a4. r4. | % 51
-    r2. r4. r4 <c,, es bes'>8 | % 52
+    \oneVoice r2. r4. r4 <c,, es bes'>8 | % 52
     <c d f g>2. ~ ~ ~ <b d f g>4. r4. | % 53
     R1.*2 | % 55
     c8 ^"Plein jeu" f8 g8 c8 f8 g8 c4. c,4. | % 56
@@ -476,69 +442,50 @@ GOrganoMDSopra =  \relative c'' {
     }
 
 GOrganoMDSotto =  \relative a' {
-    \clef "treble" \key c \major \time 12/8 s1*9 s2*15
-    s2*15 s2*15 s1*9 s2*15
-    s2*15 s2*15 | % 43
-    a1. ^"Grand jeu" | % 44
+    \clef "treble" \key c \major \time 12/8 s1.*42 | % 43
+    a1. | % 44
     <b e>2. <g b>4. r4. | % 45
     c1. s1. | % 47
     <a d>1. ~ | % 48
     <a c>1. | % 49
     d2. ~ d4. cis4. | \barNumberCheck #50
     d2. ~ d4. r4. s1*3 s1*3 | % 55
-    s2*9 ^"Plein jeu" s1. \bar "|."
+    s2*9 s1. \bar "|."
     }
 
 GOrganoMSSopra =  \relative e' {
-    \clef "bass" \key c \major \time 12/8 R1.*6 | % 7
-    R1.*5 | % 12
-    R1.*5 | % 17
-    R1.*5 | % 22
-    R1.*6 | % 28
-    R1.*5 | % 33
-    R1.*5 | % 38
-    R1.*5 | % 43
-    \clef "treble_8" e4. ~ e4 d8 c4. a4. | % 44
+    \clef "treble" \key c \major \time 12/8 R1.*42 | % 43
+    \oneVoice e4. ~ e4 d8 c4. a4. | % 44
     e'2. ~ e4. r4. | % 45
     <c g'>2. ~ ~ <c g'>4. r4. | % 46
-    r4. d4. ~ d2. | % 47
-    <f, a d>2. ~ ~ <a d>4. r4 r8 | % 48
+    \voiceOne r2. d2. | % 47
+    \oneVoice <f, a d>2. ~ ~ <a d>4. r4. | % 48
     <a e'>2. c4 e8 d4 c8 | % 49
     bes4. d4. g4 f8 g4 a8 | \barNumberCheck #50
     fis2. fis4. r4. | % 51
-    r2. r4. r4 as,8 | % 52
-    d,2. ~ d4. r8 r4 | % 53
+    \clef "bass" r2. r4. r4 as,8 | % 52
+    d,2. ~ d4. r4. | % 53
     R1.*5 | % 58
     R1. \bar "|."
     }
 
-GOrganoMSMezzo =  \relative d, {
-    \clef "bass" \key c \major \time 12/8 s1*9 s2*15
-    s2*15 s2*15 s1*9 s2*15
-    s2*15 s2*15 | % 43
-    \clef "treble_8" s1. s1*3 | % 46
-    d2. \rest b4 \rest a''8 g4. s1. s2*15 s2*15
+GOrganoMSMezzo =  \relative d {
+    \key c \major \time 12/8 s1.*42 | % 43
+    s1. s1*3 | % 46
+    c2. \rest c4 \rest a'8 g4. s1. s2*15 s2*15
     s1. \bar "|."
     }
 
 GOrganoMSSotto =  \relative d' {
-    \clef "bass" \key c \major \time 12/8 s1*9 s2*15
-    s2*15 s2*15 s1*9 s2*15
-    s2*15 s2*15 | % 43
-    \clef "treble_8" s1. s1*3 | % 46
+    \key c \major \time 12/8 s1.*42 | % 43
+    s1. s1*3 | % 46
     d4. \rest d4 c8 b4. ~ b4 a8 s1. s2*15 s2*15
     s1. \bar "|."
     }
 
 GOrganoPed =  \relative a, {
-    \clef "bass" \key c \major \time 12/8 R1.*6 | % 7
-    R1.*5 | % 12
-    R1.*5 | % 17
-    R1.*5 | % 22
-    R1.*6 | % 28
-    R1.*5 | % 33
-    R1.*5 | % 38
-    R1.*5 a2. c4 b8 c4 d8 | % 44
+    \clef "bass" \key c \major \time 12/8 R1.*42 | % 43
+    a2. c4 b8 c4 d8 | % 44
     e2. e4 fis8 e4 d8 | % 45
     c2. e,4 d8 e4 fis8 | % 46
     g2. ~ g4 g8 f4 e8 | % 47

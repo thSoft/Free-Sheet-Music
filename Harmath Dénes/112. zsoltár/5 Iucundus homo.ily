@@ -60,23 +60,22 @@ EFlauto =  \relative gis' {
 
 EOboe =  \relative a' {
     \clef "treble" \key a \major \time 4/4 R1*2 | % 3
-    \time 9/8  R8*18 | % 5
-    R8*18 | % 7
-    \time 6/8  a4. b4. | % 8
+    \time 9/8  R8*36 | % 7
+    \time 6/8  a4.\mp b4. | % 8
     g4. a4. | % 9
     fis4. gis4 fis8 ~ | \barNumberCheck #10
     fis8 e4 cis4 r8 | % 11
     R2. | % 12
-    r4. a'8 gis8 fis8 | % 13
+    r4. a'8\p gis8 fis8 | % 13
     e4 fis4 e4 | % 14
     fis4 e4 d4 | % 15
     cis4. fis16 e16 e16 dis16 dis16 cis16 | % 16
-    e4. dis8. cis16 dis8 | % 17
+    e4.\mp dis8. cis16 dis8 | % 17
     cis8. b16 cis16 dis16 e4. | % 18
     dis4. gis4 gis8 | % 19
     dis8 fis4 dis4 r8 | \barNumberCheck #20
     R2. | % 21
-    cis8 d8 e8 fis8 g8 a8 ~ | % 22
+    cis8\p d8 e8 fis8 g8 a8 ~ | % 22
     a8 d,8 g4 a4 | % 23
     e8 a8 e8 a4 g8 | % 24
     \time 9/8  e8 fis4 e4 r8 cis'8 ais4 | % 25
@@ -91,40 +90,34 @@ EOboe =  \relative a' {
     a8 cis8 b8 a8 b8 a16 gis16 a8 b8 | % 35
     cis8 fis,4 gis16 fis16 gis4 fis4 ~ | % 36
     fis8 e8 fis8 b8 ~ b8 ais16 gis16 ais8 r8 | % 37
-    R1*3 | \barNumberCheck #40
-    R1*3 \bar "||"
+    R1*6 \bar "||"
     }
 
 ECornoInglese =  \relative b' {
     \transposition f \clef "treble" \key e \major \time 4/4 R1*2 | % 3
-    \time 9/8  R8*18 | % 5
-    R8*18 | % 7
-    \time 6/8  b4. dis8. cis16 dis8 | % 8
+    \time 9/8  R8*36 | % 7
+    \time 6/8  b4.\mp dis8. cis16 dis8 | % 8
     a4 a8 cis8. b16 cis8 | % 9
     gis4 gis8 b4 a8 | \barNumberCheck #10
     ais8 fis8 dis8 eis4 r8 | % 11
     R2. | % 12
-    a8 gis8 fis8 cis4 fis8 ~ | % 13
+    a8\p gis8 fis8 cis4 fis8 ~ | % 13
     fis8 e4 dis8 fis4 | % 14
     gis8 fis8 e8 e4 e16 dis16 | % 15
     dis16 cis16 fis4 ~ fis8 eis8 r8 | % 16
-    fis4 b,8 cis4. | % 17
+    fis4\mp b,8 cis4. | % 17
     cis'4 cis,8 dis8. cis16 dis16 eis16 | % 18
     fis4. ~ fis8 gis8 fis8 ~ | % 19
     fis4 eis8 cis4 r8 | \barNumberCheck #20
     R2. | % 21
-    r4. a'4. ~ | % 22
+    r4. a'4.\p ~ | % 22
     a4. fis8 d8 e16 fis16 | % 23
     e2 fis4 | % 24
     \time 9/8  gis8 eis4 fis4 r8 b8 gis4 | % 25
     \time 6/8  fis8 fis4 fis4 fis8 | % 26
     R2. | % 27
     fis8 fis4 fis4 fis8 | % 28
-    \time 4/4  R1*3 | % 31
-    R1*3 | % 34
-    R1*3 | % 37
-    R1*3 | \barNumberCheck #40
-    R1*3 \bar "||"
+    \time 4/4  R1*15 \bar "||"
     }
 
 EFagotto =  \relative a {
@@ -163,10 +156,10 @@ EFagotto =  \relative a {
     }
 
 ETamburelloBasco =  \relative e' {
+	\set RhythmicStaff.instrumentName = \markup { \center-column { \line {"Tamburello"} \line {"basco"} } }
     \clef "percussion" \stopStaff \override Staff.StaffSymbol
     #'line-count = #1 \startStaff \key c \major \time 4/4 R1*2 | % 3
-    \time 9/8  R8*18 | % 5
-    R8*18 | % 7
+    \time 9/8  R8*36 | % 7
     \time 6/8  e4 e8 e8 e4 | % 8
     e8. e32 e32 e8 e8 e4 | % 9
     e4 e8 e4 e8 ~ | \barNumberCheck #10
@@ -188,15 +181,13 @@ ETamburelloBasco =  \relative e' {
     \time 6/8  e4 e4 e4 | % 26
     R2. | % 27
     e4 e4 e4 | % 28
-    \time 4/4  R1*3 | % 31
-    R1 | % 32
+    \time 4/4  R1*4 | % 32
     r8 e8 r8 e8 r8 e8 e8 r8 | % 33
     r8 e8 r8 e8 r8 e8 e8 r8 | % 34
     R1*3 | % 37
     r8 e8 r8 e8 r8 e8 e8 r8 | % 38
     r8 e8 r8 e8 r8 e8 e8 r8 | % 39
-    R1 | \barNumberCheck #40
-    R1*3 \bar "||"
+    R1*4 \bar "||"
     }
 
 EVioliniI =  \relative a' {
@@ -208,29 +199,29 @@ EVioliniI =  \relative a' {
     r4 a,8 r8 cis8 r8 | \barNumberCheck #10
     b8 r8 gis8 fis16 fis16 fis8 r8 | % 11
     R2. | % 12
-    fis'8 ^"arco"\f fis16 e8 d16 cis8. d8. | % 13
-    e8 e16 d8 cis16 b8. cis8. | % 14
-    d8 d16 cis8 b16 a4 b8 | % 15
-    cis8 gis4 fis4 r8 | % 16
+    fis'8\downbow--( ^"arco"\f fis16-.) e8--( d16-.) cis8. d8. | % 13
+    e8--( e16-.) d8--( cis16-.) b8. cis8. | % 14
+    d8--( d16-.) cis8--( b16-.) a4 b8 | % 15
+    cis8-. gis4 fis4 r8 | % 16
     r4 ^"pizz." gis8\p fis8 b8 fis'8 | % 17
     r4 cis8 cis8 gis'8 cis8 | % 18
     r4 b,8 r8 e8 r8 | % 19
     b8 r8 cis8 b16 b16 b8 r8 | \barNumberCheck #20
     R2. | % 21
-    a8 ^"arco"\f a16 b8 cis16 d8. cis8. | % 22
-    b8 b16 cis8 d16 e8. d8. | % 23
-    cis8 cis16 d8 e16 fis8. e8. | % 24
+    a8\downbow --(^"arco"\f a16-.) b8--( cis16-.) d8. cis8. | % 22
+    b8--( b16-.) cis8--( d16-.) e8. d8. | % 23
+    cis8--( cis16-.) d8--( e16-.) fis8. e8. | % 24
     \time 9/8  e8. dis16 dis16 cis16 e4. r4 r8 | % 25
     \time 6/8  R2. | % 26
-    f,8 \mf\< f4 f4 f8 | % 27
+    f,8\downbow \mf\< f4 f4 f8 | % 27
     R2.\!  | % 28
     \time 4/4  | % 28
-    <fis e'>8 \< <fis e'>4 <fis e'>4 <fis e'>8 r4 \! | % 29
+    <fis e'>8\downbow \< <fis e'>4 <fis e'>4 <fis e'>8 r4 \! | % 29
     R1*10 | % 39
-    r4 e'8 r8 r4 a,8 r8 | \barNumberCheck #40
+    r4 e'8\downbow r8 r4 a,8\upbow r8 | \barNumberCheck #40
     R1 | % 41
     r4 a8 r8 r4 d8 r8 | % 42
-    e8 d16 cis16 b8. a16 a8 r8 r4 \bar "||"
+    e8 d16 cis16 b8.--( a16-.) a8 r8 r4 \bar "||"
     }
 
 EVioliniII =  \relative e' {
@@ -329,15 +320,12 @@ EOrganoMDSopra =  \relative a' {
     fis16 e16 fis8 | % 6
     g16 fis16 g16 a16 b16 g16 a16 fis16 g16 fis16 e16 d16 e8 e4
     | % 7
-    \time 6/8  R2. | % 8
-	\oneVoice
-    R2.*2 | \barNumberCheck #10
-    r4. r4 <cis fis ais>8 ~ | % 11
+    \time 6/8 \oneVoice R2.*3 | \barNumberCheck #10
+    r4. r4 <cis fis ais>8 ~\mp | % 11
 	\voiceOne
     <b fis' b>8 -_ <b gis'>4 <ais fis'>4 r8 | % 12
 	\oneVoice
-    R2.*4 | % 16
-    R2.*3 | % 19
+    R2.*7 | % 19
 	\voiceOne
     r4. r4 <gis' b dis>8 | \barNumberCheck #20
     b8 -. <b cis>8 <ais dis>8 -. b4 r8 | % 21
@@ -345,11 +333,11 @@ EOrganoMDSopra =  \relative a' {
     R2.*3 | % 24
     \time 9/8  R8*9 | % 25
     \time 6/8  R2. | % 26
-    f16[ a16 e'16] f,16[ a16 d16] f,16[ a16 cis16] f,16[ a16 d16] | % 27
+    f16[\f a16 e'16] f,16[ a16 d16] f,16[ a16 cis16] f,16[ a16 d16] | % 27
     R2. | % 28
     \time 4/4  fis,,16[ d'16 ais'16] gis,16[ e'16 c'16] bes,16[ fis'16 d'16]
     c,16 gis'16 e'16 r4 | % 29
-    e16 cis16 a16 e16 a16 cis16 e16 a,16 e'16 b16 a16 e16 a16 b16 e16 a,16
+    e16\mp cis16 a16 e16 a16 cis16 e16 a,16 e'16 b16 a16 e16 a16 b16 e16 a,16
     | \barNumberCheck #30
     d16 a16 fis16 e16 fis16 a16 d16 a16 cis16 a16 fis16 cis16 fis16 a16
     cis16 a16 | % 31
@@ -361,8 +349,7 @@ EOrganoMDSopra =  \relative a' {
     fis16 cis16 | % 36
     r16 d16 gis16 b16 d16 b16 gis16 d16 r16 cis16 fis16 cis'16 fis,16
     cis'16 fis8 | % 37
-    R1*3 | \barNumberCheck #40
-    R1*3 \bar "||"
+    R1*6 \bar "||"
     }
 
 EOrganoPed =  \relative d {
@@ -371,18 +358,10 @@ EOrganoPed =  \relative d {
     \time 9/8  g4 b8 g8 e'4 b4 a8 | % 4
     g4 g8 fis8 b4 e,4 e8 | % 5
     R8*18 | % 7
-    \time 6/8  R2. | % 8
-    R2.*4 | % 12
-    R2.*4 | % 16
-    R2.*4 | \barNumberCheck #20
-    R2.*4 | % 24
+    \time 6/8  R2.*17 | % 24
     \time 9/8  R8*9 | % 25
     \time 6/8  R2.*3 | % 28
-    \time 4/4  R1*3 | % 31
-    R1*3 | % 34
-    R1*3 | % 37
-    R1*3 | \barNumberCheck #40
-    R1*3 \bar "||"
+    \time 4/4  R1*15 \bar "||"
     }
 
 EOrganoMDSotto =  \relative fis' {
@@ -393,14 +372,13 @@ EOrganoMDSotto =  \relative fis' {
     d4. e8 d8 cis8 b8 b4 | % 5
     g'4 g8 g8 g4 dis8 dis4 | % 6
     <b d>4 <d e>8 <d e>8 d4 gis,16 fis16 gis4 | % 7
-    \time 6/8  s2. s4*9 | % 11
-    e'8 e8 dis8 cis4 r8 s1*3 s4*9 | % 19
+    \time 6/8  s2.*4 | % 11
+    e'8 e8 dis8 cis4 r8 s2.*7 | % 19
     r4. r4 e8 ~ | \barNumberCheck #20
     <e fis>8 <e gis>4 <dis fis>4 r8 s4*9 | % 24
     \time 9/8  s8*9 | % 25
     \time 6/8  s4*9 | % 28
-    \time 4/4  s1*3 s1*3 s1*3 s1*3
-    s1*3 \bar "||"
+    \time 4/4  s1*15 \bar "||"
     }
 
 EOrganoMS =  \relative d' {
@@ -410,22 +388,16 @@ EOrganoMS =  \relative d' {
     b4. cis8 a4 gis8 gis4 | % 5
     <g d'>4 <g cis>8 <g b>8 <e a cis>4 <b fis' b>8 <b fis' b>4 | % 6
     g4 g8 fis8 <b a'>8 fis'8 <e, b' e>8 <e b' e>4 | % 7
-    \time 6/8  R2. | % 8
-    R2.*2 | \barNumberCheck #10
+    \time 6/8  R2.*3 | \barNumberCheck #10
     r4. r4 fis8 | % 11
     gis8 cis8 e,8 fis4 r8 | % 12
-    R2.*4 | % 16
-    R2.*3 | % 19
+    R2.*7 | % 19
     r4. r4 cis8 | \barNumberCheck #20
     gis'8 <fis fis'>4 <b fis'>4 r8 | % 21
     R2.*3 | % 24
     \time 9/8  R8*9 | % 25
     \time 6/8  R2.*3 | % 28
-    \time 4/4  R1*3 | % 31
-    R1*3 | % 34
-    R1*3 | % 37
-    R1*3 | \barNumberCheck #40
-    R1*3 \bar "||"
+    \time 4/4  R1*15 \bar "||"
     }
 
 EETenoreSolo =  \relative e {
@@ -651,7 +623,6 @@ E = \score {
             
             >>
         \new RhythmicStaff <<
-            \set RhythmicStaff.instrumentName = \markup { \center-column { \line {"Tamburello"} \line {"basco"} } }
             \set RhythmicStaff.shortInstrumentName = "Tamb. b."
             \context RhythmicStaff << 
                 \context Voice = "TamburelloBasco" { \ETamburelloBasco }

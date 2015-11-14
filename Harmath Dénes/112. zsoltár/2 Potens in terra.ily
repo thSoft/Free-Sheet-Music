@@ -14,9 +14,9 @@ BTacet = {
 	\bar "||"
 }
 BOboeI =  \relative a' {
-    \clef "treble" \key d \major \time 4/4 | % 1
+    \clef "treble" \key d \major \time 2/2 | % 1
     R1*10 | % 11
-    r2 a2 | % 12
+    r2 a2\mf^"marcato" | % 12
     e2 a2 | % 13
     d2 a2 ~ | % 14
     a1 | % 15
@@ -27,7 +27,7 @@ BOboeI =  \relative a' {
     }
 
 BOboeII =  \relative a' {
-    \clef "treble" \key d \major \time 4/4 R1*11 | % 12
+    \clef "treble" \key d \major \time 2/2 R1*11 | % 12
     a2 e2 | % 13
     a1 | % 14
     d1 | % 15
@@ -38,32 +38,28 @@ BOboeII =  \relative a' {
     }
 
 BFagottoI =  \relative b {
-    \clef "bass" \key d \major \time 4/4 R1*5 | % 6
-    R1*6 | % 12
+    \clef "bass" \key d \major \time 2/2 R1*11 | % 12
     r2 b2 | % 13
     fis2 b2 | % 14
     e,1 | % 15
     dis'1 | % 16
     e1 | % 17
     dis2. r4 | % 18
-    R1*7 | % 25
-    R1*5 \bar "||"
+    R1*12 \bar "||"
     }
 
 BFagottoII =  \relative b {
-    \clef "bass" \key d \major \time 4/4 R1*5 | % 6
-    R1*7 | % 13
+    \clef "bass" \key d \major \time 2/2 R1*12 | % 13
     b2 fis2 | % 14
     g,1 | % 15
     b1 | % 16
     fis2 cis'2 | % 17
     b2. r4 | % 18
-    R1*7 | % 25
-    R1*5 \bar "||"
+    R1*12 \bar "||"
     }
 
 BTrombaI =  \relative g'' {
-    \transposition bes \clef "treble" \key e \major \time 4/4 r8 g16 g16
+    \transposition bes \clef "treble" \key e \major \time 2/2 r8 g16\f g16
     g2 r4 | % 2
     r8 g16 g16 g4 r2 | % 3
     r8 g16 g16 g4 r2 | % 4
@@ -79,16 +75,15 @@ BTrombaI =  \relative g'' {
     cis4 dis4 e4 fis4 | % 14
     gis2. r4 | % 15
     R1*2 | % 17
-    r2 r4 eis4 | % 18
+    r2 r4 eis4\ff | % 18
     gis2 dis2 | % 19
     eis2. r4 | \barNumberCheck #20
-    R1*5 | % 25
-    R1*5 \bar "||"
+    R1*10 \bar "||"
     }
 
 BTrombaII =  \relative g'' {
-    \transposition bes \clef "treble" \key e \major \time 4/4 R1 | % 2
-    r2 r8 g16 g16 g4 | % 3
+    \transposition bes \clef "treble" \key e \major \time 2/2 R1 | % 2
+    r2 r8 g16\f g16 g4 | % 3
     r2 r8 g16 g16 g4 | % 4
     r4 r8 g16 g16 g4 r16 g16 g16 g16 | % 5
     a4 r4 r8 a16 a16 a4 | % 6
@@ -101,118 +96,104 @@ BTrombaII =  \relative g'' {
     d,4 e4 fis4 gis4 | % 15
     eis2. r4 | % 16
     R1 | % 17
-    r2 r4 cis'4 | % 18
+    r2 r4 cis'4\ff | % 18
     cis1 | % 19
     cis2. r4 | \barNumberCheck #20
-    R1*5 | % 25
-    R1*5 \bar "||"
+    R1*10 \bar "||"
     }
 
 BCornoI =  \relative b' {
-    \transposition f \clef "treble" \key a \major \time 4/4 R1*5
-    | % 6
-    R1*2 | % 8
-    r2 b2 | % 9
+    \transposition f \clef "treble" \key a \major \time 2/2 R1*7 | % 8
+    r2 b2\mf | % 9
     fis2 b2 | \barNumberCheck #10
     e,1 | % 11
-    R1*3 | % 14
-    R1*3 | % 17
-    r2 r4 cis'4 | % 18
+    R1*6 | % 17
+    r2 r4 cis'4\f | % 18
     d1 | % 19
     cis2. r4 | \barNumberCheck #20
-    R1*5 | % 25
-    R1*5 \bar "||"
+    R1*10 \bar "||"
     }
 
 BCornoII =  \relative b' {
-    \transposition f \clef "treble" \key a \major \time 4/4 R1*5
-    | % 6
-    R1*3 | % 9
-    b2 fis2 | \barNumberCheck #10
+    \transposition f \clef "treble" \key a \major \time 2/2 R1*8 | % 9
+    b2\mf fis2 | \barNumberCheck #10
     g,1 | % 11
-    R1*3 | % 14
-    R1*3 | % 17
-    r2 r4 fis'4 | % 18
+    R1*6 | % 17
+    r2 r4 fis'4\f | % 18
     gis1 | % 19
     fis2. r4 | \barNumberCheck #20
-    R1*5 | % 25
-    R1*5 \bar "||"
+    R1*10 \bar "||"
     }
 
 BTromboneI =  \relative f' {
-    \clef "tenor" \key d \major \time 4/4 r2 r8 f16 f16 f4 ~ | % 2
+    \clef "tenor" \key d \major \time 2/2 r2 r8 f16\f f16 f4 ~ | % 2
     f4 r8 f16 f16 f4 r4 | % 3
     r4 r8 f16 f16 f4 r4 | % 4
     r8 f16 f16 f4 r8 f16 f16 f4 | % 5
     r4 r8 g16 g16 g4 r4 | % 6
     r8 g16 g16 g4 r8 g16 g16 g4 | % 7
-    r2 d2 | % 8
+    r2 d2\mf | % 8
     a2 d2 | % 9
     g2 d2 ~ | \barNumberCheck #10
     d1 | % 11
     R1 | % 12
-    \clef "bass" b,2 fis4 b4 | % 13
+    \clef "bass" b,2\f fis4 b4 | % 13
     e2. d4 | % 14
     c1 | % 15
     b2. r4 | % 16
     R1*2 | % 18
     a'1 | % 19
     fis2. r4 | \barNumberCheck #20
-    R1*5 | % 25
-    R1*5 \bar "||"
+    R1*10 \bar "||"
     }
 
 BTromboneII =  \relative f' {
-    \clef "tenor" \key d \major \time 4/4 R1 | % 2
-    r2 r4 r8 f16 f16 | % 3
+    \clef "tenor" \key d \major \time 2/2 R1 | % 2
+    r2 r4 r8 f16\f f16 | % 3
     f4 r4 r4 r8 f16 f16 | % 4
     f4 r8 f16 f16 f4 r16 f16 f16 f16 | % 5
     g4 r4 r4 r8 g16 g16 | % 6
     g4 r8 g16 g16 g4 r16 g16 g16 g16 | % 7
     a4 r4 r2 | % 8
-    d,2 a2 | % 9
+    d,2\mf a2 | % 9
     d1 | \barNumberCheck #10
     g1 | % 11
     R1*3 | % 14
     R1 | % 15
     R1*3 | % 18
-    r2 e,2 | % 19
+    \clef bass r2 e,2\f | % 19
     b2. r4 | \barNumberCheck #20
-    R1*5 | % 25
-    R1*5 \bar "||"
+    R1*10 \bar "||"
     }
 
 BTromboneBasso =  \relative e, {
-    \clef "bass" \key d \major \time 4/4 R1*5 | % 6
-    R1*2 | % 8
-    e2 b4 e4 | % 9
+    \clef "bass" \key d \major \time 2/2 R1*7 | % 8
+    e2\f b4 e4 | % 9
     a2. g4 | \barNumberCheck #10
     f1 | % 11
-    R1*3 | % 14
-    R1*5 | % 19
+    R1*8 | % 19
     b2. s4 | \barNumberCheck #20
-    R1*5 | % 25
-    R1*5 \bar "||"
+    R1*10 \bar "||"
     }
 
 BVioliniI =  \relative b'' {
-    \clef "treble" \key d \major \time 4/4 R1*9 | \barNumberCheck #10
-    b1 ^"senza vibrato"\mf | % 11
+    \clef "treble" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
+    b1\downbow ^"senza vibrato"\mf | % 11
     a2. r4 | % 12
     R1*2 | % 14
-    fis'1 | % 15
+    fis'1\downbow | % 15
     fis,1 | % 16
     a2\f e2 | % 17
     fis2. r4 | % 18
     R1*8 | % 26
-    g,4\p a4 bes4 c4 | % 27
+    g,4\downbow\p a4 bes4 c4 | % 27
     d4 e4 fis4 g4 | % 28
     a1 ~ | % 29
     a1 \laissezVibrer \bar "||"
     }
 
 BVioliniII =  \relative g' {
-    \clef "treble" \key d \major \time 4/4 R1*9 | \barNumberCheck #10
+    \clef "treble" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
     <g d'>1 ^"senza vibrato"\mf | % 11
     cis2. r4 | % 12
     R1*2 | % 14
@@ -231,7 +212,7 @@ BVioliniII =  \relative g' {
     }
 
 BVioleI =  \relative a {
-    \clef "alto" \key d \major \time 4/4 R1*9 | \barNumberCheck #10
+    \clef "alto" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
     a1\mf ^"senza vibrato" | % 11
     fis'2. r4 | % 12
     R1*2 | % 14
@@ -253,7 +234,7 @@ BVioleI =  \relative a {
     }
 
 BVioleII =  \relative c {
-    \clef "alto" \key d \major \time 4/4 R1*9 | \barNumberCheck #10
+    \clef "alto" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
     c1 \mf^"senza vibrato" | % 11
     e2. r4 | % 12
     R1*2 | % 14
@@ -276,7 +257,7 @@ BVioleII =  \relative c {
     }
 
 BVioloncelli =  \relative f, {
-    \clef "bass" \key d \major \time 4/4 R1*9 | \barNumberCheck #10
+    \clef "bass" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
     f1\mf ^"senza vibrato" | % 11
     e2. r4 | % 12
     R1*2 | % 14
@@ -299,7 +280,7 @@ BVioloncelli =  \relative f, {
     }
 
 BContrabbassi =  \relative f, {
-    \transposition c \clef "bass" \key d \major \time 4/4 R1*9 | \barNumberCheck #10
+    \transposition c \clef "bass" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
     f1\mf ^"senza vibrato" | % 11
     e2. r4 | % 12
     R1*2 | % 14
@@ -322,8 +303,7 @@ BContrabbassi =  \relative f, {
     }
 
 BOrganoMD =  \relative e' {
-    \clef "treble" \key d \major \time 4/4 R1*5 | % 6
-    R1*2 | % 8
+    \clef "treble" \key d \major \time 2/2 R1*7 | % 8
     r8 e16[ \ff ^"Chamades" a16 d16] r16 a16 d16 g4 r4 | % 9
     R1*4 | % 13
     r8 b,,16[ e16 a16] r16 e16 a16 d4 r4 | % 14
@@ -336,7 +316,7 @@ BOrganoMD =  \relative e' {
     <des ges>4 <c f>4 <des ges>4 <bes des>4 | % 22
     d2. c4 | % 23
     R1 | % 24
-    \clef "treble_8" r4 d,4 e4 d4 | % 25
+    \clef "bass" r4 d,4 e4 d4 | % 25
     e4 d4 e4 c'4 | % 26
     d1 ~ | % 27
     <d e>1 ~ | % 28
@@ -345,9 +325,7 @@ BOrganoMD =  \relative e' {
     }
 
 BOrganoPed =  \relative b, {
-    \clef "bass" \key d \major \time 4/4 R1*5 | % 6
-    R1*8 | % 14
-    R1 | % 15
+    \clef "bass" \key d \major \time 2/2 R1*14 | % 15
     r2 r4 b4 | % 16
     fis2 cis'2 | % 17
     b2. r4 | % 18
@@ -364,8 +342,7 @@ BOrganoPed =  \relative b, {
     }
 
 BOrganoMS =  \relative e {
-    \clef "bass" \key d \major \time 4/4 R1*5 | % 6
-    R1*3 | % 9
+    \clef "bass" \key d \major \time 2/2 R1*8 | % 9
     r8 e16[ a16 d16] r16 a16 d16 g4 r4 | \barNumberCheck #10
     R1*2 | % 12
     r8 b,,16[ e16 a16] r16 e16 a16 d4 r4 | % 13
@@ -387,7 +364,7 @@ BOrganoMS =  \relative e {
     }
 
 BSoprano =  \relative a' {
-    \clef "treble" \key d \major \time 4/4 R1*5 | % 6
+    \clef "treble" \key d \major \time 2/2 R1*5 | % 6
     R1*5 | % 11
     a2 e4 a4 | % 12
     d4. d8 d4 cis4 | % 13
@@ -411,7 +388,7 @@ BSopranoLyricsOne =  \lyricmode { Po -- tens in ter -- ra e
     to -- \skip4 rum be -- ne -- di -- ce -- "tur," be -- ne -- di -- ce
     -- "tur." }
 BAlto =  \relative d' {
-    \clef "treble" \key d \major \time 4/4 R1*5 | % 6
+    \clef "treble" \key d \major \time 2/2 R1*5 | % 6
     R1 | % 7
     d2 a4 d4 | % 8
     g4. g8 g4 fis4 | % 9
@@ -438,7 +415,7 @@ BAltoLyricsOne =  \lyricmode { Po -- tens in ter -- ra e
     \skip4 \skip4 \skip4 \skip4 \skip4 be -- ne -- di -- ce -- "tur," be
     -- ne -- di -- ce -- "tur." }
 BTenore =  \relative c' {
-    \clef "treble_8" \key d \major \time 4/4 R1*4 | % 5
+    \clef "treble_8" \key d \major \time 2/2 R1*4 | % 5
     c2 g2 | % 6
     R1*6 | % 12
     b2 fis4 b4 | % 13
@@ -465,7 +442,7 @@ BTenoreLyricsOne =  \lyricmode { Po -- "tens!" Po -- tens in
     \skip4 \skip4 \skip4 \skip4 be -- ne -- di -- ce -- "tur," be -- ne
     -- di -- ce -- "tur." }
 BBasso =  \relative bes {
-    \clef "bass" \key d \major \time 4/4 R1*2 | % 3
+    \clef "bass" \key d \major \time 2/2 R1*2 | % 3
     bes2 f2 | % 4
     R1*2 | % 6
     R1*2 | % 8

@@ -6,7 +6,7 @@ AHeader = {
 AGlobal = {
 	\AHeader
 	\tempo "Allegretto"
-	s1
+	s1*29
 }
 ATacet = {
 	\once \override Staff.TimeSignature.stencil = ##f
@@ -15,11 +15,11 @@ ATacet = {
 }
 AVioliniI =  \relative f' {
     \clef "treble" \key f \major \time 4/4 | % 1
-    f4\f f'4 ~ f8 e16 f16 g8 bes,8 | % 2
-    a4 a'4 ~ a8 g16 a16 bes8 d,8 | % 3
-    c4 c'4 ~ c8 bes16 c16 d8 f,8 | % 4
-    e8 d16 e16 f4. g16 f16 e16 f16 d16 e16 | % 5
-    f16 g,16 ^"Solo"\mf f'16 g,16 es'16 g,16 es'16 g,16 es'16 f,16 es'16 f,16
+    f4-_\downbow\f f'4\downbow ~ f8 e16 f16 g8 bes,8\upbow | % 2
+    a4-_ a'4\downbow ~ a8 g16 a16 bes8 d,8\upbow | % 3
+    c4-_ c'4\downbow ~ c8 bes16 c16 d8 f,8\upbow | % 4
+    e8-. d16\downbow e16 f4. g16\downbow f16 e16 f16 d16 e16 | % 5
+    f16( g,16) ^"Solo"\mf f'16( g,16) es'16^"sim." g,16 es'16 g,16 es'16 f,16 es'16 f,16
     d'16 f,16 d'16 es,16 | % 6
     d'16 es,16 d'16 es,16 c'16 es,16 c'16 es,16 c'16 d,16 c'16 d,16 bes'16
     d,16 bes'16 d,16 | % 7
@@ -29,23 +29,24 @@ AVioliniI =  \relative f' {
     bes,16 f'16 bes,16 f'16 bes,16 | % 9
     a4 r4 r2 | \barNumberCheck #10
     R1*7 | % 17
-    d4 ^"Tutti"\f d'4 ~ d8 cis16 d16 e8 g,8 | % 18
-    fis4 fis'4 ~ fis8 e16 fis16 g8 b,8 | % 19
-    a4 a'4 ~ a8 g16 a16 b8 d,8 | \barNumberCheck #20
-    cis8 b16 cis16 d4. e16 d16 cis16 b16 a16 g16 | % 21
-    f4 r8 c'16 ^"Solo"\mf bes16 c4. bes16 a16 | % 22
+    d4-_\downbow ^"Tutti"\f d'4\downbow ~ d8 cis16 d16 e8 g,8\upbow | % 18
+    fis4-_ fis'4\downbow ~ fis8 e16 fis16 g8 b,8\upbow | % 19
+    a4-_ a'4\downbow ~ a8 g16 a16 b8 d,8\upbow | \barNumberCheck #20
+    cis8-. b16\downbow cis16 d4. e16\downbow d16 cis16 b16 a16 g16 | % 21
+    f4 r8 c'16\downbow ^"Solo"\mf bes16 c4. bes16 a16 | % 22
     bes4. a16 g16 a4. g16 f16 | % 23
     g4. f16 es16 f4. r8 | % 24
-    bes,8. c16 des8. es16 f8 e8 r4 | % 25
-    r8 ^"pizz." ^"Tutti"\f a8 r8 bes8 r8 c8 c8 r8 | % 26
+    bes,8.\downbow(-- c16)-. des8.(-- es16)-. f8 e8 r4 | % 25
+    r8 a8^"pizz." ^"Tutti"\f  r8 bes8 r8 c8 c8 r8 | % 26
     r8 c8 r8 c8 r8 c8 c8 r8 | % 27
     r8 a8 r8 c8 r8 f8 f8 r8 | % 28
     R1 | % 29
-    g,4 ^"arco" a4 r8 <c f>16 <c f>16 <c f>8 r8 \bar "||"
+    g,4\downbow ^"arco" a4 r8 <c f>16\downbow <c f>16 <c f>8 r8 \bar "||"
     }
 
 AVioliniII =  \relative g {
-    \clef "treble" \key f \major \time 4/4 r2 g4\f g'4 ~ | % 2
+    \clef "treble" \key f \major \time 4/4
+    r2 g4\downbow\f g'4\downbow ~ | % 2
     g8 f16 e16 f8 c8 bes4 bes'4 ~ | % 3
     bes8 a16 g16 a8 f8 d4 d'4 ~ | % 4
     d8 c16 bes16 a4 g4 r4 | % 5
@@ -60,7 +61,7 @@ AVioliniII =  \relative g {
     g8 fis16 e16 fis8 d8 b4 b'4 | \barNumberCheck #20
     e,4 d4 b8 g e4 | % 21
     R1*4 | % 25
-    r8 ^"pizz." g8 r8 g8 r8 a8 a8 r8 | % 26
+    r8 g8^"pizz."  r8 g8 r8 a8 a8 r8 | % 26
     r8 bes8 r8 f8 r8 bes8 g8 r8 | % 27
     r8 f8 r8 f8 r8 bes8 bes8 r8 | % 28
     R1 | % 29
@@ -86,7 +87,7 @@ AVioleI =  \relative f' {
     a8 g16 f16 g4. f16 e16 f4 ~ | % 23
     f8 es16 d16 es4. d16 c16 d8 r8 | % 24
     r4 bes8. c16 bes8 g8 r4 | % 25
-    r8 ^"pizz." ^"Tutti"\f f'8 r8 f8 r8 g8 g8 r8 | % 26
+    r8 f'8^"pizz." ^"Tutti"\f  r8 f8 r8 g8 g8 r8 | % 26
     r8 f8 r8 d8 r8 e8 e8 r8 | % 27
     r8 d8 r8 e8 r8 d8 d8 r8 | % 28
     R1 | % 29
@@ -110,7 +111,7 @@ AVioleII =  \relative bes {
     a4 d,4. cis16 b16 a8 r8 | % 21
     R1 | % 22
     R1*3 | % 25
-    r8 ^"pizz." c8 r8 d8 r8 e8 e8 r8 | % 26
+    r8 c8^"pizz."  r8 d8 r8 e8 e8 r8 | % 26
     r8 c8 r8 bes8 r8 g8 g8 r8 | % 27
     r8 c8 r8 g8 r8 f8 f8 r8 | % 28
     R1 | % 29
@@ -137,7 +138,7 @@ AVioloncelli =  \relative f {
     g8 r8 r8 g8 d8 r8 r8 d8 | % 23
     es8 r8 r8 es8 bes8 r8 r8 c8 | % 24
     des8 r8 r8 g,8 c8 r8 r4 | % 25
-    r8 ^"Tutti" f8\f r8 c8 r8 f,8 f8 r8 | % 26
+    r8 f8^"Tutti"\f r8 c8 r8 f,8 f8 r8 | % 26
     r8 a'8 r8 g8 r8 c,8 c8 r8 | % 27
     r8 d8 r8 a8 r8 bes8 bes8 r8 | % 28
     R1 | % 29
@@ -156,7 +157,7 @@ AContrabbassi =  \relative f {
     fis8 g8 a8 fis8 g8 fis8 e8 g8 | \barNumberCheck #20
     a8 fis8 b8 a8 g8 e8 a8 r8 | % 21
     R1*4 | % 25
-    r8 ^"pizz." f'8 r8 c8 r8 f,8 f8 r8 | % 26
+    r8 f'8^"pizz."  r8 c8 r8 f,8 f8 r8 | % 26
     r8 a'8 r8 g8 r8 c,8 c8 r8 | % 27
     r8 d8 r8 a8 r8 bes8 bes8 r8 | % 28
     R1 | % 29
@@ -164,9 +165,7 @@ AContrabbassi =  \relative f {
     }
 
 AOrganoMD =  \relative f'' {
-    \clef "treble" \key f \major \time 4/4 R1*3 | % 4
-    R1*3 | % 7
-    R1*2 r2 r8 f16\f e16 f8 r8 r2 r8 e,16 d16 e8 r8 | % 11
+    \clef "treble" \key f \major \time 4/4 R1*8 r2 r8 f16\f e16 f8 r8 r2 r8 e,16 d16 e8 r8 | % 11
     r2 r8 d16 c16 d8 r8 | % 12
     r2 r4 a'16 bes16 c16 d16 | % 13
     <c es>16 f,16 <c' es>16 f,16 <c' es>16 f,16 <bes d>16 f16 <bes d>16
@@ -175,11 +174,9 @@ AOrganoMD =  \relative f'' {
     <e g>8 g16 a16 bes16 c16 | % 15
     <bes d>16 f16 <a d>16 f16 <g d'>16 e16 <g c>16 e16 <g c>16 d16 <g b>16
     d16 <g b>16 d16 <g b>16 d16 | % 16
-    <f bes>16 d16 <f bes>16 d16 <g bes>16 d16 <g c>16 d16 <g bes>16 d16
+    <f bes!>16 d16 <f bes>16 d16 <g bes>16 d16 <g c>16 d16 <g bes>16 d16
     <cis a'>8 r4 | % 17
-    R1*2 | % 19
-    R1*3 | % 22
-    R1*3 | % 25
+    R1*8 | % 25
     a'16 c,16 f16 a16 bes16 c,16 f16 bes16 c16 a16 f'16 e16 f16 c16 a16
     f16 | % 26
     bes16 d16 c16 bes16 c16 bes16 a16 f16 g16 a16 bes16 d16 c16 bes16 a16
@@ -190,22 +187,12 @@ AOrganoMD =  \relative f'' {
     }
 
 AOrganoPed =  \relative f, {
-    \clef "bass" \key f \major \time 4/4 R1*3 | % 4
-    R1*3 | % 7
-    R1*3 R1*2 | % 12
-    R1*2 | % 14
-    R1*2 | % 16
-    R1*3 | % 19
-    R1*3 | % 22
-    R1*3 | % 25
-    R1*2 | % 27
-    R1*2 r2 r8 f8 f8 r8 \bar "||"
+    \clef "bass" \key f \major \time 4/4 R1*28
+    r2 r8 f8 f8 r8 \bar "||"
     }
 
 AOrganoMS =  \relative a' {
-    \clef "bass" \key f \major \time 4/4 R1*3 | % 4
-    R1*3 | % 7
-    R1*2 | % 9
+    \clef "bass" \key f \major \time 4/4 R1*8 | % 9
     \clef "treble" r2 r8 a16 g16 a8 r8 | \barNumberCheck #10
     \clef "bass" r2 r8 c,,16 bes16 c8 r8 | % 11
     r2 r8 bes'16 a16 bes8 r8 | % 12
@@ -214,11 +201,7 @@ AOrganoMS =  \relative a' {
     es8 es,8 f8 f'8 c8 c,8 r8 d'16 c16 | % 15
     bes8 bes'8 c8 c,8 g8 g'8 g,8 a8 | % 16
     bes8 bes'8 e,8 e,8 a8 a'8 r4 | % 17
-    R1*2 | % 19
-    R1*3 | % 22
-    R1*3 | % 25
-    R1*2 | % 27
-    R1 | % 28
+    R1*11 | % 28
     \clef "treble" r2 <bes' des ges>4.\mp r8 | % 29
     \clef "bass" r2 r8 <f, a d>16 <f a d>16 <f a d>8 r8 \bar "||"
     }
@@ -227,7 +210,7 @@ ASoprano =  \relative f' {
     \clef "treble" \key f \major \time 4/4 R1*3 | % 4
     R1*3 | % 7
     R1 | % 8
-    r2 r4 r8 f8 | % 9
+    r2 r4 r8 f8\f | % 9
     a4 bes4 c4 r8 c8 | \barNumberCheck #10
     d8 c16 d16 es16 d16 c16 bes16 c4 r8 c8 | % 11
     a4 g4 f4 r8 f8 | % 12
@@ -235,17 +218,17 @@ ASoprano =  \relative f' {
     es'8 es8 es8 d8 d8 c8 c4 | % 14
     bes4. a8 a8 g8 r4 | % 15
     d'8 d8 d8 c8 c8 b8 b4 | % 16
-    bes4. c8 bes8 a8 r4 | % 17
+    bes!4. c8 bes8 a8 r4 | % 17
     R1*2 | % 19
     R1*2 | % 21
-    d8 d8 d8 d8 d8 c8 c4 | % 22
+    d8\mf d8 d8 d8 d8 c8 c4 | % 22
     c4. bes8 bes8 a8 r4 | % 23
     a8 a8 a8 g8 g8 f8 f4 | % 24
-    f4. g8 f8 e8 r8 f8 | % 25
+    f4. g8 f8 e8 r8 f8\f | % 25
     a4 bes4 c4 r8 c8 | % 26
     d8 c16 d16 es16 d16 c16 bes16 c4 r8 c8 | % 27
-    a4 c4 f4 r8 f,8 | % 28
-    f8 es16 f16 g8 r8 r4 r8 bes8 | % 29
+    a4 c4 f4 r8 f,8\mp | % 28
+    f8 es16 f16 g8 r8 r4 r8 bes8\f | % 29
     bes8 a16 bes16 c16 d16 f16 d16 f4 r4 \bar "||"
     }
 
@@ -263,7 +246,7 @@ AMezzosoprano =  \relative f' {
     \clef "treble" \key f \major \time 4/4 R1*3 | % 4
     R1*3 | % 7
     R1 | % 8
-    r2 r4 r8 f8 | % 9
+    r2 r4 r8 f8\f | % 9
     g4 g4 a4 r8 c8 | \barNumberCheck #10
     c8 bes8 bes4 ~ bes8. a16 g8 g8 | % 11
     f4 f4 e8 d16 c16 d8 f8 | % 12
@@ -274,15 +257,15 @@ AMezzosoprano =  \relative f' {
     bes4. c8 bes8 a8 r4 | % 17
     R1*2 | % 19
     R1*2 | % 21
-    d8 d8 d8 d8 d8 c8 c4 | % 22
+    d8\mf d8 d8 d8 d8 c8 c4 | % 22
     c4. bes8 bes8 a8 r4 | % 23
     a8 a8 a8 g8 g8 f8 f4 | % 24
-    f4. g8 f8 e8 r8 f8 | % 25
+    f4. g8 f8 e8 r8 f8\f | % 25
     g4 g4 a4 r8 c8 | % 26
     c8 bes8 bes4 ~ bes8. a16 g8 g8 | % 27
-    f4 f4 c'8 bes16 a16 bes8 f8 | % 28
+    f4 f4 c'8 bes16 a16 bes8 f8\mp | % 28
     es4 f8 r8 r2 | % 29
-    f8 f8 bes8. bes16 c4 r4 \bar "||"
+    f8\f f8 bes8. bes16 c4 r4 \bar "||"
     }
 
 AMezzosopranoLyricsOne =  \lyricmode { Be -- a -- tus "vir," qui ti
@@ -298,7 +281,7 @@ AAlto =  \relative f' {
     \clef "treble" \key f \major \time 4/4 R1*3 | % 4
     R1*3 | % 7
     R1 | % 8
-    r2 r4 r8 f8 | % 9
+    r2 r4 r8 f8\f | % 9
     f4 f4 g4 r8 g8 | \barNumberCheck #10
     g8 c8 g8. g16 g4 r8 e8 | % 11
     d4 e4 d4 r8 d8 | % 12
@@ -309,15 +292,15 @@ AAlto =  \relative f' {
     d4. d8 d8 cis8 r4 | % 17
     R1*2 | % 19
     R1*2 | % 21
-    bes'8 bes8 bes8 bes8 bes4 a4 | % 22
+    bes'8\mf bes8 bes8 bes8 bes4 a4 | % 22
     a4. g8 g8 f8 r4 | % 23
     f8 f8 f8 es8 es8 d8 d8 c8 | % 24
-    bes4 des4 c8 c8 r8 f8 | % 25
+    bes4 des4 c8 c8 r8 f8\f | % 25
     f4 f4 g4 r8 g8 | % 26
     g8 c8 g8. g16 g4 r8 e8 | % 27
-    d4 e4 e8 d16 c16 d8 d8 | % 28
+    d4 e4 e8 d16 c16 d8 d8\mp | % 28
     es4 es8 r8 r2 | % 29
-    es8 es8 f8. f16 g4 r4 \bar "||"
+    es8\f es8 f8. f16 g4 r4 \bar "||"
     }
 
 AAltoLyricsOne =  \lyricmode { Be -- a -- tus "vir," qui
@@ -332,7 +315,7 @@ ATenore =  \relative c' {
     \clef "treble_8" \key f \major \time 4/4 R1*3 | % 4
     R1*3 | % 7
     R1 | % 8
-    r2 r4 r8 c8 | % 9
+    r2 r4 r8 c8\f | % 9
     c4 d4 e4 r8 f8 | \barNumberCheck #10
     f8 f8 f4. e16 d16 e8 c8 | % 11
     c4 c4 c8 bes16 a16 bes8 bes8 | % 12
@@ -343,22 +326,22 @@ ATenore =  \relative c' {
     f4 g4 g8 e8 r4 | % 17
     R1*2 | % 19
     R1*2 | % 21
-    f'4 r8 f8 f4 r8 f8 | % 22
+    f'4\mf r8 f8 f4 r8 f8 | % 22
     d4 r4 d4 r4 | % 23
     bes2 ~ bes4. a8 | % 24
-    g4 bes4 ~ bes8 bes8 r8 c8 | % 25
+    g4 bes4 ~ bes8 bes8 r8 c8\f | % 25
     c4 d4 e4 r8 f8 | % 26
     f8 f8 f4. e16 d16 e8 c8 | % 27
-    c4 g4 f4 r8 c'8 | % 28
+    c4 g4 f4 r8 c'8\mp | % 28
     bes4 bes8 r8 r2 | % 29
-    g8 g8 g8. g16 a4 r4 \bar "||"
+    g8\f g8 g8. g16 a4 r4 \bar "||"
     }
 
 ATenoreLyricsOne =  \lyricmode { Be -- a -- tus "vir," qui
     ti -- met Do -- mi -- \skip4 "num," be -- a -- tus "vir," \skip4
     \skip4 \skip4 qui ti -- "met," ti -- met Do -- \skip4 mi -- \skip4
     "num." In man -- da -- tis e -- jus vo -- \skip4 let ni -- "mis," vo
-    -- let ni -- "mis." In man -- da -- tis e jus vo -- let ni -- \skip4
+    -- let ni -- "mis." In man -- da -- tis e -- jus vo -- let ni -- \skip4
     "mis." Be -- a -- tus "vir," qui ti -- met Do -- mi -- \skip4 "num,"
     be -- a -- tus "vir," qui ti -- "met," ti -- met Do -- mi -- "num."
     }
@@ -366,7 +349,7 @@ ABasso =  \relative c {
     \clef "bass" \key f \major \time 4/4 R1*3 | % 4
     R1*3 | % 7
     R1 | % 8
-    r2 r4 r8 c8 | % 9
+    r2 r4 r8 c8\f | % 9
     f4 c4 f,4 r8 a'8 | \barNumberCheck #10
     bes8 a8 g8. f16 es16 d16 c16 bes16 c8 c8 | % 11
     d4 a4 bes4 r8 a8 | % 12
@@ -377,15 +360,15 @@ ABasso =  \relative c {
     bes4 e4 a,8 a8 r4 | % 17
     R1*2 | % 19
     R1*2 | % 21
-    bes'4 r8 bes8 f4 r8 f8 | % 22
+    bes'4\mf r8 bes8 f4 r8 f8 | % 22
     g4 r4 d4 r4 | % 23
     es2 bes4. c8 | % 24
-    des4 g,4 c8 c8 r8 c8 | % 25
+    des4 g,4 c8 c8 r8 c8\f | % 25
     f4 c4 f,4 r8 a'8 | % 26
     bes8 a8 g8. f16 es16 d16 c16 bes16 c8 c8 | % 27
-    d4 a4 bes4 r8 a8 | % 28
+    d4 a4 bes4 r8 a8\mp | % 28
     g4 g8 r8 r2 | % 29
-    des'8 des8 c8. c16 f,4 r4 \bar "||"
+    des'8\f des8 c8. c16 f,4 r4 \bar "||"
     }
 
 ABassoLyricsOne =  \lyricmode { Be -- a -- tus "vir," qui

@@ -11,9 +11,12 @@ JGlobal = {
 	s\breve*6
 	s2..*4^"accel."
 	\tempo "Vivace"
+	\set Staff.beatStructure = #'(2 2 3)
 	s2..*9
 	\tempo "Meno mosso"
+	\set Staff.beatStructure = #'(3 3 4)
 	s8*10*5
+	\set Staff.beatStructure = #'(3 2 2)
 }
 JFlauti =  \relative c'' {
     \clef "treble" \key c \major \time 12/8 | % 1
@@ -40,19 +43,19 @@ JFlauti =  \relative c'' {
 
 JOboeI =  \relative f' {
     \clef "treble" \key c \major \time 12/8 R1.*3 | % 4
-    \time 4/2  R1*2 | % 5
-    R1*2 | % 6
-    r4 f2 g4 as2. bes4 | % 7
+    \time 4/2  R1*4 | % 6
+	\voiceOne
+    r4 f2\mf g4 as2. bes4 | % 7
     as1 f1 | % 8
     e1 r1 | % 9
+	\oneVoice
     R1*2 | \barNumberCheck #10
     \time 7/8  R2.. | % 11
-    r8 b'4 a4 e8 dis8 ~ | % 12
+    r8 b'4\mp a4 e8 dis8 ~ | % 12
     dis8 e8 b'4 a4 e8 | % 13
     dis4 e8 b'4 a4 | % 14
     e4 r4 r4. | % 15
-    R2..*6 | % 21
-    R2..*2 | % 23
+    R2..*8 | % 23
     \time 10/8  R4*15 | % 26
     g8 a8 bes8 a8 g8 f8 e8 c8 g'8 r8 | % 27
     R4*5 | % 28
@@ -63,35 +66,30 @@ JOboeI =  \relative f' {
 
 JOboeII =  \relative c' {
     \clef "treble" \key c \major \time 12/8 s2*9 | % 4
-    \time 4/2  s1*2 s1*2 | % 6
+    \time 4/2  s1*4 | % 6
+	\voiceTwo
     r2 c4 d4 es2 f2 | % 7
     ges2.. f16 es16 f2 bes,2 | % 8
-    c1 r1 s1*2 | \barNumberCheck #10
-    \time 7/8  s8*21 s1*7 s4*7 | % 23
-    \time 10/8  s1*5 s4*5 | % 28
-    \time 7/8  s8*21 \bar "||"
+    c1 r1
     }
 
 JCornoInglese =  \relative g' {
     \transposition f \clef "treble" \key g \major \time 12/8 R1.*3 | % 4
-    \time 4/2  R1*2 | % 5
-    R1*2 | % 6
-    r2 g2. g4 f2 | % 7
+    \time 4/2  R1*4 | % 6
+    r2 g2.\mf g4 f2 | % 7
     g1 f4 e4 d4 c4 | % 8
     d1 r1 | % 9
     R1*2 | \barNumberCheck #10
-    \time 7/8  r2 r8 b'4 | % 11
+    \time 7/8  r2 r8 b'4\mp | % 11
     ais4 fis8 e4 fis8 b8 ~ | % 12
     b8 ais4 fis8 e4 fis8 | % 13
-    b4 ais8 ~ ais8 fis8 e4 | % 14
+    b4 ais4 fis8 e4 | % 14
     fis4 r4 r4. | % 15
-    R2..*6 | % 21
-    R2..*2 | % 23
+    R2..*8 | % 23
     \time 10/8  R4*10 | % 25
     c'8 d8 es8 d8 c8 b8 c8 f,8 c8 r8 | % 26
-    R4*5 | % 27
-    R4*5 | % 28
-    \time 7/8  f4 f8 g4 e4 | % 29
+    R4*10 | % 28
+    \time 7/8  f4\mf f8 g4 e4 | % 29
     d8 d2. ~ | \barNumberCheck #30
     d2.. \bar "||"
     }
@@ -118,17 +116,17 @@ JFagotti =  \relative f {
     }
 
 JTrombaI =  \relative d'' {
-    \transposition bes \clef "treble" \key d \major \time 12/8 R1.*2 | % 3
+    \transposition bes \clef "treble" \key d \major \time 12/8 R1.
+	\voiceOne
+    R1.\mp\cresc | % 3
     d8. d16 d8 d8. d16 d8 d8. d16 d8 d8. d16 d8 | % 4
-    \time 4/2  d2 r2 r1 | % 5
+    \time 4/2  d2\f r2 r1 | % 5
+	\oneVoice
     R1*10 | \barNumberCheck #10
-    \time 7/8  R2..*3 | % 13
-    R2..*8 | % 21
-    R2..*2 | % 23
+    \time 7/8  R2..*13 | % 23
     \time 10/8  R4*5 | % 24
     r2. d8. \p d16 d8 r8 | % 25
-    R4*10 | % 27
-    R4*5 | % 28
+    R4*15 | % 28
     \time 7/8  | % 28
     g4 \f g8 fis4 c4 | % 29
     d16 c16 d2. ~ | \barNumberCheck #30
@@ -137,32 +135,29 @@ JTrombaI =  \relative d'' {
 
 JTrombaII =  \relative a' {
     \transposition bes \clef "treble" \key d \major \time 12/8 s1. | % 2
+	\voiceTwo
     r2. a8. a16 a8 a4. ~ | % 3
     a8. a16 a8 a8. a16 a8 a8. a16 a8 a8. a16 a8 | % 4
-    \time 4/2  g2 r2 r1 s1*10 |
-    \barNumberCheck #10
-    \time 7/8  s8*21 s1*7 s4*7 | % 23
-    \time 10/8  s1*2 s1*3 \p s4*5 | % 28
-    \time 7/8  | % 28
-    s8*21 \f \bar "||"
+    \time 4/2  g2 r2 r1
     }
 
 JCornoI =  \relative a' {
     \transposition f \clef "treble" \key g \major \time 12/8 R1. | % 2
-    a8. a16 a8 a4. ~ a2. ~ | % 3
+	\voiceOne
+    a8.\mp\cresc a16 a8 a4. ~ a2. ~ | % 3
     a8. a16 a8 a8. a16 a8 a8. a16 a8 a8. a16 a8 | % 4
-    \time 4/2  c2 r2 r1 | % 5
+    \time 4/2  c2\f r2 r1 | % 5
+	\oneVoice
     R1*6 | % 8
-    r2 b'2. a4 fis2 | % 9
+	\voiceOne
+    r2 b'2.\mf^"cantabile" a4 fis2 | % 9
     e2 fis2 g4 fis4 e4 d4 | \barNumberCheck #10
+    \oneVoice
     \time 7/8  e2. r8 | % 11
-    R2..*2 | % 13
-    R2..*8 | % 21
-    R2..*2 | % 23
+    R2..*12 | % 23
     \time 10/8  R4*5 | % 24
     a,8. \p a16 a8 <a d>8. <a d>16 <a d>8 <a d>4 <a d>8 r8 | % 25
-    R4*10 | % 27
-    R4*5 | % 28
+    R4*15 | % 28
     \time 7/8  | % 28
     f4 \f f8 g4 e4 | % 29
     d8 d2. ~ | \barNumberCheck #30
@@ -171,56 +166,47 @@ JCornoI =  \relative a' {
 
 JCornoII =  \relative e' {
     \transposition f \clef "treble" \key g \major \time 12/8 s1. | % 2
-    e4. \rest f8. f16 f8 f2. ~ | % 3
+	\voiceTwo
+    r4. f8. f16 f8 f2. ~ | % 3
     f8. f16 f8 f8. f16 f8 f8. f16 f8 f8. f16 f8 | % 4
     \time 4/2  g2 r2 r1 s1*6 | % 8
     r1 b2 cis2 | % 9
     d4 cis4 b4 a4 b1 | \barNumberCheck #10
-    \time 7/8  R2.. s4*7 s1*7 s4*7 | % 23
-    \time 10/8  s4*5 | % 24
-    s4*15 \p s4*5 | % 28
-    \time 7/8  | % 28
-    s8*21 \f \bar "||"
     }
 
 JTromboneI =  \relative c' {
-    \clef "bass" \key c \major \time 12/8 r2. c4. ~ c4 c16 c16 | % 2
-    c,2. r4. f8. f16 f8 | % 3
+    \clef "bass" \key c \major \time 12/8
+    \voiceOne
+    r2. c4. ~ c4 c16 c16 | % 2
+    c,2.\mp\cresc r4. f8. f16 f8 | % 3
     f8. f16 f8 f8. f16 f8 f8. f16 f8 f8. f16 f8 | % 4
-    \time 4/2  f2 r2 r1 | % 5
+    \time 4/2  f2\f r2 r1 | % 5
+	\oneVoice
     R1*10 | \barNumberCheck #10
-    \time 7/8  R2..*3 | % 13
-    R2..*8 | % 21
-    R2..*2 | % 23
-    \time 10/8  R4*20 | % 27
-    R4*5 | % 28
-    \time 7/8  d4 d8 g,4 g4 | % 29
+    \time 7/8  R2..*13 | % 23
+    \time 10/8  R4*25 | % 28
+    \time 7/8  d4\mf d8 g,4 g4 | % 29
     c8 c2 g'4 | \barNumberCheck #30
     c16 bes16 c2. \bar "||"
     }
 
 JTromboneII =  \relative c {
-    \clef "bass" \key c \major \time 12/8 c4. ~ c4 c16 c16 c2. ~ | % 2
+    \clef "bass" \key c \major \time 12/8
+    \voiceTwo
+    c4.\f ~ c4 c16 c16 c2. ~ | % 2
     c1. ~ | % 3
     c8. c16 c8 c8. c16 c8 c8. c16 c8 c8. c16 c8 | % 4
-    \time 4/2  f2 r2 r1 s1*10 |
-    \barNumberCheck #10
-    \time 7/8  s8*21 s1*7 s4*7 | % 23
-    \time 10/8  s1*5 s4*5 | % 28
-    \time 7/8  s8*21 \bar "||"
+    \time 4/2  f2 r2 r1
     }
 
 JTromboneBasso =  \relative c, {
     \clef "bass" \key c \major \time 12/8 R1.*2 | % 3
-    c1. | % 4
-    \time 4/2  f2 r2 r1 | % 5
+    c1.\mf\cresc | % 4
+    \time 4/2  f2\f r2 r1 | % 5
     R1*10 | \barNumberCheck #10
-    \time 7/8  R2..*3 | % 13
-    R2..*8 | % 21
-    R2..*2 | % 23
-    \time 10/8  R4*20 | % 27
-    R4*5 | % 28
-    \time 7/8  d'4 d8 g,4 g4 | % 29
+    \time 7/8  R2..*13 | % 23
+    \time 10/8  R4*25 | % 28
+    \time 7/8  d'4\mf d8 g,4 g4 | % 29
     c8 c2 g4 | \barNumberCheck #30
     c,8 c2. \bar "||"
     }
@@ -228,43 +214,38 @@ JTromboneBasso =  \relative c, {
 JTimpani =  \relative c {
     \clef "bass" \key c \major \time 12/8 c1. | % 2
     c2. c4. c4. | % 3
-    c1. :32 | % 4
-    \time 4/2  f2 r2 r1 | % 5
+    c1. :32\< | % 4
+    \time 4/2  f2\! r2 r1 | % 5
     R1*10 | \barNumberCheck #10
-    \time 7/8  R2..*3 | % 13
-    R2..*8 | % 21
-    R2..*2 | % 23
-    \time 10/8  R4*20 | % 27
-    R4*5 | % 28
+    \time 7/8  R2..*13 | % 23
+    \time 10/8  R4*25 | % 28
     \time 7/8  R2..*3 \bar "||"
     }
 
 JPiatti =  \relative e' {
+	\set RhythmicStaff.instrumentName = "Piatti"
     \clef "percussion" \stopStaff \override Staff.StaffSymbol
     #'line-count = #1 \startStaff \key c \major \time 12/8 R1.*3 | % 4
     \time 4/2  e2 r2 r1 | % 5
     R1*10 | \barNumberCheck #10
-    \time 7/8  R2..*3 | % 13
-    R2..*8 | % 21
-    R2..*2 | % 23
-    \time 10/8  R4*20 | % 27
-    R4*5 | % 28
+    \time 7/8  R2..*13 | % 23
+    \time 10/8  R4*25 | % 28
     \time 7/8  R2..*3 \bar "||"
     }
 
 JVioliniI =  \relative g' {
     \clef "treble" \key c \major \time 12/8 R1.*2 | % 3
-    g16\f f16 e16 f16 g16 a16 bes16 a16 g16 a16 bes16 c16 d16 c16 bes16 c16
+    g16\downbow\f f16 e16 f16 g16 a16 bes16 a16 g16 a16 bes16 c16 d16 c16 bes16 c16
     d16 e16 f16 e16 f16 g16 a16 bes16 | % 4
     \time 4/2  <c, c'>2 r2 r1 | % 5
     R1*6 | % 8
-    e,\breve \p ~ | % 9
-    e2 fis2 g2 fis2 | \barNumberCheck #10
-    \time 7/8  e2.. ~ | % 11
+    e,\breve\downbow \p ~ | % 9
+    e2 fis2\upbow g2 fis2 | \barNumberCheck #10
+    \time 7/8  e2..\downbow ~ | % 11
     e2.. ~ | % 12
-    e2.. ~ | % 13
+    e2..\upbow^"~" ~ | % 13
     e2.. | % 14
-    fis8 ^"cresc. poco a poco" fis8 r8 fis8 r8 fis8 r8 | % 15
+    fis8\downbow ^"cresc. poco a poco" fis8 r8 fis8 r8 fis8 r8 | % 15
     fis8 fis8 r8 fis8 r8 fis8 r8 | % 16
     as8 as8 r8 as8 r8 as8 r8 | % 17
     as8 as8 r8 as8 r8 as8 r8 | % 18
@@ -273,12 +254,12 @@ JVioliniI =  \relative g' {
     c8 c8 r8 c8 r8 c8 r8 | % 21
     c8 c8 r8 c8 r8 c8 r8 | % 22
     R2.. | % 23
-    \time 10/8 f4\mf f8 e4 c8 bes4 c4 | % 24
+    \time 10/8 f4\downbow\mf_"legg." f8\upbow e4 c8 bes4 c4 | % 24
     f4 f8 e4 c8 bes4 c4 | % 25
     f4 f8 e4 c8 bes4 c4 | % 26
     bes4 bes8 c4 a8 g4 g4 | % 27
     R4*5 | % 28
-    \time 7/8  f'4\f f8 e4 bes4 | % 29
+    \time 7/8  f'4\downbow\f f8 e4 bes4 | % 29
     c16 bes16 c2. ~ | \barNumberCheck #30
     c2.. \bar "||"
     }
@@ -427,7 +408,7 @@ JContrabbassi =  \relative c {
     g8 g8 r8 ges8 r8 ges8 r8 | % 22
     R2.. | % 23
     \time 10/8  f'4.\mf a4. g4 c,4 | % 24
-    c4 b8 c4 d8 es8[ d8 c8 bes8] | % 25
+    c4 b8 c4 d8 es8 d8 c8 bes8 | % 25
     as4. bes4. ges4 f4 | % 26
     g4. a4 bes8 c4 c4 | % 27
     R4*5 | % 28
@@ -437,18 +418,16 @@ JContrabbassi =  \relative c {
     }
 
 JOrganoMDSopra =  \relative c'' {
-    \clef "treble" \key c \major \time 12/8 R1.*3 | % 4
-    \time 4/2  c2. b4 c2 d4. c16 d16 | % 5
+    \clef "treble" \key c \major \time 12/8 \oneVoice R1.*3 | % 4
+    \time 4/2 \voiceOne c2. \f b4 c2 d4. c16 d16 | % 5
     es4 d4 c4 bes4 c1 ~ | % 6
     c2 r2 r1 | % 7
-    R1*6 | \barNumberCheck #10
-    \time 7/8  R2..*3 | % 13
-    R2..*8 | % 21
-    R2..*2 | % 23
+    \oneVoice R1*6 | \barNumberCheck #10
+    \time 7/8  R2..*13 | % 23
     \time 10/8  R4*20 | % 27
-    bes'4 \p bes8 c4 a8 g4 g8 r8 | % 28
+    \voiceOne bes'4 \p bes8 c4 a8 g4 g8 r8 | % 28
     \time 7/8  | % 28
-    f8 \f f,8 f'8 e8 f,8 bes8 f8 | % 29
+    f8 f,8 f'8 e8 f,8 bes8 f8 | % 29
     c'16 bes16 <d, f c'>2. ~ ~ ~ | \barNumberCheck #30
     <d f c'>8 ~ <c e c'>2. \bar "||"
     }
@@ -458,9 +437,7 @@ JOrganoPed =  \relative f {
     \time 4/2  f2. g4 f1 | % 5
     es2 g2 c,1 | % 6
     R1*8 | \barNumberCheck #10
-    \time 7/8  R2..*3 | % 13
-    R2..*8 | % 21
-    R2..*2 | % 23
+    \time 7/8  R2..*13 | % 23
     \time 10/8  R4*20 | % 27
     R4*5 | % 28
     \time 7/8  d4. g,4 g4 | % 29
@@ -473,24 +450,22 @@ JOrganoMDSotto =  \relative f' {
     \time 4/2  r4 f2 e4 f2 g2 ~ | % 5
     g4 f4 f1 e2 | % 6
     f2 r2 r1 s1*6 | \barNumberCheck #10
-    \time 7/8  s8*21 s1*7 s4*7 | % 23
+    \time 7/8  s2..*13 | % 23
     \time 10/8  s1*5 | % 27
-    <d' g>2. \p ~ d4. r8 | % 28
+    <d' g>2. ~ d4. r8 | % 28
     \time 7/8  | % 28
     s8*21 \f \bar "||"
     }
 
 JOrganoMSSopra =  \relative c' {
-    \clef "bass" \key c \major \time 12/8 R1.*3 | % 4
+    \clef "bass" \key c \major \time 12/8 \oneVoice R1.*3 | % 4
     \time 4/2  r2 c4 d4 c2. b4 | % 5
-    c2 d4. c16 d16 es4 d4 c4 bes4 | % 6
+    \voiceOne c2 d4. c16 d16 es4 d4 c4 bes4 | % 6
     a2 r2 r1 | % 7
-    R1*6 | \barNumberCheck #10
-    \time 7/8  R2..*3 | % 13
-    R2..*8 | % 21
-    R2..*2 | % 23
+    \oneVoice R1*6 | \barNumberCheck #10
+    \time 7/8  R2..*13 | % 23
     \time 10/8  R4*20 | % 27
-    <f' g bes>2. ~ ~ <e g bes c>4. r8 | % 28
+    \clef "treble" <f' g bes>2. ~ ~ <e g bes c>4. r8 | % 28
     \clef "bass" \time 7/8 bes4 bes8 c4 a4 | % 29
     g8 ~ <g bes>2. ~ ~ | \barNumberCheck #30
     <c, g' bes>8 ~ ~ <c g'>2. \bar "||"
@@ -501,7 +476,7 @@ JOrganoMSSotto =  \relative g {
     \time 4/2  s1*2 | % 5
     r4 g4 bes2 ~ bes4 a4 g2 | % 6
     f2 r2 r1 s1*6 | \barNumberCheck #10
-    \time 7/8  s8*21 s1*7 s4*7 | % 23
+    \time 7/8  s2..*13 | % 23
     \time 10/8  s1*5 s4*5 | % 28
     \clef "bass" \time 7/8 s8*21 \bar "||"
     }
@@ -816,7 +791,6 @@ J = \score {
                 >>
             >>
         \new RhythmicStaff <<
-            \set RhythmicStaff.instrumentName = "Piatti"
             \set RhythmicStaff.shortInstrumentName = "Pt."
             \context RhythmicStaff << 
                 \context Voice = "JPiatti" { \JPiatti }

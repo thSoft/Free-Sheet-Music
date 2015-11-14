@@ -3,6 +3,10 @@ FHeader = {
 	\mark "6. In memoria aeterna"
 	\Common
 }
+FTacet = {
+	\once \override Staff.TimeSignature.stencil = ##f
+	R1*44^"Tacet"
+}
 FGlobal = {
 	\FHeader
 	\tempo "L'istesso tempo"
@@ -24,74 +28,48 @@ FFlauto =  \relative a' {
 
 FOboe =  \relative e' {
     \clef "treble" \key c \major \time 4/4 R1 | % 2
-    r4 r8 e8 -. ->[ a8 -. e'8] -. r4 | % 3
-    R1*2 | % 5
-    R1*4 | % 9
-    R1*3 | % 12
-    R1*3 | % 15
-    R1*4 | % 19
-    R1 | \barNumberCheck #20
-    R1*2 | % 22
-    R1*3 | % 25
-    R1*4 | % 29
-    R1*3 | % 32
-    R1*3 | % 35
-    R1*3 | % 38
-    R1*3 | % 41
-    R1*4 \bar "||"
+    r4 r8 e8\mf -. ->[ a8 -. e'8] -. r4 | % 3
+    R1*42 \bar "||"
     }
 
 FCornoInglese =  \relative e' {
     \transposition f \clef "treble" \key g \major \time 4/4 R1 | % 2
-    e8 -. b'8 -. e8 -. r8 r2 | % 3
-    R1*2 | % 5
-    R1*4 | % 9
-    R1*3 | % 12
-    R1*3 | % 15
-    R1*4 | % 19
-    R1 | \barNumberCheck #20
-    R1*2 | % 22
-    R1*3 | % 25
-    R1*4 | % 29
-    R1*3 | % 32
-    R1*3 | % 35
-    R1*3 | % 38
-    R1*3 | % 41
-    R1*4 \bar "||"
+    e8 -.\mf b'8 -. e8 -. r8 r2 | % 3
+    R1*42 \bar "||"
     }
 
 FVioliniI =  \relative a'' {
-    \clef "treble" \key c \major \time 4/4 R1*2 | % 3
+    \clef "treble" \key c \major \time 4/4 R1*2^"con sord." | % 3
 	\once \override TextScript.outside-staff-priority = #-100
-    a8 \p^"con sord." a4 a4 a4 a8 | % 4
-    a8 a4 a4 a4 a8 | % 5
-    e8 e4 e4 e4 e8 | % 6
-    g8 g4 g4 g4 g8 | % 7
-    d8 d4 d4 d4 d8 | % 8
-    a8 a4 a4 a8 bes8 c8 | % 9
-    d8 d4 d4 d4 d8 | \barNumberCheck #10
-    c8 c4 c4 c4 c8 | % 11
-    b8 b4 b4 b4 b8 | % 12
-    c8 c4 c4 c4 c8 | % 13
-    d8 d4 d4 d4 d8 | % 14
-    c8 c4 c4 c4 c8 | % 15
-    des8 des4 des4 des4 des8 | % 16
-    es8 es4 es4 es4 es8 | % 17
-    e!8 e4 e4 e4 e8 | % 18
+    a8\downbow \p a4 a4 a4 a8( | % 4
+    a8) a4 a4 a4 a8( | % 5
+    e8) e4 e4 e4 e8( | % 6
+    g8) g4 g4 g4 g8( | % 7
+    d8) d4 d4 d4 d8( | % 8
+    a8) a4 a4 a8( bes8 c8) | % 9
+    d8 d4 d4 d4 d8( | \barNumberCheck #10
+    c8) c4 c4 c4 c8( | % 11
+    b8) b4 b4 b4 b8( | % 12
+    c8) c4 c4 c4 c8( | % 13
+    d8) d4 d4 d4 d8( | % 14
+    c8) c4 c4 c4 c8( | % 15
+    des8) des4 des4 des4 des8( | % 16
+    es8) es4 es4 es4 es8( | % 17
+    e!8) e4 e4 e4 e8\upbow | % 18
     e1 | % 19
-    r4 f,16 \mf\< e16 f16 g16 as8 \! r8 r4 | \barNumberCheck #20
-    r4 b16 ais16 b16 cis16 d8 r8 f16 e16 f16 g16 | % 21
-    e16 f16 e16 d16 cis8 cis16[\> d16 cis16 b16] ais8 r4\! | % 22
+    r4 f,16\downbow \mf\< e16 f16 g16 as8 \! r8 r4 | \barNumberCheck #20
+    r4 b16\downbow ais16 b16 cis16 d8 r8 f16\downbow e16 f16 g16 | % 21
+    e16 f16 e16 d16 cis8 cis16[\downbow\> d16 cis16 b16] ais8 r4\! | % 22
     R1*2 | % 24
-    <e' \tweak #'style #'mi a>1\p | % 25
+    <e' \tweak #'style #'mi a>1\p\downbow | % 25
     R1*19 | % 44
-    <c \tweak #'style #'mi f>1 ^\fermata \bar "||"
+    <c \tweak #'style #'mi f>1\downbow ^\fermata \bar "||"
     }
 
 FVioliniII =  \relative a' {
-    \clef "treble" \key c \major \time 4/4 R1*3 | % 4
+    \clef "treble" \key c \major \time 4/4 R1*3^"con sord." | % 4
 	\once \override TextScript.outside-staff-priority = #-100
-    a8 \p^"con sord." a4 a4 a4 a8 | % 5
+    a8 \p a4 a4 a4 a8 | % 5
     b8 b4 b4 b4 b8 | % 6
     d8 d4 d4 d4 d8 | % 7
     a8 a4 a4 a4 a8 | % 8
@@ -135,9 +113,9 @@ FVioliniII =  \relative a' {
     }
 
 FVioliniIII =  \relative a' {
-    \clef "treble" \key c \major \time 4/4 R1*4 | % 5
+    \clef "treble" \key c \major \time 4/4 R1*4^"con sord." | % 5
 	\once \override TextScript.outside-staff-priority = #-100
-    a8 \p^"con sord." a4 a4 a4 a8 | % 6
+    a8 \p a4 a4 a4 a8 | % 6
     a8 a4 a4 a4 a8 | % 7
     f8 f4 f4 f4 f8 | % 8
     d4 es4 f4 es4 | % 9
@@ -181,8 +159,8 @@ FVioliniIII =  \relative a' {
 
 FVioleI =  \relative a {
     \clef "alto" \key c \major \time 4/4 r2 a8\p ^"pizz." e'8 a8 r8 | % 2
-    R1*3 | % 5
-    e8 ^"arco" ^"con sord." e4 e4 e4 e8 | % 6
+    R1*3^"con sord."  | % 5
+    e8 ^"arco" e4 e4 e4 e8 | % 6
     e8 e4 e4 e4 e8 | % 7
     c8 c4 c4 c4 c8 | % 8
     c8 c4 c4 c4 c8 | % 9
@@ -226,8 +204,8 @@ FVioleI =  \relative a {
 
 FVioleII =  \relative a {
     \clef "alto" \key c \major \time 4/4 r2 a8\p ^"pizz." e'8 a8 r8 | % 2
-    R1*3 | % 5
-    e4 ^"arco" \p^"con sord." d4 cis4 d4 | % 6
+    R1*3^"con sord." | % 5
+    e4 ^"arco" \p d4 cis4 d4 | % 6
     e4 d4 c4 b4 | % 7
     a4 b4 c4 b4 | % 8
     a4 bes4 c4 bes4 | % 9
@@ -272,8 +250,8 @@ FVioleII =  \relative a {
 FVioloncelliI =  \relative a, {
     \clef "bass" \key c \major \time 4/4 | % 1
     a8 \p^"pizz." e'8 a8 r8 r2 | % 2
-    R1*3 | % 5
-    cis4 ^"arco"^"con sord." \p b4 a4 b4 | % 6
+    R1*3^"con sord." | % 5
+    cis4 ^"arco" \p b4 a4 b4 | % 6
     c4 b4 a4 g4 | % 7
     f4 g4 a4 g4 | % 8
     f4 g4 a4 g4 | % 9
@@ -318,8 +296,8 @@ FVioloncelliI =  \relative a, {
 FVioloncelliII =  \relative a, {
     \clef "bass" \key c \major \time 4/4 | % 1
     a8 \p^"pizz." e'8 a8 r8 r2 | % 2
-    R1*3 | % 5
-    cis4 ^"arco"^"con sord." \p b4 a4 b4 | % 6
+    R1*3^"con sord." | % 5
+    cis4 ^"arco" \p b4 a4 b4 | % 6
     c4 b4 a4 g4 | % 7
     f4 g4 a4 g4 | % 8
     f4 g4 a4 g4 | % 9

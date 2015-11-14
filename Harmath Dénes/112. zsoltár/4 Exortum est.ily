@@ -57,8 +57,7 @@ DFlautoII =  \relative cis'' {
     }
 
 DFagotto =  \relative d, {
-    \clef "bass" \key c \major \time 3/4 R2.*6 | % 7
-    R2.*2 | % 9
+    \clef "bass" \key c \major \time 3/4 R2.*8 | % 9
     \key bes \major d2. | \barNumberCheck #10
     c2 d4 | % 11
     f2. | % 12
@@ -78,41 +77,34 @@ DFagotto =  \relative d, {
     }
 
 DTimpani =  \relative g, {
-    \clef "bass" \key c \major \time 3/4 R2.*6 | % 7
-    R2.*9 | % 16
-    R2.*10 | % 26
-    R2.*6 | % 32
-    R2.*5 | % 37
-    \key c \major \time 6/8 R2.*2 | % 39
-    R2.*5 | % 44
-    R2.*2 | % 46
+    \clef "bass" \key c \major \time 3/4 R2.*45 | % 46
     r4. r8. g8. \< :16 \bar "||"
-    \time 4/4  d'4 \! \once \override TupletBracket #'stencil = ##f
+    \time 4/4  d'4 \!
     \times 2/3  {
         d8 d8 d8 }
-    d4 \once \override TupletBracket #'stencil = ##f
+    d4
     \times 2/3  {
         d8 d8 d8 }
     | % 48
-    d4 \once \override TupletBracket #'stencil = ##f
+    d4
     \times 2/3  {
         d8 d8 d8 }
     d8 d8 d8 d8 | % 49
-    g,4 \once \override TupletBracket #'stencil = ##f
+    g,4
     \times 2/3  {
         g8 g8 g8 }
-    g4 \once \override TupletBracket #'stencil = ##f
+    g4
     \times 2/3  {
         g8 g8 g8 }
     | \barNumberCheck #50
-    g4 \once \override TupletBracket #'stencil = ##f
+    g4
     \times 2/3  {
         g8 g8 g8 }
     g8 g8 g8 g8 | % 51
-    d'4 \once \override TupletBracket #'stencil = ##f
+    d'4
     \times 2/3  {
         d8 d8 d8 }
-    d4 \once \override TupletBracket #'stencil = ##f
+    d4
     \times 2/3  {
         d8 d8 d8 }
     | % 52
@@ -123,7 +115,7 @@ DTimpani =  \relative g, {
 
 DVioliniI =  \relative a {
     \clef "treble" \key c \major \time 3/4 | % 1
-    a2. \p ~ | % 2
+    a2.\downbow \p ~ | % 2
     a2. | % 3
     b2. ~ | % 4
     b2. | % 5
@@ -132,25 +124,25 @@ DVioliniI =  \relative a {
     b2. ~ | % 8
     b2. | % 9
     \key bes \major R2.*5 | % 14
-    r4 r4 es''4 \mf | % 15
+    r4 r4 es''4\upbow \mf | % 15
     d2 \> r4 \! | % 16
     R2.*5 | % 21
-    r4 c,4\mf g'4 ~ | % 22
-    g4 f4 es4 ~ | % 23
+    r4 c,4\upbow\mf g'4 ~ | % 22
+    g4 f4\downbow es4 ~ | % 23
     es4 d4 c4 | % 24
     b2. | % 25
     c2. | % 26
-    r8 g'8 f8 es8 d8 c8 | % 27
+    r8 g'8\upbow_"ten. e leg." f8 es8 d8 c8 | % 27
     bes2. | % 28
-    r8 es8 des8 ces8 bes8 as8 | % 29
+    r8 es8\upbow des8 ces8 bes8 as8 | % 29
     bes2. | \barNumberCheck #30
-    r8 g8 c8 bes8 c8 a8 | % 31
+    r8 g8\upbow c8 bes8 c8 a8 | % 31
     bes2. ~ | % 32
     bes4 a4 r4 | % 33
     R2.*4 | % 37
     \key c \major \time 6/8 R2.*6 | % 43
-    c2.\p | % 44
-    cis2. | % 45
+    c2.\downbow(\p | % 44
+    cis2.) | % 45
     d2. | % 46
     bes2. \bar "||"
     \time 4/4  R1*8 \bar "|."
@@ -315,24 +307,22 @@ DContrabbassi =  \relative d {
     }
 
 DOrganoMDSopra =  \relative d' {
-    \clef "treble" \key c \major \time 3/4 \oneVoice r4 r4 d8 e8 | % 2
+    \clef "treble" \key c \major \time 3/4 \oneVoice r4\mf r4 d8 e8 | % 2
     g8 a8 d8 g8 a8 b8 | % 3
     c8 b8 g8 d8 c8 b8 | % 4
     g8 d8 r4 r4 | % 5
     r4 r4 as'8 bes8 | % 6
     f'8 as8 d8 c8 bes8 f8 | % 7
-    g8 d8 e8 f8 e8 d8 ~ d2. _~ | % 9
+    g8 d8 e8 f8 e8 d8 ~ d2.\> _~ | % 9
     \key bes \major | % 9
-    <d a' d>2. ~ ~ ~ | \barNumberCheck #10
+    <d a' d>2.\p ~ ~ ~ | \barNumberCheck #10
     <d a' d>2. ~ ~ ~ | % 11
     <d a' d>2. ~ ~ ~ | % 12
     <d a' d>2. ~ ~ ~ | % 13
     <d a' d>2. ~ ~ ~ | % 14
     <d a' d>2. ~ ~ ~ | % 15
     <d a' d>4 r4 r4 | % 16
-    R2.*10 | % 26
-    R2.*6 | % 32
-    R2.*5 | % 37
+    R2.*21 | % 37
     \key c \major \time 6/8 | % 37
     d16^"tutti tenuti" _"de niente" \< g8 a8 g16 d16 g8 a8 g16 | % 38
     d16 g8 a8 g16 d16 g8 a8 g16 | % 39
@@ -345,15 +335,15 @@ DOrganoMDSopra =  \relative d' {
     d16 g8 a8 g16 d16 g8 a8 g16 | % 46
     d16 g8 a8 g16 d16 g8 a8 g16 \bar "||"
     \time 4/4  | % 47
-    <a, d e fis>8 \ff <b e fis gis>8 <a d e fis>4 ~ ~ ~ ~ <a d e fis>8
+    <a, d e fis>8 \f <b e fis gis>8 <a d e fis>4 ~ ~ ~ ~ <a d e fis>8
     <b e fis gis>8 <a d e fis>4 ~ ~ ~ ~ | % 48
     <a d e fis>8 <b e fis gis>8 <a d e fis>4 ~ ~ ~ ~ <a d e fis>8 <b e
         fis gis>8 <a d e fis>8 <b e fis gis>8 | % 49
-    <c es f a>8 <d f g b>8 <c es f a>4 ~ ~ ~ ~ <c es f a>8 <d f g b>8 <c
+    <c es f! a>8 <d f g b>8 <c es f a>4 ~ ~ ~ ~ <c es f a>8 <d f g b>8 <c
         es f a>4 ~ ~ ~ ~ | \barNumberCheck #50
     <c es f a>8 <d f g b>8 <c es f a>4 ~ ~ ~ ~ <c es f a>8 <d f g b>8 <c
         es f a>8 <d f g b>8 | % 51
-    <b c e g>8 <a c e>8 <b c e g>4 ~ ~ ~ ~ <b c e g>8 <a c e>8 <b c e g>4
+    <b c e! g>8 <a c e>8 <b c e g>4 ~ ~ ~ ~ <b c e g>8 <a c e>8 <b c e g>4
     ~ ~ ~ ~ | % 52
     <b c e g>8 <a c e>8 <b c e g>4 ~ ~ ~ ~ <b c e g>8 <a c e>8 <b c e g>8
     <a c e>8 | % 53
@@ -364,7 +354,7 @@ DOrganoMDSopra =  \relative d' {
 DOrganoMDMezzoSopra =  \relative a {
     \clef "treble" \key c \major \time 3/4 s2*9 s1. | % 9
     \key bes \major | % 9
-    s4*21 \p s2*15 s2*9 s4*15 | % 37
+    s2.*28 | % 37
     \key c \major \time 6/8 | % 37
     s2. | % 38
     s2. \! | % 39
@@ -378,7 +368,7 @@ DOrganoMDMezzoSotto =  \relative g'' {
     \clef "treble" \key c \major \time 3/4 s2*9 | % 7
     \voiceOne g2. ~ g2. | % 9
     \key bes \major | % 9
-    s4*21 s2*15 s2*9 s4*15 | % 37
+    s2.*28 | % 37
     \key c \major \time 6/8 | % 37
     s2. | % 38
     s2. \! | % 39
@@ -396,12 +386,10 @@ DOrganoMSSopra =  \relative d, {
     d,8 f'8 bes8 f'8 r4 | % 6
     R2. | % 7
     R2. | % 8
-    \clef "treble_8" \voiceTwo g8 f8 e8 d8 f8 g8 | % 9
+    \clef "treble" \voiceTwo g8 f8 e8 d8 f8 g8 | % 9
     \key bes \major \oneVoice d4 r4 r4 | \barNumberCheck #10
     \oneVoice R2.*6 | % 16
-    R2.*10 | % 26
-    R2.*6 | % 32
-    R2.*5 | % 37
+    R2.*21 | % 37
     \key c \major \time 6/8 R2.*2 | % 39
     R2.*5 | % 44
     R2.*3 \bar "||"
@@ -409,21 +397,21 @@ DOrganoMSSopra =  \relative d, {
     ~ ~ ~ ~ <a d e fis>8 <b e fis gis>8 | % 48
     <a d e fis>4 ~ ~ ~ ~ <a d e fis>8 <b e fis gis>8 <a d e fis>4 ~ ~ ~
     ~ <a d e fis>8 <d e fis a>8 | % 49
-    <c es f a>8 r8 <c es f a>8 <d f g b>8 <c es f a>4 ~ ~ ~ ~ <c es f a>8
+    <c es f! a>8 r8 <c es f a>8 <d f g b>8 <c es f a>4 ~ ~ ~ ~ <c es f a>8
     <d f g b>8 | \barNumberCheck #50
     <c es f a>4 ~ ~ ~ ~ <c es f a>8 <d f g b>8 <c es f a>4 ~ ~ ~ ~ <c es
         f a>8 <a c es f>8 | % 51
-    <b c e g>8 r8 <b c e g>8 <a c e>8 <b c e g>4 ~ ~ ~ ~ <b c e g>8 <a c
+    <b c e! g>8 r8 <b c e g>8 <a c e>8 <b c e g>4 ~ ~ ~ ~ <b c e g>8 <a c
         e>8 | % 52
     <b c e g>4 ~ ~ ~ ~ <b c e g>8 <a c e>8 <b c e g>2 | % 53
-    g'2 \rest g4.\rest f8 | % 54
+    b'2 \rest a4.\rest f8 | % 54
     <g, b e>4. <g b e>8 ~ ~ ~ <g b e>2 ^\fermata \bar "|."
     }
 
 DOrganoMDSotto =  \relative c' {
     \clef "treble" \key c \major \time 3/4 s2*9 s1. | % 9
     \key bes \major | % 9
-    s4*21 s2*15 s2*9 s4*15 | % 37
+    s2.*28 | % 37
     \key c \major \time 6/8 | % 37
     s2. | % 38
     s2. \! | % 39
@@ -436,8 +424,7 @@ DOrganoMDSotto =  \relative c' {
 DOrganoMSMezzo =  \relative f, {
     \clef "bass" \key c \major \time 3/4 s2*9 s2. | % 8
     \clef "treble_8" s2. | % 9
-    \key bes \major s4*21 s2*15 s2*9 
-    s4*15 | % 37
+    \key bes \major s2.*28 | % 37
     \key c \major \time 6/8 s1. s4*15 s4*9 \bar
     "||"
     \time 4/4  s1 s1*3 s1*2 | % 53
@@ -446,9 +433,8 @@ DOrganoMSMezzo =  \relative f, {
 
 DOrganoMSSotto =  \relative g' {
     \clef "bass" \key c \major \time 3/4 s2*9 s2. | % 8
-    \clef "treble_8" g2. | % 9
-    \key bes \major s4*21 s2*15 s2*9 
-    s4*15 | % 37
+    \clef "treble" g2. | % 9
+    \key bes \major s2.*28 | % 37
     \key c \major \time 6/8 s1. s4*15 s4*9 \bar
     "||"
     \time 4/4  s1 s1*3 s1*2 | % 53
@@ -461,12 +447,8 @@ DOrganoPed =  \relative d, {
     \key bes \major R2.*6 | % 15
     d2. ~ | % 16
     d2. | % 17
-    R2.*9 | % 26
-    R2.*6 | % 32
-    R2.*5 | % 37
-    \key c \major \time 6/8 R2.*2 | % 39
-    R2.*5 | % 44
-    R2.*3 \bar "||"
+    R2.*20 | % 37
+    \key c \major \time 6/8 R2.*10 \bar "||"
     \time 4/4  d'4. a8 cis4. a8 | % 48
     b4. fis8 a4. fis8 | % 49
     g4. c8 a4. c8 | \barNumberCheck #50

@@ -1,7 +1,7 @@
 \include "Common.ily"
 
 \header {
-	instrument = "Oboi"
+	instrument = "Fagotti"
 }
 
 \score {
@@ -13,42 +13,41 @@
 \score {<<
 	\new Staff <<
 		\BGlobal
-		\BOboeI
+		\BFagottoI
 	>>
 	\new Staff <<
 		\BGlobal
-		\BOboeII
+		\BFagottoII
 	>>
 >>}
 \score {
 	\new Staff <<
 		\CGlobal
-		\COboe
+		\CFagotto
 	>>	
 }
 \score {
 	\new Staff <<
-		\DHeader
-		\DTacet
+		\DGlobal
+		\DFagotto
 	>>	
 }
 \score {
 	\new Staff <<
 		\EGlobal
-		\EOboe
+		\EFagotto
 	>>	
 }
 \score {
 	\new Staff <<
-		\FGlobal
-		\FOboe
+		\FHeader
+		\FTacet
 	>>	
 }
 \score {
 	\new Staff <<
 		\GGlobal
-		\new Voice \GOboeI
-		\new Voice \GOboeII
+		\GFagotto
 	>>	
 }
 \score {<<
@@ -56,30 +55,29 @@
 		\HHeader
 		\HTempi
 		\HTimes
-		\HOboeI
+		\HFagottoI
 	>>
 	\new Staff <<
 		\HTimes
-		\HOboeII
+		\HFagottoII
 	>>
 >>}
 \score {
 	\new Staff <<
 		\IGlobal
-		\IOboe
+		\IFagotto
 	>>	
 }
 \score {
 	\new Staff <<
-		\JGlobal
-		\new Voice \JOboeI
-		\new Voice \JOboeII
+		\JHeader
+		\JFagotti
 	>>	
 }
 \score {
 	\new Staff <<
 		\KGlobal
-		\new Voice \KOboeI
-		\new Voice \KOboeII
+		\new Voice \KFagottoI
+		\new Voice \KFagottoII
 	>>	
 }

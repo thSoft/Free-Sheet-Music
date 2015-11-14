@@ -31,7 +31,7 @@ HTempi = {
 	s\breve*2	
 }
 HTimes = {
-	\key c \major \time 4/2
+	\time 4/2
 	s\breve*7
 	\bar "||"
 	\override Staff.TimeSignature.stencil = ##f
@@ -126,7 +126,7 @@ HOboeI =  \relative f' {
     \clef "treble" \key c \major \time 4/2 R1*6
     | % 4
     R1*4 | % 6
-    r1 f2 f4 g4 | % 7
+    r1 f2\mf f4 g4 | % 7
     a4 e4 a1. | % 8
     \time 12/8  R1. | % 9
     \time 11/8  R8*11 | \barNumberCheck #10
@@ -157,7 +157,7 @@ HOboeI =  \relative f' {
 
 HOboeII =  \relative d' {
     \clef "treble" \key c \major \time 4/2 R1*2 | % 2
-    d2 e4 fis4 g4 d4 g2 ~ | % 3
+    d2\mf e4 fis4 g4 d4 g2 ~ | % 3
     g4 fis4 g4 a2 g8 fis8 g2 ~ | % 4
     g4 fis8 e8 fis2. d8 e8 fis4 g8 fis8 | % 5
     e\breve | % 6
@@ -189,8 +189,8 @@ HOboeII =  \relative d' {
 
 HCornoInglese =  \relative d' {
     \transposition f \clef "treble" \key g \major
-    \time 4/2 d2 e4 fis4 g4 d4 g2 ~ | % 2
-    g4 fis4 d4 e4 fis2 fis4 gis4 | % 3
+    \time 4/2 d2\mf e4 fis4 g4 d4 g2 ~ | % 2
+    g4 fis4 d4 e4 \breathe fis2 fis4 gis4 | % 3
     a4 e4 g2 fis2. e8 fis8 | % 4
     g1 a1 ~ | % 5
     a2 g2 fis2 g4 a4 | % 6
