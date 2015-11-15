@@ -17,10 +17,13 @@
 	>>	
 }
 \score {
-	\new Staff <<
-		\CGlobal
-		\CVioliniII
-	>>	
+	\new StaffGroup <<
+		\new Staff <<
+			\CGlobal
+			\CVioliniII
+		>>
+		\new Staff \CVioliniIII
+	>>
 }
 \score {
 	\new Staff <<
@@ -35,10 +38,13 @@
 	>>	
 }
 \score {
-	\new Staff <<
-		\FGlobal
-		\FVioliniII
-	>>	
+	\new StaffGroup <<
+		\new Staff <<
+			\FGlobal
+			\FVioliniII
+		>>
+		\new Staff \FVioliniIII
+	>>
 }
 \score {
 	\new Staff <<

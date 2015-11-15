@@ -841,7 +841,14 @@ K = \score {
                     \context Voice = "KTromboni" { \KTromboni }
                     >>
                 >>
-            
+            >>
+            \new Staff <<
+                \set Staff.instrumentName = "Trombone basso"
+                \set Staff.shortInstrumentName = "Trb. b."
+                \context Staff << 
+                    \context Voice = "KTromboneBasso" { \KTromboneBasso }
+                    >>
+                >>
             >>
         \new StaffGroup <<
             \new Staff <<

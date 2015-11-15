@@ -121,7 +121,7 @@ FVioliniIII =  \relative a' {
     d4 es4 f4 es4 | % 9
     es8 es4 es4 es4 es8 | \barNumberCheck #10
     es8 es4 es4 es4 es8 | % 11
-    e8 e4 e4 e4 e8 | % 12
+    e!8 e4 e4 e4 e8 | % 12
     e8 e4 e4 e4 e8 | % 13
     g8 g4 g4 g4 g8 | % 14
     es8 es4 es4 es4 es8 | % 15

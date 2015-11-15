@@ -1,7 +1,7 @@
 \include "Common.ily"
 
 \header {
-	instrument = "Violoncelli II"
+	instrument = "Violoncelli"
 }
 
 \score {
@@ -35,9 +35,12 @@
 	>>	
 }
 \score {
-	\new Staff <<
-		\FGlobal
-		\FVioloncelliII
+	\new StaffGroup <<
+		\new Staff <<
+			\FGlobal
+			\FVioloncelliI
+		>>
+		\new Staff \FVioloncelliII
 	>>	
 }
 \score {
