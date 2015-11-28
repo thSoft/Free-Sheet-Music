@@ -53,12 +53,10 @@
 \score {<<
 	\new Staff <<
 		\HHeader
-		\HTempi
-		\HTimes
+		\HGlobal
 		\HFagottoI
 	>>
 	\new Staff <<
-		\HTimes
 		\HFagottoII
 	>>
 >>}

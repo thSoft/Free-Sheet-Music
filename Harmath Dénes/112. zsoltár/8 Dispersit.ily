@@ -8,56 +8,49 @@ HTacet = {
 	R1*33^"Tacet"
 	\bar "||"
 }
-
-HTempi = {
-	\tempo "Andante" 
-	s\breve*7
-	\tempo "In modo gregoriano"
-	s8*12
-	s8*11
+HGlobal = {
+	\HHeader
 	\tempo "Andante"
-	s\breve*5
-	\tempo "In modo gregoriano"
-	s8*12
-	s8*15
-	\tempo "Andante"
-	s\breve*7
-	\tempo "In modo gregoriano"
-	s8*8
-	s8*17  
-	\tempo "Andante"
-	s\breve*5
-	s1 s1^"poco rit."
-	s\breve*2	
-}
-HTimes = {
 	\time 4/2
 	s\breve*7
 	\bar "||"
-	\override Staff.TimeSignature.stencil = ##f
+	\tempo "In modo gregoriano"
+	\override Score.TimeSignature.stencil = ##f
 	\time 12/8  | % 8
 	s8*12
 	\time 11/8
 	s8*11
 	\bar "||"
+	\tempo "Andante"
+	\revert Score.TimeSignature.stencil
 	\time 4/2
 	s\breve*5
 	\bar "||"
+	\tempo "In modo gregoriano"
+	\override Score.TimeSignature.stencil = ##f
 	\time 12/8
 	s8*12
 	\time 15/8
 	s8*15
 	\bar "||"
+	\tempo "Andante"
+	\revert Score.TimeSignature.stencil
 	\time 4/2  | % 17
 	s\breve*7
 	\bar "||"
+	\tempo "In modo gregoriano"
+	\override Score.TimeSignature.stencil = ##f
 	\time 4/4  | % 24
 	s8*8
 	\time 17/8
 	s8*17  
 	\bar "||"
+	\tempo "Andante"
+	\revert Score.TimeSignature.stencil
 	\time 4/2  | % 26
-	s\breve*8
+	s\breve*5
+	s1 s1^"poco rit."
+	s\breve*2
 	\bar "||"
 }
 HFlautoI =  \relative e'' {
@@ -82,10 +75,10 @@ HFlautoI =  \relative e'' {
     R1 | % 25
     R8*17 | % 26
     r1 r4 c4 b4 a4 | % 27
-    g4 c4 g2 f2. g8 a8 | % 28
+    g4 c4 g2 f2. g8( a8) | % 28
     b4 g4 c1 b2 ~ | % 29
     b4 e,4 a2 ~ a4 gis4 a4 b4 | \barNumberCheck #30
-    c2. b8 c8 d2 e4 d4 | % 31
+    c2. b8( c8) d2 e4 d4 | % 31
     c1 ~ c4 b4 c4 d4 | % 32
     e4 b4 e1. ~ | % 33
     e\breve }
@@ -117,7 +110,7 @@ HFlautoII =  \relative a' {
     r1 a1 ~ | % 28
     a2 g2. a4 g4 f4 | % 29
     e1 d1 | \barNumberCheck #30
-    e4 fis8 gis8 a8 e8 a4 b1 ~ | % 31
+    e4 fis8( gis8) a8 e8 a4 b1 ~ | % 31
     b2 a4 gis4 a1 | % 32
     b\breve ~ | % 33
     b\breve }
@@ -133,7 +126,7 @@ HOboeI =  \relative f' {
     \time 4/2  R1*2 | % 11
     r1 e2 f4 g4 | % 12
     a4 e4 a4 f4 e4 f4 g2 ~ | % 13
-    g4 f8 e8 d2. e4 e2 | % 14
+    g4 f8( e8) d2. e4 e2 | % 14
     f\breve | % 15
     \time 12/8  R1. | % 16
     \time 15/8  R1... | % 17
@@ -158,8 +151,8 @@ HOboeI =  \relative f' {
 HOboeII =  \relative d' {
     \clef "treble" \key c \major \time 4/2 R1*2 | % 2
     d2\mf e4 fis4 g4 d4 g2 ~ | % 3
-    g4 fis4 g4 a2 g8 fis8 g2 ~ | % 4
-    g4 fis8 e8 fis2. d8 e8 fis4 g8 fis8 | % 5
+    g4 fis4 g4 a2 g8( fis8) g2 ~ | % 4
+    g4 fis8( e8) fis2. d8( e8) fis4 g8( fis8) | % 5
     e\breve | % 6
     a1 ~ a2. f4 | % 7
     e\breve | % 8
@@ -191,10 +184,10 @@ HCornoInglese =  \relative d' {
     \transposition f \clef "treble" \key g \major
     \time 4/2 d2\mf e4 fis4 g4 d4 g2 ~ | % 2
     g4 fis4 d4 e4 \breathe fis2 fis4 gis4 | % 3
-    a4 e4 g2 fis2. e8 fis8 | % 4
+    a4 e4 g2 fis2. e8( fis8) | % 4
     g1 a1 ~ | % 5
     a2 g2 fis2 g4 a4 | % 6
-    g4 a4 b2 a2. g8 fis8 | % 7
+    g4 a4 b2 a2. g8( fis8) | % 7
     e\breve | % 8
     \time 12/8  R1. | % 9
     \time 11/8  R8*11 | \barNumberCheck #10
@@ -226,7 +219,7 @@ HCornoInglese =  \relative d' {
 HFagottoI =  \relative d {
     \clef "bass" \key c \major \time 4/2 R1*4 | % 3
     d2 e4 fis4 g4 d4 g2 | % 4
-    a2. g8 a8 b1 ~ | % 5
+    a2. g8( a8) b1 ~ | % 5
     b4 a4 g4 fis4 g4 fis4 e2 ~ | % 6
     e2 a1 f4 d4 | % 7
     e\breve | % 8
@@ -249,7 +242,7 @@ HFagottoI =  \relative d {
     \time 4/4  R1 | % 25
     \time 17/8  R8*17 | % 26
     \time 4/2  R1*4 | % 28
-    r1 d4 e8 f8 g8 d8 g4 ~ | % 29
+    r1 d4 e8( f8) g8 d8 g4 ~ | % 29
     g4 gis4 a2 b4 e,4 fis4 gis4 | \barNumberCheck #30
     a1 e1 ~ | % 31
     e\breve | % 32
@@ -278,8 +271,8 @@ HFagottoII =  \relative c {
     \time 4/4  R1 | % 25
     \time 17/8  R8*17 | % 26
     \time 4/2  r4 a4 b4 c4 d4 a4 d2 | % 27
-    e2. d8 e8 f2. e8 f8 | % 28
-    g4 f8 e8 d8 c8 b8 a8 g1 | % 29
+    e2. d8( e8) f2. e8( f8) | % 28
+    g4 f8( e8) d8( c8) b8( a8) g1 | % 29
     c1 b1 ~ | \barNumberCheck #30
     b4 e,4 a2 ~ a4 gis4 fis4 gis4 | % 31
     a\breve | % 32
@@ -298,8 +291,8 @@ HSopranoSolo =  \relative b' {
     \time 15/8  R1... | % 17
     \time 4/2  R1*8 | % 21
     R1*6 | % 24
-    \time 4/4  b8 g8 b8 d8 -- c8 b8 b4 | % 25
-    \time 17/8  b8 d8 e8 g8 e8 g4 e8 e8 d8 e8 fis8 e8 d8 e8 e4 ~ | % 26
+    \time 4/4  b8[ g8 b8] d8[ -- c8 b8] b4 | % 25
+    \time 17/8  b8[ d8 e8 g8 e8] g4 e8[ e8 d8] e8[ fis8 e8 d8 e8] e4 ~ | % 26
     \time 4/2  e8 r8 r4 r2 r1 | % 27
     R1*2 | % 28
     R1*6 | % 31
@@ -312,12 +305,12 @@ HAltoSolo =  \relative e' {
     \clef "treble" \key c \major \time 4/2 R1*6
     | % 4
     R1*8 | % 8
-    \time 12/8  e8 b'8 b4 a8 g8 a8 b8 c8 a8 a4 | % 9
-    \time 11/8  a8 g8 a8 b8 g8 a8 g8 f8 e8 e4 ~ | \barNumberCheck #10
+    \time 12/8  e8 b'8 b4 a8[ g8 a8 b8 c8 a8] a4 | % 9
+    \time 11/8  a8[ g8] a8[ b8 g8 a8 g8 f8 e8] e4 ~ | \barNumberCheck #10
     \time 4/2  e8 r1 r2 r4 r8 | % 11
     R1*8 | % 15
-    \time 12/8  a8 a8 -- d8 -- c8 b8 c8 d8 c8 b4 a4 | % 16
-    \time 15/8  a8 -- g8 e8 g4 a8 b8 c8 a8 b8 a8 g8 a8 a4 ~ | % 17
+    \time 12/8  a8[ a8 -- d8 -- c8 b8 c8 d8 c8] b4 a4 | % 16
+    \time 15/8  a8[ -- g8 e8] g4 a8[ b8 c8 a8] b8[ a8 g8 a8] a4 ~ | % 17
     \time 4/2  a8 r8 r4 r2 r1 | % 18
     R1*6 | % 21
     R1*6 | % 24
@@ -329,12 +322,12 @@ HAltoSolo =  \relative e' {
 
 HAltoSoloLyricsOne =  \lyricmode { Dis -- \skip4 per -- \skip4
     \skip4 \skip4 \skip4 \skip4 \skip4 "sit," de -- dit pau -- pe --
-    \skip4 \skip4 ri -- \skip4 \skip4 "bus," Jus -- ti -- \skip4 ti --
+    \skip4 \skip4 ri -- \skip4 \skip4 "bus." Jus -- ti -- \skip4 ti --
     \skip4 a \skip4 \skip4 e -- jus ma -- net in sae -- \skip4 \skip4 cu
     -- lum sae -- \skip4 cu -- \skip4 "li." }
 
 % The score definition
-H = \score {
+H = \score { \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
@@ -342,9 +335,8 @@ H = \score {
                 \set Staff.shortInstrumentName = "Fl. I"
                 \context Staff << 
 					\HHeader
-					\HTempi
-					\HTimes
-                    \context Voice = "HFlautoI" { \HFlautoI }
+					\HGlobal
+			                    \context Voice = "HFlautoI" { \HFlautoI }
                     >>
                 >>
             \new Staff <<
@@ -370,7 +362,7 @@ H = \score {
                 >>
             \new Staff <<
                 \set Staff.instrumentName = \markup { \center-column { \line {"Corno inglese"} \line {"in F"} } }
-                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Cor. ingl."} \line {"F"} } }
+                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Cor."} \line {"ingl."} \line {"F"} } }
                 \context Staff << 
                     \context Voice = "HCornoInglese" { \HCornoInglese }
                     >>
@@ -391,7 +383,7 @@ H = \score {
                 >>
             
             >>
-        \new StaffGroup <<
+        \new ChoirStaff <<
             \new Staff <<
                 \set Staff.instrumentName = \markup { \center-column { \line {"Soprano"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }

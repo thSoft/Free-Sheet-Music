@@ -60,7 +60,6 @@
 \score {
 	\new Staff <<
 		\IHeader
-		\ITimes
 		\ITacet
 	>>	
 }

@@ -49,13 +49,10 @@
 }
 \score {<<
 	\new Staff <<
-		\HHeader
-		\HTempi
-		\HTimes
+		\HGlobal
 		\HFlautoI
 	>>
 	\new Staff <<
-		\HTimes
 		\HFlautoII
 	>>
 >>}

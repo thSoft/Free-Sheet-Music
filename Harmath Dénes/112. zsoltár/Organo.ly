@@ -31,12 +31,12 @@
 	        \new PianoStaff <<
             \context Staff = "1" << 
             	\CGlobal
-                \context Voice = "COrganoMDSopra" { \voiceOne \COrganoMDSopra }
-                \context Voice = "COrganoMDSotto" { \voiceTwo \COrganoMDSotto }
-                \context Voice = "COrganoMDMezzo" { \voiceThree \COrganoMDMezzo }
+                \context Voice = "COrganoMDSopra" { \COrganoMDSopra }
+                \context Voice = "COrganoMDSotto" { \COrganoMDSotto }
+                \context Voice = "COrganoMDMezzo" { \COrganoMDMezzo }
                 >> \context Staff = "2" <<
-                \context Voice = "COrganoMSSopra" { \voiceOne \COrganoMSSopra }
-                \context Voice = "COrganoMSSotto" { \voiceTwo \COrganoMSSotto }
+                \context Voice = "COrganoMSSopra" { \COrganoMSSopra }
+                \context Voice = "COrganoMSSotto" { \COrganoMSSotto }
                 >> \context Staff = "3" <<
                 \context Voice = "COrganoPed" { \COrganoPed }
                 >>
@@ -46,14 +46,14 @@
 	        \new PianoStaff <<
             \context Staff = "1" <<
             	\DGlobal 
-                \context Voice = "DOrganoMDSopra" { \voiceOne \DOrganoMDSopra }
-                \context Voice = "DOrganoMDMezzoSopra" { \voiceTwo \DOrganoMDMezzoSopra }
-                \context Voice = "DOrganoMDMezzoSotto" { \voiceThree \DOrganoMDMezzoSotto }
-                \context Voice = "DOrganoMDSotto" { \voiceFour \DOrganoMDSotto }
+                \context Voice = "DOrganoMDSopra" { \DOrganoMDSopra }
+                \context Voice = "DOrganoMDMezzoSopra" { \DOrganoMDMezzoSopra }
+                \context Voice = "DOrganoMDMezzoSotto" { \DOrganoMDMezzoSotto }
+                \context Voice = "DOrganoMDSotto" { \DOrganoMDSotto }
                 >> \context Staff = "2" <<
-                \context Voice = "DOrganoMSSopra" { \voiceOne \DOrganoMSSopra }
-                \context Voice = "DOrganoMSMezzo" { \voiceTwo \DOrganoMSMezzo }
-                \context Voice = "DOrganoMSSotto" { \voiceThree \DOrganoMSSotto }
+                \context Voice = "DOrganoMSSopra" { \DOrganoMSSopra }
+                \context Voice = "DOrganoMSMezzo" { \DOrganoMSMezzo }
+                \context Voice = "DOrganoMSSotto" { \DOrganoMSSotto }
                 >> \context Staff = "3" <<
                 \context Voice = "DOrganoPed" { \DOrganoPed }
                 >>
@@ -63,8 +63,8 @@
 	        \new PianoStaff <<
             \context Staff = "1" <<
             	\EGlobal 
-                \context Voice = "EOrganoMDSopra" { \voiceOne \EOrganoMDSopra }
-                \context Voice = "EOrganoMDSotto" { \voiceTwo \EOrganoMDSotto }
+                \context Voice = "EOrganoMDSopra" { \EOrganoMDSopra }
+                \context Voice = "EOrganoMDSotto" { \EOrganoMDSotto }
                 >> \context Staff = "2" <<
                 \context Voice = "EOrganoMS" { \EOrganoMS }
                 >> \context Staff = "3" <<
@@ -82,12 +82,12 @@
 	        \new PianoStaff <<
             \context Staff = "1" <<
             	\GGlobal 
-                \context Voice = "GOrganoMDSopra" { \voiceOne \GOrganoMDSopra }
-                \context Voice = "GOrganoMDSotto" { \voiceTwo \GOrganoMDSotto }
+                \context Voice = "GOrganoMDSopra" { \GOrganoMDSopra }
+                \context Voice = "GOrganoMDSotto" { \GOrganoMDSotto }
                 >> \context Staff = "2" <<
-                \context Voice = "GOrganoMSSopra" { \voiceOne \GOrganoMSSopra }
-                \context Voice = "GOrganoMSMezzo" { \voiceTwo \GOrganoMSMezzo }
-                \context Voice = "GOrganoMSSotto" { \voiceThree \GOrganoMSSotto }
+                \context Voice = "GOrganoMSSopra" { \GOrganoMSSopra }
+                \context Voice = "GOrganoMSMezzo" { \GOrganoMSMezzo }
+                \context Voice = "GOrganoMSSotto" { \GOrganoMSSotto }
                 >> \context Staff = "3" <<
                 \context Voice = "GOrganoPed" { \GOrganoPed }
                 >>
@@ -109,11 +109,11 @@
 	        \new PianoStaff <<
             \context Staff = "1" <<
             	\JGlobal 
-                \context Voice = "JOrganoMDSopra" { \voiceOne \JOrganoMDSopra }
-                \context Voice = "JOrganoMDSotto" { \voiceTwo \JOrganoMDSotto }
+                \context Voice = "JOrganoMDSopra" { \JOrganoMDSopra }
+                \context Voice = "JOrganoMDSotto" { \JOrganoMDSotto }
                 >> \context Staff = "2" <<
-                \context Voice = "JOrganoMSSopra" { \voiceOne \JOrganoMSSopra }
-                \context Voice = "JOrganoMSSotto" { \voiceTwo \JOrganoMSSotto }
+                \context Voice = "JOrganoMSSopra" { \JOrganoMSSopra }
+                \context Voice = "JOrganoMSSotto" { \JOrganoMSSotto }
                 >> \context Staff = "3" <<
                 \context Voice = "JOrganoPed" { \JOrganoPed }
                 >>
@@ -123,12 +123,12 @@
 	        \new PianoStaff <<
             \context Staff = "1" <<
             	\KGlobal 
-                \context Voice = "KOrganoMDSopra" { \voiceOne \KOrganoMDSopra }
-                \context Voice = "KOrganoMDMezzo" { \voiceTwo \KOrganoMDMezzo }
-                \context Voice = "KOrganoMDSotto" { \voiceThree \KOrganoMDSotto }
+                \context Voice = "KOrganoMDSopra" { \KOrganoMDSopra }
+                \context Voice = "KOrganoMDMezzo" { \KOrganoMDMezzo }
+                \context Voice = "KOrganoMDSotto" { \KOrganoMDSotto }
                 >> \context Staff = "2" <<
-                \context Voice = "KOrganoMSSopra" { \voiceOne \KOrganoMSSopra }
-                \context Voice = "KOrganoMSSotto" { \voiceTwo \KOrganoMSSotto }
+                \context Voice = "KOrganoMSSopra" { \KOrganoMSSopra }
+                \context Voice = "KOrganoMSSotto" { \KOrganoMSSotto }
                 >> \context Staff = "3" <<
                 \context Voice = "KOrganoPed" { \KOrganoPed }
                 >>

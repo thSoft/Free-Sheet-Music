@@ -49,8 +49,7 @@
 \score {<<
 	\new Staff <<
 		\HHeader
-		\HTempi
-		\HTimes
+		\HGlobal
 		\HCornoInglese
 	>>
 >>}

@@ -19,6 +19,7 @@ DGlobal = {
 	\tempo "Maestoso"
 	s1*8 
 }
+
 DFlautoI =  \relative cis'' {
     \clef "treble" \key c \major \time 3/4 | % 1
     R2.*8 | % 9
@@ -38,6 +39,7 @@ DFlautoI =  \relative cis'' {
     \time 4/4  | % 47
     R1*8 \bar "|."
 }
+\addQuote "DFlautoI" { \DFlautoI } 
 
 DFlautoII =  \relative cis'' {
     \clef "treble" \key c \major \time 3/4 | % 1
@@ -64,16 +66,9 @@ DFagotto =  \relative d, {
     es2 c4 | % 13
     d2. ~ | % 14
     d2. | % 15
-    R2. | % 16
-    R2.*10 | % 26
-    R2.*6 | % 32
-    R2.*5 | % 37
-    \key c \major \time 6/8 R2.*2 | % 39
-    R2.*5 | % 44
-    R2.*3 \bar "||"
-    \time 4/4  R1 | % 48
-    R1*3 | % 51
-    R1*4 \bar "|."
+    R2.*22 | % 37
+    \key c \major \time 6/8 R2.*10 \bar "||"
+    \time 4/4  R1*8 \bar "|."
     }
 
 DTimpani =  \relative g, {
@@ -140,7 +135,9 @@ DVioliniI =  \relative a {
     bes2. ~ | % 32
     bes4 a4 r4 | % 33
     R2.*4 | % 37
-    \key c \major \time 6/8 R2.*6 | % 43
+    \key c \major \time 6/8 R2.*4 | % 43
+	\new CueVoice { \set instrumentCueName = "Fl." }
+	\cueDuring #"DFlautoI" #UP { R2.*2 } 
     c2.\downbow(\p | % 44
     cis2.) | % 45
     d2. | % 46
@@ -150,7 +147,7 @@ DVioliniI =  \relative a {
 
 DVioliniII =  \relative g {
     \clef "treble" \key c \major \time 3/4 | % 1
-    g2. \p ~ | % 2
+    g2.\downbow \p ~ | % 2
     g2. | % 3
     a2. ~ | % 4
     a2. | % 5
@@ -160,25 +157,25 @@ DVioliniII =  \relative g {
     a2. ~ | % 9
     \key bes \major a2 r4 | \barNumberCheck #10
     R2.*4 | % 14
-    es''4 \mf d2 ~ | % 15
+    es''4\upbow\mf d2 ~ | % 15
     d2. \> | % 16
     R2.*3\! | % 19
-    r4 d,4\mf a'4 ~ | \barNumberCheck #20
-    a4 g4 f4 ~ | % 21
+    r4 d,4\upbow\mf a'4 ~ | \barNumberCheck #20
+    a4 g4\downbow f4 ~ | % 21
     f4 es4 g4 | % 22
     d2 g4 | % 23
     f4 bes4 as4 | % 24
     des,4 es2 | % 25
-    r8 c8 g'8 f8 g8 es8 | % 26
+    r8 c8\upbow_"ten. e leg." g'8 f8 g8 es8 | % 26
     f2. | % 27
     R2.*2 | % 29
-    r8 f8 e8 f8 g8 as8 | \barNumberCheck #30
+    r8 f8\upbow e8 f8 g8 as8 | \barNumberCheck #30
     g2. ~ | % 31
     g2. | % 32
     d2 r4 | % 33
     R2.*4 | % 37
     \key c \major \time 6/8 R2.*6 | % 43
-    e2.\p ~ | % 44
+    e2.\downbow\p ~ | % 44
     e2. | % 45
     g2. | % 46
     e2. \bar "||"
@@ -187,7 +184,7 @@ DVioliniII =  \relative g {
 
 DViole =  \relative f {
     \clef "alto" \key c \major \time 3/4 | % 1
-    f2. \p ~ | % 2
+    f2. \p\downbow ~ | % 2
     f2. | % 3
     g2. ~ | % 4
     g2. | % 5
@@ -195,13 +192,13 @@ DViole =  \relative f {
     f2. | % 7
     g2. ~ | % 8
     g2. ~ | % 9
-    \key bes \major g4 a4 r4 | \barNumberCheck #10
+    \key bes \major g4( a4) r4 | \barNumberCheck #10
     R2.*3 | % 13
-    r4 es'4 \mf d4 | % 14
+    r4 es'4 \mf\upbow d4~ | % 14
     d2. ~ | % 15
     d2. \> ~ | % 16
     d4 r4\!  r4 | % 17
-    r4 g,4\mf d'4 ~ | % 18
+    r4 g,4\mf\upbow d'4 ~ | % 18
     d4 c4 bes4 | % 19
     c4 a4 d4 | \barNumberCheck #20
     g,2 a4 | % 21
@@ -211,16 +208,16 @@ DViole =  \relative f {
     f4 g4 as4 | % 25
     g2. | % 26
     R2. | % 27
-    r8 as8 ges8 as8 bes8 c8 | % 28
+    r8 as8\upbow_"ten. e leg." ges8 as8 bes8 c8 | % 28
     des2 f4 | % 29
     d2 des4 ~ | \barNumberCheck #30
     des4 c2 | % 31
-    r8 bes8 c8 bes8 a8 g8 | % 32
+    r8 bes8\upbow c8 bes8 a8 g8 | % 32
     a2 r4 | % 33
     R2.*4 | % 37
     \key c \major \time 6/8 R2.*6 | % 43
-    g2.\p | % 44
-    a2. | % 45
+    g2.\p\downbow( | % 44
+    a2.) | % 45
     b2. | % 46
     c2. \bar "||"
     \time 4/4  R1*8 \bar "|."
@@ -228,24 +225,24 @@ DViole =  \relative f {
 
 DVioloncelli =  \relative d {
     \clef "bass" \key c \major \time 3/4 | % 1
-    d2. \p ~ | % 2
+    d2.\downbow \p ~ | % 2
     d2. ~ | % 3
     d2. ~ | % 4
     d2. ~ | % 5
-    d2. ~ | % 6
+    d2.\upbow^"~" ~ | % 6
     d2. ~ | % 7
-    d2. ~ | % 8
+    d2.\downbow^"~" ~ | % 8
     d2. | % 9
     \key bes \major | % 9
-    r4 ^"Solo" d'4 \f e4 ~ | \barNumberCheck #10
+    r4 d'4\upbow \f^"Solo"  e4 ~ | \barNumberCheck #10
     e4 d2 ~ | % 11
-    d4 c4 g4 ~ | % 12
+    d4 c4\downbow g4\upbow ~ | % 12
     g4 c4 d4 | % 13
     a2. ~ | % 14
     a2. ~ | % 15
     a2. ~ | % 16
     a2 \> r4 \! | % 17
-    g,2. ^"Tutti" \mf | % 18
+    g,2.\downbow^"Tutti" \mf | % 18
     c2. | % 19
     fis,2. | \barNumberCheck #20
     bes2. | % 21
@@ -263,21 +260,21 @@ DVioloncelli =  \relative d {
     <d d'>2 r4 | % 33
     R2.*4 | % 37
     \key c \major \time 6/8 R2.*9 | % 46
-    g'2. \bar "||"
+    g'2.\downbow \bar "||"
     \time 4/4  R1*8 \bar "|."
     }
 
 DContrabbassi =  \relative d {
     \transposition c \clef "bass" \key c \major \time 3/4 | % 1
-    d2. \p ~ | % 2
+    d2. \p\downbow ~ | % 2
     d2. | % 3
     g2. ~ | % 4
-    g4. g8 f8 e8 | % 5
-    d2. ~ | % 6
+    g4. g8\upbow\< f8 e8 | % 5
+    d2.\! ~ | % 6
     d2. | % 7
     g,2. ~ | % 8
-    g4. g'8 f8 e8 | % 9
-    \key bes \major d4 d4 d4 | \barNumberCheck #10
+    g4. g'8\upbow\< f8 e8 | % 9
+    \key bes \major d4\! d4 d4 | \barNumberCheck #10
     c4 c4 d4 | % 11
     f4 f4 f4 | % 12
     es4 es4 c4 | % 13
@@ -285,7 +282,7 @@ DContrabbassi =  \relative d {
     d4 d4 d4 | % 15
     d4 d4 d4 | % 16
     d4 d4 d4 | % 17
-    g,2. \mf | % 18
+    g,2.\downbow\mf | % 18
     c2. | % 19
     fis,2. | \barNumberCheck #20
     bes2. | % 21
@@ -299,7 +296,7 @@ DContrabbassi =  \relative d {
     des2. | % 29
     f2. | \barNumberCheck #30
     e2. | % 31
-    es2. | % 32
+    es!2. | % 32
     d2 r4 | % 33
     R2.*4 | % 37
     \key c \major \time 6/8 R2.*10 \bar "||"
@@ -347,11 +344,13 @@ DOrganoMDSopra =  \relative d' {
     ~ ~ ~ ~ | % 52
     <b c e g>8 <a c e>8 <b c e g>4 ~ ~ ~ ~ <b c e g>8 <a c e>8 <b c e g>8
     <a c e>8 | % 53
+	\voiceOne
     g'1 ~ | % 54
     g1 ^\fermata \bar "|."
     }
 
 DOrganoMDMezzoSopra =  \relative a {
+	\voiceTwo 
     \clef "treble" \key c \major \time 3/4 s2*9 s1. | % 9
     \key bes \major | % 9
     s2.*28 | % 37
@@ -365,6 +364,7 @@ DOrganoMDMezzoSopra =  \relative a {
     }
 
 DOrganoMDMezzoSotto =  \relative g'' {
+	\voiceThree 
     \clef "treble" \key c \major \time 3/4 s2*9 | % 7
     \voiceOne g2. ~ g2. | % 9
     \key bes \major | % 9
@@ -409,6 +409,7 @@ DOrganoMSSopra =  \relative d, {
     }
 
 DOrganoMDSotto =  \relative c' {
+	\voiceFour 
     \clef "treble" \key c \major \time 3/4 s2*9 s1. | % 9
     \key bes \major | % 9
     s2.*28 | % 37
@@ -422,6 +423,7 @@ DOrganoMDSotto =  \relative c' {
     }
 
 DOrganoMSMezzo =  \relative f, {
+	\voiceTwo 
     \clef "bass" \key c \major \time 3/4 s2*9 s2. | % 8
     \clef "treble_8" s2. | % 9
     \key bes \major s2.*28 | % 37
@@ -432,6 +434,7 @@ DOrganoMSMezzo =  \relative f, {
     }
 
 DOrganoMSSotto =  \relative g' {
+	\voiceThree 
     \clef "bass" \key c \major \time 3/4 s2*9 s2. | % 8
     \clef "treble" g2. | % 9
     \key bes \major s2.*28 | % 37
@@ -547,19 +550,20 @@ DSoprano =  \relative d' {
     \key bes \major R2.*7 | % 16
     R2.*10 | % 26
     R2.*6 | % 32
-    r4 r4 d4 | % 33
+    r4 r4 d4\p | % 33
     f4. es4. | % 34
     d2. ~ | % 35
     d2. ~ | % 36
     d2. ~ | % 37
     \key c \major \time 6/8 | % 37
+	\once \override ChoirStaff.Hairpin #'circled-tip = ##t
     d4. \> r4. \! | % 38
     R2. | % 39
     R2.*5 | % 44
     R2.*3 \bar "||"
     \time 4/4  R1 | % 48
     R1 | % 49
-    r8 c'8 c8 d8 es2 | \barNumberCheck #50
+    r8 c'8\f c8 d8 es2 | \barNumberCheck #50
     r4 g,8 c8 d4 c8 g8 | % 51
     a4 a4 r2 | % 52
     R1 | % 53
@@ -576,7 +580,7 @@ DAlto =  \relative a {
     \key bes \major R2.*7 | % 16
     R2.*10 | % 26
     R2.*6 | % 32
-    r4 r4 a4 | % 33
+    r4 r4 a4\p | % 33
     c4. bes4. | % 34
     a4 r8 f4. | % 35
     as4. ges4. | % 36
@@ -588,7 +592,7 @@ DAlto =  \relative a {
     R2.*3 \bar "||"
     \time 4/4  R1 | % 48
     R1 | % 49
-    r8 es'8 es8 g8 c2 | \barNumberCheck #50
+    r8 es'8\f es8 g8 c2 | \barNumberCheck #50
     r4 c,8 d8 es4 d8 c8 | % 51
     a4 a4 r2 | % 52
     R1 | % 53
@@ -605,7 +609,7 @@ DTenore =  \relative f {
     \key bes \major R2.*7 | % 16
     R2.*10 | % 26
     R2.*6 | % 32
-    r4 r4 f4 | % 33
+    r4 r4 f4\p | % 33
     as4. ges4. | % 34
     f4 r8 d4. | % 35
     f4. es4. | % 36
@@ -615,7 +619,7 @@ DTenore =  \relative f {
     R2. | % 39
     R2.*5 | % 44
     R2.*3 \bar "||"
-    \time 4/4  r8 d'8 d8 e8 fis2 | % 48
+    \time 4/4  r8 d'8\f d8 e8 fis2 | % 48
     r4 a,8 d8 e4 d8 a8 | % 49
     g4 g4 r2 | \barNumberCheck #50
     R1 | % 51
@@ -633,7 +637,7 @@ DBasso =  \relative d {
     \key bes \major R2.*7 | % 16
     R2.*10 | % 26
     R2.*6 | % 32
-    d2. | % 33
+    d2.\p | % 33
     d2. | % 34
     d4 r8 a4. | % 35
     c4. bes4. | % 36
@@ -643,7 +647,7 @@ DBasso =  \relative d {
     R2. | % 39
     R2.*5 | % 44
     R2.*3 \bar "||"
-    \time 4/4  r8 fis'8 fis8 a8 d2 | % 48
+    \time 4/4  r8 fis'8\f fis8 a8 d2 | % 48
     r4 d,8 e8 fis4 e8 d8 | % 49
     g4 g4 r2 | \barNumberCheck #50
     R1 | % 51
@@ -657,7 +661,7 @@ DBassoLyricsOne =  \lyricmode { Ex -- or -- tum in te --
     "tus," et jus -- "tus." }
 
 % The score definition
-D = \score {
+D = \score { \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
@@ -727,19 +731,19 @@ D = \score {
             \set PianoStaff.instrumentName = "Organo"
             \set PianoStaff.shortInstrumentName = "Org."
             \context Staff = "1" << 
-                \context Voice = "DOrganoMDSopra" { \voiceOne \DOrganoMDSopra }
-                \context Voice = "DOrganoMDMezzoSopra" { \voiceTwo \DOrganoMDMezzoSopra }
-                \context Voice = "DOrganoMDMezzoSotto" { \voiceThree \DOrganoMDMezzoSotto }
-                \context Voice = "DOrganoMDSotto" { \voiceFour \DOrganoMDSotto }
+                \context Voice = "DOrganoMDSopra" { \DOrganoMDSopra }
+                \context Voice = "DOrganoMDMezzoSopra" { \DOrganoMDMezzoSopra }
+                \context Voice = "DOrganoMDMezzoSotto" { \DOrganoMDMezzoSotto }
+                \context Voice = "DOrganoMDSotto" { \DOrganoMDSotto }
                 >> \context Staff = "2" <<
-                \context Voice = "DOrganoMSSopra" { \voiceOne \DOrganoMSSopra }
-                \context Voice = "DOrganoMSMezzo" { \voiceTwo \DOrganoMSMezzo }
-                \context Voice = "DOrganoMSSotto" { \voiceThree \DOrganoMSSotto }
+                \context Voice = "DOrganoMSSopra" { \DOrganoMSSopra }
+                \context Voice = "DOrganoMSMezzo" { \DOrganoMSMezzo }
+                \context Voice = "DOrganoMSSotto" { \DOrganoMSSotto }
                 >> \context Staff = "3" <<
                 \context Voice = "DOrganoPed" { \DOrganoPed }
                 >>
             >>
-        \new StaffGroup <<
+        \new ChoirStaff <<
             \new Staff <<
                 \set Staff.instrumentName = \markup { \center-column { \line {"Soprano"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
@@ -758,7 +762,7 @@ D = \score {
                 >>
             
             >>
-        \new StaffGroup <<
+        \new ChoirStaff <<
             \new Staff <<
                 \set Staff.instrumentName = "Soprano"
                 \set Staff.shortInstrumentName = "S"

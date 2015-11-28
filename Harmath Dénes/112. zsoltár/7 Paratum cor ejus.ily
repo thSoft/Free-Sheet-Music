@@ -10,22 +10,19 @@ GTacet = {
 }
 GGlobal = {
 	\GHeader
-	\tempo "Pomposo"
+	\tempo "Pomposo e staccato"
 	s1.*19
-	\override BreathingSign.text = \markup { \musicglyph #"scripts.caesura.straight" }
-	s1.^"rit." \breathe
+	s1.^"rit."
 	\tempo "Con brio"
-	s1.*34
-	s1.*2^"poco allarg."
-	s1.*2^"a tempo"
+	s1.*38
 }
 GFlauti =  \relative a'' {
     \clef "treble" \key c \major \time 12/8 | % 1
     R1.*36 | % 37
-    a4\f ^"a 2" a8 b8( cis8 b8 a4. b4.) | % 38
-    fis8( e8 d8 e4 fis8 d4) b8 d4. | % 39
-    fis4 fis8( e4 d8 e4) fis8 fis4. | \barNumberCheck #40
-    a4 a8( b4 a8 fis4.) ~ fis4 fis8 | % 41
+    a4\f ^"a 2" a8 b8( cis8 b8) a4.-- b4.-- | % 38
+    fis8( e8 d8) e4( fis8) d4 b8 d4. | % 39
+    fis4 fis8( e4) d8( e4) fis8 fis4. | \barNumberCheck #40
+    a4 a8( b4) a8( fis4.) ~ fis4 fis8 | % 41
     e4( fis4 e4 d2.) ~ | % 42
     d1. | % 43
     R1.*12 | % 55
@@ -39,13 +36,14 @@ GOboeI =  \relative fis'' {
     \clef "treble" \key c \major \time 12/8 R1.*36 | % 37
 	\voiceOne
     fis1.\mp | % 38
-    d2. cis8 b8 a8 b4. | % 39
+    d2. cis8( b8 a8) b4. | % 39
     b2. b4. ais4. | \barNumberCheck #40
     b2. ~ b4. a4. ~ | % 41
-    a4. g4. fis4. g4. | % 42
-    a1. | % 43
+    a4. g4. fis4. g4._~ | % 42
+    g4. e4. fis2. | % 43
     R1.*12 | % 55
-    c1. \pp ~ | % 56
+	\oneVoice
+    c'1. \pp ~ | % 56
     c2. ~ c4. d4. | % 57
     e1. ~ | % 58
     e2. ~ e8 r4 r4. \bar "|."
@@ -54,12 +52,12 @@ GOboeI =  \relative fis'' {
 GOboeII =  \relative d'' {
     \clef "treble" \key c \major \time 12/8 s1.*36 | % 37
 	\voiceTwo
-    d2. cis8 d8 cis8 b4 a8 | % 38
+    d2. cis8( d8 cis8) b4 a8 | % 38
     g4. a2. g4 fis8 | % 39
     e4. gis2. cis,4. |
     fis2. g4. d4. | % 41
     d1. | % 42
-    g4. e4. fis2.
+    a'1.
     s1.*16
     }
 
@@ -79,27 +77,18 @@ GCornoInglese =  \relative a'' {
     }
 
 GFagotto =  \relative cis' {
-    \clef "bass" \key c \major \time 12/8 R1.*6 | % 7
-    R1.*5 | % 12
-    R1.*5 | % 17
-    R1.*5 | % 22
-    R1.*6 | % 28
-    R1.*5 | % 33
-    R1.*5 | % 38
-    R1. | % 39
+    \clef "bass" \key c \major \time 12/8
+    R1.*38 | % 39
     cis2. fis,4. ~ fis4 e8 | \barNumberCheck #40
     dis2. e4. fis4. | % 41
     g2. a4. g4 fis8 | % 42
-    e4 fis4 e4 d2. | % 43
-    R1. | % 44
-    R1.*4 | % 48
-    R1.*5 | % 53
-    R1. | % 54
+    e4( fis4 e4 d2.) | % 43
+    R1.*11 | % 54
     r2. r4. bes4. | % 55
     a2. ~ a4. g4. | % 56
     f1. | % 57
     c'1. ~ | % 58
-    c2. ~ c8 c,8 c8 c8 r4 \bar "|."
+    c2. ~ c8 \breathe c,8^"marc." c8 c8 r4 \bar "|."
     }
 
 GTrombaI =  \relative a' {
@@ -327,6 +316,8 @@ GTimpani =  \relative g, {
 
 GVioliniI =  \relative e'' {
     \clef "treble" \key c \major \time 12/8 R1.*20^"senza sord." | % 21
+	\once \override BreathingSign.text = \markup { \musicglyph #"scripts.caesura.straight" }
+	\breathe
     e4.\downbow ^"Solo"\f -. e4. -. b4--( a8-.) b4--( c8-.) | % 22
     d4. ~ d4 c16 b16 a4. ~ a4 b8\upbow | % 23
     c4. b4 -_ a8\upbow g4--( e8-.) fis4--( g8-.) | % 24
@@ -344,85 +335,92 @@ GVioliniI =  \relative e'' {
     c1. ~ | % 56
     c2. ~ c4. d4.\downbow | % 57
     e1.\upbow ~ | % 58
-    e2. ~ e8 c8\downbow_"marc." c8 c8 r4 \bar "|."
+    e2. ~ e8\breathe c8\downbow_"marc." c8 c8 r4 \bar "|."
     }
 
 GVioliniII =  \relative c'' {
     \clef "treble" \key c \major \time 12/8 R1.*20^"senza sord." | % 21
-    c4. ^"Solo"\f -. c4. -. g2. | % 22
+	\once \override BreathingSign.text = \markup { \musicglyph #"scripts.caesura.straight" }
+	\breathe
+    c4.\downbow ^"Solo"\f -. c4. -. g2. | % 22
     a4. a4. f2. | % 23
-    g4. g4 -_ e8 d2. | % 24
-    e4. d4 b8 cis2. | % 25
+    g4. g4 -_( e8-.) d2. | % 24
+    e4. d4-_( b8-.) cis2. | % 25
     g'4. -. g4. -. d2. | % 26
-    fis4 e8 fis4 g8 a4. g4 fis8 | % 27
+    fis4--( e8-.) fis4--( g8-.) a4. g4--( fis8-.) | % 27
     e4. -. g2. g4. ~ -> | % 28
-    g4. fis4. d4. ~ d8 e8 f8 | % 29
+    g4. fis4.\downbow d4.\upbow ~ d8 e8 f8 | % 29
     e2. r2. | \barNumberCheck #30
     R1.*21 | % 51
-    e4. ^"Tutti" fis4. g4. r4. | % 52
-    r2. r4. r4 d8 | % 53
-    c4. f4. e4. r4 a,8 | % 54
-    as4 -> as4 -> as4 -> bes4. g4. | % 55
-    c2. ~ c4. b4. | % 56
-    a1. | % 57
-    g1. ~ | % 58
-    g2. g8 c8 c8 c8 r4 \bar "|."
+    e4.\downbow ^"Tutti" fis4. g4. r4. | % 52
+    r2. r4. r4 d8\upbow | % 53
+    c4. f4. e4. r4 a,8\upbow | % 54
+    as4 -> as4 -> as4 -> bes4. g4.\upbow | % 55
+    c2. ~ c4. b4.\upbow | % 56
+    a1.\downbow | % 57
+    g1.\upbow ~ | % 58
+    g2.~g8\breathe c8\downbow-"marc." c8 c8 r4 \bar "|."
     }
 
 GViole =  \relative g' {
     \clef "alto" \key c \major \time 12/8 R1.*20^"senza sord." | % 7
-    g4.\f ^"Solo" -. g4. -. e2. | % 22
+	\once \override BreathingSign.text = \markup { \musicglyph #"scripts.caesura.straight" }
+	\breathe
+    g4.\f ^"Solo"\downbow -. g4. -. e2. | % 22
     f4. f4. c2. | % 23
-    e4. c4 -_ c8 b2. | % 24
+    e4. c4 -_( c8-.) b2. | % 24
     d4. a4. b2. | % 25
-    d4. -. d4. -. g,4 b8 a4 g8 | % 26
+    d4. -. d4. -. g,4--( b8-.) a4--( g8-.) | % 26
     d'4. -. d4. -. e4. c4. | % 27
-    b4. ~ b4 c8 d4. bes4. -> | % 28
+    b4. ~ b4 c8\downbow d4.\upbow bes4. -> | % 28
     a4. ~ a8 b8 c8 c4. b4. | % 29
     c2. r2. | \barNumberCheck #30
     R1.*21 | % 51
-    c2. ^"Tutti" c4. r4. | % 52
-    r2. r4. r4 g8 | % 53
-    bes2. bes4. r4 es,8 | % 54
-    f4 -> f4 -> f4 -> f4 e8 d4 e8 | % 55
+    c2.\downbow ^"Tutti" c4. r4. | % 52
+    r2. r4. r4 g8\upbow | % 53
+    bes2. bes4. r4 es,8\upbow | % 54
+    f4 ->\downbow f4 ->\upbow f4 ->\upbow f4--( e8-.) d4--( e8-.) | % 55
     f1. ~ | % 56
-    f1. | % 57
+    f1.\breathe | % 57
     c4 ^"pizz." e4 g4 a4 c4 d4 | % 58
     e4 g4 a4 c8 r4 r4. \bar "|."
     }
 
 GVioloncelli =  \relative c {
     \clef "bass" \key c \major \time 12/8 R1.*20^"senza sord." | % 7
-    c4 \f^"Solo" b8 c4 d8 e2. | % 22
-    d4 c8 d4 e8 f2. | % 23
-    e4 d8 e4 fis8 g2. | % 24
-    fis4 e8 fis4 g8 <a, a'>2. | % 25
-    g'2. b,4 b8 b4 b8 | % 26
-    d4. ~ d4 c16 b16 a4 a8 a4 a8 | % 27
+	\once \override BreathingSign.text = \markup { \musicglyph #"scripts.caesura.straight" }
+	\breathe
+    c4 \downbow\f^"Solo"--( b8-.) c4--( d8-.) e2. | % 22
+    d4\upbow--( c8-.) d4--( e8-.) f2. | % 23
+    e4--( d8-.) e4--( fis8-.) g2. | % 24
+    fis4--( e8-.) fis4--( g8-.) <a, a'>2. | % 25
+    g'2. b,4--( b8-.) b4--( b8-.) | % 26
+    d4. ~ d4 c16 b16 a4--( a8-.) a4--( a8-.) | % 27
     e'4. es4. d4. cis4. -> | % 28
-    d2. g,8 f8 e8 f8 e8 d8 | % 29
+    d2.\breathe g,8\downbow f8 e8 f8 e8 d8 | % 29
     c2. r2. | \barNumberCheck #30
     R1.*21 | % 51
-    c'4. ^"Tutti" d4 dis8 e4. r4. | % 52
-    r2. r4. r4 f8 | % 53
-    e4. d4. c4. r4 f,8 | % 54
-    bes4 -> bes4 -> bes4 -> c4. bes4. | % 55
-    a2. ~ a4. g4. | % 56
-    f1. | % 57
-    c'1. ~ | % 58
-    c2. ~ c8 c,8 c8 c8 r4 \bar "|."
+    c'4.\downbow ^"Tutti" d4--( dis8-.) e4. r4. | % 52
+    r2. r4. r4 f8\upbow | % 53
+    e4. d4. c4. r4 f,8\upbow | % 54
+    bes4 -> bes4 -> bes4 -> c4. bes4.\upbow | % 55
+    a2. ~ a4. g4.\upbow | % 56
+    f1.\downbow | % 57
+    c'1.\upbow ~ | % 58
+    c2. ~ c8\breathe c,8\downbow_"marc." c8 c8 r4 \bar "|."
     }
 
 GContrabbassi =  \relative bes, {
     \transposition c \clef "bass" \key c \major \time 12/8 R1.*53 | % 54
-    r2. r4. bes4.\f | % 55
+    r2. r4. bes4.\f\upbow | % 55
     a2. ~ a4. g4. | % 56
     f1. | % 57
     c'1. ~ | % 58
-    c2. ~ c8 c8 c8 c8 r4 \bar "|."
+    c2. ~ c8\breathe c8\downbow_"marc." c8 c8 r4 \bar "|."
     }
 
 GOrganoMDSopra =  \relative c'' {
+	\voiceOne
     \clef "treble" \key c \major \time 12/8 R1.*42 | % 43
     c4 \f^"Grand jeu" b8 c4 d8 e4. ~ <e a>4. | % 44
     g4 a8 g4 fis8 e4. r4. | % 45
@@ -442,6 +440,7 @@ GOrganoMDSopra =  \relative c'' {
     }
 
 GOrganoMDSotto =  \relative a' {
+	\voiceTwo
     \clef "treble" \key c \major \time 12/8 s1.*42 | % 43
     a1. | % 44
     <b e>2. <g b>4. r4. | % 45
@@ -470,6 +469,7 @@ GOrganoMSSopra =  \relative e' {
     }
 
 GOrganoMSMezzo =  \relative d {
+	\voiceTwo
     \key c \major \time 12/8 s1.*42 | % 43
     s1. s1*3 | % 46
     c2. \rest c4 \rest a'8 g4. s1. s2*15 s2*15
@@ -477,6 +477,7 @@ GOrganoMSMezzo =  \relative d {
     }
 
 GOrganoMSSotto =  \relative d' {
+	\voiceThree
     \key c \major \time 12/8 s1.*42 | % 43
     s1. s1*3 | % 46
     d4. \rest d4 c8 b4. ~ b4 a8 s1. s2*15 s2*15
@@ -505,7 +506,7 @@ GSoprano =  \relative g' {
     R1.*5 | % 17
     R1.*5 | % 22
     R1.*6 | % 28
-    r2. r4. g4. | % 29
+    r2. r4. g4.\ff | % 29
     c4. ~ c4 d8 e4. c4. | \barNumberCheck #30
     d4. g,4. g4. cis4. | % 31
     d2. f4. d4. | % 32
@@ -523,9 +524,9 @@ GSoprano =  \relative g' {
     b4. ~ b4 c8 d4. r4. | % 47
     d4. -> a4 a8 d4. ~ d4 d8 | % 48
     c4. e4. -> c4. a4. | % 49
-    bes4 a8 d4. d4 d8 cis8 b8 cis8 | \barNumberCheck #50
+    bes4-> a8 d4. d4 d8 cis8 b8 cis8 | \barNumberCheck #50
     d2. d4. r4. | % 51
-    r2. r4. r4 bes8 | % 52
+    r2. r4. r4 bes8\f | % 52
     g4. a4. g4. r4. | % 53
     r2. r4. r4 f8 | % 54
     es4. d4. c4. c'4. | % 55
@@ -549,14 +550,14 @@ GAlto =  \relative g' {
     R1.*5 | % 17
     R1.*5 | % 22
     R1.*6 | % 28
-    r2. r4. g4. | % 29
+    r2. r4. g4.\ff | % 29
     e2. g4. g4. | \barNumberCheck #30
     g2. g4. e4. | % 31
     f2. a4. a4. | % 32
     a4. ~ a4 a8 a4. r4. | % 33
     a2. -> a4 a8 a4 a8 | % 34
     g4. c4. -> g4. g4. | % 35
-    fis4 fis8 e4. e4 f8 e4 d8 | % 36
+    fis4-> fis8 e4. e4 f8 e4 d8 | % 36
     cis2. cis4. r4. | % 37
     R1. | % 38
     R1.*4 | % 42
@@ -567,9 +568,9 @@ GAlto =  \relative g' {
     d4. ~ d4 d8 g4. r4. | % 47
     d4. -> f4 f8 a4. ~ a4 f8 | % 48
     e4. a4. -> a4. e4 fis8 | % 49
-    g4 g8 a4. a4 a8 a4 g8 | \barNumberCheck #50
+    g4-> g8 a4. a4 a8 a4 g8 | \barNumberCheck #50
     fis2. fis4. r4. | % 51
-    r2. r4. r4 c8 | % 52
+    r2. r4. r4 c8\f | % 52
     c2. b4. r4. | % 53
     r2. r4. r4 a8 | % 54
     as2. bes4. c4. | % 55
@@ -592,14 +593,14 @@ GTenore =  \relative g {
     R1.*5 | % 17
     R1.*5 | % 22
     R1.*6 | % 28
-    r2. r4. g4. | % 29
+    r2. r4. g4.\ff | % 29
     g2. c4. c4. | \barNumberCheck #30
     b2. b4. a4. | % 31
     a2. d4. d4. | % 32
     e4. ~ e4 d8 e4. r4. | % 33
     c2. -> c4 c8 c4 c8 | % 34
     c4. e4. -> c4. c4. | % 35
-    a4 a8 a4. a4 a8 gis8 fis8 gis8 | % 36
+    a4-> a8 a4. a4 a8 gis8 fis8 gis8 | % 36
     e2. e4. r4. | % 37
     R1. | % 38
     R1.*5 | % 43
@@ -609,9 +610,9 @@ GTenore =  \relative g {
     b4 a8 g4 a8 b4. r4. | % 47
     r4. d,4. -> a'4 a8 a4 b8 | % 48
     c4. c4. -> e4. c4. | % 49
-    d4 d8 d4. e4 e8 e4 e8 | \barNumberCheck #50
+    d4-> d8 d4. e4 e8 e4 e8 | \barNumberCheck #50
     a,2. a4. r4. | % 51
-    r2. r4. r4 as8 | % 52
+    r2. r4. r4 as8\f | % 52
     d,2. d4. r4. | % 53
     r2. r4. r4 es8 | % 54
     f2. f4. e4. | % 55
@@ -635,14 +636,14 @@ GBasso =  \relative g {
     R1.*5 | % 17
     R1.*5 | % 22
     R1.*6 | % 28
-    r2. r4. g4. | % 29
+    r2. r4. g4.\ff | % 29
     c,2. c4. e4. | \barNumberCheck #30
     g2. g4. g4. | % 31
     d2. d4. f4. | % 32
     a4. ~ a4 a,8 a4. r4. | % 33
     f4. -> f4 f8 f4. ~ f4 a8 | % 34
     c4. c4. -> c4. e4. | % 35
-    d4 d8 a4. e'4 e8 e,4 e8 | % 36
+    d4-> d8 a4. e'4 e8 e,4 e8 | % 36
     a2. a4. r4. | % 37
     R1. | % 38
     R1.*5 | % 43
@@ -652,9 +653,9 @@ GBasso =  \relative g {
     g4. ~ g4 g8 g4. r4. | % 47
     r4. d'4. -> f,4 e8 f4 g8 | % 48
     a4. a4. -> a4. a'4. | % 49
-    g4 a8 f4. e4 d8 e4 f8 | \barNumberCheck #50
+    g4-> a8 f4. e4 d8 e4 f8 | \barNumberCheck #50
     d2. d4. r4. | % 51
-    r2. r4. r4 f,8 | % 52
+    r2. r4. r4 f,8\f | % 52
     g2. g4. r4. | % 53
     r2. r4. r4 f8 | % 54
     bes2. c4. bes4. | % 55
@@ -673,7 +674,7 @@ GBassoLyricsOne =  \lyricmode { Pa -- ra -- tum cor e --
     "jus," spe -- ra -- re in Do -- mi -- "no." }
 
 % The score definition
-G = \score {
+G = \score { \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
@@ -688,13 +689,13 @@ G = \score {
                 \set Staff.instrumentName = "Oboi"
                 \set Staff.shortInstrumentName = "Ob."
                 \context Staff << 
-                    \context Voice = "GOboeI" { \voiceOne \GOboeI }
-                    \context Voice = "GOboeII" { \voiceTwo \GOboeII }
+                    \context Voice = "GOboeI" { \GOboeI }
+                    \context Voice = "GOboeII" { \GOboeII }
                     >>
                 >>
             \new Staff <<
                 \set Staff.instrumentName = \markup { \center-column { \line {"Corno inglese"} \line {"in F"} } }
-                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Cor. ingl."} \line {"F"} } }
+                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Cor."} \line {"ingl."} \line {"F"} } }
                 \context Staff << 
                     \context Voice = "GCornoInglese" { \GCornoInglese }
                     >>
@@ -713,24 +714,24 @@ G = \score {
                 \set Staff.instrumentName = \markup { \center-column { \line {"Trombe"} \line {"in B"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr."} \line {"B"} } }
                 \context Staff << 
-                    \context Voice = "GTrombaI" { \voiceOne \GTrombaI }
-                    \context Voice = "GTrombaII" { \voiceTwo \GTrombaII }
+                    \context Voice = "GTrombaI" { \GTrombaI }
+                    \context Voice = "GTrombaII" { \GTrombaII }
                     >>
                 >>
             \new Staff <<
                 \set Staff.instrumentName = \markup { \center-column { \line {"Corni"} \line {"in F"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"Cor."} \line {"F"} } }
                 \context Staff << 
-                    \context Voice = "GCornoI" { \voiceOne \GCornoI }
-                    \context Voice = "GCornoII" { \voiceTwo \GCornoII }
+                    \context Voice = "GCornoI" { \GCornoI }
+                    \context Voice = "GCornoII" { \GCornoII }
                     >>
                 >>
             \new Staff <<
                 \set Staff.instrumentName = "Tromboni"
                 \set Staff.shortInstrumentName = "Trb."
                 \context Staff << 
-                    \context Voice = "GTromboneI" { \voiceOne \GTromboneI }
-                    \context Voice = "GTromboneII" { \voiceTwo \GTromboneII }
+                    \context Voice = "GTromboneI" { \GTromboneI }
+                    \context Voice = "GTromboneII" { \GTromboneII }
                     >>
                 >>
             \new Staff <<
@@ -791,17 +792,17 @@ G = \score {
             \set PianoStaff.instrumentName = "Organo"
             \set PianoStaff.shortInstrumentName = "Org."
             \context Staff = "1" << 
-                \context Voice = "GOrganoMDSopra" { \voiceOne \GOrganoMDSopra }
-                \context Voice = "GOrganoMDSotto" { \voiceTwo \GOrganoMDSotto }
+                \context Voice = "GOrganoMDSopra" { \GOrganoMDSopra }
+                \context Voice = "GOrganoMDSotto" { \GOrganoMDSotto }
                 >> \context Staff = "2" <<
-                \context Voice = "GOrganoMSSopra" { \voiceOne \GOrganoMSSopra }
-                \context Voice = "GOrganoMSMezzo" { \voiceTwo \GOrganoMSMezzo }
-                \context Voice = "GOrganoMSSotto" { \voiceThree \GOrganoMSSotto }
+                \context Voice = "GOrganoMSSopra" { \GOrganoMSSopra }
+                \context Voice = "GOrganoMSMezzo" { \GOrganoMSMezzo }
+                \context Voice = "GOrganoMSSotto" { \GOrganoMSSotto }
                 >> \context Staff = "3" <<
                 \context Voice = "GOrganoPed" { \GOrganoPed }
                 >>
             >>
-        \new StaffGroup <<
+        \new ChoirStaff <<
             \new Staff <<
                 \set Staff.instrumentName = "Soprano"
                 \set Staff.shortInstrumentName = "S"
