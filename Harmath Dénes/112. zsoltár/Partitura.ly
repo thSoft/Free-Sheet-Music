@@ -11,7 +11,7 @@
   	\RhythmicStaff \RemoveEmptyStaves
   	\override VerticalAxisGroup.remove-first = ##t
   }
-  indent = 1\cm
+  indent = 0.9\cm
 }
 
 \paper {

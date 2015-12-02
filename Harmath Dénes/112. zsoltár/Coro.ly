@@ -4,6 +4,10 @@
 	instrument = "Coro"
 }
 
+\layout {
+	indent = 1.3\cm
+}
+
 \score {
         \new ChoirStaff <<
             \new Staff <<
@@ -16,7 +20,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Mezzosoprano"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "AMezzosoprano" { \AMezzosoprano }
@@ -100,7 +104,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Mezzosoprano"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "CMezzosoprano" { \CMezzosoprano }
@@ -278,7 +282,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Mezzosoprano"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "JMezzosoprano" { \JMezzosoprano }

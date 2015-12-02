@@ -57,6 +57,7 @@ EFlauto =  \relative gis' {
     d8 d16( cis16) b8 d8 cis4. r8 | % 37
     R1*6 \bar "||"
     }
+\addQuote "EFlauto" \EFlauto
 
 EOboe =  \relative a' {
     \clef "treble" \key a \major \time 4/4 R1*2 | % 3
@@ -151,6 +152,7 @@ EFagotto =  \relative a {
     R1*3 | % 42
     r2 a8-. e'8-. a8-. r8 \bar "||"
     }
+\addQuote "EFagotto" \EFagotto
 
 ETamburelloBasco =  \relative e' {
 	\set RhythmicStaff.instrumentName = \markup { \center-column { \line {"Tamburello"} \line {"basco"} } }
@@ -214,7 +216,9 @@ EVioliniI =  \relative a' {
     R2.\!  | % 28
     \time 4/4  | % 28
     <fis e'>8\downbow \< <fis e'>4 <fis e'>4 <fis e'>8 r4 \! | % 29
-    R1*10 | % 39
+    R1*9 | % 39
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+	\cueDuringWithClef #"EFagotto" #UP #"bass" { R1 }
     r4 e'8\downbow r8 r4 a,8\upbow r8 | \barNumberCheck #40
     R1 | % 41
     r4 a8 r8 r4 d8 r8 | % 42
@@ -241,7 +245,9 @@ EVioliniII =  \relative e' {
     R2.\! | % 28
     \time 4/4  | % 28
     <d c'>8\downbow\< <d c'>4 <d c'>4 <d c'>8 r4 \! | % 29
-    R1*10 | % 39
+    R1*9 | % 39
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+	\cueDuringWithClef #"EFagotto" #UP #"bass" { R1 }
     r4 a'8\downbow r8 r4 fis8\upbow r8 | \barNumberCheck #40
     R1 | % 41
     r4 fis8 r8 r4 a8 r8 | % 42
@@ -251,7 +257,11 @@ EVioliniII =  \relative e' {
 EViole =  \relative d' {
     \clef "alto" \key a \major \time 4/4 R1*2 | % 3
     \time 9/8  R8*36 | % 7
-    \time 6/8  R2.*5 | % 12
+    \time 6/8
+    R2.*2 | % 12
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fl." } }
+	\cueDuringWithClef #"EFlauto" #UP #"treble" { R2.*2 }
+	R2.
     d16\mp\downbow( fis16 a16) gis16( e16 b16) a16^"sim." cis16 fis16 a16 fis16 d16 | % 13
     a16 e'16 gis16 fis16 d16 a16 e16 b'16 e16 gis16 e16 a,16 | % 14
     b16 d16 fis16 e16 a,16 e16 a16 d16 fis16 a16 fis16 d16 | % 15
@@ -268,7 +278,9 @@ EViole =  \relative d' {
     R2.\! | % 28
     \time 4/4  | % 28
     gis8\downbow \< gis4 gis4 gis8 r4 \! | % 29
-    R1*10 | % 39
+    R1*9 | % 39
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+	\cueDuringWithClef #"EFagotto" #UP #"bass" { R1 }
     r4 e'8\downbow r8 r4 c8\upbow r8 | \barNumberCheck #40
     R1 | % 41
     r4 e8 r8 r4 g8 r8 | % 42
@@ -278,7 +290,11 @@ EViole =  \relative d' {
 EVioloncelli =  \relative d {
     \clef "bass" \key a \major \time 4/4 R1*2 | % 3
     \time 9/8  R8*36 | % 7
-    \time 6/8  R2.*5 | % 12
+    \time 6/8
+    R2.*2 | % 12
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fl." } }
+	\cueDuringWithClef #"EFlauto" #UP #"treble" { R2.*2 }
+	R2.
     d8.\<\downbow e8. fis8\f--( fis16-.) e8--( d16-.) | % 13
     cis8. d8. e8--( e16-.) d8--( cis16-.) | % 14
     b8. cis8. d8--( d16-.) cis8--( b16-.) | % 15
@@ -590,7 +606,7 @@ EBassoLyricsOne =  \lyricmode { ho -- "mo," qui mi -- se
     bi -- "tur," "non," "non," non com -- mo -- ve -- bi -- "tur." }
 
 % The score definition
-E = \score { \killCues
+E = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<

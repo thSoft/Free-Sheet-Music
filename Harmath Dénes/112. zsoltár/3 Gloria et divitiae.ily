@@ -34,10 +34,12 @@ CTacet = {
 	R1*31^"Tacet"
 	\bar "||"
 }
+
 COboe =  \relative a' {
     \clef "treble" \key c \major \time 9/8 | % 1
-    R8*9 | % 2
-    r2. a8.\mf^"cantabile" a16 a8 | % 3
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Cor. ingl." } }
+	\cueDuring #"CCornoInglese" #DOWN { R8*9 r2. }
+    a8.\mf^"cantabile" a16 a8 | % 3
     bes8( g8) a8 f4 e8 f8( e8) d8 | % 4
     \time 4/4  e2 r2 | % 5
     R1 | % 6
@@ -46,7 +48,9 @@ COboe =  \relative a' {
     R1*7 | % 15
     \time 9/8  R8*9 | % 16
     \time 3/4  R2. | % 17
-    \time 4/4  R1*2 | % 19
+    \time 4/4  R1 | % 19
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Cor. ingl." } }
+	\cueDuring #"CCornoInglese" #DOWN { R1 }
     \key bes \major g8.[ g16 g8] f8.[ g16 a8] g4
     | \barNumberCheck #20
     R1 | % 21
@@ -58,6 +62,7 @@ COboe =  \relative a' {
     a8( g8) d8 g2. | % 28
     R8*36 \bar "||"
     }
+\addQuote "COboe" { \COboe }
 
 CCornoInglese =  \relative a' {
     \transposition f \clef "treble" \key g \major \time 9/8
@@ -70,7 +75,9 @@ CCornoInglese =  \relative a' {
     R1*8 | % 15
     \time 9/8  R8*9 | % 16
     \time 3/4  R2. | % 17
-    \time 4/4  R1 | % 18
+    \time 4/4
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+    \cueDuringWithClef #"CFagotto" #DOWN "bass" { R1 }
     a8.[ a16 a8] g8[ a8] d8.[ c16 a8] | % 19
     \key f \major bes4. r4. r4 | \barNumberCheck #20
     f8.[ g16 f8] e8[( d8]) f4. ~ | % 21
@@ -81,14 +88,20 @@ CCornoInglese =  \relative a' {
     \key g \major a4. r2. | % 27
     R8*45 \bar "||"
     }
+\addQuote "CCornoInglese" { \CCornoInglese }
 
 CFagotto =  \relative a {
-    \clef "bass" \key c \major \time 9/8 R8*27 | % 4
+    \clef "bass" \key c \major \time 9/8
+    R8*9 | % 4
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Ob." } }
+	\cueDuringWithClef #"COboe" #DOWN #"treble" { R8*18 }
     \time 4/4  r4. a8.[\mf^"cantabile" a16 a8] b8 b8 | % 5
     d8.[ cis16 a8] e'4 r8 r4 | % 6
     R1*9 | % 15
     \time 9/8  R8*9 | % 16
-    \time 3/4  R2. | % 17
+    \time 3/4 
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Org." } }
+	\cueDuringWithClef #"COrganoMDSopra" #UP #"treble" { R2. }
     \time 4/4  g,,8.[ g16 g8] f8[ g8] bes8.[ a16 f8] | % 18
     g4 r8 r4 r4. | % 19
     \key bes \major R1*2 | % 21
@@ -96,7 +109,7 @@ CFagotto =  \relative a {
     r4 es8[( g8]) bes8. bes16 | % 23
     \time 9/8  bes8 c4 bes4. r4. | % 24
     bes8. bes16 bes8 c8. a16 a8 bes4 g8 | % 25
-    g4 f8 g8 f8 es8 f8. r8. | % 26
+    g4 f8 g8( f8 es8 f8.) r8. | % 26
     \key c \major R8*54 \bar "||"
     }
 \addQuote "CFagotto" { \CFagotto }
@@ -119,7 +132,7 @@ CVioliniI =  \relative a'' {
     \key bes \major R1*2 | % 21
     \time 6/8  R2.*2 | % 23
     \time 9/8  R8*9 | % 26
-	\new CueVoice { \set instrumentCueName = "Fg." }
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
 	\cueDuringWithClef #"CFagotto" #DOWN #"bass" { R8*18 }
     \key c \major | % 26
     d2.\downbow \mp ~ d4. ~ | % 27
@@ -129,6 +142,7 @@ CVioliniI =  \relative a'' {
     d2.\downbow^"~" ~ d4. ~ | % 31
     d2. ~ d4. ^\fermata \bar "||"
     }
+\addQuote "CVioliniI" \CVioliniI
 
 CVioliniII =  \relative e'' {
     \clef "treble" \key c \major \time 9/8 | % 1
@@ -171,7 +185,9 @@ CVioliniIII =  \relative e'' {
     R1*5 | % 15
     \time 9/8  R8*9 | % 16
     \time 3/4  R2. | % 17
-    \time 4/4  R1*2 | % 19
+    \time 4/4  R1*1 | % 19
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Cor. ingl." } }
+	\cueDuring #"CCornoInglese" #DOWN { R1 }
     \key bes \major | % 19
     g8.[\downbow \mf -> g16 -> g8] -> f8.[ -> g16 -> a8] -> g4 -> | \barNumberCheck
     #20
@@ -203,7 +219,9 @@ CVioleI =  \relative d'' {
     R1*5 | % 15
     \time 9/8  R8*9 | % 16
     \time 3/4  R2. | % 17
-    \time 4/4  R1*2 | % 19
+    \time 4/4  R1 | % 19
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Cor. ingl." } }
+	\cueDuring #"CCornoInglese" #DOWN { R1 }
     \key bes \major | % 19
     bes4. \mf\downbow a4 c8\downbow bes4\upbow | \barNumberCheck #20
     es4. c4 es4. ~ | % 21
@@ -235,7 +253,9 @@ CVioleII =  \relative a' {
     \time 9/8  R8*9 | % 16
     \time 3/4  R2. | % 17
     \time 4/4  R1*2 | % 19
-    \key bes \major R1 | \barNumberCheck #20
+    \key bes \major
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Ob." } }
+	\cueDuring #"COboe" #UP { R1 }
     bes8.[ \mf\downbow -> c16 -> bes8] -> a8[\upbow -> g8]\upbow -> bes4. ~ -> | % 21
     \time 6/8  bes8 d8 -> c8 -> a8 -> bes8 -> c8 -> | % 22
     bes4. ~ -> bes4 \breathe c8\downbow | % 23
@@ -264,7 +284,9 @@ CVioloncelli =  \relative fis' {
     R1*5 | % 15
     \time 9/8  R8*9 | % 16
     \time 3/4  R2. | % 17
-    \time 4/4  R1*2 | % 19
+    \time 4/4  R1*1 | % 19
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Cor. ingl." } }
+	\cueDuringWithClef #"CCornoInglese" #DOWN "treble" { R1 }
     \key bes \major | % 19
     es,8.[--(\downbow \mf es16-.) es8]\upbow es4--( es8-.) es4 | \barNumberCheck #20
     es4. es'4 es,8\upbow d4 | % 21
@@ -283,15 +305,19 @@ CVioloncelli =  \relative fis' {
 
 CContrabbassi =  \relative f {
     \transposition c \clef "bass" \key c \major \time 9/8 R8*27 | % 4
-    \time 4/4  R1*4 | % 8
+    \time 4/4
+    R1*3 | % 8
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vl. I" } }
+	\transposedCueDuring #"CVioliniI" #UP c' { \cueClef "treble" R1 \cueClefUnset }
     f1\mp\upbow | % 9
 	g4 ~ g4. r4. | \barNumberCheck #10
     R1*5 | % 15
     \time 9/8  R8*9 | % 16
     \time 3/4  R2. | % 17
     \time 4/4  R1*2 | % 19
-    \key bes \major R1*2 | % 21
-    \time 6/8  R2. | % 22
+    \key bes \major R1*1 | % 21
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Cor. ingl." } }
+	\transposedCueDuring #"CCornoInglese" #UP c' { R1 R2. }
     r4 es8[\mf\downbow g8] bes8. bes16 | % 23
     \time 9/8  bes8 c4 bes4. r4. | % 24
     bes8.--(\downbow bes16-.) bes8\upbow c8.--( a16-.) a8 bes4 g8 | % 25
@@ -328,6 +354,7 @@ COrganoMDSopra =  \relative g {
     <a d>2. ~ ~ <a d>4. ~ ~ | % 31
     <a d>2. ~ ~ <a d>4. ^\fermata \bar "||"
     }
+\addQuote "COrganoMDSopra" \COrganoMDSopra
 
 COrganoMDSotto =  \relative f' {
 	\voiceTwo 
@@ -349,7 +376,7 @@ COrganoMDMezzo =  \relative g' {
     \clef "treble" \key c \major \time 9/8 s8*27 | % 4
     \time 4/4  s1*5 | % 9
       | % 9
-    s1*4 ^"cresc. poco a poco" s1*2 | % 15
+    s1*4 _\markup { \italic "cresc. poco a poco" } s1*2 | % 15
     \time 9/8  s8*9 | % 16
     \time 3/4  g2 fis4 | % 17
     \time 4/4  s1*2 | % 19
@@ -433,6 +460,7 @@ COrganoPed =  \relative g, {
     g2. ~ g4. ~ | % 31
     g2. ~ g4. ^\fermata \bar "||"
     }
+\addQuote "COrganoPed" \COrganoPed
 
 CSopranoSolo =  \relative es' {
     \clef "treble" \key c \major \time 9/8 R8*27 | % 4
@@ -466,7 +494,7 @@ CSoprano =  \relative g' {
       R1*4 | % 13
     R1*2 | % 15
     \time 9/8  | % 15
-    g8. \mf_"cresc."[ g16 g8] c8[ c8] es8.[ d16 bes8] g8 | % 16
+    g8. \mf_\markup { \italic "cresc." }[ g16 g8] c8[ c8] es8.[ d16 bes8] g8 | % 16
     \time 3/4  c8\f d8 c8 b8 a4 | % 17
     \time 4/4  g4 r8 r4 r4. | % 18
     R1 | % 19
@@ -491,7 +519,7 @@ CMezzosoprano =  \relative d' {
     R1*2 | % 9
       R1*4 | % 13
     R1 | % 14
-    d8.[ \mp_"cresc." d16 d8] g8[ g8] bes8.[ a16 f8] | % 15
+    d8.[ \mp_\markup { \italic "cresc." } d16 d8] g8[ g8] bes8.[ a16 f8] | % 15
     \time 9/8  f8. e16 d8 a'8 a8 bes8.[ bes16 bes8] f8 | % 16
     \time 3/4  a4\f g4 fis4 | % 17
     \time 4/4  g4 r8 r4 r4. | % 18
@@ -518,7 +546,7 @@ CAlto =  \relative c' {
     \time 4/4  R1*3 | % 7
     R1*2 | % 9
       R1*4 | % 13
-    c8.[ \mp_"cresc." c16 c8] d8[ d8] f8.[ e16 c8] | % 14
+    c8.[ \mp_\markup { \italic "cresc." } c16 c8] d8[ d8] f8.[ e16 c8] | % 14
     d8.[ c16 b8] e8[ e8] f8.[ f16 e8] | % 15
     \time 9/8  c8. c16 d8 e8 f8 f8.[ f16 f8] es8 | % 16
     \time 3/4  g4\f e4 g4 | % 17
@@ -543,7 +571,7 @@ CTenore =  \relative g {
     \time 4/4  R1*3 | % 7
     R1*2 | % 9
       R1*3 | % 12
-    g8.[\p _"cresc." g16 g8] a8[ a8] c8.[ b16 g8] | % 13
+    g8.[\p _\markup { \italic "cresc." } g16 g8] a8[ a8] c8.[ b16 g8] | % 13
     a8.[ a16 a8] a8[ a8] a8.[ a16 a8] | % 14
     b8.[ b16 b8] b8[ c8] c8.[ c16 c8] | % 15
     \time 9/8  a8. a16 b8 c8 f8 es8.[ es16 es8] bes8 | % 16
@@ -571,7 +599,7 @@ CBasso =  \relative g {
     \time 4/4  R1*3 | % 7
     R1*2 | % 9
       R1*2 | % 11
-    g8.[\p_"cresc." g16 g8] g8[ g8] g8.[ g16 g8] | % 12
+    g8.[\p_\markup { \italic "cresc." } g16 g8] g8[ g8] g8.[ g16 g8] | % 12
     g8.[ g16 g8] g8[ g8] g8.[ g16 g8] | % 13
     g8.[ g16 g8] g8[ g8] g8.[ g16 g8] | % 14
     g8.[ g16 g8] g8[ g8] g8.[ g16 g8] | % 15
@@ -599,7 +627,7 @@ CBassoLyricsOne =  \lyricmode { Glo -- ri -- a et di --
     \skip4 \skip4 cu -- "li." }
 
 % The score definition
-C = \score { \killCues
+C = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
@@ -710,7 +738,7 @@ C = \score { \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Mezzosoprano"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "CMezzosoprano" { \CMezzosoprano }

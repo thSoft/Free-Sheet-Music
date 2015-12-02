@@ -63,7 +63,7 @@ FVioliniI =  \relative a'' {
     R1*2 | % 24
     <e' \tweak #'style #'mi a>1\p\downbow | % 25
     R1*12 | % 44
-	\new CueVoice { \set instrumentCueName = "Vc. I" }
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vc. I" } }
 	\cueDuringWithClef #"FVioloncelliI" #DOWN "bass" { R1*7 }
     <c \tweak #'style #'mi f>1\downbow ^\fermata \bar "||"
     }
@@ -480,7 +480,7 @@ FTenoreSoloLyricsOne =  \lyricmode { Ab au -- di -- ti -- o --
     \skip4 \skip4 "bit," "non," \skip4 \skip4 \skip4 \skip4 "non." }
 
 % The score definition
-F = \score { \killCues
+F = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<

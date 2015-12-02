@@ -327,7 +327,7 @@ HAltoSoloLyricsOne =  \lyricmode { Dis -- \skip4 per -- \skip4
     -- lum sae -- \skip4 cu -- \skip4 "li." }
 
 % The score definition
-H = \score { \killCues
+H = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<

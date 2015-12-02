@@ -18,22 +18,30 @@ GGlobal = {
 }
 GFlauti =  \relative a'' {
     \clef "treble" \key c \major \time 12/8 | % 1
-    R1.*36 | % 37
+    R1.*34 | % 37
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+	\cueDuring #"GTrombaI" #UP { R1.*2 }
     a4\f ^"a 2" a8 b8( cis8 b8) a4.-- b4.-- | % 38
     fis8( e8 d8) e4( fis8) d4 b8 d4. | % 39
     fis4 fis8( e4) d8( e4) fis8 fis4. | \barNumberCheck #40
     a4 a8( b4) a8( fis4.) ~ fis4 fis8 | % 41
     e4( fis4 e4 d2.) ~ | % 42
     d1. | % 43
-    R1.*12 | % 55
+    R1.*11 | % 55
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Trb." } }
+	\cueDuring #"GTromboneI" #DOWN { R1. }
     c'1. \pp ~ | % 56
     c1. | % 57
     c1. ~ | % 58
     c2. ~ c8 r4 r4. \bar "|."
     }
+\addQuote "GFlauti" \GFlauti
 
 GOboeI =  \relative fis'' {
-    \clef "treble" \key c \major \time 12/8 R1.*36 | % 37
+    \clef "treble" \key c \major \time 12/8
+    R1.*34 | % 37
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+	\cueDuring #"GTrombaI" #UP { R1.*2 }
 	\voiceOne
     fis1.\mp | % 38
     d2. cis8( b8 a8) b4. | % 39
@@ -41,7 +49,9 @@ GOboeI =  \relative fis'' {
     b2. ~ b4. a4. ~ | % 41
     a4. g4. fis4. g4._~ | % 42
     g4. e4. fis2. | % 43
-    R1.*12 | % 55
+    R1.*11 | % 55
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Trb." } }
+	\cueDuring #"GTromboneI" #DOWN { R1. }
 	\oneVoice
     c'1. \pp ~ | % 56
     c2. ~ c4. d4. | % 57
@@ -62,14 +72,19 @@ GOboeII =  \relative d'' {
     }
 
 GCornoInglese =  \relative a'' {
-    \transposition f \clef "treble" \key g \major \time 12/8 R1.*36 | % 37
+    \transposition f \clef "treble" \key g \major \time 12/8
+    R1.*34 |
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+	\transposedCueDuring #"GTrombaI" #UP g { R1.*2 }
     a4.\mp fis4. cis4. a4. | % 38
     b4. cis4. d2. | % 39
     gis,1. | \barNumberCheck #40
     fis1. | % 41
     fis2. g4. fis4. | % 42
     g4. d4. e2. | % 43
-    R1.*12 | % 55
+    R1.*11 | % 55
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Trb." } }
+	\cueDuring #"GTromboneI" #DOWN { R1. }
     c'2. \pp ~ c4. d4. | % 56
     e2. c2. | % 57
     d1. ~ | % 58
@@ -78,17 +93,21 @@ GCornoInglese =  \relative a'' {
 
 GFagotto =  \relative cis' {
     \clef "bass" \key c \major \time 12/8
-    R1.*38 | % 39
+    R1.*36 | % 37
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fl." } }
+	\cueDuringWithClef #"GFlauti" #UP "treble" { R1.*2 }
     cis2. fis,4. ~ fis4 e8 | \barNumberCheck #40
     dis2. e4. fis4. | % 41
     g2. a4. g4 fis8 | % 42
     e4( fis4 e4 d2.) | % 43
-    R1.*11 | % 54
-    r2. r4. bes4. | % 55
+    R1.*11 | % 55
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Trb." } }
+	\cueDuring #"GTromboneI" #UP { r2. r4. }
+    bes4. | % 55
     a2. ~ a4. g4. | % 56
     f1. | % 57
     c'1. ~ | % 58
-    c2. ~ c8 \breathe c,8^"marc." c8 c8 r4 \bar "|."
+    c2. ~ c8 \breathe c,8 c8 c8 r4 \bar "|."
     }
 
 GTrombaI =  \relative a' {
@@ -135,10 +154,13 @@ GTrombaI =  \relative a' {
     gis4 ais8 b4. ~ b4 ais16 gis16 ais4. | % 36
     b2. ~ b4. r4. | % 37
 	\oneVoice
-    R1.*15 | % 52
+    R1.*14 | % 52
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vl. I" } }
+	\cueDuring #"GVioliniI" #UP { R1. }
     a,4 a8 b8 c8 b8 a4. r4. | % 53
     R1.*6 \bar "|."
     }
+\addQuote "GTrombaI" \GTrombaI
 
 GTrombaII =  \relative dis'' {
     \transposition bes \clef "treble" \key d \major \time 12/8
@@ -180,8 +202,7 @@ GCornoI =  \relative g' {
     c2. des2. | % 19
     es1. | \barNumberCheck #20
     <a, es'>1. | % 21
-    R1. | % 22
-    R1.*6 | % 28
+    R1.*7 | % 28
     r2. r4. d4. | % 29
     <b d>2. <b d>4. <b d>4. | \barNumberCheck #30
     <a d>2. <a d>4. <d e>4. | % 31
@@ -195,15 +216,17 @@ GCornoI =  \relative g' {
 	\oneVoice
     e2. b4. b4. | % 36
     b2. ~ b4. r4. | % 37
-    R1.*20 | % 57
+    R1.*18 | % 57
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Org." } }
+    \transposedCueDuring #"GOrganoMDSopra" #UP g { R1.*2 }
     g,4\mf b4 d4 e4 g4 a4 | % 58
     b4 d4 e4 g8 r4 r4. \bar "|."
     }
+\addQuote "GCornoI" #GCornoI
 
 GCornoII =  \relative b' {
-    \transposition f \clef "treble" \key g \major \time 12/8 s1*9
-    s2*15 s2*15 s2*15 s1*9
-    s1*6 | % 32
+    \transposition f \clef "treble" \key g \major \time 12/8
+    s1.*31
 	\voiceTwo
     b4 c8 b4 a8 b4. b4. s1. | % 34
     d4 c8 d4 e8 d4. d4.
@@ -251,10 +274,14 @@ GTromboneI =  \relative e {
     a4. c4. b4. d4. | % 36
 	\oneVoice
     <e, cis'>2. ~ <e cis'>4. r4. | % 37
-    R1.*17 | % 54
+    R1.*15 | % 54
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+	\cueDuringWithClef #"GTrombaI" #DOWN #"treble" { R1. }
+	R1.
     es'4 es8 d8 es8 d8 c4. r4. | % 55
     R1.*4 \bar "|."
     }
+\addQuote "GTromboneI" \GTromboneI
 
 GTromboneII =  \relative as {
     \clef "bass" \key c \major \time 12/8
@@ -298,16 +325,23 @@ GTromboneBasso =  \relative c {
     c2. c4. e4. | % 35
     d4. a4. e'4. e,4. | % 36
     a2. ~ a4. r4. | % 37
-    R1.*21 | % 58
+    R1.*20 | % 58
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Cor." } }
+    \cueDuring #"GCornoI" #UP { R1. }
     r2. r8 c,8 c8 c8 r4 \bar "|."
     }
 
 GTimpani =  \relative g, {
-    \clef "bass" \key c \major \time 12/8 R1.*27 | % 28
+    \clef "bass" \key c \major \time 12/8
+    R1.*26 | % 28
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vl. I" } }
+    \cueDuringWithClef #"GVioliniI" #UP #"treble" { R1. }
     r2. r4 g8 g4 g8 | % 29
     c2. r2. | \barNumberCheck #30
-    R1.*20 | \barNumberCheck #50
-    r2. r4. r4 g8 | % 51
+    R1.*19 | \barNumberCheck #49
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Org. Ped." } }
+	\cueDuring #"GOrganoPed" #DOWN { R1. r2. r4.}
+    r4 g8 | % 51
     c4. r4. r2. | % 52
     g4 g4 g4 g4. r4. | % 53
     R1.*5 | % 58
@@ -327,7 +361,9 @@ GVioliniI =  \relative e'' {
     g4--( fis8-.) g4--( a8-.) b4--( g8-.) e'4. -> | % 28
     d8 c8 b8 c8 b8 a8 g2. | % 29
     g2. r2. | \barNumberCheck #30
-    R1.*21 | % 51
+    R1.*19 | % 51
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Org. Ped." } }
+	\cueDuringWithClef #"GOrganoPed" #DOWN "bass" { R1.*2 }
     c8\downbow ^"Tutti" g8 c8 g8 c8 g8 c4. r4. | % 52
     g8\downbow c8 d8 g8 c8 d8 g4. r4 c,,8\upbow | % 53
     g8 c8 g8 c8 g8 c8 g4. r4 d8\upbow | % 54
@@ -337,6 +373,7 @@ GVioliniI =  \relative e'' {
     e1.\upbow ~ | % 58
     e2. ~ e8\breathe c8\downbow_"marc." c8 c8 r4 \bar "|."
     }
+\addQuote "GVioliniI" \GVioliniI
 
 GVioliniII =  \relative c'' {
     \clef "treble" \key c \major \time 12/8 R1.*20^"senza sord." | % 21
@@ -351,7 +388,9 @@ GVioliniII =  \relative c'' {
     e4. -. g2. g4. ~ -> | % 28
     g4. fis4.\downbow d4.\upbow ~ d8 e8 f8 | % 29
     e2. r2. | \barNumberCheck #30
-    R1.*21 | % 51
+    R1.*19 | % 51
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Org. Ped." } }
+	\cueDuringWithClef #"GOrganoPed" #DOWN "bass" { R1.*2 }
     e4.\downbow ^"Tutti" fis4. g4. r4. | % 52
     r2. r4. r4 d8\upbow | % 53
     c4. f4. e4. r4 a,8\upbow | % 54
@@ -375,7 +414,9 @@ GViole =  \relative g' {
     b4. ~ b4 c8\downbow d4.\upbow bes4. -> | % 28
     a4. ~ a8 b8 c8 c4. b4. | % 29
     c2. r2. | \barNumberCheck #30
-    R1.*21 | % 51
+    R1.*19 | % 51
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Org. Ped." } }
+	\cueDuringWithClef #"GOrganoPed" #DOWN "bass" { R1.*2 }
     c2.\downbow ^"Tutti" c4. r4. | % 52
     r2. r4. r4 g8\upbow | % 53
     bes2. bes4. r4 es,8\upbow | % 54
@@ -399,7 +440,9 @@ GVioloncelli =  \relative c {
     e'4. es4. d4. cis4. -> | % 28
     d2.\breathe g,8\downbow f8 e8 f8 e8 d8 | % 29
     c2. r2. | \barNumberCheck #30
-    R1.*21 | % 51
+    R1.*19 | % 51
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Org. Ped." } }
+	\cueDuringWithClef #"GOrganoPed" #DOWN "bass" { R1.*2 }
     c'4.\downbow ^"Tutti" d4--( dis8-.) e4. r4. | % 52
     r2. r4. r4 f8\upbow | % 53
     e4. d4. c4. r4 f,8\upbow | % 54
@@ -411,8 +454,11 @@ GVioloncelli =  \relative c {
     }
 
 GContrabbassi =  \relative bes, {
-    \transposition c \clef "bass" \key c \major \time 12/8 R1.*53 | % 54
-    r2. r4. bes4.\f\upbow | % 55
+    \transposition c \clef "bass" \key c \major \time 12/8
+    R1.*53 | % 54
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Trb." } }
+	\transposedCueDuring #"GTromboneI" #UP c' { r2. r4. }
+    bes4.\f\upbow | % 55
     a2. ~ a4. g4. | % 56
     f1. | % 57
     c'1. ~ | % 58
@@ -438,6 +484,7 @@ GOrganoMDSopra =  \relative c'' {
     a8 c8 g8 a8 e8 g8 d8 e8 c8 d8 a8 c8 | % 58
     g8 a8 e8 g8 d8 e8 c8 r4 r4. \bar "|."
     }
+\addQuote "GOrganoMDSopra" \GOrganoMDSopra
 
 GOrganoMDSotto =  \relative a' {
 	\voiceTwo
@@ -499,6 +546,7 @@ GOrganoPed =  \relative a, {
     R1.*5 | % 58
     R1. \bar "|."
     }
+\addQuote "GOrganoPed" { \GOrganoPed }
 
 GSoprano =  \relative g' {
     \clef "treble" \key c \major \time 12/8 R1.*6 | % 7
@@ -674,7 +722,7 @@ GBassoLyricsOne =  \lyricmode { Pa -- ra -- tum cor e --
     "jus," spe -- ra -- re in Do -- mi -- "no." }
 
 % The score definition
-G = \score { \killCues
+G = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
@@ -735,7 +783,7 @@ G = \score { \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Trombone basso"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Trombone"} \line {"basso"} } }
                 \set Staff.shortInstrumentName = "Trb. b."
                 \context Staff << 
                     \context Voice = "GTromboneBasso" { \GTromboneBasso }

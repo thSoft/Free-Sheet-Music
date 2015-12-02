@@ -32,7 +32,9 @@ IFlauto =  \relative g' {
     r2 r8 e''4. \< :32^"flz" | % 6
     R1*11 \!  | % 17
     \time 7/8  | % 17
-    R2..*18 | % 35
+    R2..*16 | % 35
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+    \cueDuringWithClef #"IFagotto" #DOWN "bass" { R2..*2 }
     es,,8:16\mf_"dim."[ e8:16 f8:16 fis8:16 g8:16 gis8:16 a8:16]
     | % 36
     a8:16[  bes8:16 b8:16 c8:16 des8:16 d8:16 es8:16] | % 37
@@ -45,8 +47,10 @@ IOboe =  \relative g' {
     \clef "treble" \key g \major \time 4/4 R1 | % 2
     g16 ->\f g16 g16 r16 r8 g16 g16 -> r16 g16 g16 g16 g16 g16 g16 g16
     | % 3
-    R1*11 | % 14
-    r2 c,16( b16 c16 d16) dis8 r8 | % 15
+    R1*10 | % 14
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+	\cueDuringWithClef #"IFagotto" #DOWN #"bass" { R1 r2 }
+    c,16( b16 c16 d16) dis8 r8 | % 15
     R1*2 | % 17
     \time 7/8  R2..*6 | % 23
     g'4 g4 fis4 es8 | % 24
@@ -66,8 +70,10 @@ ICornoInglese =  \relative d' {
     \time 4/4 R1 | % 2
     d16 ->\f d16 d16 r16 r8 d16 d16 -> r16 d16 d16 d16 d16 d16 d16 d16
     | % 3
-    R1*11 | % 14
-    r4 eis16( dis16 eis16 fis16) g8 r8 r4 | % 15
+    R1*10 | % 14
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+	\cueDuringWithClef #"IFagotto" #DOWN #"bass" { R1 r4 }
+    eis16( dis16 eis16 fis16) g8 r8 r4 | % 15
     R1*2 | % 17
     \time 7/8  R2..*2 | % 19
     gis'4 gis4 g4 e8 | \barNumberCheck #20
@@ -121,6 +127,7 @@ IFagotto =  \relative g {
     c8 fis,8 c8 r2 | % 39
     R2.. \bar "||"
     }
+\addQuote "IFagotto" \IFagotto
 
 IBattacio =  \relative e' {
 	\set RhythmicStaff.instrumentName = "Battacio"
@@ -138,7 +145,7 @@ IVioliniI =  \relative b' {
     \clef "treble" \key g \major \time 4/4 | % 1
 	\once \override TextScript.outside-staff-priority = #-100
     b8\downbow ^"martellato"\ff r8 dis8^"sempre" r8 b8 r8 g8 r8 | % 2
-    b8^"sim." r8 gis8 r8 f2 -> | % 3
+    b8^"sim." r8 gis8 r8 f2 -> \breathe | % 3
     g8 r8 gis8 r8 a8 r8 ais8 r8 | % 4
     r8 <dis, b'>16\downbow ^"poco sul ponticello" <dis b'>16 <dis b'>16 <dis b'>16
     <dis b'>16 <dis b'>16 <dis b'>16 <dis b'>16 <dis b'>8 r4 
@@ -186,7 +193,7 @@ IVioliniI =  \relative b' {
 IVioliniII =  \relative dis' {
     \clef "treble" \key g \major \time 4/4 | % 1
     dis8\downbow \ff^"martellato" r8 g8^"sempre" r8 dis8 r8 b8 r8 | % 2
-    dis8 r8 dis8 r8 b2 -> | % 3
+    dis8 r8 dis8 r8 b2 -> \breathe | % 3
     es8 r8 e8 r8 f8 r8 fis8 r8 | % 4
     r8 g16\downbow ^"poco sul ponticello" g16 g16 g16 g16 g16 g16 g16 g8 r4
     | % 5
@@ -232,7 +239,7 @@ IVioliniII =  \relative dis' {
 IVioleI =  \relative g {
     \clef "alto" \key g \major \time 4/4 | % 1
     g8 \downbow\ff^"martellato" r8 b8^"sempre" r8 g8 r8 dis8 r8 | % 2
-    g8 r8 b8 r8 g2 -> | % 3
+    g8 r8 b8 r8 g2 -> \breathe | % 3
     b8 r8 c8 r8 cis8 r8 d8 r8 | % 4
     r8 g,16^"poco sul ponticello"\downbow g16 g16 g16 g16 g16 <g dis'>16 <g
         dis'>16 <g dis'>8 r4 | % 5
@@ -279,7 +286,7 @@ IVioleI =  \relative g {
 IVioleII =  \relative e {
     \clef "alto" \key g \major \time 4/4 | % 1
     e8\ff ^"martellato"\downbow r8 a8^"sempre" r8 e8 r8 f8 r8 | % 2
-    fis!8 r8 f8 r8 f2 -> | % 3
+    fis!8 r8 f8 r8 f2 -> \breathe | % 3
     g8 r8 gis8 r8 a8 r8 ais8 r8 | % 4
     r8 b16\downbow ^"poco sul ponticello" b16 b16 b16 b16 b16 b16 b16 b8 r4
     | % 5
@@ -298,7 +305,9 @@ IVioleII =  \relative e {
     c8 r8 cis8 r8 c8 r8 cis8 r8 | % 16
     dis,8\> r8 fis8 r8 a8 r8 gis8 r8 | % 17
     \time 7/8  cis,8\mp r8 r4 r4. | % 18
-    R2..*17 | % 35
+    R2..*15 | % 35
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+    \cueDuringWithClef #"IFagotto" #DOWN "bass" { R2..*2 }
     bes'4_"dim."\downbow b4 c4. | % 36
     d4\upbow es4\upbow e4. | % 37
     gis4 a4\downbow f4.\upbow | % 38
@@ -335,7 +344,7 @@ IContrabbassi =  \relative e {
     \transposition c \clef "bass" \key g \major
     \time 4/4 | % 1
     e8\ff\downbow ^"martellato" r8 c8^"sempre" r8 e8 r8 gis8 r8 | % 2
-    e8 r8 b'8 r8 des2 -> | % 3
+    e8 r8 b'8 r8 des2 -> \breathe | % 3
     c8 r8 a8 r8 fis8 r8 dis8 r8 | % 4
     c2 \sfp b4\downbow r4 | % 5
     e8\ff\downbow r8 c8^"sempre" r8 e8 r8 c8 r8 | % 6
@@ -428,7 +437,7 @@ ITenoreSoloLyricsOne =  \lyricmode { Pec -- ca -- \skip4 tor
     "bit." }
 
 % The score definition
-I = \score { \killCues
+I = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<

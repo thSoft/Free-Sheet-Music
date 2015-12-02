@@ -155,7 +155,9 @@ AContrabbassi =  \relative f {
     f,8 g8 a8 f8 g8 f8 g8 bes8 | % 3
     a8 bes8 c8 a8 bes8 a8 g8 bes8 | % 4
     c8 a8 d8 c8 bes8 g8 c8 r8 | % 5
-    R1*12 | % 17
+    R1*10 | % 17
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Org." } }
+	\transposedCueDuring #"AOrganoMS" #DOWN c' { R1*2 }
     d8 e8 fis8 d8 a8 b8 cis8 a8 | % 18
     d8 e8 fis8 d8 e8 d8 e8 g,8 | % 19
     fis8 g8 a8 fis8 g8 fis8 e8 g8 | \barNumberCheck #20
@@ -209,6 +211,7 @@ AOrganoMS =  \relative a' {
     \clef "treble" r2 <bes' des ges>4.\mp r8 | % 29
     \clef "bass" r2 r8 <f, a d>16 <f a d>16 <f a d>8 r8 \bar "||"
     }
+\addQuote "AOrganoMS" \AOrganoMS
 
 ASoprano =  \relative f' {
     \clef "treble" \key f \major \time 4/4 R1*7 | % 8
@@ -375,7 +378,7 @@ ABassoLyricsOne =  \lyricmode { Be -- a -- tus "vir," qui
     "vir," qui ti -- "met," ti -- met Do -- mi -- "num." }
 
 % The score definition
-A = \score { \killCues
+A = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
@@ -444,7 +447,7 @@ A = \score { \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Mezzosoprano"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "AMezzosoprano" { \AMezzosoprano }

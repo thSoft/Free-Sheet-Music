@@ -19,7 +19,9 @@ KFlautoI =  \relative a {
     \clef "treble" \key d \major \time 4/4 | % 1
     R1*5 \bar "||"
     \time 4/2  | % 6
-    R1*24 | % 18
+    R\breve*10 | % 18
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vle." } }
+    \cueDuringWithClef #"KVioleI" #DOWN "alto" { R\breve*2 }
 	\voiceOne
     r1 r2 r4 b''4 | % 19
     b2. a4 a1 | \barNumberCheck #20
@@ -55,6 +57,7 @@ KFlautoI =  \relative a {
     s\breve| % 47
     d'\breve^"I" ^\fermata \bar "|."
     }
+\addQuote "KFlautoI" { \KFlautoI }
 
 KFlautoII =  \relative e''' {
     \clef "treble" \key d \major \time 4/4 | % 1
@@ -83,7 +86,10 @@ KFlautoII =  \relative e''' {
 
 KOboeI =  \relative a' {
     \clef "treble" \key d \major \time 4/4 R1*5 \bar "||"
-    \time 4/2  R1*24 | % 18
+    \time 4/2
+    R\breve*10 | % 18
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vle." } }
+    \cueDuringWithClef #"KVioleI" #DOWN "alto" { R\breve*2 }
 	\voiceOne
     r2 r4 a4\mf e'1 ~ | % 19
     e1 d1 ~ | \barNumberCheck #20
@@ -139,7 +145,10 @@ KOboeII =  \relative d'' {
 KCornoInglese =  \relative g' {
     \transposition f \clef "treble" \key a \major \time 4/4 R1*5 \bar
     "||"
-    \time 4/2  R1*26 | % 19
+    \time 4/2
+    R\breve*10 | % 18
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vle." } }
+    \cueDuringWithClef #"KVioleI" #DOWN "alto" { R\breve*3 }
     g4\mf a8( b8) a4 e4 d4 r4 r2 | \barNumberCheck #20
     f4 g8( a8) g4 d4 e2 r2 | % 21
     r4 gis2 fis4 cis1 | % 22
@@ -166,7 +175,11 @@ KCornoInglese =  \relative g' {
 
 KFagottoI =  \relative b, {
     \clef "bass" \key d \major \time 4/4 R1*5 \bar "||"
-    \time 4/2  R\breve*13 | % 19
+    \time 4/2
+    R\breve*10 | % 18
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vle." } }
+    \cueDuringWithClef #"KVioleI" #DOWN "alto" { R\breve*2 }
+    R\breve
 	\voiceOne
     r1 f'4 g8( a8) g4 d4 | \barNumberCheck #20
     \oneVoice
@@ -191,6 +204,7 @@ KFagottoI =  \relative b, {
     r1 r2 \voiceOne a2^"I" ~ | % 47
     a\breve ^\fermata \bar "|."
     }
+\addQuote "KFagottoI" \KFagottoI
 
 KFagottoII =  \relative a, {
     \clef "bass" \key d \major \time 4/4 s1*5 \bar "||"
@@ -207,8 +221,10 @@ KFagottoII =  \relative a, {
 KTrombe =  \relative b' {
     \transposition bes \clef "treble" \key e \major \time 4/4 R1*5 \bar
     "||"
-    \time 4/2  R1*64 | % 38
-    r2 r4 b4\ff ^"a 2" ^"marcato" dis2 e2 | % 39
+    \time 4/2  R\breve*30 | % 38
+	\new CueVoice { \set instrumentCueName = "Fl. I" }
+	\cueDuring #"KFlautoI" #UP { R\breve*2 r4 }
+    r4 r4 b4\ff ^"a 2" ^"marcato" dis2 e2 | % 39
     fis2 r4 gis4 a4 gis8 fis8 gis8 a8 b4 | \barNumberCheck #40
     fis2 r2 r1 | % 41
     R1*4 | % 43
@@ -222,8 +238,11 @@ KTrombe =  \relative b' {
 KCorni =  \relative a' {
     \transposition f \clef "treble" \key a \major \time 4/4 R1*5 \bar
     "||"
-    \time 4/2  R1*62 | % 37
-    r1 <a b>4\mf <a b>8 <a b>8 <a b>4 <a bis>4 | % 38
+    \time 4/2
+    R\breve*30 | % 37
+	\new CueVoice { \set instrumentCueName = "Fl. I" }
+	\cueDuring #"KFlautoI" #UP { R\breve r1 }
+    <a b>4\mf <a b>8 <a b>8 <a b>4 <a bis>4 | % 38
     <a cis>4 r4 r2 r1 | % 39
     R1*10 | % 44
     d\breve ~ | % 45
@@ -234,18 +253,24 @@ KCorni =  \relative a' {
 
 KTromboni =  \relative gis {
     \clef "bass" \key d \major \time 4/4 R1*5 \bar "||"
-    \time 4/2  R1*62 | % 37
-    r1 <gis bes>4\mf <gis bes>8 <gis bes>8 <gis bes>4 <gis bes>4 | % 38
+    \time 4/2
+    R\breve*30 | % 37
+	\new CueVoice { \set instrumentCueName = "Fl. I" }
+	\cueDuringWithClef #"KFlautoI" #UP #"treble" { R\breve r1 }
+    <gis bes>4\mf <gis bes>8 <gis bes>8 <gis bes>4 <gis bes>4 | % 38
     a4 r4 r2 r1 | % 39
     R1*12 | % 45
     r2 a,2\f c2 a2 | % 46
     d\breve ~ | % 47
     d^\fermata \bar "|."
     }
+\addQuote "KTromboni" \KTromboni
 
 KTromboneBasso =  \relative d, {
     \clef "bass" \key d \major \time 4/4 R1*5 \bar "||"
-    \time 4/2  R1*82
+    \time 4/2  R\breve*39
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Trb." } }
+    \cueDuring #"KTromboni" #DOWN { R\breve*2 }
     d\breve\f^\fermata \bar "|."
     }
 
@@ -261,7 +286,9 @@ KVioliniI =  \relative d' {
     cis4 e4 a8 g8 fis8 e8 d4 g2 fis4\upbow | % 8
     e4 a,4 d2. cis8 b8 \afterGrace cis2( \trill { b16 cis16) } | % 9
     d4 r4 r2 r1 | \barNumberCheck #10
-    R1*24 | % 22
+    R\breve*10 | % 22
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fl. I" } }
+	\cueDuring #"KFlautoI" #UP { R\breve*2 }
     b1\downbow ^"Tutti"\mf ~ b4\breathe g8\downbow a8 b4 a8 b8 | % 23
     c2\breathe b2\downbow ~ b2. a4\downbow | % 24
     b1\upbow ~ b4 e,2\downbow fis4\upbow | % 25
@@ -301,8 +328,10 @@ KVioliniII =  \relative e' {
     b2. e4 a,2. e4 | % 11
     fis4 e4 fis8 e8 d8 cis8 d4 b4 e4.--( d8-.) | % 12
     cis4 r4 r2 r1 | % 13
-    R1*18 | % 22
-    r2 ^"Tutti" r4 g'8\mf\downbow fis8 e4 fis4 fis2 | % 23
+    R\breve*7 | % 22
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fl. I" } }
+	\cueDuring #"KFlautoI" #UP { R\breve*2 }
+    r2 r4 g'8\mf\downbow^"Tutti"  fis8 e4 fis4 fis2 | % 23
     a2 fis2 r4 a8\downbow g8 a4 g8 fis8 | % 24
     g2 d2\downbow e1\upbow | % 25
     dis1 :8 d1 ~ :8 | % 26
@@ -336,8 +365,7 @@ KVioleI =  \relative d' {
     fis4 e4 e2 | % 5
     a1 ^\fermata \bar "||"
     \time 4/2  <a, d a'>4\downbow r4 r2 r1 | % 7
-    R1*8 | % 11
-    R1*2 | % 12
+    R\breve*5 | % 12
     cis4. ^"Solo" b16 cis16 d4 cis4 a2. b8 a8 | % 13
     gis4. e'8\downbow d4\upbow a4\upbow a'4 gis8 fis8 e2 | % 14
     fis4\upbow e2 fis8 e8 d2. e8 d8 | % 15
@@ -372,6 +400,7 @@ KVioleI =  \relative d' {
     fis\breve ~ | % 47
     fis\breve ^\fermata \bar "|."
     }
+\addQuote "KVioleI" \KVioleI
 
 KVioleII =  \relative g' {
     \clef "alto" \key d \major \time 4/4
@@ -381,13 +410,15 @@ KVioleII =  \relative g' {
     d2 e4. e8\upbow | % 5
     e1 ^\fermata \bar "||"
     \time 4/2  <d, a' d>4\downbow r4 r2 r1 | % 7
-    R1*18 | % 16
+    R\breve*8 | % 16
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vle. I" } }
+    \cueDuring #"KVioleI" #DOWN { R\breve }
     r4 d4\upbow e4 d4 g2 fis2 | % 17
     r4 a8\downbow b8 c4 d8 c8 b4 a8 g8 a4 d,4 | % 18
     g2 fis4 g8 fis8 e1 | % 19
     d1 r1 | \barNumberCheck #20
     R1*4 | % 22
-    dis'2\downbow e4 dis4 b4 c4 b2 | % 23
+    dis'2\mf\downbow e4 dis4 b4 c4 b2 | % 23
     a4.--( b8-.) c4\upbow b4\upbow e2 d2 | % 24
     c1\mf ~ c4 b4\upbow a4 g4 | % 25
     a1 :8 r4 gis4 :8\downbow a4 :8 gis4 :8 | % 26
@@ -421,7 +452,9 @@ KVioloncelli =  \relative d {
     a8 b8 c8 a8 b8 c8 b8 b8 | % 5
     a1 ^\fermata \bar "||"
     \time 4/2  <d, d'>4\downbow r4 r2 r1 | % 7
-    R1*30 | % 22
+    R\breve*14 | % 22
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+	\cueDuring #"KFagottoI" #DOWN { R\breve }
     r4 b'4\upbow cis4 b4 e2 dis2 | % 23
     r4 fis8\downbow g8 a4 b8 a8 g4 fis8 e8 fis4 b,4 | % 24
     e2 d2 c1 | % 25
@@ -436,7 +469,7 @@ KVioloncelli =  \relative d {
     R1*6 | % 36
     e,2\downbow fis2 g2 a2 | % 37
     bes2\downbow a2\downbow gis1\upbow | % 38
-    a\breve ~^"cresc." | % 39
+    a\breve ~^\markup { \italic "cresc." } | % 39
     a\breve ~ | \barNumberCheck #40
     a\breve\upbow^"~" ~ | % 41
     a\breve | % 42
@@ -457,7 +490,9 @@ KContrabbassi =  \relative d {
     a8 b8 c8 a8 b8 c8 b8 b8 | % 5
     a1 ^\fermata \bar "||"
     \time 4/2  d4\downbow r4 r2 r1 | % 7
-    R1*30 | % 22
+    R\breve*14 | % 22
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fg." } }
+	\transposedCueDuring #"KFagottoI" #DOWN c' { R\breve }
     r4 b4\upbow cis4 b4 e2 dis2 | % 23
     r4 fis8\downbow g8 a4 b8 a8 g4 fis8 e8 fis4 b,4 | % 24
     e2 d2 c1 | % 25
@@ -468,7 +503,7 @@ KContrabbassi =  \relative d {
     b2 c2 d2 e2 | % 31
     a,2 r2 r1 | % 32
     R1*12 | % 38
-    a'\breve^"cresc."\downbow ~ | % 39
+    a'\breve^\markup { \italic "cresc." }\downbow ~ | % 39
     a\breve | \barNumberCheck #40
     a,\breve ~ | % 41
     a\breve | % 42
@@ -786,7 +821,7 @@ KBassoLyricsOne =  \lyricmode { Et nunc et sem -- "per,"
     -- a -- tus "vir," a -- "men," a -- "men." }
 
 % The score definition
-K = \score { \killCues
+K = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
@@ -846,7 +881,7 @@ K = \score { \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Trombone basso"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Trombone"} \line {"basso"} } }
                 \set Staff.shortInstrumentName = "Trb. b."
                 \context Staff << 
                     \context Voice = "KTromboneBasso" { \KTromboneBasso }

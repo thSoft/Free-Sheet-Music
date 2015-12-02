@@ -15,7 +15,9 @@ BTacet = {
 }
 BOboeI =  \relative a' {
     \clef "treble" \key d \major \time 2/2 | % 1
-    R1*10 | % 11
+    R1*9 | % 11
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vl. I" } }
+    \cueDuring #"BVioliniI" #UP { R1 }
     r2 a2\mf^"marcato" | % 12
     e2 a2 | % 13
     d2 a2 ~ | % 14
@@ -38,7 +40,10 @@ BOboeII =  \relative a' {
     }
 
 BFagottoI =  \relative b {
-    \clef "bass" \key d \major \time 2/2 R1*11 | % 12
+    \clef "bass" \key d \major \time 2/2
+    R1*9 | % 11
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vl. I" } }
+    \cueDuringWithClef #"BVioliniI" #UP #"treble" { R1*2 }
     r2 b2\mf^"marcato" | % 13
     fis2 b2 | % 14
     e,1 | % 15
@@ -104,7 +109,10 @@ BTrombaII =  \relative g'' {
     }
 
 BCornoI =  \relative b' {
-    \transposition f \clef "treble" \key a \major \time 2/2 R1*7 | % 8
+    \transposition f \clef "treble" \key a \major \time 2/2
+    R1*6 | % 8
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+    \cueDuring #"BTrombaI" #DOWN { R1 }
     r2 b2\mf | % 9
     fis2 b2 | \barNumberCheck #10
     e,1 | % 11
@@ -168,7 +176,10 @@ BTromboneII =  \relative f' {
     }
 
 BTromboneBasso =  \relative e, {
-    \clef "bass" \key d \major \time 2/2 R1*7 | % 8
+    \clef "bass" \key d \major \time 2/2
+    R1*6 | % 8
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+    \cueDuring #"BTrombaI" #UP { R1 }
     e2\f b4 e4 | % 9
     a2. g4 | \barNumberCheck #10
     f1 | % 11
@@ -178,8 +189,9 @@ BTromboneBasso =  \relative e, {
     }
 
 BVioliniI =  \relative b'' {
-    \clef "treble" \key d \major \time 2/2 R1*6 |
-    \new CueVoice { \set instrumentCueName = "Tr. I" }
+    \clef "treble" \key d \major \time 2/2
+    R1*6 |
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
     \cueDuring #"BTrombaI" #DOWN { R1*3 }
     b1\downbow ^"senza vibrato"\mf | % 11
     a2. r4 | % 12
@@ -194,9 +206,13 @@ BVioliniI =  \relative b'' {
     a1 ~ | % 29
     a1 \laissezVibrer \bar "||"
     }
+\addQuote "BVioliniI" \BVioliniI
 
 BVioliniII =  \relative g' {
-    \clef "treble" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
+    \clef "treble" \key d \major \time 2/2
+    R1*6 |
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+    \cueDuring #"BTrombaI" #DOWN { R1*3 }
     <g d'>1\downbow ^"senza vibrato"\mf | % 11
     cis2. r4 | % 12
     R1*2 | % 14
@@ -215,7 +231,10 @@ BVioliniII =  \relative g' {
     }
 
 BVioleI =  \relative a {
-    \clef "alto" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
+    \clef "alto" \key d \major \time 2/2
+    R1*6 |
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+    \cueDuring #"BTrombaI" #UP { R1*3 }
     a1\mf ^"senza vibrato"\downbow | % 11
     fis'2. r4 | % 12
     R1*2 | % 14
@@ -237,7 +256,10 @@ BVioleI =  \relative a {
     }
 
 BVioleII =  \relative c {
-    \clef "alto" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
+    \clef "alto" \key d \major \time 2/2
+    R1*6 |
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+    \cueDuring #"BTrombaI" #UP { R1*3 }
     c1 \mf^"senza vibrato"\downbow | % 11
     e2. r4 | % 12
     R1*2 | % 14
@@ -260,7 +282,10 @@ BVioleII =  \relative c {
     }
 
 BVioloncelli =  \relative f, {
-    \clef "bass" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
+    \clef "bass" \key d \major \time 2/2
+    R1*6 |
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+    \cueDuringWithClef #"BTrombaI" #DOWN "treble" { R1*3 }
     f1\mf\downbow ^"senza vibrato" | % 11
     e2. r4 | % 12
     R1*2 | % 14
@@ -283,7 +308,10 @@ BVioloncelli =  \relative f, {
     }
 
 BContrabbassi =  \relative f, {
-    \transposition c \clef "bass" \key d \major \time 2/2 R1*9 | \barNumberCheck #10
+    \transposition c \clef "bass" \key d \major \time 2/2
+    R1*6 |
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Tr. I" } }
+    \transposedCueDuring #"BTrombaI" #DOWN c' { \cueClef "treble" R1*3 \cueClefUnset }
     f1\mf ^"senza vibrato"\downbow | % 11
     e2. r4 | % 12
     R1*2 | % 14
@@ -317,12 +345,12 @@ BOrganoMD =  \relative e' {
     R1*2 | \barNumberCheck #20
     <des, ges>4 \p ^"Fonds doux" <c f>4 <bes es>4 <c f>4 | % 21
     <des ges>4 <c f>4 <des ges>4 <bes des>4 | % 22
-    d2. c4 | % 23
+    d!2. c4 | % 23
     R1 | % 24
     \clef "bass" r4 d,4 e4 d4 | % 25
     e4 d4 e4 c'4 | % 26
     d1 ~ | % 27
-    <d e>1 ~ | % 28
+    <d_~ e>1 | % 28
     <d fis>1 ~ ~ | % 29
     <d fis>1 \bar "||"
     }
@@ -479,7 +507,7 @@ BBassoLyricsOne =  \lyricmode { Po -- "tens!" Po -- tens in
     "tur." }
 
 % The score definition
-B = \score { \killCues
+B = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
@@ -557,7 +585,7 @@ B = \score { \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Trombone basso"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Trombone"} \line {"basso"} } }
                 \set Staff.shortInstrumentName = "Trb. b."
                 \context Staff << 
                     \context Voice = "BTromboneBasso" { \BTromboneBasso }

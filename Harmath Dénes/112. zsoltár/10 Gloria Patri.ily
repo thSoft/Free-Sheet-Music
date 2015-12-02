@@ -36,7 +36,9 @@ JFlauti =  \relative c'' {
     b4 r4 r4. | % 15
     R2..*8 | % 23
     \time 10/8  | % 23
-    R4*25 | % 28
+    R4*20 | % 28
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Org." } }
+    \cueDuring #"JOrganoMDSopra" #UP { R4*5 }
     \time 7/8  f'4\f f8 e4 bes4 | % 29
     c16 bes16 c2. ~ | \barNumberCheck #30
     c2.. ^"," \bar "||"
@@ -57,7 +59,9 @@ JOboeI =  \relative f' {
     dis4 e8 b'4 a4 | % 14
     e4 r4 r4. | % 15
     R2..*8 | % 23
-    \time 10/8  R4*15 | % 26
+    \time 10/8  R4*10 | % 26
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Cor. ingl." } }
+    \cueDuring #"JCornoInglese" #DOWN { R4*5 }
     g8[( a8) bes8] a8[( g8) f8] e8[( c8) g'8] r8 | % 27
     R4*5 | % 28
     \time 7/8  d8[( e8) f8] bes8[( a8]) f8[( d8]) | % 29
@@ -87,13 +91,16 @@ JCornoInglese =  \relative g' {
     b4 ais4 fis8 e4 | % 14
     fis4 r4 r4. | % 15
     R2..*8 | % 23
-    \time 10/8  R4*10 | % 25
+    \time 10/8
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vl. I" } }
+	\cueDuring #"JVioliniI" #UP { R4*10 }
     c'8[( d8) es8] d8[( c8) b8] c8[( f,8) c8] r8 | % 26
     R4*10 | % 28
     \time 7/8  f4 f8 g4 e4 | % 29
     d8 d2. ~ | \barNumberCheck #30
     d2.. \bar "||"
     }
+\addQuote "JCornoInglese" \JCornoInglese
 
 JFagotti =  \relative f {
     \clef "bass" \key c \major \time 12/8 R1.*3 | % 4
@@ -103,11 +110,13 @@ JFagotti =  \relative f {
     c1 r1 | % 9
     R1*2 | \barNumberCheck #10
     \time 7/8  R2..*13 | % 23
-    \time 10/8  R4*5 | % 24
+    \time 10/8
+    \new CueVoice { \set instrumentCueName = "Vl. I" }
+	\cueDuringWithClef #"JVioliniI" #UP #"treble" { R4*5 }
     c4^"Solo" b8 c4 d8 es8[( d8]) c8[( bes8]) | % 25
     as4. r4. r2 | % 26
     R4*10 | % 28
-    \time 7/8  d4 d8 g,4 g4 | % 29
+    \time 7/8  d4^"a 2" d8 g,4 g4 | % 29
     c8 c2 g4 | \barNumberCheck #30
     c,8 c2. \bar "||"
     }
@@ -115,14 +124,16 @@ JFagotti =  \relative f {
 JTrombaI =  \relative d'' {
     \transposition bes \clef "treble" \key d \major \time 12/8 R1.
 	\voiceOne
-    R1.\mp\cresc | % 3
+    R1. | %3
     d8. d16 d8 d8. d16 d8 d8. d16 d8 d8. d16 d8 | % 4
-    \time 4/2  d2\f r2 r1 | % 5
+    \time 4/2  d2 r2 r1 | % 5
 	\oneVoice
     R1*10 | \barNumberCheck #10
     \time 7/8  R2..*13 | % 23
-    \time 10/8  R4*5 | % 24
-    r2. d8. \p d16 d8 r8 | % 25
+    \time 10/8
+	\new CueVoice { \set instrumentCueName = "Vl. I" }
+	\cueDuring #"JVioliniI" #UP { R4*5 }
+    r2. d8.[ \p d16 d8] r8 | % 25
     R4*15 | % 28
     \time 7/8  | % 28
     g4 \f g8 fis4 c4 | % 29
@@ -133,9 +144,9 @@ JTrombaI =  \relative d'' {
 JTrombaII =  \relative a' {
     \transposition bes \clef "treble" \key d \major \time 12/8 s1. | % 2
 	\voiceTwo
-    r2. a8. a16 a8 a4. ~ | % 3
+    r2. a8.\mp\cresc a16 a8 a4. ~ | % 3
     a8. a16 a8 a8. a16 a8 a8. a16 a8 a8. a16 a8 | % 4
-    \time 4/2  g2 r2 r1
+    \time 4/2  g2\f r2 r1
     }
 
 JCornoI =  \relative a' {
@@ -181,7 +192,10 @@ JTromboneI =  \relative c' {
 	\oneVoice
     R1*10 | \barNumberCheck #10
     \time 7/8  R2..*13 | % 23
-    \time 10/8  R4*25 | % 28
+    \time 10/8
+    R4*20 | % 28
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Org." } }
+    \cueDuringWithClef #"JOrganoMDSopra" #UP #"treble" { R4*5 }
     \time 7/8  d4\mf d8 g,4 g4 | % 29
     c8 c2 g'4 | \barNumberCheck #30
     c16 bes16 c2. \bar "||"
@@ -202,7 +216,10 @@ JTromboneBasso =  \relative c, {
     \time 4/2  f2\f r2 r1 | % 5
     R1*10 | \barNumberCheck #10
     \time 7/8  R2..*13 | % 23
-    \time 10/8  R4*25 | % 28
+    \time 10/8
+    R4*20 | % 28
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Org." } }
+    \cueDuringWithClef #"JOrganoMDSopra" #UP #"treble" { R4*5 }
     \time 7/8  d'4\mf d8 g,4 g4 | % 29
     c8 c2 g4 | \barNumberCheck #30
     c,8 c2. \bar "||"
@@ -260,6 +277,7 @@ JVioliniI =  \relative g' {
     c16 bes16 c2. ~ | \barNumberCheck #30
     c2.. \bar "||"
     }
+\addQuote "JVioliniI" \JVioliniI
 
 JVioliniII =  \relative g' {
     \clef "treble" \key c \major \time 12/8 R1.*2 | % 3
@@ -428,6 +446,7 @@ JOrganoMDSopra =  \relative c'' {
     c'16 bes16 <d, f c'>2. ~ ~ ~ | \barNumberCheck #30
     <d f c'>8 ~ <c e c'>2. \bar "||"
     }
+\addQuote "JOrganoMDSopra" \JOrganoMDSopra
 
 JOrganoPed =  \relative f {
     \clef "bass" \key c \major \time 12/8 R1.*3 | % 4
@@ -713,7 +732,7 @@ JBassoLyricsOne =  \lyricmode { Glo -- ri -- a Pat -- "ri,"
     tu -- i Sanc -- "to," Sanc -- "to." }
 
 % The score definition
-J = \score { \killCues
+J = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
@@ -774,7 +793,7 @@ J = \score { \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Trombone basso"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Trombone"} \line {"basso"} } }
                 \set Staff.shortInstrumentName = "Trb. b."
                 \context Staff << 
                     \context Voice = "JTromboneBasso" { \JTromboneBasso }
@@ -890,7 +909,7 @@ J = \score { \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Mezzosoprano"
+                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "JMezzosoprano" { \JMezzosoprano }

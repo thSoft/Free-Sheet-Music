@@ -27,7 +27,8 @@ DFlautoI =  \relative cis'' {
     R2.*28 | % 37
 	\bar "||"
     \key c \major \time 6/8 | % 37
-    R2.*2 | % 39
+    \tag #'part { \new CueVoice { \set instrumentCueName = "Org." } }
+	\cueDuring #"DOrganoMDSopra" #UP { R2.*2 }
 	\voiceOne
     cis4.\p\<    
     ~ cis8. ~ cis8 b16 ~ | \barNumberCheck #40
@@ -72,7 +73,10 @@ DFagotto =  \relative d, {
     }
 
 DTimpani =  \relative g, {
-    \clef "bass" \key c \major \time 3/4 R2.*45 | % 46
+    \clef "bass" \key c \major \time 3/4
+    R2.*42 | % 46
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vl. I" } }
+    \cueDuringWithClef #"DVioliniI" #UP #"treble" { R2.*3 }
     r4. r8. g8. \< :16 \bar "||"
     \time 4/4  d'4 \!
     \times 2/3  {
@@ -136,7 +140,7 @@ DVioliniI =  \relative a {
     bes4 a4 r4 | % 33
     R2.*4 | % 37
     \key c \major \time 6/8 R2.*4 | % 43
-	\new CueVoice { \set instrumentCueName = "Fl." }
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fl." } }
 	\cueDuring #"DFlautoI" #UP { R2.*2 } 
     c2.\downbow(\p | % 44
     cis2.) | % 45
@@ -144,6 +148,7 @@ DVioliniI =  \relative a {
     bes2. \bar "||"
     \time 4/4  R1*8 \bar "|."
     }
+\addQuote "DVioliniI" { \DVioliniI }
 
 DVioliniII =  \relative g {
     \clef "treble" \key c \major \time 3/4 | % 1
@@ -174,7 +179,10 @@ DVioliniII =  \relative g {
     g2. | % 32
     d2 r4 | % 33
     R2.*4 | % 37
-    \key c \major \time 6/8 R2.*6 | % 43
+    \key c \major \time 6/8
+    R2.*4 | % 43
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fl." } }
+	\cueDuringWithClef #"DFlautoI" #UP "treble" { R2.*2 }
     e2.\downbow\p ~ | % 44
     e2. | % 45
     g2. | % 46
@@ -215,7 +223,10 @@ DViole =  \relative f {
     r8 bes8\upbow c8 bes8 a8 g8 | % 32
     a2 r4 | % 33
     R2.*4 | % 37
-    \key c \major \time 6/8 R2.*6 | % 43
+    \key c \major \time 6/8
+    R2.*4 | % 43
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Fl." } }
+	\cueDuringWithClef #"DFlautoI" #UP "treble" { R2.*2 }
     g2.\p\downbow( | % 44
     a2.) | % 45
     b2. | % 46
@@ -256,10 +267,13 @@ DVioloncelli =  \relative d {
     des2. | % 29
     <f, f'>2. ^"div." | \barNumberCheck #30
     <e e'>2. | % 31
-    <es es'>2. | % 32
+    <es! es'!>2. | % 32
     <d d'>2 r4 | % 33
     R2.*4 | % 37
-    \key c \major \time 6/8 R2.*9 | % 46
+    \key c \major \time 6/8
+    R2.*6 | % 43
+	\tag #'part { \new CueVoice { \set instrumentCueName = "Vl. I" } }
+	\cueDuringWithClef #"DVioliniI" #UP "treble" { R2.*3 }
     g'2.\downbow \bar "||"
     \time 4/4  R1*8 \bar "|."
     }
@@ -348,6 +362,7 @@ DOrganoMDSopra =  \relative d' {
     g'1 ~ | % 54
     g1 ^\fermata \bar "|."
     }
+\addQuote "DOrganoMDSopra" \DOrganoMDSopra
 
 DOrganoMDMezzoSopra =  \relative a {
 	\voiceTwo 
@@ -661,7 +676,7 @@ DBassoLyricsOne =  \lyricmode { Ex -- or -- tum in te --
     "tus," et jus -- "tus." }
 
 % The score definition
-D = \score { \killCues
+D = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
