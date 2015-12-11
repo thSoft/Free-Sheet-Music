@@ -217,9 +217,9 @@ ASoprano =  \relative f' {
     \clef "treble" \key f \major \time 4/4 R1*7 | % 8
     r2 r4 r8 f8\f^"leggiero" | % 9
     a4 bes4 c4 r8 c8 | \barNumberCheck #10
-    d8 c16 d16 es16 d16 c16 bes16 c4 r8 c8 | % 11
+    d8 c16 d16 es16-> d16 c16 bes16 c4 r8 c8 | % 11
     a4 g4 f4 r8 f8 | % 12
-    g8 f16 g16 as16 g16 f16 d16 f4. r8 | % 13
+    g8 f16 g16 as16-> g16 f16 d16 f4. r8 | % 13
     es'8 es8 es8 d8 d8 c8 c4 | % 14
     bes4. a8 a8 g8 r4 | % 15
     d'8 d8 d8 c8 c8 b8 b4 | % 16
@@ -231,10 +231,10 @@ ASoprano =  \relative f' {
     a8 a8 a8 g8 g8 f8 f4 | % 24
     f4. g8 f8 e8 r8 f8\f | % 25
     a4 bes4 c4 r8 c8 | % 26
-    d8 c16 d16 es16 d16 c16 bes16 c4 r8 c8 | % 27
+    d8 c16 d16 es16-> d16 c16 bes16 c4 r8 c8 | % 27
     a4 c4 f4 r8 f,8\mp | % 28
     f8 es16 f16 g8 r8 r4 r8 bes8\f | % 29
-    bes8 a16 bes16 c16 d16 f16 d16 f4 r4 \bar "||"
+    bes8 a16 bes16 c16-> d16 f16 d16 f4 r4 \bar "||"
     }
 
 ASopranoLyricsOne =  \lyricmode { Be -- a -- tus "vir," qui ti
@@ -318,7 +318,7 @@ ATenore =  \relative c' {
     c4 d4 e4 r8 f8 | \barNumberCheck #10
     f8 f8 f4. e16 d16 e8 c8\noBeam | % 11
     c4 c4 c8 bes16 a16 bes8 bes8\noBeam | % 12
-    bes8 bes8 bes8 g8 a16 g16 f16 d16 f8 r8 | % 13
+    bes8 bes8 bes8 g8 a16-> g16 f16 d16 f8 r8 | % 13
     f'4 f4 f4 f4 | % 14
     c2 c4 r4 | % 15
     bes8 a8 g4 g4 g4 | % 16
@@ -348,7 +348,7 @@ ABasso =  \relative c {
     \clef "bass" \key f \major \time 4/4 R1*7 | % 8
     r2 r4 r8 c8\f | % 9
     f4 c4 f,4 r8 a'8 | \barNumberCheck #10
-    bes8 a8 g8. f16 es16 d16 c16 bes16 c8 c8\noBeam | % 11
+    bes8 a8 g8. f16 es16-> d16 c16 bes16 c8 c8\noBeam | % 11
     d4 a4 bes4 r8 a8 | % 12
     g8 g8 c8. c16 f,4. r8 | % 13
     as'8 as8 bes8 bes8 f4 c8 d8 | % 14
@@ -362,7 +362,7 @@ ABasso =  \relative c {
     es2 bes4. c8 | % 24
     des4 g,4 c8 c8 r8 c8\f | % 25
     f4 c4 f,4 r8 a'8 | % 26
-    bes8 a8 g8. f16 es16 d16 c16 bes16 c8 c8\noBeam | % 27
+    bes8 a8 g8. f16 es16-> d16 c16 bes16 c8 c8\noBeam | % 27
     d4 a4 bes4 r8 a8\mp | % 28
     g4 g8 r8 r2 | % 29
     des'8\f des8 c8. c16 f,4 r4 \bar "||"
@@ -382,7 +382,7 @@ A = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
-                \set Staff.instrumentName = "Violini I"
+                \set Staff.instrumentName = "Vl. I"
                 \set Staff.shortInstrumentName = "Vl. I"
                 \context Staff <<
                 	\AGlobal
@@ -390,35 +390,35 @@ A = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Violini II"
+                \set Staff.instrumentName = "Vl. II"
                 \set Staff.shortInstrumentName = "Vl. II"
                 \context Staff << 
                     \context Voice = "PartPTwoVoiceOne" { \AVioliniII }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Viole I"
+                \set Staff.instrumentName = "Vle. I"
                 \set Staff.shortInstrumentName = "Vle. I"
                 \context Staff << 
                     \context Voice = "AVioleI" { \AVioleI }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Viole II"
+                \set Staff.instrumentName = "Vle. II"
                 \set Staff.shortInstrumentName = "Vle. II"
                 \context Staff << 
                     \context Voice = "AVioleII" { \AVioleII }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Violoncelli"
+                \set Staff.instrumentName = "Vc."
                 \set Staff.shortInstrumentName = "Vc."
                 \context Staff << 
                     \context Voice = "AVioloncelli" { \AVioloncelli }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Contrabbassi"
+                \set Staff.instrumentName = "Cb."
                 \set Staff.shortInstrumentName = "Cb."
                 \context Staff << 
                     \context Voice = "AContrabbassi" { \AContrabbassi }
@@ -427,7 +427,7 @@ A = \score { \removeWithTag #'part \killCues
             
             >>
         \new PianoStaff <<
-            \set PianoStaff.instrumentName = "Organo"
+            \set PianoStaff.instrumentName = "Org."
             \set PianoStaff.shortInstrumentName = "Org."
             \context Staff = "1" << 
                 \context Voice = "AOrganoMD" { \AOrganoMD }
@@ -439,7 +439,7 @@ A = \score { \removeWithTag #'part \killCues
             >>
         \new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
                     \context Voice = "ASoprano" { \ASoprano }
@@ -447,7 +447,7 @@ A = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
+                \set Staff.instrumentName = "M"
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "AMezzosoprano" { \AMezzosoprano }
@@ -455,7 +455,7 @@ A = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "AAlto" { \AAlto }
@@ -463,7 +463,7 @@ A = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "ATenore" { \ATenore }
@@ -471,7 +471,7 @@ A = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "ABasso" { \ABasso }

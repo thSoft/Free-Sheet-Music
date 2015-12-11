@@ -11,12 +11,12 @@
   	\RhythmicStaff \RemoveEmptyStaves
   	\override VerticalAxisGroup.remove-first = ##t
   }
-  indent = 0.9\cm
 }
 
 \paper {
 	left-margin = 1.4\cm
 	right-margin = 0.8\cm
+	system-separator-markup = \slashSeparator
 }
 
 \A

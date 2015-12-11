@@ -726,7 +726,7 @@ G = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
-                \set Staff.instrumentName = "Flauti"
+                \set Staff.instrumentName = "Fl."
                 \set Staff.shortInstrumentName = "Fl."
                 \context Staff <<
                 	\GGlobal 
@@ -734,7 +734,7 @@ G = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Oboi"
+                \set Staff.instrumentName = "Ob."
                 \set Staff.shortInstrumentName = "Ob."
                 \context Staff << 
                     \context Voice = "GOboeI" { \GOboeI }
@@ -742,14 +742,14 @@ G = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Corno inglese"} \line {"in F"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"Cor."} \line {"ingl."} \line {"F"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"Cor."} \line {"ingl."} \line {"F"} } }
                 \context Staff << 
                     \context Voice = "GCornoInglese" { \GCornoInglese }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Fagotto"
+                \set Staff.instrumentName = "Fg."
                 \set Staff.shortInstrumentName = "Fg."
                 \context Staff << 
                     \context Voice = "GFagotto" { \GFagotto }
@@ -759,7 +759,7 @@ G = \score { \removeWithTag #'part \killCues
             >>
         \new StaffGroup <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Trombe"} \line {"in B"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"Tr."} \line {"B"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr."} \line {"B"} } }
                 \context Staff << 
                     \context Voice = "GTrombaI" { \GTrombaI }
@@ -767,7 +767,7 @@ G = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Corni"} \line {"in F"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"Cor."} \line {"F"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"Cor."} \line {"F"} } }
                 \context Staff << 
                     \context Voice = "GCornoI" { \GCornoI }
@@ -775,7 +775,7 @@ G = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tromboni"
+                \set Staff.instrumentName = "Trb."
                 \set Staff.shortInstrumentName = "Trb."
                 \context Staff << 
                     \context Voice = "GTromboneI" { \GTromboneI }
@@ -783,7 +783,7 @@ G = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Trombone"} \line {"basso"} } }
+                \set Staff.instrumentName = "Trb. b."
                 \set Staff.shortInstrumentName = "Trb. b."
                 \context Staff << 
                     \context Voice = "GTromboneBasso" { \GTromboneBasso }
@@ -792,7 +792,7 @@ G = \score { \removeWithTag #'part \killCues
             
             >>
         \new Staff <<
-            \set Staff.instrumentName = "Timpani"
+            \set Staff.instrumentName = "Timp."
             \set Staff.shortInstrumentName = "Timp."
             \context Staff << 
                 \context Voice = "GTimpani" { \GTimpani }
@@ -800,35 +800,35 @@ G = \score { \removeWithTag #'part \killCues
             >>
         \new StaffGroup <<
             \new Staff <<
-                \set Staff.instrumentName = "Violini I"
+                \set Staff.instrumentName = "Vl. I"
                 \set Staff.shortInstrumentName = "Vl. I"
                 \context Staff << 
                     \context Voice = "GVioliniI" { \GVioliniI }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Violini II"
+                \set Staff.instrumentName = "Vl. II"
                 \set Staff.shortInstrumentName = "Vl. II"
                 \context Staff << 
                     \context Voice = "GVioliniII" { \GVioliniII }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Viole"
+                \set Staff.instrumentName = "Vle."
                 \set Staff.shortInstrumentName = "Vle."
                 \context Staff << 
                     \context Voice = "GViole" { \GViole }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Violoncelli"
+                \set Staff.instrumentName = "Vc."
                 \set Staff.shortInstrumentName = "Vc."
                 \context Staff << 
                     \context Voice = "GVioloncelli" { \GVioloncelli }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Contrabbassi"
+                \set Staff.instrumentName = "Cb."
                 \set Staff.shortInstrumentName = "Cb."
                 \context Staff << 
                     \context Voice = "GContrabbassi" { \GContrabbassi }
@@ -837,7 +837,7 @@ G = \score { \removeWithTag #'part \killCues
             
             >>
         \new PianoStaff <<
-            \set PianoStaff.instrumentName = "Organo"
+            \set PianoStaff.instrumentName = "Org."
             \set PianoStaff.shortInstrumentName = "Org."
             \context Staff = "1" << 
                 \context Voice = "GOrganoMDSopra" { \GOrganoMDSopra }
@@ -852,7 +852,7 @@ G = \score { \removeWithTag #'part \killCues
             >>
         \new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
                     \context Voice = "GSoprano" { \GSoprano }
@@ -860,7 +860,7 @@ G = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "GAlto" { \GAlto }
@@ -868,7 +868,7 @@ G = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "GTenore" { \GTenore }
@@ -876,7 +876,7 @@ G = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "GBasso" { \GBasso }

@@ -30,6 +30,7 @@
 }
 \score {
 	\new RhythmicStaff <<
+		\set RhythmicStaff.instrumentName = \markup { \center-column { \line {"Tamburello"} \line {"basco"} } }
 		\EGlobal
 		\ETamburelloBasco
 	>>
@@ -57,6 +58,7 @@
 }
 \score {
 	\new RhythmicStaff <<
+		\set RhythmicStaff.instrumentName = "Battacio"
 		\IGlobal
 		\IBattacio
 	>>	
@@ -66,6 +68,7 @@
 }
 \score {
 	\new RhythmicStaff <<
+		\set RhythmicStaff.instrumentName = "Piatti"
 		\JGlobal
 		\JPiatti
 	>>	

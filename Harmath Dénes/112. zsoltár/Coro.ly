@@ -4,14 +4,14 @@
 	instrument = "Coro"
 }
 
-\layout {
-	indent = 1.3\cm
+\paper {
+	left-margin = 1.2\cm
 }
 
 \score {
         \new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff <<
                 	\AGlobal 
@@ -20,7 +20,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
+                \set Staff.instrumentName = "M"
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "AMezzosoprano" { \AMezzosoprano }
@@ -28,7 +28,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "AAlto" { \AAlto }
@@ -36,7 +36,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "ATenore" { \ATenore }
@@ -44,7 +44,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "ABasso" { \ABasso }
@@ -57,7 +57,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
                 	\BGlobal
@@ -66,7 +66,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "BAlto" { \BAlto }
@@ -74,7 +74,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "BTenore" { \BTenore }
@@ -82,7 +82,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "BBasso" { \BBasso }
@@ -95,7 +95,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
                 	\CGlobal
@@ -104,7 +104,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
+                \set Staff.instrumentName = "M"
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "CMezzosoprano" { \CMezzosoprano }
@@ -112,7 +112,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "CAlto" { \CAlto }
@@ -120,7 +120,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "CTenore" { \CTenore }
@@ -128,7 +128,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "CBasso" { \CBasso }
@@ -141,7 +141,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff <<
                 	\DGlobal 
@@ -150,7 +150,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "DAlto" { \DAlto }
@@ -158,7 +158,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "DTenore" { \DTenore }
@@ -166,7 +166,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "DBasso" { \DBasso }
@@ -179,7 +179,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff <<
                 	\EGlobal 
@@ -188,7 +188,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "Alto" { \EAlto }
@@ -196,7 +196,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "Tenore" { \ETenore }
@@ -204,7 +204,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "Basso" { \EBasso }
@@ -223,7 +223,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
                 	\GGlobal
@@ -232,7 +232,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "GAlto" { \GAlto }
@@ -240,7 +240,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "GTenore" { \GTenore }
@@ -248,7 +248,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "GBasso" { \GBasso }
@@ -273,7 +273,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
                 	\JGlobal
@@ -282,7 +282,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Mezzo-"} \line {"soprano"} } }
+                \set Staff.instrumentName = "M"
                 \set Staff.shortInstrumentName = "M"
                 \context Staff << 
                     \context Voice = "JMezzosoprano" { \JMezzosoprano }
@@ -290,7 +290,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "JAlto" { \JAlto }
@@ -298,7 +298,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "JTenore" { \JTenore }
@@ -306,7 +306,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Baritono"
+                \set Staff.instrumentName = "Bar"
                 \set Staff.shortInstrumentName = "Bar"
                 \context Staff << 
                     \context Voice = "JBaritono" { \JBaritono }
@@ -314,7 +314,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "JBasso" { \JBasso }
@@ -327,7 +327,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = "Soprano"
+                \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff <<
                 	\KGlobal 
@@ -336,7 +336,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Alto"
+                \set Staff.instrumentName = "A"
                 \set Staff.shortInstrumentName = "A"
                 \context Staff << 
                     \context Voice = "KAlto" { \KAlto }
@@ -344,7 +344,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Tenore"
+                \set Staff.instrumentName = "T"
                 \set Staff.shortInstrumentName = "T"
                 \context Staff << 
                     \context Voice = "KTenore" { \KTenore }
@@ -352,7 +352,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Basso"
+                \set Staff.instrumentName = "B"
                 \set Staff.shortInstrumentName = "B"
                 \context Staff << 
                     \context Voice = "KBasso" { \KBasso }

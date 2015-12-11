@@ -292,7 +292,7 @@ HSopranoSolo =  \relative b' {
     \time 4/2  R1*8 | % 21
     R1*6 | % 24
     \time 4/4  b8[ g8 b8] d8[ -- c8 b8] b4 | % 25
-    \time 17/8  b8[ d8 e8 g8 e8] g4 e8[ e8 d8] e8[ fis8 e8 d8 e8] e4 ~ | % 26
+    \time 17/8  b8[ d8 e8 g8 e8] g4 e8[ e8] d8 e8[ fis8 e8 d8 e8] e4 ~ | % 26
     \time 4/2  e8 r8 r4 r2 r1 | % 27
     R1*2 | % 28
     R1*6 | % 31
@@ -310,7 +310,7 @@ HAltoSolo =  \relative e' {
     \time 4/2  e8 r1 r2 r4 r8 | % 11
     R1*8 | % 15
     \time 12/8  a8[ a8 -- d8 -- c8 b8 c8 d8 c8] b4 a4 | % 16
-    \time 15/8  a8[ -- g8 e8] g4 a8[ b8 c8 a8] b8[ a8 g8 a8] a4 ~ | % 17
+    \time 15/8  a8[ -- g8] e8 g4 a8[ b8 c8 a8] b8[ a8 g8 a8] a4 ~ | % 17
     \time 4/2  a8 r8 r4 r2 r1 | % 18
     R1*6 | % 21
     R1*6 | % 24
@@ -331,7 +331,7 @@ H = \score { \removeWithTag #'part \killCues
     <<
         \new StaffGroup <<
             \new Staff <<
-                \set Staff.instrumentName = "Flauto I"
+                \set Staff.instrumentName = "Fl. I"
                 \set Staff.shortInstrumentName = "Fl. I"
                 \context Staff << 
 					\HHeader
@@ -340,42 +340,42 @@ H = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Flauto II"
+                \set Staff.instrumentName = "Fl. II"
                 \set Staff.shortInstrumentName = "Fl. II"
                 \context Staff << 
                     \context Voice = "HFlautoII" { \HFlautoII }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Oboe I"
+                \set Staff.instrumentName = "Ob. I"
                 \set Staff.shortInstrumentName = "Ob. I"
                 \context Staff << 
                     \context Voice = "HOboeI" { \HOboeI }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Oboe II"
+                \set Staff.instrumentName = "Ob. II"
                 \set Staff.shortInstrumentName = "Ob. II"
                 \context Staff << 
                     \context Voice = "HOboeII" { \HOboeII }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Corno inglese"} \line {"in F"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"Cor."} \line {"ingl."} \line {"F"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"Cor."} \line {"ingl."} \line {"F"} } }
                 \context Staff << 
                     \context Voice = "HCornoInglese" { \HCornoInglese }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Fagotto I"
+                \set Staff.instrumentName = "Fg. I"
                 \set Staff.shortInstrumentName = "Fg. I"
                 \context Staff << 
                     \context Voice = "HFagottoI" { \HFagottoI }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = "Fagotto II"
+                \set Staff.instrumentName = "Fg. II"
                 \set Staff.shortInstrumentName = "Fg. II"
                 \context Staff << 
                     \context Voice = "HFagottoII" { \HFagottoII }
@@ -385,7 +385,7 @@ H = \score { \removeWithTag #'part \killCues
             >>
         \new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Soprano"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \context Staff << 
                     \context Voice = "HSopranoSolo" { \HSopranoSolo }
@@ -393,7 +393,7 @@ H = \score { \removeWithTag #'part \killCues
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Alto"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \context Staff << 
                     \context Voice = "HAltoSolo" { \HAltoSolo }

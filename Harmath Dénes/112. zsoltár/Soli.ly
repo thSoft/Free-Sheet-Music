@@ -18,7 +18,7 @@
 }
 \score {
 	\new Staff <<
-            \set Staff.instrumentName = \markup { \center-column { \line {"Soprano"} \line {"solo"} } }
+            \set Staff.instrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
             \set Staff.shortInstrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
             \context Staff << 
             	\CGlobal
@@ -30,7 +30,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Soprano"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \context Staff << 
                 	\DGlobal
@@ -39,7 +39,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Alto"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \context Staff << 
                     \context Voice = "DAltoSolo" { \DAltoSolo }
@@ -51,7 +51,7 @@
 }
 \score {
         \new Staff <<
-            \set Staff.instrumentName = \markup { \center-column { \line {"Tenore"} \line {"solo"} } }
+            \set Staff.instrumentName = \markup { \center-column { \line {"T"} \line {"solo"} } }
             \set Staff.shortInstrumentName = \markup { \center-column { \line {"T"} \line {"solo"} } }
             \context Staff << 
             	\EGlobal
@@ -63,7 +63,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Soprano"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \context Staff <<
                 	\FGlobal 
@@ -72,7 +72,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Alto"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \context Staff << 
                     \context Voice = "FAltoSolo" { \FAltoSolo }
@@ -80,7 +80,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Tenore"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"T"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"T"} \line {"solo"} } }
                 \context Staff << 
                     \context Voice = "FTenoreSolo" { \FTenoreSolo }
@@ -99,7 +99,7 @@
 \score {
 	\new ChoirStaff <<
 	            \new Staff <<
-	                \set Staff.instrumentName = \markup { \center-column { \line {"Soprano"} \line {"solo"} } }
+	                \set Staff.instrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
 	                \set Staff.shortInstrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
 	                \context Staff << 
 	                	\HGlobal
@@ -108,7 +108,7 @@
 	                    >>
 	                >>
 	            \new Staff <<
-	                \set Staff.instrumentName = \markup { \center-column { \line {"Alto"} \line {"solo"} } }
+	                \set Staff.instrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
 	                \set Staff.shortInstrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
 	                \context Staff << 
 	                    \context Voice = "HAltoSolo" { \HAltoSolo }
@@ -121,7 +121,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Alto"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \context Staff << 
                 	\IGlobal
@@ -130,7 +130,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Tenore"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"T"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"T"} \line {"solo"} } }
                 \context Staff << 
                     \context Voice = "ITenoreSolo" { \ITenoreSolo }
@@ -143,7 +143,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Soprano"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \context Staff << 
                 	\JGlobal
@@ -152,7 +152,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Alto"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \context Staff << 
                     \context Voice = "JAltoSolo" { \JAltoSolo }
@@ -160,7 +160,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Tenore"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"T"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"T"} \line {"solo"} } }
                 \context Staff << 
                     \context Voice = "JTenoreSolo" { \JTenoreSolo }
@@ -173,7 +173,7 @@
 \score {
 	\new ChoirStaff <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Soprano"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"S"} \line {"solo"} } }
                 \context Staff << 
                 	\KGlobal
@@ -182,7 +182,7 @@
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Alto"} \line {"solo"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \set Staff.shortInstrumentName = \markup { \center-column { \line {"A"} \line {"solo"} } }
                 \context Staff << 
                     \context Voice = "KAltoSolo" { \KAltoSolo }

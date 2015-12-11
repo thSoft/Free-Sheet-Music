@@ -3,8 +3,13 @@
 \header {
 	instrument = "Organo"
 }
+
+\paper {
+	page-breaking = #ly:page-turn-breaking
+}
+
 \score {
-			\new PianoStaff <<
+			\new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" << 
             	\AGlobal
                 \context Voice = "AOrganoMD" { \AOrganoMD }
@@ -16,7 +21,7 @@
             >>
 }
 \score {
-			\new PianoStaff <<
+			\new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
             	\BGlobal 
                 \context Voice = "BOrganoMD" { \BOrganoMD }
@@ -28,7 +33,7 @@
             >>
 }
 \score {
-	        \new PianoStaff <<
+	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" << 
             	\CGlobal
                 \context Voice = "COrganoMDSopra" { \COrganoMDSopra }
@@ -43,7 +48,7 @@
             >>
 }
 \score {
-	        \new PianoStaff <<
+	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
             	\DGlobal 
                 \context Voice = "DOrganoMDSopra" { \DOrganoMDSopra }
@@ -60,7 +65,7 @@
             >>
 }
 \score {
-	        \new PianoStaff <<
+	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
             	\EGlobal 
                 \context Voice = "EOrganoMDSopra" { \EOrganoMDSopra }
@@ -79,7 +84,7 @@
 	>>	
 }
 \score {
-	        \new PianoStaff <<
+	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
             	\GGlobal 
                 \context Voice = "GOrganoMDSopra" { \GOrganoMDSopra }
@@ -106,7 +111,7 @@
 	>>	
 }
 \score {
-	        \new PianoStaff <<
+	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
             	\JGlobal 
                 \context Voice = "JOrganoMDSopra" { \JOrganoMDSopra }
@@ -120,7 +125,7 @@
             >>
 }
 \score {
-	        \new PianoStaff <<
+	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
             	\KGlobal 
                 \context Voice = "KOrganoMDSopra" { \KOrganoMDSopra }
