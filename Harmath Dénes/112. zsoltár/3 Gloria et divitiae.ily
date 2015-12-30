@@ -6,7 +6,8 @@ CHeader = {
 CGlobal = {
 	\CHeader
 	\tempo "Ad libitum"
-	\time 9/8 s8*27
+	\time 9/8
+	s8*27
 	\overrideTimeSignatureSettings
         4/4        % timeSignatureFraction
         1/8        % baseMomentFraction
@@ -15,11 +16,13 @@ CGlobal = {
     \time 4/4
     s1*5 | % 9
 	\tempo "Vivace"
+	\tag #'score \mark \markup { \box "Dicsőség és gazdagság az ő házában," }
     s1*6 | % 15
     \time 9/8  s8*9 | % 16
     \time 3/4  s2. | % 17
 	\set Score.beatStructure = #'(3 2 3)
     \time 4/4  s1*2 | % 19
+	\tag #'score \mark \markup { \box "és az ő igazsága megmarad örökkön-örökké." }
 	\set Score.beatStructure = #'(3 3 2)
 	s1
 	\set Score.beatStructure = #'(3 2 3)

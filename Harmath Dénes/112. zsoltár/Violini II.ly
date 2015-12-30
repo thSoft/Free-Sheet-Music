@@ -10,20 +10,20 @@
 
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\AGlobal
+		\removeWithTag #'score \AGlobal
 		\AVioliniII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BVioliniII
 	>>	
 }
 \score {
 	\new StaffGroup \with { \consists "Page_turn_engraver" } <<
 		\new Staff <<
-			\CGlobal
+			\removeWithTag #'score \CGlobal
 			\CVioliniII
 		>>
 		\new Staff \CVioliniIII
@@ -31,20 +31,20 @@
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\DGlobal
+		\removeWithTag #'score \DGlobal
 		\DVioliniII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\EGlobal
+		\removeWithTag #'score \EGlobal
 		\EVioliniII
 	>>	
 }
 \score {
 	\new StaffGroup \with { \consists "Page_turn_engraver" } <<
 		\new Staff <<
-			\FGlobal
+			\removeWithTag #'score \FGlobal
 			\FVioliniII
 		>>
 		\new Staff \FVioliniIII
@@ -52,7 +52,7 @@
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\GVioliniII
 	>>	
 }
@@ -64,19 +64,19 @@
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\IGlobal
+		\removeWithTag #'score \IGlobal
 		\IVioliniII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\JVioliniII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\KVioliniII
 	>>	
 }

@@ -12,13 +12,17 @@ ETacet = {
 EGlobal = {
 	\EHeader
 	\tempo "Giocoso"
-	s1*2
+	s8
+	\tag #'score \mark \markup { \box "Jól lészen annak, ki könyörül és szívesen ád," }
+	s2..
+	s1
 	s8*9*4
 	s2.*17
 	s8*9
 	s2.*3
 	s1^"tornando al"
 	\tempo "Pochissimo meno mosso"
+	\tag #'score \mark \markup { \box \column { "az ő dolgait igazul rendezi;" "meg nem inog az mindörökké." } }
 	s1*14
 }
 EFlauto =  \relative gis' {
@@ -334,14 +338,14 @@ EOrganoMDSopra =  \relative a' {
     g16 fis16 g16 a16 b16 g16 a16 fis16 g16 fis16 e16 d16 e8 e4
     | % 7
     \time 6/8 \oneVoice R2.*3 | \barNumberCheck #10
-    r4. r4 <cis fis ais>8 ~\mp | % 11
+    r4. r4 <cis fis ais>8^( ~\mp | % 11
 	\voiceOne
-    <b fis' b>8 -_ <b gis'>4 <ais fis'>4 r8 | % 12
+    <b fis' b>8) <b gis'>4 <ais fis'>4 r8 | % 12
 	\oneVoice
     R2.*7 | % 19
 	\voiceOne
-    r4. r4 <gis' b dis>8 | \barNumberCheck #20
-    b8 -. <b cis>8 <ais dis>8 -. b4 r8 | % 21
+    r4. r4 <gis' b dis>8( | \barNumberCheck #20
+    b8) <b cis>8( <ais dis>8) b4 r8 | % 21
 	\oneVoice
     R2.*3 | % 24
     \time 9/8  R8*9 | % 25
@@ -350,7 +354,7 @@ EOrganoMDSopra =  \relative a' {
     R2. | % 28
     \time 4/4  fis,,16[ d'16 ais'16] gis,16[ e'16 c'16] bes,16[ fis'16 d'16]
     c,16 gis'16 e'16 r4 | % 29
-    e16\mp cis16 a16 e16 a16 cis16 e16 a,16 e'16 b16 a16 e16 a16 b16 e16 a,16
+    e16\p cis16 a16 e16 a16 cis16 e16 a,16 e'16 b16 a16 e16 a16 b16 e16 a,16
     | \barNumberCheck #30
     d16 a16 fis16 e16 fis16 a16 d16 a16 cis16 a16 fis16 cis16 fis16 a16
     cis16 a16 | % 31
@@ -403,11 +407,11 @@ EOrganoMS =  \relative d' {
     <g d'>4 <g cis>8 <g b>8 <e a cis>4 <b fis' b>8 <b fis' b>4 | % 6
     g4 g8 fis8 <b a'>8 fis'8 <e, b' e>8 <e b' e>4 | % 7
     \time 6/8  R2.*3 | \barNumberCheck #10
-    r4. r4 fis8 | % 11
-    gis8 cis8 e,8 fis4 r8 | % 12
+    r4. r4 fis8( | % 11
+    gis8) cis8( e,8) fis4 r8 | % 12
     R2.*7 | % 19
-    r4. r4 cis8 | \barNumberCheck #20
-    gis'8 <fis fis'>4 <b fis'>4 r8 | % 21
+    r4. r4 cis8( | \barNumberCheck #20
+    gis'8) <fis fis'>4 <b fis'>4 r8 | % 21
     R2.*3 | % 24
     \time 9/8  R8*9 | % 25
     \time 6/8  R2.*3 | % 28

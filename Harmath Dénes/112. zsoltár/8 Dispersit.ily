@@ -15,6 +15,7 @@ HGlobal = {
 	s\breve*7
 	\bar "||"
 	\tempo "In modo gregoriano"
+	\tag #'score \mark \markup { \box "Osztogat, adakozik a szegényeknek," }
 	\override Score.TimeSignature.stencil = ##f
 	\time 12/8  | % 8
 	s8*12
@@ -27,6 +28,7 @@ HGlobal = {
 	s\breve*5
 	\bar "||"
 	\tempo "In modo gregoriano"
+	\tag #'score \mark \markup { \box "az ő igazsága megmarad örökkön-örökké," }
 	\override Score.TimeSignature.stencil = ##f
 	\time 12/8
 	s8*12
@@ -39,6 +41,7 @@ HGlobal = {
 	s\breve*7
 	\bar "||"
 	\tempo "In modo gregoriano"
+	\tag #'score \mark \markup { \box "fölemeltetik a feje dicsőséggel." }
 	\override Score.TimeSignature.stencil = ##f
 	\time 4/4  | % 24
 	s8*8

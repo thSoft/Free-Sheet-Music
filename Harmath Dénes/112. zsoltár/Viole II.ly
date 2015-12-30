@@ -10,43 +10,43 @@
 
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\AGlobal
+		\removeWithTag #'score \AGlobal
 		\AVioleII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BVioleII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\CGlobal
+		\removeWithTag #'score \CGlobal
 		\CVioleII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\DGlobal
+		\removeWithTag #'score \DGlobal
 		\DViole
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\EGlobal
+		\removeWithTag #'score \EGlobal
 		\EViole
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\FGlobal
+		\removeWithTag #'score \FGlobal
 		\FVioleII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\GViole
 	>>	
 }
@@ -58,19 +58,19 @@
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\IGlobal
+		\removeWithTag #'score \IGlobal
 		\IVioleII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\JVioleII
 	>>	
 }
 \score {
 	\new Staff \with { \consists "Page_turn_engraver" } <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\KVioleII
 	>>	
 }

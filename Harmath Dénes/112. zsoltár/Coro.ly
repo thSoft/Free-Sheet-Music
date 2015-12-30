@@ -14,7 +14,7 @@
                 \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff <<
-                	\AGlobal 
+                	\removeWithTag #'score \AGlobal 
                     \context Voice = "ASoprano" { \ASoprano }
                     \new Lyrics \lyricsto "ASoprano" \ASopranoLyricsOne
                     >>
@@ -60,7 +60,7 @@
                 \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
-                	\BGlobal
+                	\removeWithTag #'score \BGlobal
                     \context Voice = "BSoprano" { \BSoprano }
                     \new Lyrics \lyricsto "BSoprano" \BSopranoLyricsOne
                     >>
@@ -98,7 +98,7 @@
                 \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
-                	\CGlobal
+                	\removeWithTag #'score \CGlobal
                     \context Voice = "CSoprano" { \CSoprano }
                     \new Lyrics \lyricsto "CSoprano" \CSopranoLyricsOne
                     >>
@@ -144,7 +144,7 @@
                 \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff <<
-                	\DGlobal 
+                	\removeWithTag #'score \DGlobal 
                     \context Voice = "DSoprano" { \DSoprano }
                     \new Lyrics \lyricsto "DSoprano" \DSopranoLyricsOne
                     >>
@@ -182,7 +182,7 @@
                 \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff <<
-                	\EGlobal 
+                	\removeWithTag #'score \EGlobal 
                     \context Voice = "Soprano" { \ESoprano }
                     \new Lyrics \lyricsto "Soprano" \ESopranoLyricsOne
                     >>
@@ -226,7 +226,7 @@
                 \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
-                	\GGlobal
+                	\removeWithTag #'score \GGlobal
                     \context Voice = "GSoprano" { \GSoprano }
                     \new Lyrics \lyricsto "GSoprano" \GSopranoLyricsOne
                     >>
@@ -276,7 +276,7 @@
                 \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff << 
-                	\JGlobal
+                	\removeWithTag #'score \JGlobal
                     \context Voice = "JSoprano" { \JSoprano }
                     \new Lyrics \lyricsto "JSoprano" \JSopranoLyricsOne
                     >>
@@ -330,7 +330,7 @@
                 \set Staff.instrumentName = "S"
                 \set Staff.shortInstrumentName = "S"
                 \context Staff <<
-                	\KGlobal 
+                	\removeWithTag #'score \KGlobal 
                     \context Voice = "KSoprano" { \KSoprano }
                     \new Lyrics \lyricsto "KSoprano" \KSopranoLyricsOne
                     >>

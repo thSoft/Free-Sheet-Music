@@ -11,7 +11,7 @@
 \score {
 			\new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" << 
-            	\AGlobal
+            	\removeWithTag #'score \AGlobal
                 \context Voice = "AOrganoMD" { \AOrganoMD }
                 >> \context Staff = "2" <<
                 \context Voice = "AOrganoMS" { \AOrganoMS }
@@ -23,7 +23,7 @@
 \score {
 			\new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
-            	\BGlobal 
+            	\removeWithTag #'score \BGlobal 
                 \context Voice = "BOrganoMD" { \BOrganoMD }
                 >> \context Staff = "2" <<
                 \context Voice = "BOrganoMS" { \BOrganoMS }
@@ -35,7 +35,7 @@
 \score {
 	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" << 
-            	\CGlobal
+            	\removeWithTag #'score \CGlobal
                 \context Voice = "COrganoMDSopra" { \COrganoMDSopra }
                 \context Voice = "COrganoMDSotto" { \COrganoMDSotto }
                 \context Voice = "COrganoMDMezzo" { \COrganoMDMezzo }
@@ -50,7 +50,7 @@
 \score {
 	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
-            	\DGlobal 
+            	\removeWithTag #'score \DGlobal 
                 \context Voice = "DOrganoMDSopra" { \DOrganoMDSopra }
                 \context Voice = "DOrganoMDMezzoSopra" { \DOrganoMDMezzoSopra }
                 \context Voice = "DOrganoMDMezzoSotto" { \DOrganoMDMezzoSotto }
@@ -67,7 +67,7 @@
 \score {
 	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
-            	\EGlobal 
+            	\removeWithTag #'score \EGlobal 
                 \context Voice = "EOrganoMDSopra" { \EOrganoMDSopra }
                 \context Voice = "EOrganoMDSotto" { \EOrganoMDSotto }
                 >> \context Staff = "2" <<
@@ -86,12 +86,11 @@
 \score {
 	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
-            	\GGlobal 
+            	\removeWithTag #'score \GGlobal 
                 \context Voice = "GOrganoMDSopra" { \GOrganoMDSopra }
                 \context Voice = "GOrganoMDSotto" { \GOrganoMDSotto }
                 >> \context Staff = "2" <<
                 \context Voice = "GOrganoMSSopra" { \GOrganoMSSopra }
-                \context Voice = "GOrganoMSMezzo" { \GOrganoMSMezzo }
                 \context Voice = "GOrganoMSSotto" { \GOrganoMSSotto }
                 >> \context Staff = "3" <<
                 \context Voice = "GOrganoPed" { \GOrganoPed }
@@ -113,7 +112,7 @@
 \score {
 	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
-            	\JGlobal 
+            	\removeWithTag #'score \JGlobal 
                 \context Voice = "JOrganoMDSopra" { \JOrganoMDSopra }
                 \context Voice = "JOrganoMDSotto" { \JOrganoMDSotto }
                 >> \context Staff = "2" <<
@@ -127,7 +126,7 @@
 \score {
 	        \new PianoStaff \with { \consists "Page_turn_engraver" } <<
             \context Staff = "1" <<
-            	\KGlobal 
+            	\removeWithTag #'score \KGlobal 
                 \context Voice = "KOrganoMDSopra" { \KOrganoMDSopra }
                 \context Voice = "KOrganoMDMezzo" { \KOrganoMDMezzo }
                 \context Voice = "KOrganoMDSotto" { \KOrganoMDSotto }

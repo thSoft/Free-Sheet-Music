@@ -13,7 +13,7 @@
 
 \score {<<
 	\new Staff <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BTrombaI
 	>>
 	\new Staff <<
@@ -46,7 +46,7 @@
 }
 \score {
 	\new Staff <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\new Voice \GTrombaI
 		\new Voice \GTrombaII
 	>>	
@@ -65,14 +65,14 @@
 }
 \score {
 	\new Staff <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\new Voice \JTrombaI
 		\new Voice \JTrombaII
 	>>	
 }
 \score {
 	\new Staff <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\KTrombe
 	>>	
 }

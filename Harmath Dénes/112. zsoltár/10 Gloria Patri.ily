@@ -6,7 +6,10 @@ JHeader = {
 JGlobal = {
 	\JHeader
 	\tempo "Festivo"
-	s1.*3
+	s8
+	\tag #'score \mark \markup { \box \column { "Dicsőség az Atyának és Fiúnak" "és Szentlélek Istennek." } }
+	s8*11
+	s1.*2
 	\tempo "Cantabile"
 	s\breve*6
 	s2..*4^"accel."

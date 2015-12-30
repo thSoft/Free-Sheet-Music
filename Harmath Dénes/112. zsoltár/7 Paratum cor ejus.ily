@@ -14,7 +14,11 @@ GGlobal = {
 	s1.*19
 	s1.^"rit."
 	\tempo "Con brio"
-	s1.*38
+	s1.*8
+	\tag #'score \mark \markup { \box \column { "Erős a szíve, mivelhogy az Úrban bízik," "bátor az ő szíve," } }
+	s1.*4
+	\tag #'score \mark \markup { \box \column { "azért nem retteg," "mígnem meglátja ellenségeinek bukását." } }
+	s1.*26
 }
 GFlauti =  \relative a'' {
     \clef "treble" \key c \major \time 12/8 | % 1
@@ -476,10 +480,10 @@ GOrganoMDSopra =  \relative c'' {
     e4 d8 c4 d8 e4. fis4. | % 49
     g4. a4. a2. ~ | \barNumberCheck #50
     a2. ~ a4. r4. | % 51
-    \oneVoice r2. r4. r4 <c,, es bes'>8 | % 52
+    \oneVoice r2. r4. r4 <c,, es bes'>8\mp | % 52
     <c d f g>2. ~ ~ ~ <b d f g>4. r4. | % 53
     R1.*2 | % 55
-    c8 ^"Plein jeu" f8 g8 c8 f8 g8 c4. c,4. | % 56
+    c8 \mf^"Plein jeu" f8 g8 c8 f8 g8 c4. c,4. | % 56
     f,8 b8 c8 f8 b8 c8 f4. f,4. | % 57
     a8 c8 g8 a8 e8 g8 d8 e8 c8 d8 a8 c8 | % 58
     g8 a8 e8 g8 d8 e8 c8 r4 r4. \bar "|."
@@ -505,7 +509,7 @@ GOrganoMSSopra =  \relative e' {
     e'2. ~ e4. r4. | % 45
     <c g'>2. ~ ~ <c g'>4. r4. | % 46
     \voiceOne r2. d2. | % 47
-    \oneVoice <f, a d>2. ~ ~ <a d>4. r4. | % 48
+    \oneVoice <a d>2. ~ ~ <a d>4. r4. | % 48
     <a e'>2. c4 e8 d4 c8 | % 49
     bes4. d4. g4 f8 g4 a8 | \barNumberCheck #50
     fis2. fis4. r4. | % 51
@@ -515,19 +519,11 @@ GOrganoMSSopra =  \relative e' {
     R1. \bar "|."
     }
 
-GOrganoMSMezzo =  \relative d {
+GOrganoMSSotto =  \relative d' {
 	\voiceTwo
     \key c \major \time 12/8 s1.*42 | % 43
     s1. s1*3 | % 46
-    c2. \rest c4 \rest a'8 g4. s1. s2*15 s2*15
-    s1. \bar "|."
-    }
-
-GOrganoMSSotto =  \relative d' {
-	\voiceThree
-    \key c \major \time 12/8 s1.*42 | % 43
-    s1. s1*3 | % 46
-    d4. \rest d4 c8 b4. ~ b4 a8 s1. s2*15 s2*15
+    d4. \rest d4 c8 b4 a8 b4 g8 s1. s2*15 s2*15
     s1. \bar "|."
     }
 
@@ -844,7 +840,6 @@ G = \score { \removeWithTag #'part \killCues
                 \context Voice = "GOrganoMDSotto" { \GOrganoMDSotto }
                 >> \context Staff = "2" <<
                 \context Voice = "GOrganoMSSopra" { \GOrganoMSSopra }
-                \context Voice = "GOrganoMSMezzo" { \GOrganoMSMezzo }
                 \context Voice = "GOrganoMSSotto" { \GOrganoMSSotto }
                 >> \context Staff = "3" <<
                 \context Voice = "GOrganoPed" { \GOrganoPed }

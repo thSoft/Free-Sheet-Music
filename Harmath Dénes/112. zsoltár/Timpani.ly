@@ -24,7 +24,7 @@
 }
 \score {
 	\new Staff <<
-		\DGlobal
+		\removeWithTag #'score \DGlobal
 		\DTimpani
 	>>	
 }
@@ -42,7 +42,7 @@
 }
 \score {
 	\new Staff <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\GTimpani
 	>>	
 }
@@ -60,7 +60,7 @@
 }
 \score {
 	\new Staff <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\JTimpani
 	>>	
 }

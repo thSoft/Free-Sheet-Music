@@ -12,11 +12,14 @@ DGlobal = {
 	\DHeader
 	\tempo "Moderato"
 	s2.*15^"rit. poco a poco"
+	\tag #'score \mark \markup { \box "A sötétségben..." }
 	s2 \tempo "Grave ma non troppo" s4 
 	s2.*20
 	\tempo \markup{ \note #"8" #1 = \note #"4" #1 }
+	\tag #'score \mark \markup { \box "...világosság támad az igazaknak:" }
 	s2.*10
 	\tempo "Maestoso"
+	\tag #'score \mark \markup { \box "Ő, az Irgalmas, Könyörülő és Igaz." }
 	s1*8 
 }
 
@@ -333,7 +336,7 @@ DOrganoMDSopra =  \relative d' {
     <d a' d>2. ~ ~ ~ | % 14
     <d a' d>2. ~ ~ ~ | % 15
     <d a' d>4 r4 r4 | % 16
-    R2.*21 | % 37
+    R2.*21 | % 37 TODO cue
     \key c \major \time 6/8 | % 37
 	\once \override Staff.Hairpin #'circled-tip = ##t
     d16^"tutti tenuti" \< g8 a8 g16 d16 g8 a8 g16 | % 38
@@ -409,10 +412,10 @@ DOrganoMSSopra =  \relative d, {
     \key c \major \time 6/8 R2.*2 | % 39
     R2.*5 | % 44
     R2.*3 \bar "||"
-    \time 4/4  <a d e fis>8 r8 <a d e fis>8 <b e fis gis>8 <a d e fis>4
-    ~ ~ ~ ~ <a d e fis>8 <b e fis gis>8 | % 48
-    <a d e fis>4 ~ ~ ~ ~ <a d e fis>8 <b e fis gis>8 <a d e fis>4 ~ ~ ~
-    ~ <a d e fis>8 <d e fis a>8 | % 49
+    \time 4/4  <a d fis>8 r8 <a d fis>8 <b e gis>8 <a d fis>4
+    ~ ~ ~ ~ <a d fis>8 <b e gis>8 | % 48
+    <a d fis>4 ~ ~ ~ ~ <a d fis>8 <b e gis>8 <a d fis>4 ~ ~ ~
+    ~ <a d fis>8 <d a'>8 | % 49
     <c es f! a>8 r8 <c es f a>8 <d f g b>8 <c es f a>4 ~ ~ ~ ~ <c es f a>8
     <d f g b>8 | \barNumberCheck #50
     <c es f a>4 ~ ~ ~ ~ <c es f a>8 <d f g b>8 <c es f a>4 ~ ~ ~ ~ <c es

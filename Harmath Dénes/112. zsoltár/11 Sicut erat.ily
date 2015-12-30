@@ -11,8 +11,12 @@ KTacet = {
 KGlobal = {
 	\KHeader
 	\tempo "Allegretto"
-	s1*5
+	s8
+	\tag #'score \mark \markup { \box "Miképpen kezdetben vala," }
+	s2..
+	s1*4
 	\tempo "Tempo giusto"
+	\tag #'score \mark \markup { \box \column { "most és mindenkor" "és mindörökkön örökké. Amen." } }
 	s\breve*41
 }
 KFlautoI =  \relative a {
@@ -520,14 +524,14 @@ KOrganoMDSopra =  \relative d' {
     \oneVoice
     R1*5 \bar "||"
     \time 4/2  R\breve*26 | % 32
-    \voiceOne r2 r4 d4\mf e2 d2 | % 33
+    \voiceOne r2 r4 d4\mp e2 d2 | % 33
     a'4 g2 fis4 g4 a8 b8 a2 | % 34
     g2 fis2 e1 | % 35
     d\breve ~ | % 36
     d2 r2 r1 | % 37
-    \oneVoice R\breve R\breve*3 \f | % 41
+    \oneVoice R\breve R\breve*3\mf\cresc | % 41
     a'4 b4 cis4 d4 e4 fis4 g4 a4 | % 42
-    r8 d,8 c8 d8 fis8 d8 c8 d8 b8 d8 c8 d8 g8 d8 c8 d8 | % 43
+    r8\f d,8 c8 d8 fis8 d8 c8 d8 b8 d8 c8 d8 g8 d8 c8 d8 | % 43
     a8 d8 c8 d8 a'8 d,8 c8 d8 g,8 d'8 c8 d8 b'8 d,8 c8 d8 | % 44
     r4 <e, a>8 c8 <e a>8 c8 <e a>8 c8 <e a>8 c8 <e g>8 c8 <e g>8 c8 <e
         g>8 c'8 | % 45
@@ -744,7 +748,7 @@ KAltoLyricsOne =  \lyricmode { Et nunc et sem -- "per,"
     -- \skip4 "men," et in sae -- \skip4 cu -- \skip4 la sae -- cu -- lo
     -- \skip4 "rum." Et nunc et sem -- "per," et in sae -- cu -- la sae
     -- cu -- \skip4 lo -- "rum," a -- \skip4 \skip4 "men." Et nunc et
-    sen -- "per," a -- \skip4 \skip4 \skip4 "men," a -- \skip4 \skip4
+    sem -- "per," a -- \skip4 \skip4 \skip4 "men," a -- \skip4 \skip4
     \skip4 "men." Be -- a -- tus "vir," a -- "men." }
 KTenore =  \relative d {
     \clef "treble_8" \key d \major \time 4/4 R1*5 \bar "||"

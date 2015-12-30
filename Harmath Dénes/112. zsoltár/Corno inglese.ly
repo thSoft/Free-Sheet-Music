@@ -18,7 +18,7 @@
 >>}
 \score {
 	\new Staff <<
-		\CGlobal
+		\removeWithTag #'score \CGlobal
 		\CCornoInglese
 	>>	
 }
@@ -30,44 +30,44 @@
 }
 \score {
 	\new Staff <<
-		\EGlobal
+		\removeWithTag #'score \EGlobal
 		\ECornoInglese
 	>>	
 }
 \score {
 	\new Staff <<
-		\FGlobal
+		\removeWithTag #'score \FGlobal
 		\FCornoInglese
 	>>	
 }
 \score {
 	\new Staff <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\GCornoInglese
 	>>	
 }
 \score {<<
 	\new Staff <<
 		\HHeader
-		\HGlobal
+		\removeWithTag #'score \HGlobal
 		\HCornoInglese
 	>>
 >>}
 \score {
 	\new Staff <<
-		\IGlobal
+		\removeWithTag #'score \IGlobal
 		\ICornoInglese
 	>>	
 }
 \score {
 	\new Staff <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\JCornoInglese
 	>>	
 }
 \score {
 	\new Staff <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\KCornoInglese
 	>>	
 }

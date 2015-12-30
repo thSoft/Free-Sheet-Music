@@ -6,25 +6,25 @@
 
 \score {
 	\new Staff <<
-		\AGlobal
+		\removeWithTag #'score \AGlobal
 		\AContrabbassi
 	>>	
 }
 \score {
 	\new Staff <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BContrabbassi
 	>>	
 }
 \score {
 	\new Staff <<
-		\CGlobal
+		\removeWithTag #'score \CGlobal
 		\CContrabbassi
 	>>	
 }
 \score {
 	\new Staff <<
-		\DGlobal
+		\removeWithTag #'score \DGlobal
 		\DContrabbassi
 	>>	
 }
@@ -36,13 +36,13 @@
 }
 \score {
 	\new Staff <<
-		\FGlobal
+		\removeWithTag #'score \FGlobal
 		\FContrabbassi
 	>>	
 }
 \score {
 	\new Staff <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\GContrabbassi
 	>>	
 }
@@ -54,19 +54,19 @@
 }
 \score {
 	\new Staff <<
-		\IGlobal
+		\removeWithTag #'score \IGlobal
 		\IContrabbassi
 	>>	
 }
 \score {
 	\new Staff <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\JContrabbassi
 	>>	
 }
 \score {
 	\new Staff <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\KContrabbassi
 	>>	
 }

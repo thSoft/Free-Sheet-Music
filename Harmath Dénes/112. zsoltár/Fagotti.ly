@@ -12,29 +12,29 @@
 }
 \score {<<
 	\new Staff <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BFagottoI
 	>>
 	\new Staff <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BFagottoII
 	>>
 >>}
 \score {
 	\new Staff <<
-		\CGlobal
+		\removeWithTag #'score \CGlobal
 		\CFagotto
 	>>	
 }
 \score {
 	\new Staff <<
-		\DGlobal
+		\removeWithTag #'score \DGlobal
 		\DFagotto
 	>>	
 }
 \score {
 	\new Staff <<
-		\EGlobal
+		\removeWithTag #'score \EGlobal
 		\EFagotto
 	>>	
 }
@@ -46,14 +46,14 @@
 }
 \score {
 	\new Staff <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\GFagotto
 	>>	
 }
 \score {<<
 	\new Staff <<
 		\HHeader
-		\HGlobal
+		\removeWithTag #'score \HGlobal
 		\HFagottoI
 	>>
 	\new Staff <<
@@ -62,7 +62,7 @@
 >>}
 \score {
 	\new Staff <<
-		\IGlobal
+		\removeWithTag #'score \IGlobal
 		\IFagotto
 	>>	
 }
@@ -74,7 +74,7 @@
 }
 \score {
 	\new Staff <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\new Voice \KFagottoI
 		\new Voice \KFagottoII
 	>>	

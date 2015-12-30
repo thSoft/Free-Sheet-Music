@@ -12,9 +12,12 @@ FGlobal = {
 	\tempo "L'istesso tempo"
 	s1*8^"poco a poco rit."
 	\tempo "Lento"
+	\tag #'score \mark \markup { \box "Örök emlékezetben lészen az igaz," }
 	s1*10
 	\tempo "Con fuoco"
-	s1*23
+	s1*4
+	\tag #'score \mark \markup { \box "nem fél a gonosz-hír hallástól." }
+	s1*19
 	s1*3^"rit." 
 }
 FFlauto =  \relative a' {

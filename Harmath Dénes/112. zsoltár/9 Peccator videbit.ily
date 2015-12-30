@@ -11,9 +11,18 @@ ITacet = {
 IGlobal = {
 	\IHeader
 	\tempo "Con fuoco"
-	s1*16
+	s8
+	\tag #'score \mark \markup { \box "A bűnös látja ezt és harag fogja el," }
+	s2..
+	s1*8
+	\tag #'score \mark \markup { \box "fogait csikorgatja" }
+	s1*3
+	\tag #'score \mark \markup { \box "és irigységben emészti magát;" }
+	s1*4
 	\set Score.beatStructure = #'(2 2 3)
-	s2..*18^"accel. poco a poco"
+	s2..*2^"accel. poco a poco"
+	\tag #'score \mark \markup { \box "a gonoszok kívánsága semmivé leszen." }
+	s2..*16
 	\tempo "Presto"
 	s2..*3 ^"piú accel."
 	\set Score.beatStructure = #'(3 2 2)
@@ -143,24 +152,24 @@ IBattacio =  \relative e' {
 IVioliniI =  \relative b' {
     \clef "treble" \key g \major \time 4/4 | % 1
 	\once \override TextScript.outside-staff-priority = #-100
-    b8\downbow ^"martellato"\ff r8 dis8^"sempre" r8 b8 r8 g8 r8 | % 2
+    b8\downbow ^"martellato"\ff r8 dis8-\tweak outside-staff-priority #-200 ^"sempre" r8 b8 r8 g8 r8 | % 2
     b8^"sim." r8 gis8 r8 f2 -> \breathe | % 3
     g8 r8 gis8 r8 a8 r8 ais8 r8 | % 4
     r8 <dis, b'>16\downbow ^"poco sul ponticello" <dis b'>16 <dis b'>16 <dis b'>16
     <dis b'>16 <dis b'>16 <dis b'>16 <dis b'>16 <dis b'>8 r4 
     | % 5
-    <a' e'>8^"ord."\downbow r8 <a e'>8^"sempre" r8 <a e'>8 r8 <a e'>8 r8 | % 6
+    <a' e'>8^"ord."\downbow r8 <a e'>8-\tweak outside-staff-priority #-200 ^"sempre" r8 <a e'>8 r8 <a e'>8 r8 | % 6
     <a e'>8 r8 <a e'>8 r8 <a e'>8 r8 <a e'>8 r8 | % 7
     <a e'>8 r8 <a e'>8 r8 <a e'>8 r8 <a e'>8 r8 | % 8
     r8 <des c'>16\downbow ^"sul ponticello" <des c'>16 <des c'>16 <des c'>16
     <des c'>16 <des c'>16 <c b'>16 <c b'>16 <c b'>8 r4 | % 9
     d'16\downbow^"ord." des16 c16 b16 bes16 a16 as16 g16 des'16 c16 b16 bes16 a16 as16
     g16 ges16 | \barNumberCheck #10
-    f8\downbow r8 f8^"sempre" r8 f8 r8 f8 r8 | % 11
+    f8\downbow r8 f8-\tweak outside-staff-priority #-200 ^"sempre" r8 f8 r8 f8 r8 | % 11
     f8 r8 f8 r8 f8 r8 f8 r8 | % 12
     r8 <e bes'>16\downbow ^"molto sul ponticello" <e bes'>16 <e bes'>16 <e bes'>16
     <e bes'>16 <e bes'>16 <es a>16 <es a>16 <es a>8 r4 | % 13
-    fis8\downbow^"ord." r8 fis8^"sempre" r8 fis8 r8 fis8 r8 | % 14
+    fis8\downbow^"ord." r8 fis8-\tweak outside-staff-priority #-200 ^"sempre" r8 fis8 r8 fis8 r8 | % 14
     fis8 r8 fis8 r8 fis8 r8 fis8 r8 | % 15
     fis8 r8 fis8 r8 fis8 r8 fis8 r8 | % 16
     e8\> r8 dis8 r8 cis8 r8 bis8 r8 | % 17
@@ -191,22 +200,22 @@ IVioliniI =  \relative b' {
 
 IVioliniII =  \relative dis' {
     \clef "treble" \key g \major \time 4/4 | % 1
-    dis8\downbow \ff^"martellato" r8 g8^"sempre" r8 dis8 r8 b8 r8 | % 2
+    dis8\downbow \ff^"martellato" r8 g8-\tweak outside-staff-priority #-200 ^"sempre" r8 dis8 r8 b8 r8 | % 2
     dis8 r8 dis8 r8 b2 -> \breathe | % 3
     es8 r8 e8 r8 f8 r8 fis8 r8 | % 4
     r8 g16\downbow ^"poco sul ponticello" g16 g16 g16 g16 g16 g16 g16 g8 r4
     | % 5
-    <g, d'>8\downbow^"ord." r8 <g d'>8^"sempre" r8 <g d'>8 r8 <g d'>8 r8 | % 6
+    <g, d'>8\downbow^"ord." r8 <g d'>8-\tweak outside-staff-priority #-200 ^"sempre" r8 <g d'>8 r8 <g d'>8 r8 | % 6
     <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 | % 7
     <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 <g d'>8 r8 | % 8
     r8 g''16 ^"sul ponticello"\downbow g16 g16 g16 g16 g16 fis16 fis16 fis8 r4
     | % 9
     r8 f,8^"ord."\downbow as8 b8 r8 bes8\upbow des8 e8 | \barNumberCheck #10
-    b8\downbow r8 b8^"sempre" r8 b8 r8 b8 r8 | % 11
+    b8\downbow r8 b8-\tweak outside-staff-priority #-200 ^"sempre" r8 b8 r8 b8 r8 | % 11
     b8 r8 b8 r8 b8 r8 b8 r8 | % 12
     r8 <b f'>16 ^"molto sul ponticello"\downbow <b f'>16 <b f'>16 <b f'>16 <b
         f'>16 <b f'>16 <bes e>16 <bes e>16 <bes e>8 r4 | % 13
-    b8^"ord."\downbow r8 c8^"sempre" r8 b8 r8 c8 r8 | % 14
+    b8^"ord."\downbow r8 c8-\tweak outside-staff-priority #-200 ^"sempre" r8 b8 r8 c8 r8 | % 14
     b8 r8 c8 r8 b8 r8 c8 r8 | % 15
     b8 r8 c8 r8 b8 r8 c8 r8 | % 16
     gis8\> r8 gis8 r8 g8 r8 fis8 r8 | % 17
@@ -237,23 +246,23 @@ IVioliniII =  \relative dis' {
 
 IVioleI =  \relative g {
     \clef "alto" \key g \major \time 4/4 | % 1
-    g8 \downbow\ff^"martellato" r8 b8^"sempre" r8 g8 r8 dis8 r8 | % 2
+    g8 \downbow\ff^"martellato" r8 b8-\tweak outside-staff-priority #-200 ^"sempre" r8 g8 r8 dis8 r8 | % 2
     g8 r8 b8 r8 g2 -> \breathe | % 3
     b8 r8 c8 r8 cis8 r8 d8 r8 | % 4
     r8 g,16^"poco sul ponticello"\downbow g16 g16 g16 g16 g16 <g dis'>16 <g
         dis'>16 <g dis'>8 r4 | % 5
-    fis'8\downbow^"ord." r8 fis8^"sempre" r8 fis8 r8 fis8 r8 | % 6
+    fis'8\downbow^"ord." r8 fis8-\tweak outside-staff-priority #-200 ^"sempre" r8 fis8 r8 fis8 r8 | % 6
     fis8 r8 fis8 r8 fis8 r8 fis8 r8 | % 7
     fis8 r8 fis8 r8 fis8 r8 fis8 r8 | % 8
     r8 <bes, a'>16\downbow ^"sul ponticello" <bes a'>16 <bes a'>16 <bes a'>16
     <bes a'>16 <bes a'>16 <a gis'>16 <a gis'>16 <a gis'>8 r4 
     | % 9
     r8 b8\downbow^"ord." d8 f8 r8 e8\upbow g8 bes8 | \barNumberCheck #10
-    a8\downbow r8 as8^"sempre" r8 a8 r8 as8 r8 | % 11
+    a8\downbow r8 as8-\tweak outside-staff-priority #-200 ^"sempre" r8 a8 r8 as8 r8 | % 11
     a8 r8 as8 r8 a8 r8 as8 r8 | % 12
     r8 <des, g>16 \downbow^"molto sul ponticello" <des g>16 <des g>16 <des g>16
     <des g>16 <des g>16 <c ges'>16 <c ges'>16 <c ges'>8 r4 | % 13
-    gis'8\downbow^"ord." r8 ais8^"sempre" r8 gis8 r8 ais8 r8 | % 14
+    gis'8\downbow^"ord." r8 ais8-\tweak outside-staff-priority #-200 ^"sempre" r8 gis8 r8 ais8 r8 | % 14
     gis8 r8 ais8 r8 gis8 r8 ais8 r8 | % 15
     gis8 r8 ais8 r8 gis8 r8 ais8 r8 | % 16
     bis,8\> r8 cis8 r8 e8 r8 d8 r8 | % 17
@@ -284,22 +293,22 @@ IVioleI =  \relative g {
 
 IVioleII =  \relative e {
     \clef "alto" \key g \major \time 4/4 | % 1
-    e8\ff ^"martellato"\downbow r8 a8^"sempre" r8 e8 r8 f8 r8 | % 2
+    e8\ff ^"martellato"\downbow r8 a8-\tweak outside-staff-priority #-200 ^"sempre" r8 e8 r8 f8 r8 | % 2
     fis!8 r8 f8 r8 f2 -> \breathe | % 3
     g8 r8 gis8 r8 a8 r8 ais8 r8 | % 4
     r8 b16\downbow ^"poco sul ponticello" b16 b16 b16 b16 b16 b16 b16 b8 r4
     | % 5
-    b8^"ord."\downbow r8 bes8^"sempre" r8 b8 r8 bes8 r8 | % 6
+    b8^"ord."\downbow r8 bes8-\tweak outside-staff-priority #-200 ^"sempre" r8 b8 r8 bes8 r8 | % 6
     b8 r8 bes8 r8 b8 r8 bes8 r8 | % 7
     b8 r8 bes8 r8 b8 r8 bes8 r8 | % 8
     r8 e16\downbow ^"sul ponticello" e16 e16 e16 e16 e16 dis16 dis16 dis8 r4
     | % 9
     r8 as8\downbow^"ord." b8 d8 r8 des8\upbow e8 g8 | \barNumberCheck #10
-    d8\downbow r8 es8^"sempre" r8 d8 r8 es8 r8 | % 11
+    d8\downbow r8 es8-\tweak outside-staff-priority #-200 ^"sempre" r8 d8 r8 es8 r8 | % 11
     d8 r8 es8 r8 d8 r8 es8 r8 | % 12
     r8 <as, d>16\upbow ^"molto sul ponticello" <as d>16 <as d>16 <as d>16 <as
         d>16 <as d>16 <g des'>16 <g des'>16 <g des'>8 r4 | % 13
-    c8\downbow^"ord." r8 cis8^"sempre" r8 c8 r8 cis8 r8 | % 14
+    c8\downbow^"ord." r8 cis8-\tweak outside-staff-priority #-200 ^"sempre" r8 c8 r8 cis8 r8 | % 14
     c8 r8 cis8 r8 c8 r8 cis8 r8 | % 15
     c8 r8 cis8 r8 c8 r8 cis8 r8 | % 16
     dis,8\> r8 fis8 r8 a8 r8 gis8 r8 | % 17
@@ -316,22 +325,22 @@ IVioleII =  \relative e {
 
 IVioloncelli =  \relative e {
     \clef "bass" \key g \major \time 4/4 | % 1
-    e8\downbow\ff ^"martellato" r8 c8^"sempre" r8 e8 r8 gis8 r8 | % 2
+    e8\downbow\ff ^"martellato" r8 c8-\tweak outside-staff-priority #-200 ^"sempre" r8 e8 r8 gis8 r8 | % 2
     e8 r8 b'8 r8 des2 ->\breathe | % 3
     c16\downbow ( b16 bes16 a16 ) a16 ( as16 g16 fis16 ) fis16 ( f16 e16 dis16 )
     dis16 ( d16 cis16 c16 ) | % 4
     c2 \sfp :32 b4 r4 | % 5
-    e8\downbow r8 e8^"sempre" r8 e8 r8 e8 r8 | % 6
+    e8\downbow r8 e8-\tweak outside-staff-priority #-200 ^"sempre" r8 e8 r8 e8 r8 | % 6
     e8 r8 e8 r8 e8 r8 e8 r8 | % 7
     e8 r8 e8 r8 e8 r8 e8 r8 | % 8
     r8 fis,16\downbow ^"sul ponticello" fis16 fis16 fis16 fis16 fis16 b16 b16 b8
     r4 | % 9
     r8 d8\downbow^"ord." f8 as8 r8 g8\upbow bes8 des8 | \barNumberCheck #10
-    f,,8\downbow r8 as8^"sempre" r8 f8 r8 as8 r8 | % 11
+    f,,8\downbow r8 as8-\tweak outside-staff-priority #-200 ^"sempre" r8 f8 r8 as8 r8 | % 11
     f8 r8 as8 r8 f8 r8 as8 r8 | % 12
     r8 bes16\downbow ^"molto sul ponticello" bes16 bes16 bes16 bes16 bes16 es16
     es16 es8 r4 | % 13
-    e!8^"ord."\downbow r8 ais8^"sempre" r8 e8 r8 ais8 r8 | % 14
+    e!8^"ord."\downbow r8 ais8-\tweak outside-staff-priority #-200 ^"sempre" r8 e8 r8 ais8 r8 | % 14
     e8 r8 ais8 r8 e8 r8 ais8 r8 | % 15
     e8 r8 ais8 r8 e8 r8 ais8 r8 | % 16
     cis,8\> r8 a8 r8 dis8 r8 gis,8 r8 | % 17
@@ -342,21 +351,21 @@ IVioloncelli =  \relative e {
 IContrabbassi =  \relative e {
     \transposition c \clef "bass" \key g \major
     \time 4/4 | % 1
-    e8\ff\downbow ^"martellato" r8 c8^"sempre" r8 e8 r8 gis8 r8 | % 2
+    e8\ff\downbow ^"martellato" r8 c8-\tweak outside-staff-priority #-200 ^"sempre" r8 e8 r8 gis8 r8 | % 2
     e8 r8 b'8 r8 des2 -> \breathe | % 3
     c8 r8 a8 r8 fis8 r8 dis8 r8 | % 4
     c2 \sfp b4\downbow r4 | % 5
-    e8\ff\downbow r8 c8^"sempre" r8 e8 r8 c8 r8 | % 6
+    e8\ff\downbow r8 c8-\tweak outside-staff-priority #-200 ^"sempre" r8 e8 r8 c8 r8 | % 6
     e8 r8 c8 r8 e8 r8 c8 r8 | % 7
     e8 r8 c8 r8 e8 r8 c8 r8 | % 8
     r8 fis,16\downbow ^"sul ponticello" fis16 fis16 fis16 fis16 fis16 b16 b16 b8
     r4 | % 9
     R1 | \barNumberCheck #10
-    f8^"ord."\downbow r8 as8^"sempre" r8 f8 r8 as8 r8 | % 11
+    f8^"ord."\downbow r8 as8-\tweak outside-staff-priority #-200 ^"sempre" r8 f8 r8 as8 r8 | % 11
     f8 r8 as8 r8 f8 r8 as8 r8 | % 12
     r8 bes16\downbow^"molto sul ponticello" bes16 bes16 bes16 bes16 bes16 es16
     es16 es8 r4 | % 13
-    a8^"ord."\downbow r8 dis,8^"sempre" r8 a'8 r8 dis,8 r8 | % 14
+    a8^"ord."\downbow r8 dis,8-\tweak outside-staff-priority #-200 ^"sempre" r8 a'8 r8 dis,8 r8 | % 14
     a'8 r8 dis,8 r8 a'8 r8 dis,8 r8 | % 15
     a'8 r8 dis,8 r8 a'8 r8 dis,8 r8 | % 16
     cis8\> r8 a8 r8 dis8 r8 gis,8 r8 | % 17

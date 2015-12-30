@@ -6,7 +6,10 @@ AHeader = {
 AGlobal = {
 	\AHeader
 	\tempo "Allegretto"
-	s1*29
+	s8
+	\tag #'score \mark \markup { \box \column { "Boldog ember az, ki az Urat féli," "az Ő parancsolatait igen kedveli." } }
+	s2..
+	s1*28
 }
 ATacet = {
 	\once \override Staff.TimeSignature.stencil = ##f
@@ -252,7 +255,7 @@ AMezzosoprano =  \relative f' {
     r2 r4 r8 f8\f | % 9
     g4 g4 a4 r8 c8 | \barNumberCheck #10
     c8 bes8 bes4 ~ bes8. a16 g8 g8\noBeam | % 11
-    f4 f4 e8 d16 c16 d8 f8\noBeam | % 12
+    f4 f4 e8-> d16 c16 d8 f8\noBeam | % 12
     f8 f8 es8 d8 c4. r8 | % 13
     es'8 es8 es8 d8 d8 c8 c4 | % 14
     bes4. a8 a8 g8 r4 | % 15
@@ -266,7 +269,7 @@ AMezzosoprano =  \relative f' {
     f4. g8 f8 e8 r8 f8\f | % 25
     g4 g4 a4 r8 c8 | % 26
     c8 bes8 bes4 ~ bes8. a16 g8 g8\noBeam | % 27
-    f4 f4 c'8 bes16 a16 bes8 f8\mp\noBeam | % 28
+    f4 f4 c'8-> bes16 a16 bes8 f8\mp\noBeam | % 28
     es4 f8 r8 r2 | % 29
     f8\f f8 bes8. bes16 c4 r4 \bar "||"
     }
@@ -299,7 +302,7 @@ AAlto =  \relative f' {
     bes4 des4 c8 c8 r8 f8\f | % 25
     f4 f4 g4 r8 g8 | % 26
     g8 c8 g8. g16 g4 r8 e8 | % 27
-    d4 e4 e8 d16 c16 d8 d8\mp\noBeam | % 28
+    d4 e4 e8-> d16 c16 d8 d8\mp\noBeam | % 28
     es4 es8 r8 r2 | % 29
     es8\f es8 f8. f16 g4 r4 \bar "||"
     }
@@ -317,7 +320,7 @@ ATenore =  \relative c' {
     r2 r4 r8 c8\f | % 9
     c4 d4 e4 r8 f8 | \barNumberCheck #10
     f8 f8 f4. e16 d16 e8 c8\noBeam | % 11
-    c4 c4 c8 bes16 a16 bes8 bes8\noBeam | % 12
+    c4 c4 c8-> bes16 a16 bes8 bes8\noBeam | % 12
     bes8 bes8 bes8 g8 a16-> g16 f16 d16 f8 r8 | % 13
     f'4 f4 f4 f4 | % 14
     c2 c4 r4 | % 15

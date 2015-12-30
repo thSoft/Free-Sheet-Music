@@ -6,43 +6,43 @@
 
 \score {
 	\new Staff <<
-		\AGlobal
+		\removeWithTag #'score \AGlobal
 		\AVioliniI
 	>>	
 }
 \score {
 	\new Staff <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BVioliniI
 	>>	
 }
 \score {
 	\new Staff <<
-		\CGlobal
+		\removeWithTag #'score \CGlobal
 		\CVioliniI
 	>>	
 }
 \score {
 	\new Staff <<
-		\DGlobal
+		\removeWithTag #'score \DGlobal
 		\DVioliniI
 	>>	
 }
 \score {
 	\new Staff <<
-		\EGlobal
+		\removeWithTag #'score \EGlobal
 		\EVioliniI
 	>>	
 }
 \score {
 	\new Staff <<
-		\FGlobal
+		\removeWithTag #'score \FGlobal
 		\FVioliniI
 	>>	
 }
 \score {
 	\new Staff <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\GVioliniI
 	>>	
 }
@@ -54,19 +54,19 @@
 }
 \score {
 	\new Staff <<
-		\IGlobal
+		\removeWithTag #'score \IGlobal
 		\IVioliniI
 	>>	
 }
 \score {
 	\new Staff <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\JVioliniI
 	>>	
 }
 \score {
 	\new Staff <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\KVioliniI
 	>>	
 }

@@ -12,17 +12,17 @@
 }
 \score {<<
 	\new Staff <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BOboeI
 	>>
 	\new Staff <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BOboeII
 	>>
 >>}
 \score {
 	\new Staff <<
-		\CGlobal
+		\removeWithTag #'score \CGlobal
 		\COboe
 	>>	
 }
@@ -34,19 +34,19 @@
 }
 \score {
 	\new Staff <<
-		\EGlobal
+		\removeWithTag #'score \EGlobal
 		\EOboe
 	>>	
 }
 \score {
 	\new Staff <<
-		\FGlobal
+		\removeWithTag #'score \FGlobal
 		\FOboe
 	>>	
 }
 \score {
 	\new Staff <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\new Voice \GOboeI
 		\new Voice \GOboeII
 	>>	
@@ -54,7 +54,7 @@
 \score {<<
 	\new Staff <<
 		\HHeader
-		\HGlobal
+		\removeWithTag #'score \HGlobal
 		\HOboeI
 	>>
 	\new Staff <<
@@ -63,20 +63,20 @@
 >>}
 \score {
 	\new Staff <<
-		\IGlobal
+		\removeWithTag #'score \IGlobal
 		\IOboe
 	>>	
 }
 \score {
 	\new Staff <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\new Voice \JOboeI
 		\new Voice \JOboeII
 	>>	
 }
 \score {
 	\new Staff <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\new Voice \KOboeI
 		\new Voice \KOboeII
 	>>	

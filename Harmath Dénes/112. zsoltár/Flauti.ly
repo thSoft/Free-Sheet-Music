@@ -24,32 +24,32 @@
 }
 \score {
 	\new Staff <<
-		\DGlobal
+		\removeWithTag #'score \DGlobal
 		\new Voice \DFlautoI
 		\new Voice \DFlautoII
 	>>	
 }
 \score {
 	\new Staff <<
-		\EGlobal
+		\removeWithTag #'score \EGlobal
 		\EFlauto
 	>>	
 }
 \score {
 	\new Staff <<
-		\FGlobal
+		\removeWithTag #'score \FGlobal
 		\FFlauto
 	>>	
 }
 \score {
 	\new Staff <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\GFlauti
 	>>	
 }
 \score {<<
 	\new Staff <<
-		\HGlobal
+		\removeWithTag #'score \HGlobal
 		\HFlautoI
 	>>
 	\new Staff <<
@@ -58,19 +58,19 @@
 >>}
 \score {
 	\new Staff <<
-		\IGlobal
+		\removeWithTag #'score \IGlobal
 		\IFlauto
 	>>	
 }
 \score {
 	\new Staff <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\JFlauti
 	>>	
 }
 \score {
 	\new Staff <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\KFlautoI
 		\KFlautoII
 	>>	

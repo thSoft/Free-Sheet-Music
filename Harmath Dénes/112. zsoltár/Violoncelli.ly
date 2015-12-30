@@ -6,38 +6,38 @@
 
 \score {
 	\new Staff <<
-		\AGlobal
+		\removeWithTag #'score \AGlobal
 		\AVioloncelli
 	>>	
 }
 \score {
 	\new Staff <<
-		\BGlobal
+		\removeWithTag #'score \BGlobal
 		\BVioloncelli
 	>>	
 }
 \score {
 	\new Staff <<
-		\CGlobal
+		\removeWithTag #'score \CGlobal
 		\CVioloncelli
 	>>	
 }
 \score {
 	\new Staff <<
-		\DGlobal
+		\removeWithTag #'score \DGlobal
 		\DVioloncelli
 	>>	
 }
 \score {
 	\new Staff <<
-		\EGlobal
+		\removeWithTag #'score \EGlobal
 		\EVioloncelli
 	>>	
 }
 \score {
 	\new StaffGroup <<
 		\new Staff <<
-			\FGlobal
+			\removeWithTag #'score \FGlobal
 			\FVioloncelliI
 		>>
 		\new Staff \FVioloncelliII
@@ -45,7 +45,7 @@
 }
 \score {
 	\new Staff <<
-		\GGlobal
+		\removeWithTag #'score \GGlobal
 		\GVioloncelli
 	>>	
 }
@@ -57,19 +57,19 @@
 }
 \score {
 	\new Staff <<
-		\IGlobal
+		\removeWithTag #'score \IGlobal
 		\IVioloncelli
 	>>	
 }
 \score {
 	\new Staff <<
-		\JGlobal
+		\removeWithTag #'score \JGlobal
 		\JVioloncelli
 	>>	
 }
 \score {
 	\new Staff <<
-		\KGlobal
+		\removeWithTag #'score \KGlobal
 		\KVioloncelli
 	>>	
 }

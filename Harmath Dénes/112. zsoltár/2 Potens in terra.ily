@@ -6,7 +6,12 @@ BHeader = {
 BGlobal = {
 	\BHeader
 	\tempo "Maestoso"
-	s1*29
+	s8
+	\tag #'score \mark \markup { \box "Hatalmas lészen magva a földön," }
+	s2..
+	s1*13
+	\tag #'score \mark \markup { \box "az igazak nemzetsége megáldatik." }
+	s1*15
 }
 BTacet = {
 	\once \override Staff.TimeSignature.stencil = ##f
@@ -343,16 +348,16 @@ BOrganoMD =  \relative e' {
     <cis a'>2 <gis e'>2 | % 17
     <b fis'>2. r4 | % 18
     R1*2 | \barNumberCheck #20
-    <des, ges>4 \p ^"Fonds doux" <c f>4 <bes es>4 <c f>4 | % 21
+    <des, ges>4 \p\dim ^"Fonds doux" <c f>4 <bes es>4 <c f>4 | % 21
     <des ges>4 <c f>4 <des ges>4 <bes des>4 | % 22
     d!2. c4 | % 23
     R1 | % 24
-    \clef "bass" r4 d,4 e4 d4 | % 25
+    \clef "bass" r4\pp d,4 e4 d4 | % 25
     e4 d4 e4 c'4 | % 26
-    d1 ~ | % 27
+    d1\< ~ | % 27
     <d_~ e>1 | % 28
-    <d fis>1 ~ ~ | % 29
-    <d fis>1 \bar "||"
+    <d fis>1\> ~ ~ | % 29
+    <d fis>1\! \bar "||"
     }
 
 BOrganoPed =  \relative b, {
