@@ -142,12 +142,12 @@ BassoContinuo =  \relative d {
 Figures = \figuremode {
 	s4 <2> s <2> |
 	<7>4 <6 5> s <2> |
-	\bassFigureExtendersOn <7 5!>8 <6+ 5!> \bassFigureExtendersOff <7+ 6! 4>8 \bassFigureExtendersOn <8 6! 4> \bassFigureExtendersOff <7!>4 <7 _+> |
+	\bassFigureExtendersOn <7 5!>8 <6+ 5!> \bassFigureExtendersOff <7+ 6! 4>8 \bassFigureExtendersOn <8 6! 4> \bassFigureExtendersOff <6 5>4 <7 _+> |
 	s4 <2> <6 5> <7> |
 	s4 <2> <7>8 <6+> <6> <_+> |
 	s8 <6 5> \bassFigureExtendersOn <4> <_+> \bassFigureExtendersOff s2 |
 	s8 <6 5> \bassFigureExtendersOn <4> <_+> \bassFigureExtendersOff s2 |
-	s4 <2> <7> <2> |
+	s4 <2> <7 5!> <2 6!> |
 	<6 5>4 <6+ 4 3>8 <_+> s4 <2> |
 	<6+>4 <2> <6 5>8 <6> <6+ 5> <6> |
 	s4 <6 5>8 <7 _+> s4 <2> |
@@ -156,7 +156,7 @@ Figures = \figuremode {
 	<6>4 s <6> s |
 	<6>4 <_+> <9>8 <8> <2>4 |
 	<6>4 <6>8 <6> s4 <2> |
-	<7>8 <4 3> <6 4>4 s <2> |
+	<7>8 <4 3> <6 4 _!>4 s <2> |
 	<6>4 <2> <6 5>8 s4 <6 5>8 |
 	<6 4>8 <9 7> <7 4> \bassFigureExtendersOn <7 3> \bassFigureExtendersOff s2 |
 }
