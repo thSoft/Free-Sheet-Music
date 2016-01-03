@@ -35,8 +35,8 @@ AVioliniI =  \relative f' {
     d4\downbow ^"Tutti"\f\breathe d'4\downbow ~ d8 cis16 d16 e8 g,8\upbow | % 18
     fis4\breathe fis'4\downbow ~ fis8 e16 fis16 g8 b,8\upbow | % 19
     a4\breathe a'4\downbow ~ a8 g16 a16 b8 d,8\upbow | \barNumberCheck #20
-    cis8\breathe b16\downbow cis16 d4. e16\downbow d16 cis16 b16 a16 g16 | % 21
-    f4 r8 c'16\downbow ^"Solo"\mf bes16 c4. bes16 a16 | % 22
+    cis8\breathe b16\downbow cis16 d4. e16\downbow d16 cis16\> b16 a16 g16 | % 21
+    f4\! r8 c'16\downbow ^"Solo"\mf bes16 c4. bes16 a16 | % 22
     bes4. a16 g16 a4. g16 f16 | % 23
     g4. f16 es16 f4. r8 | % 24
     bes,8.\downbow(-- c16)-. des8.(-- es16)-. f8 e8 r4 | % 25

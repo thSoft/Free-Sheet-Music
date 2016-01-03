@@ -124,8 +124,8 @@ JFagotti =  \relative f {
     c,8 c2. \bar "||"
     }
 
-JTrombaI =  \relative d'' {
-    \transposition bes \clef "treble" \key d \major \time 12/8 R1.
+JTrombaI = \transpose c bes, \relative d'' {
+    \clef "treble" \key d \major \time 12/8 R1.
 	\voiceOne
     R1. | %3
     d8. d16 d8 d8. d16 d8 d8. d16 d8 d8. d16 d8 | % 4
@@ -144,8 +144,8 @@ JTrombaI =  \relative d'' {
     d2.. \bar "||"
     }
 
-JTrombaII =  \relative a' {
-    \transposition bes \clef "treble" \key d \major \time 12/8 s1. | % 2
+JTrombaII = \transpose c bes, \relative a' {
+    \clef "treble" \key d \major \time 12/8 s1. | % 2
 	\voiceTwo
     r2. a8.\mp\cresc a16 a8 a4. ~ | % 3
     a8. a16 a8 a8. a16 a8 a8. a16 a8 a8. a16 a8 | % 4
@@ -771,8 +771,8 @@ J = \score { \removeWithTag #'part \killCues
             >>
         \new StaffGroup <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Tr."} \line {"B"} } }
-                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr."} \line {"B"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"Tr."} } }
+                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr."} } }
                 \context Staff << 
                     \context Voice = "JTrombaI" { \voiceOne \JTrombaI }
                     \context Voice = "JTrombaII" { \voiceTwo \JTrombaII }

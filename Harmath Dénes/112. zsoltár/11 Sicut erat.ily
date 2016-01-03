@@ -222,8 +222,8 @@ KFagottoII =  \relative a, {
     d\breve_"II" \bar "|."
     }
 
-KTrombe =  \relative b' {
-    \transposition bes \clef "treble" \key e \major \time 4/4 R1*5 \bar
+KTrombe = \transpose c bes, \relative b' {
+    \clef "treble" \key e \major \time 4/4 R1*5 \bar
     "||"
     \time 4/2  R\breve*30 | % 38
 	\tag #'part \new CueVoice { \set instrumentCueName = "Fl. I" }
@@ -864,8 +864,8 @@ K = \score { \removeWithTag #'part \killCues
             >>
         \new StaffGroup <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Tr."} \line {"B"} } }
-                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr."} \line {"B"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"Tr."} } }
+                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr."} } }
                 \context Staff << 
                     \context Voice = "KTrombe" { \KTrombe }
                     >>

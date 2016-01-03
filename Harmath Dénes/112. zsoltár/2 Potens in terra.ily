@@ -68,8 +68,8 @@ BFagottoII =  \relative b {
     R1*12 \bar "||"
     }
 
-BTrombaI =  \relative g'' {
-    \transposition bes \clef "treble" \key e \major \time 2/2 r8 g16\f g16
+BTrombaI =  \transpose c bes, \relative g'' {
+    \clef "treble" \key e \major \time 2/2 r8 g16\f g16
     g2 r4 | % 2
     r8 g16 g16 g4 r2 | % 3
     r8 g16 g16 g4 r2 | % 4
@@ -92,8 +92,8 @@ BTrombaI =  \relative g'' {
     }
 \addQuote "BTrombaI" { \BTrombaI }
 
-BTrombaII =  \relative g'' {
-    \transposition bes \clef "treble" \key e \major \time 2/2 R1 | % 2
+BTrombaII = \transpose c bes, \relative g'' {
+    \clef "treble" \key e \major \time 2/2 R1 | % 2
     r2 r8 g16\f g16 g4 | % 3
     r2 r8 g16 g16 g4 | % 4
     r4 r8 g16 g16 g4 r16 g16 g16 g16 | % 5
@@ -548,15 +548,15 @@ B = \score { \removeWithTag #'part \killCues
             >>
         \new StaffGroup <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Tr. I"} \line {"B"} } }
-                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr. I"} \line {"B"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"Tr. I"} } }
+                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr. I"} } }
                 \context Staff << 
                     \context Voice = "BTrombaI" { \BTrombaI }
                     >>
                 >>
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Tr. II"} \line {"B"} } }
-                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr. II"} \line {"B"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"Tr. II"} } }
+                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr. II"} } }
                 \context Staff << 
                     \context Voice = "BTrombaII" { \BTrombaII }
                     >>

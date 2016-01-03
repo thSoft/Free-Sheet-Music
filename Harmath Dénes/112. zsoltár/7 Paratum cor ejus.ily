@@ -114,50 +114,41 @@ GFagotto =  \relative cis' {
     c2. ~ c8 \breathe c,8 c8 c8 r4 \bar "|."
     }
 
-GTrombaI =  \relative a' {
-    \transposition bes \clef "treble" \key d \major \time 12/8
-    \oneVoice
-    <a d>4.\f ~ ~ <a d>4 <g c>8 <a d>4. <b e>4. | % 2
-    <a d>2. ~ ~ <a d>4. r4. | % 3
-    <a d>4. <a d>8 <a d>8 <a d>8 <b e>4. <g c>4. | % 4
-    <a d>2. ~ ~ <a d>4. r4. | % 5
-    <d g>4. ~ ~ <d g>4 <c f>8 <d g>4. <e a>4. | % 6
-    <d g>2. ~ ~ <d g>4. r4. | % 7
-    <d g>4 <d g>4 <d g>4 <e a>4. <c f>4. | % 8
-    <d g>2. ~ ~ <d g>4. r4. | % 9
-    <dis gis>4. ~ ~ <dis gis>4 <cis fis>8 <dis gis>4. <eis ais>4. |
+GTrombaI = \transpose c bes, \relative a' {
+    \clef "treble" \key d \major \time 12/8
+    <d>4.\f ~ ~ <d>4 <c>8 <d>4. <e>4. | % 2
+    <d>2. ~ ~ <d>4. r4. | % 3
+    <d>4. <d>8 <d>8 <d>8 <e>4. <c>4. | % 4
+    <d>2. ~ ~ <d>4. r4. | % 5
+    <g>4. ~ ~ <g>4 <f>8 <g>4. <a>4. | % 6
+    <g>2. ~ ~ <g>4. r4. | % 7
+    <g>4 <g>4 <g>4 <a>4. <f>4. | % 8
+    <g>2. ~ ~ <g>4. r4. | % 9
+    <gis>4. ~ ~ <gis>4 <fis>8 <gis>4. <ais>4. |
     \barNumberCheck #10
-    <dis gis>2. ~ ~ <dis gis>4. r4. | % 11
-    <dis gis>4. <dis gis>8 <dis gis>8 <dis gis>8 <eis ais>4. <cis fis>4.
+    <gis>2. ~ ~ <gis>4. r4. | % 11
+    <gis>4. <gis>8 <gis>8 <gis>8 <ais>4. <fis>4.
     | % 12
-	\voiceOne
-    gis'2. ~ gis4. ~ gis8 fis8 eis8 | % 13
-	\oneVoice
-    <bes es>4. ~ ~ <bes es>4 <bes es>8 <c f>4. <a d>4. | % 14
-    <g c>1. | % 15
-    r4. <bes es>8 <bes es>8 <bes es>8 <c f>4. <a d>4. | % 16
-    <g c>2. ~ ~ <g c>4. r4. | % 17
-	\voiceOne
+    gis2. ~ gis4. ~ gis8 fis8 eis8 | % 13
+    es4. ~ ~ es4 es8 f4. d4. | % 14
+    c1. | % 15
+    r4. es8 es8 es8 f4. d4. | % 16
+    c2. ~ ~ c4. r4. | % 17
     c4. ~ c4 bes8 c4. es4. | % 18
     f4. ~ f4 es8 f4. g4. | % 19
     a4. ~ a4 g8 a4. c4. | \barNumberCheck #20
     a1. | % 21
-	\oneVoice
     R1.*7 | % 28
     r2. r4. a,4. | % 29
-    <d fis>4. ~ ~ <d fis>4 <d fis>8 <d fis>4 <fis a>8 <e g>4 <d fis>8 |
+    fis'4. ~ ~ fis4 fis8 fis4 a8 g4 fis8 |
     \barNumberCheck #30
-    <cis e>4. ~ ~ <cis e>4 <b d>8 <cis e>4. <dis fis>4. | % 31
-    <e g>4. ~ ~ <e g>4 <dis fis>8 <e g>4 <g b>8 <fis a>4 <e g>8 | % 32
-	\voiceOne
+    e4. ~ ~ e4 d8 e4. fis4. | % 31
+    g4. ~ ~ g4 fis8 g4 b8 a4 g8 | % 32
     fis4 e8 fis4 g8 fis4. r8. fis16 g16 a16 | % 33
-	\oneVoice
-    <g b>4. ~ ~ <g b>4 <g b>8 <g b>4 <b d>8 <a cis>4 <g b>8 | % 34
-    <fis a>4 <g b>8 <fis a>4 <e g>8 <fis a>4. <d fis>4. | % 35
-	\voiceOne
+    b4. ~ ~ b4 b8 b4 d8 cis4 b8 | % 34
+    a4 b8 a4 g8 a4. fis4. | % 35
     gis4 ais8 b4. ~ b4 ais16 gis16 ais4. | % 36
     b2. ~ b4. r4. | % 37
-	\oneVoice
     R1.*14 | % 52
 	\tag #'part { \new CueVoice { \set instrumentCueName = "Vl. I" } }
 	\cueDuring #"GVioliniI" #UP { R1. }
@@ -166,20 +157,39 @@ GTrombaI =  \relative a' {
     }
 \addQuote "GTrombaI" \GTrombaI
 
-GTrombaII =  \relative dis'' {
-    \transposition bes \clef "treble" \key d \major \time 12/8
-    \voiceTwo
-    s1*9
-    s2*15 | % 12
+GTrombaII = \transpose c bes, \relative dis'' {
+    \clef "treble" \key d \major \time 12/8
+    a4.\f ~ ~ a4 g8 a4. b4. | % 2
+    a2. ~ ~ a4. r4. | % 3
+    a4. a8 a8 a8 b4. g4. | % 4
+    a2. ~ ~ a4. r4. | % 5
+    d4. ~ ~ d4 c8 d4. e4. | % 6
+    d2. ~ ~ d4. r4. | % 7
+    d4 d4 d4 e4. c4. | % 8
+    d2. ~ ~ d4. r4. | % 9
+    dis4. ~ ~ dis4 cis8 dis4. eis4. |
+    \barNumberCheck #10
+    dis2. ~ ~ dis4. r4. | % 11
+    dis4. dis8 dis8 dis8 eis4. cis4.
     dis2. ~ dis4. r4.
-    s1*6 | % 17
+    bes4. ~ ~ bes4 bes8 c4. a4. | % 14
+    g1. | % 15
+    r4. bes8 bes8 bes8 c4. a4. | % 16
+    g2. ~ ~ g4. r4. | % 17
     as2. c2. | % 18
     c1. | % 19
     f1. | \barNumberCheck #20
-    g,4. ~ -> g4 a8 -> fis4. -> g4. -> s1.*11 | % 32
-    dis'4 cis8 dis4 e8 dis4. r4. s1*3 | % 35
+    g,4. ~ -> g4 a8 -> fis4. -> g4. ->
+    R1.*8 | % 32
+	d'4. ~ ~ d4 d8 d4 fis8 e4 d8 |
+    cis4. ~ ~ cis4 b8 cis4. dis4. | % 31
+    e4. ~ ~ e4 dis8 e4 g8 fis4 e8 | % 32
+    dis4 cis8 dis4 e8 dis4. r4. |
+    g4. ~ ~ g4 g8 g4 b8 a4 g8 | % 34
+    fis4 g8 fis4 e8 fis4. d4. | % 35
     e4 fis8 d4. cis4 b8 cis4 d8 | % 36
     b2. b4. r4.
+    R1.*22
     }
 
 GCornoI =  \relative g' {
@@ -755,10 +765,16 @@ G = \score { \removeWithTag #'part \killCues
             >>
         \new StaffGroup <<
             \new Staff <<
-                \set Staff.instrumentName = \markup { \center-column { \line {"Tr."} \line {"B"} } }
-                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr."} \line {"B"} } }
+                \set Staff.instrumentName = \markup { \center-column { \line {"Tr. I"} } }
+                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr. I"} } }
                 \context Staff << 
                     \context Voice = "GTrombaI" { \GTrombaI }
+                    >>
+                >>
+            \new Staff <<
+                \set Staff.instrumentName = \markup { \center-column { \line {"Tr. II"} } }
+                \set Staff.shortInstrumentName = \markup { \center-column { \line {"Tr. II"} } }
+                \context Staff << 
                     \context Voice = "GTrombaII" { \GTrombaII }
                     >>
                 >>

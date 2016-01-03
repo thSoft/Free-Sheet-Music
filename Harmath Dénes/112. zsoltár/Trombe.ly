@@ -44,13 +44,15 @@
 		\FTacet
 	>>	
 }
-\score {
+\score {<<
 	\new Staff <<
 		\removeWithTag #'score \GGlobal
 		\new Voice \GTrombaI
+	>>
+	\new Staff <<
 		\new Voice \GTrombaII
-	>>	
-}
+	>>
+>>}
 \score {<<
 	\new Staff <<
 		\HHeader
